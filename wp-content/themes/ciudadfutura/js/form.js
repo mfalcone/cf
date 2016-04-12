@@ -1,4 +1,11 @@
 $(document).ready(function(){
+
+	function validateEmail(email) 
+{
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
 	$("#main-formulario input").keyup(function(e){
 		var me = $(e.target).attr("id");
 		if($(e.target).val() == ""){
@@ -12,10 +19,21 @@ $(document).ready(function(){
 
 	$("#sumate").click(function(){
 		var nombre = $('#nombre').val();
+		if(nombre==""){
+			alert("por favor ingrese su nombre")
+			return;	
+		}
 		var domicilio = $('#domicilio').val();
 		var fecha = $('#nacimiento').val();
 		var telefono = $('#celular').val();
 		var email = $('#mail').val();
+
+		mailvalido = validateEmail(email);
+		if(!mailvalido){
+			alert("por favor ingreso una dirección de correo válida")
+			return;
+		}
+
 		var facebook = $('#facebook').val();
 		var twitter = $('#twitter').val();
 		var distrito;

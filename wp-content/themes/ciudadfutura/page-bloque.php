@@ -37,7 +37,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 <script>
 	  $(document).ready(function(){
 	  	 if (!window.matchMedia('(max-width: 768px)').matches){
-
+	  	 			$("#main-bloque").height($(window).height())
 			      $(".the-content-bloque").onepage_scroll({
 			        sectionContainer: "article",
 			        responsiveFallback: 600,
