@@ -1,0 +1,114 @@
+#main-calculadora dt{
+	font-weight: bold;
+}
+
+
+#main-calculadora hgroup{
+	display:none;
+}
+
+#main-calculadora .main-calculadora dt{
+	background: #900;
+	color: #FFF;
+	padding:10px;
+	font-size:17px;
+}
+
+#main-calculadora .main-calculadora dd{
+	padding: 20px;
+}
+
+#main-calculadora .main-calculadora input{
+	padding: 6px;
+}
+
+#main-calculadora .main-calculadora input[type="text"]{
+	background: #FFF;
+}
+
+
+
+#main-calculadora .resultados{
+
+}
+
+
+#main-calculadora .resultados table{
+	width: 100%;
+}
+
+#main-calculadora .resultados th{
+	font-weight: bold;
+	font-size: 16px;
+	border-bottom:1px solid;
+}
+
+#main-calculadora .resultados td{
+	
+}
+
+#main-calculadora .resultados tr:nth-child(even) td {background: #CCC}
+#main-calculadora .resultados tr:nth-child(odd) td {background: #FFF}
+
+#main-calculadora .resultados tr:nth-child(even) td.tit_tabla {background: #525252;color: #FFF;}
+#main-calculadora .resultados tr:nth-child(odd) td.tit_tabla {background: #171717;color:#FFF;}
+
+
+#main-calculadora .resultados .tit_tabla{
+	text-align: right;
+	margin-right: 10px;
+	border-right: 1px solid #333;
+}
+
+
+
+#main-calculadora .resultados tr{
+	
+}
+
+#main-calculadora .resultados th,
+#main-calculadora .resultados td{
+	padding: 5px;
+	
+}
+
+#main-calculadora .resultados .final-diciembre,
+#main-calculadora .resultados .final-marzo{
+	color: #900;
+	font-size:18px;
+}
+
+p.disclaimer{
+	font-size:10px;
+    line-height: 14px;
+    background: #CCC;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#main-calculadora h3{
+	font-size:20px;
+}
+
+#main-calculadora a{
+	color:#900;
+}
+
+#segundo_aumento,
+#primer_aumento{
+	width: 29%;
+}
+
+#main-calculadora .vinculos img{
+	width:32%;
+	float:left;
+	margin-right: 1%;
+}
+
+#main-calculadora .vinculos{
+	margin-bottom: 10px;
+	overflow: auto;
+}
+
+
+

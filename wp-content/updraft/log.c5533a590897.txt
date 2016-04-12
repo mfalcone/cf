@@ -1,0 +1,91 @@
+0000.001 (0) Opened log file at time: Tue, 20 May 2014 14:50:27 +0000 on http://localhost/wordpress
+0000.004 (0) UpdraftPlus WordPress backup plugin (http://updraftplus.com): 1.9.13 WP: 3.8.3 PHP: 5.2.17 (Darwin MacBook-Air-de-maximiliano-330.local 12.0.0 Darwin Kernel Version 12.0.0: Sun Jun 24 23:00:16 PDT 2012; root:xnu-2050.7.9~1/RELEASE_X86_64 x86_64) MySQL: 5.5.25 Server: Apache safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 36.4M | 37.3M) multisite: N mcrypt: Y ZipArchive::addFile: Y W3TC/ObjectCache: N
+0000.006 (0) Free space on disk containing Updraft's temporary directory: 41270.4 Mb
+0000.011 (0) Tasks: Backup files: 1 (schedule: unset) Backup DB: 0 (schedule: unset)
+0000.044 (0) Requesting semaphore lock (f)
+0000.048 (0) Set semaphore last lock (f) time to 2014-05-20 14:50:27
+0000.049 (0) Semaphore lock (f) complete
+0000.057 (0) Backup run: resumption=0, nonce=c5533a590897, begun at=1400597427 (0s ago), job type=backup
+0000.058 (0) Scheduling a resumption (1) after 300 seconds (1400597727) in case this run gets aborted
+0000.078 (0) Checking if we have a zip executable available
+0000.080 (0) Testing: /usr/bin/zip
+0000.094 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.096 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.098 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.099 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=127) (out=105) (deflated 17%)
+0000.101 (0) Output: total bytes=127, compressed=105 -> 17% savings
+0000.110 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=134) (out=109) (deflated 19%)
+0000.112 (0) Output: total bytes=261, compressed=214 -> 18% savings
+0000.179 (0) Working binary zip found: /usr/bin/zip
+0000.182 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0000.184 (0) Creation of backups of directories: beginning
+0000.189 (0) Beginning creation of dump of plugins (split every: 800 Mb)
+0000.768 (0) Total entities for the zip file: 171 directories, 1262 files, 41.2 Mb
+0000.773 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: 100 files added (on-disk size: 0 Kb)
+0000.780 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: 200 files added (on-disk size: 0 Kb)
+0000.787 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: 300 files added (on-disk size: 0 Kb)
+0000.792 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 Mb added on this batch (25 Mb, 1262 files batched, 362 (362) added so far); re-opening (prior size: 0 Kb)
+0008.282 (0) backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: size is now: 6.40 Mb
+0008.320 (0) A useful amount of data was added after this amount of zip processing: 9.1 s (normalised: 9.1 s, rate: 2810.3 Kb/s)
+0008.324 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: 400 files added (on-disk size: 6576.4 Kb)
+0008.329 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: 500 files added (on-disk size: 6576.4 Kb)
+0008.334 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: 600 files added (on-disk size: 6576.4 Kb)
+0008.339 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: 700 files added (on-disk size: 6576.4 Kb)
+0008.344 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: 800 files added (on-disk size: 6576.4 Kb)
+0008.347 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (8.4 Mb, 1262 files batched, 501 (863) added so far); re-opening (prior size: 6576.4 Kb)
+0012.099 (0) backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: size is now: 8.80 Mb
+0012.106 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: 900 files added (on-disk size: 9061.1 Kb)
+0012.158 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: 1000 files added (on-disk size: 9061.1 Kb)
+0012.163 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: 1100 files added (on-disk size: 9061.1 Kb)
+0012.169 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: 1200 files added (on-disk size: 9061.1 Kb)
+0016.522 (0) backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip.tmp: size is now: 11.30 Mb
+0016.651 (0) Created plugins zip (0) - 11556.9 Kb in 16.5 s (702.1 Kb/s) (SHA1 checksum: dca64b3c0bdde7c14a204693cc108b267f59d406)
+0016.655 (0) Beginning creation of dump of themes (split every: 800 Mb)
+0016.838 (0) Total entities for the zip file: 34 directories, 211 files, 2.2 Mb
+0016.846 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-themes.zip.tmp: 100 files added (on-disk size: 0 Kb)
+0016.852 (0) Zip: backup_2014-05-20-1450_wordpress_test_c5533a590897-themes.zip.tmp: 200 files added (on-disk size: 0 Kb)
+0017.936 (0) backup_2014-05-20-1450_wordpress_test_c5533a590897-themes.zip.tmp: size is now: 1.60 Mb
+0017.957 (0) Created themes zip (0) - 1588.5 Kb in 1.3 s (1222.2 Kb/s) (SHA1 checksum: ac4e393ab905d70f9257e2f73432eedf09dd00f4)
+0017.961 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone
+0017.962 (0) Looking for candidates to back up in: /Volumes/SAMSUN-250G/htdocs/wordpress/wp-content/uploads
+0017.964 (0) finding files: 2014: adding to list (1)
+0017.965 (0) finding files: woocommerce_uploads: adding to list (2)
+0017.966 (0) Beginning creation of dump of uploads (split every: 800 Mb)
+0017.993 (0) Total entities for the zip file: 3 directories, 18 files, 1.7 Mb
+0018.391 (0) backup_2014-05-20-1450_wordpress_test_c5533a590897-uploads.zip.tmp: size is now: 1.60 Mb
+0018.438 (0) Created uploads zip (0) - 1684.9 Kb in 0.5 s (3585.8 Kb/s) (SHA1 checksum: 5562ef7c68dc3c321a8657d5ab2638cf181079d1)
+0018.441 (0) Beginning backup of other directories found in the content directory (index: 0)
+0018.443 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups
+0018.445 (0) Looking for candidates to back up in: /Volumes/SAMSUN-250G/htdocs/wordpress/wp-content
+0018.446 (0) finding files: index.php: adding to list (1)
+0018.447 (0) finding files: languages: adding to list (2)
+0018.449 (0) finding files: plugins: skipping: this is the plugins directory
+0018.450 (0) finding files: themes: skipping: this is the themes directory
+0018.452 (0) finding files: upgrade: skipping: excluded by options
+0018.453 (0) finding files: uploads: skipping: this is the uploads directory
+0018.454 (0) finding files: updraft: skipping: this is the updraft directory
+0018.459 (0) Total entities for the zip file: 3 directories, 17 files, 1.4 Mb
+0018.677 (0) backup_2014-05-20-1450_wordpress_test_c5533a590897-others.zip.tmp: size is now: 0.40 Mb
+0018.690 (0) Created others zip (0) - 423.9 Kb in 0.2 s (1818.1 Kb/s) (SHA1 checksum: 639818d0dff2947ca50ce142a6413b5513d9c22e)
+0018.697 (0) Saving backup status to database (elements: 8)
+0018.699 (0) No database backup (wp) - not part of this run
+0018.700 (0) Saving backup history
+0018.703 (0) backup_2014-05-20-1450_wordpress_test_c5533a590897-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0018.705 (0) backup_2014-05-20-1450_wordpress_test_c5533a590897-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0018.706 (0) backup_2014-05-20-1450_wordpress_test_c5533a590897-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0018.707 (0) backup_2014-05-20-1450_wordpress_test_c5533a590897-others.zip: others: This file has not yet been successfully uploaded: will queue
+0018.711 (0) Requesting upload of the files that have not yet been successfully uploaded (4)
+0018.715 (0) Cloud backup selection: none
+0018.716 (0) No remote despatch: user chose no remote backup service
+0018.719 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0018.721 (0) Number of backup sets in history: 1
+0018.722 (0) Examining backup set with datestamp: 1400597427 (May 20 2014 14:50:27)
+0018.725 (0) 1400597427: this backup set remains non-empty (1/0); will retain in history
+0018.726 (0) Retain: saving new backup history (sets now: 1) and finishing retain operation
+0018.728 (0) Resume backup (c5533a590897, 0): finish run
+0018.731 (0) Decremented the semaphore (f) by 1
+0018.732 (0) Semaphore (f) unlocked
+0018.733 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0018.738 (0) The backup apparently succeeded and is now complete
+0018.739 (0) No email will/can be sent - the user has not configured an email address.
+0018.740 (0) El respaldo parece haber tenido éxito y ahora está completado

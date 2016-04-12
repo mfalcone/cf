@@ -1,0 +1,76 @@
+table{
+	margin-bottom: 20px;
+	font-size: 20px;
+	line-height: 25px;
+	border:1px solid;
+	width: 100%;
+}
+
+.tool-wrap{
+	margin-bottom: 20px;
+}
+
+.table-wrap{
+    height: 500px;
+    overflow: auto;
+    position: relative;
+    border: 2px solid;
+    background: #DDD;
+    width:90%;
+}
+
+
+table tr{
+	border-bottom: 1px solid;
+}
+
+table .label{
+	font-weight: bold;
+	text-align: right;
+	padding-right: 10px;
+	width: 25%;
+	background: #888;
+	color: #FFF;
+}
+
+
+table td{
+	padding: 10px;
+	vertical-align: top;
+
+}
+
+tr:nth-child(odd) {
+   background-color: #ccc;
+}
+
+
+tr:nth-child(odd) .label{
+	background: #666;
+	color:#FFF;
+}
+
+.modal{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 50%;
+	background: #999;
+	border:1px solid;
+	left:5%;
+	top:5%;
+	height: 50%;
+	display: none;
+	padding:5%;
+}
+
+.modal textarea{
+	width:90%;
+	height: 90%;
+}
+
+.modal #cerrar_modal{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

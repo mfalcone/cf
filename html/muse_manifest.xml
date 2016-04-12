@@ -1,0 +1,150 @@
+<manifest alg="2" build="2015.0.0.309" opt="false" iceEnabled="true" iceMarkupVersion="2" exportTarget="other" domain="www.ciudadfutura.com.ar" resolutions="1x" timestamp="1437472898577">
+  <folder name="css">
+    <file name="site_global.css" crc="3884778386"/>
+    <file name="spots-audiovisuales.css" crc="3876464894" ref="spots-audiovisuales"/>
+    <file name="formulario-comlpeto.css" crc="4020477769" ref="formulario-comlpeto"/>
+    <file name="discursos_-charlas-y-debates.css" crc="98494926" ref="discursos,-charlas-y-debates"/>
+    <file name="index.css" crc="269302602" ref="index"/>
+    <file name="bloque-ciudad-futura.css" crc="4170634355" ref="bloque-ciudad-futura"/>
+    <file name="entrevistas.css" crc="3911365071" ref="entrevistas"/>
+    <file name="sumate.css" crc="3932212517" ref="sumate"/>
+    <file name="hacer-historia.css" crc="68514667" ref="hacer-historia"/>
+  </folder>
+  <folder name="assets">
+    <file name="montserrat-regular.otf" crc="176721407" seo="true" mt="1415967144000"/>
+    <file name="play.png" crc="452357613" seo="true" mt="1437151451000"/>
+    <file name="fondo_web.mp4" crc="400231870" seo="true" mt="1437330216000"/>
+    <file name="fondo_web.webm" crc="59718391" seo="true" mt="1437332842000"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="4255413929" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="museutils.js" crc="183364071" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="4004268962" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="webpro.js" crc="3803554875" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="musewpdisclosure.js" crc="3993616448" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="musewpslideshow.js" crc="242596657" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="jquery.museoverlay.js" crc="493285861" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="touchswipe.js" crc="4038331989" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="pie.js" crc="3827607177" ref="phone>index:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="jquery.watch.js" crc="71412426" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="form_check.php" crc="277267350" ref="phone>sumate:sumate"/>
+    <file name="form_throttle.php" crc="3908387251" ref="phone>sumate:sumate"/>
+    <file name="form_process.php" crc="24249335" ref="phone>sumate:sumate"/>
+    <file name="form-u17694.php" crc="34958533" ref="phone>sumate"/>
+    <file name="museredirect.js" crc="40941066" ref="index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="form-u16061.php" crc="4128052336" ref="sumate"/>
+  </folder>
+  <folder name="images">
+    <file name="ciudad-futura-favicon.ico" crc="384979801" ref="phone>index"/>
+    <file name="suma.jpg" crc="455411394" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="video_blog.jpg" crc="4071910796" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="img_carta_ok.jpg" crc="301363441" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="fotos_menu_actualizaciones.jpg" crc="3868879980" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="menu_los_tres.jpg" crc="476185873" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="suma_negro-u18296-fr.png" crc="4115333970" ref="phone>index:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas"/>
+    <file name="suma_blanco-u18296-r-fr.png" crc="4052546444" ref="phone>index:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas"/>
+    <file name="suma_blanco.png" crc="443750889" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="icono_video_normal-u18295-fr.png" crc="4027235583" ref="phone>index:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas"/>
+    <file name="icono_video_roll_activo.png" crc="445017348" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="carta_activo-u18298-fr.png" crc="471559717" ref="phone>index:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas"/>
+    <file name="carta_blanco.png" crc="4139268977" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="icono_blog-u18297-fr.png" crc="4071124677" ref="phone>index:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas"/>
+    <file name="icono_blog_blanco.png" crc="227043262" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="vector_tres-u18299-fr.png" crc="390055131" ref="phone>index:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas"/>
+    <file name="vector_tres_blanco-u18299-r-fr.png" crc="4189729160" ref="phone>index:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas"/>
+    <file name="vector_tres_blanco.png" crc="4132015654" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="1.jpg" crc="499567698" seo="true" ref="phone>index"/>
+    <file name="blank.gif" crc="4208392903" ref="phone>index"/>
+    <file name="2.jpg" crc="3792806858" seo="true" ref="phone>index"/>
+    <file name="3.jpg" crc="3795896986" seo="true" ref="phone>index"/>
+    <file name="4.png" crc="81941189" seo="true" ref="phone>index"/>
+    <file name="5.jpg" crc="352886768" seo="true" ref="phone>index"/>
+    <file name="loading.gif" crc="3815509949" ref="phone>index"/>
+    <file name="iso.png" crc="304061447" seo="true" ref="phone>index:phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas"/>
+    <file name="hacer_medio.png" crc="213466918" seo="true" ref="phone>index:index"/>
+    <file name="bloque-ciudad-futura-favicon.ico" crc="384979801" ref="phone>bloque-ciudad-futura"/>
+    <file name="suma_negro.png" crc="180162709" ref="phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="icono_video_normal.png" crc="360391614" ref="phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="carta_activo.png" crc="299179543" ref="phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="icono_blog.png" crc="23979803" ref="phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="vector_tres.png" crc="3808485178" ref="phone>bloque-ciudad-futura:phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="mbloque.jpg" crc="504484277" seo="true" ref="phone>bloque-ciudad-futura"/>
+    <file name="mjuan_final.png" crc="53749321" seo="true" ref="phone>bloque-ciudad-futura"/>
+    <file name="mpitu.jpg" crc="4023322962" seo="true" ref="phone>bloque-ciudad-futura"/>
+    <file name="mcaren.jpg" crc="287907240" seo="true" ref="phone>bloque-ciudad-futura"/>
+    <file name="hacer-historia-favicon.ico" crc="384979801" ref="phone>hacer-historia"/>
+    <file name="textured_paper.jpg" crc="4107146083" ref="phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas:sumate:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="titulo.png" crc="168640243" seo="true" ref="phone>hacer-historia:hacer-historia"/>
+    <file name="firma_los_tres.png" crc="420764574" seo="true" ref="phone>hacer-historia:hacer-historia"/>
+    <file name="hacer_para_moviles.jpg" crc="3767463874" seo="true" ref="phone>hacer-historia:phone>sumate:phone>formulario-comlpeto:phone>spots-audiovisuales:phone>discursos,-charlas-y-debates:phone>entrevistas"/>
+    <file name="sumate-favicon.ico" crc="384979801" ref="phone>sumate"/>
+    <file name="u17751-17.png" crc="47495579" ref="phone>sumate"/>
+    <file name="u17751-17-r.png" crc="83918299" ref="phone>sumate"/>
+    <file name="u17751-17-m.png" crc="83918299" ref="phone>sumate"/>
+    <file name="u17751-17-fs.png" crc="355114621" ref="phone>sumate"/>
+    <file name="checkboxunchecked.jpg" crc="4284791278" ref="phone>sumate"/>
+    <file name="checkboxuncheckedrollover.jpg" crc="3930314023" ref="phone>sumate"/>
+    <file name="checkboxuncheckedmousedown.jpg" crc="4094402789" ref="phone>sumate"/>
+    <file name="checkboxchecked.jpg" crc="3811403411" ref="phone>sumate"/>
+    <file name="checkboxcheckedrollover.jpg" crc="453126313" ref="phone>sumate"/>
+    <file name="checkboxcheckedmousedown.jpg" crc="4186677088" ref="phone>sumate"/>
+    <file name="formulario-comlpeto-favicon.ico" crc="384979801" ref="phone>formulario-comlpeto"/>
+    <file name="favicon.ico" crc="384979801" ref="phone>spots-audiovisuales"/>
+    <file name="menu.png" crc="358310296" seo="true" ref="index:sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="sumate_img_menu.jpg" crc="3865245813" ref="index"/>
+    <file name="ciudad_hacer.png" crc="507574909" seo="true" ref="sumate:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="social_tw_sprite-ieu16322-fr.png" crc="4071240302" ref="sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="social_tw_sprite.png" crc="3922289204" ref="sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="social_fb_sprite-u16322-fr.png" crc="445806147" ref="sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="social_twitter_sprite-u16321-fr.png" crc="4253909403" ref="sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="social_youtube_sprite-u16323-fr.png" crc="3988047591" ref="sumate:bloque-ciudad-futura:hacer-historia:spots-audiovisuales:formulario-comlpeto:discursos,-charlas-y-debates:entrevistas"/>
+    <file name="u16076-17.png" crc="47495579" ref="sumate"/>
+    <file name="u16076-17-r.png" crc="83918299" ref="sumate"/>
+    <file name="u16076-17-m.png" crc="83918299" ref="sumate"/>
+    <file name="u16076-17-fs.png" crc="355114621" ref="sumate"/>
+    <file name="checkboxunchecked2.jpg" crc="3783961257" ref="sumate"/>
+    <file name="checkboxuncheckedrollover2.jpg" crc="3898835355" ref="sumate"/>
+    <file name="checkboxuncheckedmousedown2.jpg" crc="4019589203" ref="sumate"/>
+    <file name="checkboxchecked2.jpg" crc="3760363524" ref="sumate"/>
+    <file name="checkboxcheckedrollover2.jpg" crc="3914243265" ref="sumate"/>
+    <file name="checkboxcheckedmousedown2.jpg" crc="350609565" ref="sumate"/>
+    <file name="posicion.jpg" crc="3993962837" ref="bloque-ciudad-futura"/>
+    <file name="firma_juan.png" crc="267920868" seo="true" ref="bloque-ciudad-futura"/>
+    <file name="ahi.jpg" crc="173291272" ref="bloque-ciudad-futura"/>
+    <file name="firma_pitu_bien.png" crc="229908351" seo="true" ref="bloque-ciudad-futura"/>
+    <file name="caren.jpg" crc="467621568" ref="bloque-ciudad-futura"/>
+    <file name="firma_caren.png" crc="532108714" seo="true" ref="bloque-ciudad-futura"/>
+    <file name="bl_bien.png" crc="4239746748" seo="true" ref="bloque-ciudad-futura"/>
+    <file name="spots-audiovisuales-favicon.ico" crc="384979801" ref="spots-audiovisuales"/>
+    <file name="discursos,-charlas-y-debates-favicon.ico" crc="384979801" ref="discursos,-charlas-y-debates"/>
+    <file name="entrevistas-favicon.ico" crc="384979801" ref="entrevistas"/>
+  </folder>
+  <folder name="phone">
+    <folder name="css">
+      <file name="sumate.css" crc="3893993308" ref="phone>sumate"/>
+      <file name="formulario-comlpeto.css" crc="4121262569" ref="phone>formulario-comlpeto"/>
+      <file name="entrevistas.css" crc="443539865" ref="phone>entrevistas"/>
+      <file name="discursos_-charlas-y-debates.css" crc="3934997755" ref="phone>discursos,-charlas-y-debates"/>
+      <file name="index.css" crc="4081442030" ref="phone>index"/>
+      <file name="spots-audiovisuales.css" crc="327462897" ref="phone>spots-audiovisuales"/>
+      <file name="bloque-ciudad-futura.css" crc="3906826453" ref="phone>bloque-ciudad-futura"/>
+      <file name="hacer-historia.css" crc="214446441" ref="phone>hacer-historia"/>
+    </folder>
+    <file name="index.html" crc="523605913" seo="true" mt="1437472790072" redirect="true"/>
+    <file name="bloque-ciudad-futura.html" crc="221860647" seo="true" mt="1437472627797" redirect="true"/>
+    <file name="hacer-historia.html" crc="4125287672" seo="true" mt="1437472640784" redirect="true"/>
+    <file name="sumate.html" crc="269214940" seo="true" mt="1437472663225" redirect="true"/>
+    <file name="formulario-comlpeto.html" crc="3800706476" seo="true" mt="1437472678004" redirect="true"/>
+    <file name="spots-audiovisuales.html" crc="4120676797" seo="true" mt="1437472762371" redirect="true"/>
+    <file name="discursos,-charlas-y-debates.html" crc="3918718907" seo="true" mt="1437472723164" redirect="true"/>
+    <file name="entrevistas.html" crc="188613154" seo="true" mt="1437472594912" redirect="true"/>
+  </folder>
+  <file name="index.html" crc="522385800" seo="true" mt="1437456583073" redirect="true"/>
+  <file name="sumate.html" crc="410096507" seo="true" mt="1437448423043" redirect="true"/>
+  <file name="bloque-ciudad-futura.html" crc="3926390403" seo="true" mt="1437442773629" redirect="true"/>
+  <file name="hacer-historia.html" crc="294456013" seo="true" mt="1437442521181" redirect="true"/>
+  <file name="spots-audiovisuales.html" crc="4222642408" seo="true" mt="1437472516067" redirect="true"/>
+  <file name="formulario-comlpeto.html" crc="4016056324" seo="true" mt="1437450572101" redirect="true"/>
+  <file name="discursos,-charlas-y-debates.html" crc="383658980" seo="true" mt="1437472505928" redirect="true"/>
+  <file name="entrevistas.html" crc="3960905108" seo="true" mt="1437471610549" redirect="true"/>
+</manifest>

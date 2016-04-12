@@ -1,0 +1,51 @@
+<manifest alg="2" build="2015.0.1.310" opt="true" iceEnabled="true" iceMarkupVersion="2" exportTarget="other" domain="www.ciudadfutura.com.ar" resolutions="1x" timestamp="1439759602314">
+  <folder name="css">
+    <file name="site_global.css" crc="291024430"/>
+    <file name="index.css" crc="4059044328" ref="index"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="4183747535" ref="index"/>
+    <file name="museutils.js" crc="334180058" ref="index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="35732776" ref="index"/>
+    <file name="webpro.js" crc="7309900" ref="index"/>
+    <file name="musewpdisclosure.js" crc="3941817638" ref="index"/>
+    <file name="musewpslideshow.js" crc="4149944274" ref="index"/>
+    <file name="jquery.museoverlay.js" crc="4282111687" ref="index"/>
+    <file name="touchswipe.js" crc="526709374" ref="index"/>
+    <file name="pie.js" crc="3827607177" ref="index"/>
+    <file name="jquery.watch.js" crc="293013060" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="1er-té-para-tres-favicon.ico" crc="384979801" ref="index"/>
+    <file name="textured_paper.jpg" crc="4107146083" ref="index"/>
+    <file name="suma.jpg" crc="455411394" ref="index"/>
+    <file name="video_blog.jpg" crc="4071910796" ref="index"/>
+    <file name="img_carta_ok.jpg" crc="301363441" ref="index"/>
+    <file name="fotos_menu_actualizaciones.jpg" crc="3868879980" ref="index"/>
+    <file name="menu_los_tres.jpg" crc="476185873" ref="index"/>
+    <file name="suma_negro.png" crc="180162709" ref="index"/>
+    <file name="suma_blanco.png" crc="443750889" ref="index"/>
+    <file name="icono_video_normal.png" crc="360391614" ref="index"/>
+    <file name="icono_video_roll_activo.png" crc="445017348" ref="index"/>
+    <file name="carta_activo.png" crc="299179543" ref="index"/>
+    <file name="carta_blanco.png" crc="4139268977" ref="index"/>
+    <file name="icono_blog.png" crc="23979803" ref="index"/>
+    <file name="icono_blog_blanco.png" crc="227043262" ref="index"/>
+    <file name="vector_tres.png" crc="3808485178" ref="index"/>
+    <file name="vector_tres_blanco.png" crc="4132015654" ref="index"/>
+    <file name="menu.png" crc="452713145" seo="true" ref="index"/>
+    <file name="ciudad_hacer.png" crc="507574909" seo="true" ref="index"/>
+    <file name="social_tw_sprite-ieu236-fr.png" crc="4071240302" ref="index"/>
+    <file name="social_tw_sprite.png" crc="3922289204" ref="index"/>
+    <file name="social_fb_sprite-u236-fr.png" crc="445806147" ref="index"/>
+    <file name="social_twitter_sprite-u235-fr.png" crc="4253909403" ref="index"/>
+    <file name="social_youtube_sprite-u237-fr.png" crc="3988047591" ref="index"/>
+    <file name="blog_entrevista.jpg" crc="447890570" seo="true" ref="index"/>
+    <file name="blank.gif" crc="4208392903" ref="index"/>
+    <file name="loading.gif" crc="3815509949" ref="index"/>
+    <file name="arrow.png" crc="3952606973" seo="true" ref="index"/>
+    <file name="icono_fotogaleria.png" crc="3915764459" seo="true" ref="index"/>
+    <file name="icono_tweets.png" crc="117228189" seo="true" ref="index"/>
+  </folder>
+  <file name="index.html" crc="110322701" seo="true" mt="1439759595655" redirect="true"/>
+</manifest>
