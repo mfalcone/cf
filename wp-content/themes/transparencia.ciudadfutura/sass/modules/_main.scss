@@ -1,0 +1,122 @@
+section.container{
+	
+	h1{
+		font-family: $myiriad;
+		border-bottom: 1px solid $rojo; 
+		font-size:2.5rem;
+		font-weight: bold;
+		color:$gris;
+		padding-bottom: 5px;
+	}
+	
+	h2{
+		font-family: $myiriad;
+		font-size: 2rem;
+	}
+
+	.graph-group{
+		
+		.slice text {
+				font-size: 10px;
+				font-family: Arial;
+				fill:$crema;
+			} 
+	}
+
+	.chart{
+		padding:0;
+	}
+
+
+	/*sueldos concejales y donaciones*/
+	
+	.equipo{
+
+		.persona{
+
+			margin-bottom: 20px;
+
+			figure{
+				img{
+					max-width: 100%;
+					border-radius: 100px;
+				}
+			}
+	
+			.data{
+				h3{
+					font-size: 1.8rem;
+					font-weight:normal;
+				}
+
+				.salario{
+
+				}
+
+				.graph-container{
+					width:100%;
+					line-height: 2.5rem;
+					.etiqueta{
+						padding-left:5px;
+					}
+					.main-percent{
+						width: 100%;
+						background:$gris;
+						height: 25px;
+						color:#FFF;
+						margin-bottom: 5px;
+					}
+
+					.donacion{
+						background:$rojo;
+						height: 25px;
+						float:left;
+						color: $crema;
+					}
+
+					.real{
+						background:$rojo_claro;
+						height: 25px;
+						float:left;
+					}
+
+				}
+				p{
+						font-size: 1.2rem;
+						margin-top: 35px;
+					}
+			}
+		}
+	}
+
+
+	/*end of sueldos concejales y donaciones*/
+	
+	/*subsidios*/
+
+		.subsidios{
+
+			table{
+				width: 100%;
+
+				th{
+					border-bottom:1px solid;
+				}
+
+				td{
+
+				}
+
+				td,th{
+					padding:10px;
+				}
+
+				tr:nth-child(even) {background: $crema}
+				tr:nth-child(odd) {background: #FFF}
+			}
+		}
+
+	/*end of subsidios*/
+	
+	
+}

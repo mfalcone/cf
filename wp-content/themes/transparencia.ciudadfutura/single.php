@@ -6,13 +6,7 @@
 
       <h1 class="article_title" itemprop="name"><? the_title(); ?></h1>
 
-      <header class="article_meta">
-        <time datetime="<? the_date() ?>" itemprop="datePublished">
-          <? date_post() ?>
-        </time>
-        <span itemprop="articleSection"><? the_tags( '', ' · ', '' ) ?></span>
-      </header>
-
+     
       <section class="article_content" itemprop="description">
       	<? the_content(); ?>
       </section>
