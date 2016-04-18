@@ -5,11 +5,11 @@ $imgDestacada = wp_get_attachment_url( $thumbID );
 ?>
 <section class="blog">
 <header class="blog" style="background-image:url(<?php echo $imgDestacada?>)">
-	<hgroup>
+	<div class="hgroup">
 	<h1 class="title"><?php the_title(); // Display the title of the post ?></h1>
 	<h2><?php the_excerpt(); ?> </h2>
 	<h3><?php the_date(); ?></h3>
-	</hgroup>
+	</div>
 </header>
 
 <article class="post">

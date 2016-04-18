@@ -34,8 +34,8 @@
 			</div>
 		
 			<ul class="col-md-8  col-md-offset-2 nav nav-tabs" role="tablist">
-				<li role="presentation" class="col-md-3 col-sm-3"><a href="/" aria-controls="Inicio" role="tab"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span><span class="text">Ingresos y Egresos</span></a></li>
-				<li role="presentation" class="col-md-3 col-sm-3"><a href="/consejo" aria-controls="Consejo" role="tab"><span class="glyphicon glyphicon glyphicon-comment" aria-hidden="true"></span><span class="text">Sueldos concejales y donaciones</span></a></li>
+				<li role="presentation" class="<?php if(is_home()){echo "active";} ?> col-md-3 col-sm-3"><a href="/" aria-controls="Inicio" role="tab"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span><span class="text">Ingresos y Egresos</span></a></li>
+				<li role="presentation" class="col-md-3 col-sm-3"><a href="consejo" aria-controls="Consejo" role="tab"><span class="glyphicon glyphicon glyphicon-comment" aria-hidden="true"></span><span class="text">Sueldos concejales y donaciones</span></a></li>
 				<li role="presentation" class="col-md-3 col-sm-3"><a href="/subsidios" aria-controls="subsidios" role="tab"><span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span><span class="text">subsidios</span></a></li>
 				<li role="presentation" class="col-md-3 col-sm-3"><a href="/aporte" aria-controls="aporte" role="tab"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span><span class="text">Hace tu aporte a la autonomía</span></a></li>
 				

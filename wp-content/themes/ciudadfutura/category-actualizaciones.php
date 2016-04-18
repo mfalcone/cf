@@ -5,7 +5,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 <div id="blog" class="content actualizaciones">
 			<?php if ( have_posts() ) : 
 			?>
-
+				<?php $count = 0; ?>
 				<?php while ( have_posts() ) : the_post(); 
 				// If we have a post to show, start a loop that will display it
 				?>
@@ -13,13 +13,15 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				<?php 
 				$thumbID = get_post_thumbnail_id( $post->ID );
 				$imgDestacada = wp_get_attachment_url( $thumbID );
+				$count++;
+								
 				?>
-					<section  class="post">
+					<section class="post <?php if($count<4){echo 'high-section';}?>">
 						<article style="background-image:url(<?php echo $imgDestacada?>)">
-							
-							<h1 class="title"><a href="<?php the_permalink() ?>"><?php the_title(); // Display the title of the post ?></a></h1>
-							<h2><?php echo get_the_excerpt(); ?> </h2>
-							
+							<a href="<?php the_permalink() ?>">
+							<h2 class="title"><?php the_title(); // Display the title of the post ?></h2>
+							<h3><?php echo get_the_excerpt(); ?> </h3>
+							</a>
 						</article>
 					</section>
 
