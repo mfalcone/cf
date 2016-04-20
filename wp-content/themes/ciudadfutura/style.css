@@ -1025,6 +1025,22 @@ section.blog{
 	color: #000;
 }
 
+#blog .pagination{
+	width:100%;
+	clear:left;
+	text-align: center;
+	padding-top:20px;
+	color:#333;
+}
+
+#blog .pagination a{
+	color:#900;
+	text-decoration: none;
+}
+
+#blog .pagination a:hover{
+	text-decoration: underline;
+}
 
 #main.search{
 	margin-top:80px;
