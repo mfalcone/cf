@@ -140,9 +140,12 @@ function wpse_91693_render()
 
 }
 
-add_action( 'wp_enqueue_scripts', 'ajax_test_enqueue_scripts' );
+     add_action( 'wp_enqueue_scripts', 'ajax_test_enqueue_scripts' );
+
+
 function ajax_test_enqueue_scripts() {
-    
+ if (is_category('actualizaciones'))    {
+    is_category( 'Stinky Cheeses' );
     wp_register_script('love', get_template_directory_uri() . '/js/actualizaciones.js', array('jquery'),'1.1', true);
     wp_localize_script( 'love', 'postlove', array(
         'ajax_url' => admin_url( 'admin-ajax.php' ),
@@ -150,7 +153,7 @@ function ajax_test_enqueue_scripts() {
     ));
 
     wp_enqueue_script('love');
-
+    }
 }
 
 add_action( 'wp_ajax_nopriv_post_love_add_love', 'post_love_add_love' );
