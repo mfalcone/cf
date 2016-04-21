@@ -140,22 +140,52 @@ function wpse_91693_render()
 
 }
 
-function pagination_bar() {
-    global $wp_query;
- 
-    $total_pages = $wp_query->max_num_pages;
- 
-    if ($total_pages > 1){
-        $current_page = max(1, get_query_var('paged'));
- 
-        echo paginate_links(array(
-            'base' => get_pagenum_link(1) . '%_%',
-            'format' => '/page/%#%',
-            'current' => $current_page,
-            'total' => $total_pages,
-        ));
-    }
+add_action( 'wp_enqueue_scripts', 'ajax_test_enqueue_scripts' );
+function ajax_test_enqueue_scripts() {
+    
+    wp_register_script('love', get_template_directory_uri() . '/js/actualizaciones.js', array('jquery'),'1.1', true);
+    wp_localize_script( 'love', 'postlove', array(
+        'ajax_url' => admin_url( 'admin-ajax.php' ),
+        'query_vars' => json_encode( $wp_query->query )
+    ));
+
+    wp_enqueue_script('love');
+
 }
 
+add_action( 'wp_ajax_nopriv_post_love_add_love', 'post_love_add_love' );
+add_action( 'wp_ajax_post_love_add_love', 'post_love_add_love' );
+
+function post_love_add_love() {
+        $count = $_REQUEST["count"];
+        $args = array(
+            'category_name' => 'actualizaciones', 
+            'posts_per_page' => 6, 
+            'paged' => $count
+            );
+
+        $query = new WP_Query( $args );
+        $actualizaciones = array();
+
+        while( $query->have_posts() ) : $query->the_post();
+ 
+          // Add a car entry
+        $thumbID = get_post_thumbnail_id( get_the_id() );
+        $imgDestacada = wp_get_attachment_url( $thumbID );
+
+          $actualizaciones[] = array(
+            'titulo'    => get_the_title(),
+            'excerpt'   => get_the_excerpt(),
+            'id'        => get_the_id(),
+            'imagen'    => $imgDestacada,
+            'link'      => get_permalink()
+          );
+       
+        endwhile;
+        wp_reset_query();
+        echo json_encode( $actualizaciones );
+        //print_r($query);
+         die();
+}
 
 ?>

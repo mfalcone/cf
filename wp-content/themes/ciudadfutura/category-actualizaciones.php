@@ -37,10 +37,8 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				</article>
 
 			<?php endif; // OK, I think that takes care of both scenarios (having a post or not having a post to show) ?>
-<nav class="pagination">
-<?php pagination_bar(); ?>
-</nav>
 
 
 </div>
+
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>
