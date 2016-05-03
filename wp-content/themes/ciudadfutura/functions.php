@@ -187,8 +187,67 @@ function post_love_add_love() {
         endwhile;
         wp_reset_query();
         echo json_encode( $actualizaciones );
-        //print_r($query);
-         die();
+        die();
+}
+
+function wpb_mce_buttons_2($buttons) {
+    array_unshift($buttons, 'styleselect');
+    return $buttons;
+}
+add_filter('mce_buttons_2', 'wpb_mce_buttons_2');
+
+/*
+* Callback function to filter the MCE settings
+*/
+
+function my_mce_before_init_insert_formats( $init_array ) {  
+
+// Define the style_formats array
+
+    $style_formats = array(  
+        // Each array child is a format with it's own settings
+        array(  
+            'title' => 'Content Block',  
+            'block' => 'span',  
+            'classes' => 'content-block',
+            'wrapper' => true,
+            
+        ),  
+        array(  
+            'title' => 'Blue Button',  
+            'block' => 'span',  
+            'classes' => 'blue-button',
+            'wrapper' => true,
+        ),
+        array(  
+            'title' => 'Red Button',  
+            'block' => 'span',  
+            'classes' => 'red-button',
+            'wrapper' => true,
+        ),
+    );  
+    // Insert the array, JSON ENCODED, into 'style_formats'
+    $init_array['style_formats'] = json_encode( $style_formats );  
+    
+    return $init_array;  
+  
+} 
+// Attach callback to 'tiny_mce_before_init' 
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' ); 
+
+
+// agrego los estilos al wp editor
+add_filter( 'mce_css', 'fb_mcekit_editor_style');
+function fb_mcekit_editor_style($url) {
+
+    if ( ! empty( $url ) )
+        $url .= ',';
+
+    // Retrieves the plugin directory URL
+    // Change the path here if using different directories
+    $url .= trailingslashit( plugin_dir_url( __FILE__ ) ) . '/my-editor-styles.css';
+
+    return $url;
 }
 
 ?>

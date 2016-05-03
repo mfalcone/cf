@@ -1,0 +1,35 @@
+section{
+height: 100vh;
+width: 100%;
+}
+
+#uno{
+	background: #900;
+}
+
+#dos{
+	background: #090;
+}
+
+#tres{
+	background: #940
+}
+
+body, html{
+	height: 100%;
+	margin:0;
+}
+
+.actor{
+	position: absolute;
+	display: none;
+}
+
+.alignleft{
+	top:20px;left:20px;
+}
+
+.alignright{
+	top:20px;
+	right: 20px;
+}
