@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title></title>
+	<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js">
+	</script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		SC.initialize({
+		  client_id: 'a485fcfe078bf1633b88428a5b846610',
+		});
+
+		SC.get('/tracks').then(function(tracks) {
+			  console.log(tracks);
+			});
+
+/*SC.get('/tracks', {
+      user_id: 217672912,
+      limit: 100
+  }).then(function(tracks) {
+			console.log(tracks)
+		})
+*/
+
+
+		
+		
+
+		})
+	</script>
+</head>
+<body>
+
+	<div class="ui360">
+    <a type="audio/mp3" href="https://api.soundcloud.com/tracks/261684364/stream?client_id=a485fcfe078bf1633b88428a5b846610" data-title="Track title">play "an.mp3"</a>
+
+    <audio id="player" src="https://api.soundcloud.com/tracks/261684364/stream?client_id=a485fcfe078bf1633b88428a5b846610" >
+</audio>
+</div>
+
+</body>
+</html>
