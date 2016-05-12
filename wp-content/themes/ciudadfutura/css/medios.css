@@ -20,6 +20,10 @@
 }
 
 
+.medios .nota h2 a{
+  color:#900;
+}
+
 .medios .nota img{
 	position: absolute;
 	top:10px;
@@ -60,6 +64,11 @@ article.medios{
     max-width: 790px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.blog .header-medios{
+    background-size: cover;
+    background-position: center center;
 }
 
 

@@ -65,6 +65,7 @@ $imgDestacada = wp_get_attachment_url( $thumbID );
 	</header>
 	<article class="post medios">
 		
+		<h2 class="cargando">Cargando...</h2>
 
 	</article>
 </section>

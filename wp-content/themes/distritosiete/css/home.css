@@ -139,22 +139,6 @@ video#bgvid {
 	height: 422px;
 }
 
-
-#menu-principal li.audioblog a{
-	background: url(../img/icono_audio_normal.png) no-repeat;
-}
-
-#menu-principal li.audioblog a:hover{
-	background-color: #333;
-	background-image: url(../img/icono_audio_roll_activo.png);
-}
-
-#menu-principal li.audioblog .subwrap .imageicon{
-	background:url(../img/audio_blog.jpg);
-}
-
-
-
 #menu-principal li.actualizaciones a{
 	background-image: url(../img/icono_blog.png);
 	background-repeat:no-repeat;

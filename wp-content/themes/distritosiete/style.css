@@ -1,5 +1,5 @@
 /*
-Theme Name: Ciudad Futura
+Theme Name: Distrito Siete
 Theme URI: maxifalcone.org/
 Author: Maxi Falcone
 Author URI: http://maxifalcone.org/
@@ -235,22 +235,6 @@ body.category-actualizaciones{
 	background-color: #333;
 	background-image: url(img/icono_blog_blanco.png);
 }
-
-
-#main-header #menu-principal li.audioblog a{
-	background: url(img/icono_audio_normal.png) no-repeat -5px -5px;
-}
-
-#main-header #menu-principal li.audioblog a:hover{
-	background-color: #333;
-	background-image: url(img/icono_audio_roll_activo.png);
-}
-
-
-#main-header #menu-principal li.audioblog .subwrap .imageicon{
-	background:url(img/audio_blog.jpg);
-}
-
 
 #main-header #menu-principal li.actualizaciones .subwrap .imageicon{
 	background:url(img/fotos_menu_actualizaciones.jpg);
@@ -1056,14 +1040,6 @@ section.blog{
 
 #blog .pagination a:hover{
 	text-decoration: underline;
-}
-
-#blog .loading{
-	font-size:2rem;
-	width: 100%;
-	padding: 5px;
-	text-align: center;
-	color: #666;
 }
 
 #main.search{
