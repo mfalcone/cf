@@ -1,5 +1,14 @@
 <? get_header() ?>
+		<div class="container">
+			<div class="col-md-12 main-texto">
+					<h1>
+								<?php echo get_bloginfo( 'description'); ?>
+					</h1>
+					<?php echo get_option( 'desc_general', '' ); ?>
 
+			</div>
+
+		</div>
  <style type="text/css">
 		.slice text {
 			font-size: 10px;

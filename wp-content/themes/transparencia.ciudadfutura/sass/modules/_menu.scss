@@ -1,0 +1,23 @@
+#menu-menu-principal{
+		li{
+			font-family: $akzidenz;
+			font-size: 3rem;
+			text-transform: uppercase;
+			white-space: nowrap;
+
+			a{
+				color: #000;
+				border-top:6px solid transparent;
+			
+			&:hover{
+				border-top:6px solid $rojo;
+				}
+			}
+
+			&.current-menu-item{
+				a{
+					color: $rojo;
+				}
+			} 
+		}
+}

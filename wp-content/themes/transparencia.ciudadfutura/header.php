@@ -12,33 +12,25 @@
   <? wp_head() ?>
 
 <body>
+	<div class="container">
+	<?php //wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu-header' ) ); ?>
+<?php /* Primary navigation */
+wp_nav_menu( array(
+  'menu' => 'top_menu',
+  'depth' => 2,
+  'container' => false,
+  'menu_class' => 'nav nav-justified',
+  //Process nav menu using our custom nav walker
+  'walker' => new wp_bootstrap_navwalker())
+);
+?>
+
+</div>
 	<header>
-			<div class="transparencia">
-				<div class="container">
-					<hgroup class="col-md-8 col-md-offset-2">
-							<h1>Portal de transparencia</h1>
-							<h2 class="col-md-6">Propuesta ciudad futura para las elección de autoridades</h2>
-							<h3 class="header-icons col-md-6 nomarginpadding"></h3>
-					</hgroup>
+				<div class="row">
+					<div class="col-md-4 pull-right">
+							<h2>DONAMOS EL 70% DE NUESTROS SUELDOS PARA MANTENER NUESTRA AUTONOMÍA</h2>
+					</div>
 					
-				</div>
 			</div>
 	</header>
-	<div class="baja-cabecera">
-		<div class="container">
-			<div class="col-md-8  col-md-offset-2 como-funciona">
-					<h4>
-								Cómo funciona?
-					</h4>
-						<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
-			</div>
-		
-			<ul class="col-md-8  col-md-offset-2 nav nav-tabs" role="tablist">
-				<li role="presentation" class="<?php if(is_home()){echo "active";} ?> col-md-3 col-sm-3"><a href="/" aria-controls="Inicio" role="tab"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span><span class="text">Ingresos y Egresos</span></a></li>
-				<li role="presentation" class="col-md-3 col-sm-3"><a href="consejo" aria-controls="Consejo" role="tab"><span class="glyphicon glyphicon glyphicon-comment" aria-hidden="true"></span><span class="text">Sueldos concejales y donaciones</span></a></li>
-				<li role="presentation" class="col-md-3 col-sm-3"><a href="/subsidios" aria-controls="subsidios" role="tab"><span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span><span class="text">subsidios</span></a></li>
-				<li role="presentation" class="col-md-3 col-sm-3"><a href="/aporte" aria-controls="aporte" role="tab"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span><span class="text">Hace tu aporte a la autonomía</span></a></li>
-				
-			</ul>
-		</div>
-	</div>

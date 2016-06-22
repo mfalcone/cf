@@ -236,6 +236,22 @@ body.category-actualizaciones{
 	background-image: url(img/icono_blog_blanco.png);
 }
 
+
+#main-header #menu-principal li.audioblog a{
+	background: url(img/icono_audio_normal.png) no-repeat -5px -5px;
+}
+
+#main-header #menu-principal li.audioblog a:hover{
+	background-color: #333;
+	background-image: url(img/icono_audio_roll_activo.png);
+}
+
+
+#main-header #menu-principal li.audioblog .subwrap .imageicon{
+	background:url(img/audio_blog.jpg);
+}
+
+
 #main-header #menu-principal li.actualizaciones .subwrap .imageicon{
 	background:url(img/fotos_menu_actualizaciones.jpg);
 }
@@ -939,7 +955,16 @@ section.blog{
 	margin-top: 40px;
 	text-align: center;
 	text-transform: uppercase;
+	line-height: 3rem;
+    text-align: left;
 }
+
+.blog .post h3{
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
 
 #blog{
 	min-height: 100%;
@@ -1157,6 +1182,47 @@ display:none;
 
 .postid-535 .hgroup{
 	display: none;
+}
+
+
+.postid-634 .hgroup{
+	position: absolute;
+    left: 2%;
+    width: 45%;
+    top: 40%;
+}
+
+.postid-634 .hgroup h1{
+	font-size:3rem;
+	text-align: left;
+	background: rgba(200,0,0,0.5);
+	display: inline;
+}
+
+.postid-634 .hgroup h2{
+	text-align: left;
+}
+
+.postid-634 .hgroup h3{
+	display: none;
+}
+
+
+.postid-634 img{
+	max-width: 100%;
+	height: auto;
+}
+
+.postid-634 img.alignnone{
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+@media all and (max-width : 768px) {
+	.postid-634 .hgroup{
+	top: 0%;
+	}
 }
 
 @media all and (max-width : 768px) {
