@@ -128,3 +128,141 @@ section.container{
     border-radius: 10px;
     background:#FFF;
 }
+
+.concejales{
+	text-align:center;
+	margin-bottom:40px;
+	img{
+		max-width: 222px;
+		border-radius:50%;
+		margin-left: auto;
+	    margin-right: auto;
+	    display: block;
+	    margin-bottom: 20px;
+	}
+
+	.mail{
+		font-family:$akzidenz;
+	}
+}
+
+.equipo{
+	text-align:center;
+	img{
+		max-width: 200px;
+		border-radius:50%;
+		margin-left: auto;
+	    margin-right: auto;
+	    display: block;
+	    margin-bottom: 20px;
+	}
+	hr{
+		display: block;
+	    height: 1px;
+	    border: 0;
+	    border-top: 1px solid #ccc;
+	    margin: 1em 0;
+	    padding: 0; 
+
+	    &.gobierno{
+			background:$rojo_claro;
+	    }
+
+	    &.politica{
+			background:$allo;
+	    }
+
+	    &.comunicacion{
+			background:$azul;
+	    }
+	}
+
+	.mail{
+		font-family:$akzidenz;
+	}
+
+	.grupo{
+		font-family:$akzidenz;
+		float: left;
+    	width: 90%;
+    	font-weight: normal;
+	    font-size: 1.8rem;
+	}
+	.glyphicon{
+		font-size: 3rem;
+		margin-top:-10px;
+		cursor:pointer;
+		&.gobierno{
+			color:$rojo_claro;
+	    }
+
+	    &.politica{
+			color:$allo;
+	    }
+
+	    &.comunicacion{
+			color:$azul;
+	    }
+	}
+
+	.bio{
+		float:left;
+    	width:100%;
+   		background: #FFF;
+    	padding: 10px;
+    	display: none;
+	}
+}
+
+.barras{
+
+	margin:20px 0 120px 0;
+
+	.total{
+		width:100%;
+		background:$rojo;
+		color:#FFF;
+		padding:3px 0 0 15px;
+		font-family:$akzidenz;
+		font-size:2rem;
+		height: 29px;
+	}
+	.donacion{
+		background:$azul;
+		color:#FFF;
+		padding:3px 0 0 15px;
+		margin-top:10px;
+		font-family:$akzidenz;
+		font-size:2rem;
+		height: 29px;
+	}
+	.num_total{
+		h4{
+			color:$rojo;
+			text-align: center;
+			font-size:3rem;
+		}
+
+		h5{
+			text-align: center;
+		}
+	}
+
+	.num_donacion{
+		h4{
+			color:$azul;
+			text-align: center;
+			font-size:3rem;
+			}
+		h5{
+			text-align: center;
+		}
+	}
+}
+
+.page-template-page-cargos{
+
+	h2{
+		margin-top:50px;
+	}
+}

@@ -30,34 +30,115 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 
 			<?php endif; // OK, I think that takes care of both scenarios (having a post or not having a post to show) ?>
 <div class="container">
-<table class="table table-striped">
-  <tr>
-    <th class="tg-yw4l">Sesion</th>
-    <th class="tg-yw4l">Institución</th>
-    <th class="tg-yw4l">Territorio</th>
-    <th class="tg-yw4l">Objetivo</th>
-    <th class="tg-yw4l">Monto</th>
-  </tr>
-
-<?php $args = array( 'post_type' => 'subsidios', 'posts_per_page' => 4 );
+<h2>Concejales</h2>
+<div class="barras">
+	<div class="col-md-8">
+		<div class="total">
+			SUELDO TOTAL 100%
+		</div>
+		<div class="donacion" style="width:70%">
+			DONACIÓN AL INSTRUMENTO 70%
+		</div>
+	</div>
+	<div class="num_total col-md-2">
+		<h4>100%</h4>
+		<h5>SUELDO TOTAL</h5>
+	</div>
+	<div class="num_donacion col-md-2">
+		<h4>70%</h4>
+		<h5>DONACIÓN AL INSTRUMENTO</h5>
+	</div>
+</div>
+<?php $args = array( 'post_type' => 'personas', 'posts_per_page' => -1, 'meta_query' => array (
+		    array (
+			  'key' => '_grupo',
+			  'value' => '_concejales',
+		    )
+		  ));
 	$loop = new WP_Query( $args );
+
 	while ( $loop->have_posts() ) : $loop->the_post(); 
 
-	$sesion = get_post_meta(get_the_ID(), '_sesion', true); 
-	$institucion = get_post_meta(get_the_ID(), '_institucion', true);
-	$territorio = get_post_meta(get_the_ID(), '_territorio', true);
-    $objetivo = get_post_meta(get_the_ID(), '_objetivo', true);
-	$monto = get_post_meta(get_the_ID(), '_monto', true);
+	$nombre = get_post_meta(get_the_ID(), '_nombre', true); 
+	$imagen = get_post_meta(get_the_ID(), '_imagen', true);
+	$mail = get_post_meta(get_the_ID(), '_mail', true);
+    $bio = get_post_meta(get_the_ID(), '_bio', true);
+	$grupo = get_post_meta(get_the_ID(), '_grupo', true);
 	
 ?>
-  <tr>
-    <td class="tg-yw4l"><?php echo $sesion ?></td>
-    <td class="tg-yw4l"><?php echo $institucion ?></td>
-    <td class="tg-yw4l"><?php echo $territorio ?></td>
-    <td class="tg-yw4l"><?php echo $objetivo ?></td>
-    <td class="tg-yw4l"><?php echo $monto ?></td>
-  </tr>
-	<?php endwhile; ?>
-</table>
+<div class="concejales col-md-4">
+	<img src="<?php echo $imagen;?>" alt="foto de <?php echo $nombre;?>" />
+	<h3><?php echo $nombre;?></h3>
+	<p class="mail"><?php echo $mail;?></p>
+	<p class="bio"><?php echo $bio;?></p>
 </div>
+	<?php endwhile; ?>
+
+
+<h2>Equipo Concejales</h2>
+<div class="barras">
+	<div class="col-md-8">
+	<div class="total">
+		SUELDO TOTAL 100%
+	</div>
+	<div class="donacion" style="width:50%">
+		DONACIÓN AL INSTRUMENTO 50%
+	</div>
+</div>
+<div class="num_total col-md-2">
+	<h4>100%</h4>
+	<h5>SUELDO TOTAL</h5>
+</div>
+<div class="num_donacion col-md-2">
+	<h4>50%</h4>
+	<h5>DONACIÓN AL INSTRUMENTO</h5>
+</div>
+</div>
+
+<?php $args = array( 'post_type' => 'personas', 'posts_per_page' => -1, 'meta_query' => array (
+		    array (
+			  'key' => '_grupo',
+			  'value' => '_concejales',
+			  'compare' => 'NOT IN'
+		    )
+		  ),'order'=>'ASC');
+	$loop = new WP_Query( $args );
+
+	while ( $loop->have_posts() ) : $loop->the_post(); 
+
+	$nombre = get_post_meta(get_the_ID(), '_nombre', true); 
+	$imagen = get_post_meta(get_the_ID(), '_imagen', true);
+	$mail = get_post_meta(get_the_ID(), '_mail', true);
+    $bio = get_post_meta(get_the_ID(), '_bio', true);
+	$grupo = get_post_meta(get_the_ID(), '_grupo', true);
+	switch ($grupo) {
+		case '_secretarios':
+			$grupo = 'Equipo Gobierno';
+			$clase = 'gobierno';
+		break;
+		case '_politica':
+			$grupo = 'Equipo Políticas Públicas';
+			$clase = 'politica';
+		break;
+		case '_comunicacion':
+			$grupo = 'Equipo Comunicación';
+			$clase = 'comunicacion';
+		break;
+	}
+?>
+<div class="equipo col-md-3">
+	<img src="<?php echo $imagen;?>" alt="foto de <?php echo $nombre;?>" />
+	<h3><?php echo $nombre;?></h3>
+	<p class="mail"><?php echo $mail;?></p>
+	<hr class="<?php echo $clase; ?>">
+	<p class="grupo"><?php echo $grupo;?></p>
+	<span class="glyphicon glyphicon-plus <?php echo $clase; ?>"></span>
+	<p class="bio">
+		<?php echo $bio;?>
+	</p>
+</div>
+	<?php endwhile; ?>
+</div>
+
+
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>

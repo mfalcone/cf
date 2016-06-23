@@ -1,7 +1,7 @@
 #menu-menu-principal{
 		li{
 			font-family: $akzidenz;
-			font-size: 3rem;
+			font-size: 2rem;
 			text-transform: uppercase;
 			white-space: nowrap;
 
@@ -19,5 +19,31 @@
 					color: $rojo;
 				}
 			} 
+
+			&:hover{
+				.dropdown-menu{
+					display: block;
+				}
+			}
+			
+			.dropdown-menu{
+				background: none;
+				margin-top: -1px;
+				width: 100%;
+				li{
+					background:#eadada;
+					a{
+
+					}
+
+					&.active{
+						a{
+							background: none;
+						}
+					}
+				}
+			}
 		}
 }
+
+

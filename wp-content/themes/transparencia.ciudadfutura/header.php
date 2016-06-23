@@ -11,7 +11,7 @@
   <!--[if lt IE 9]><script src="<?= get_template_directory_uri(); ?>/js/html5shiv.js"></script><![endif]-->
   <? wp_head() ?>
 
-<body>
+<body <?php body_class(); ?>>
 	<div class="container">
 	<?php //wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu-header' ) ); ?>
 <?php /* Primary navigation */
