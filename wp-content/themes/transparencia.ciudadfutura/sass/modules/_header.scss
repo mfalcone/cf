@@ -19,5 +19,13 @@ header{
 	    text-align: center;
 	    line-height: 6rem;
 	}
+
+	.row{
+		margin:0;
+
+		.col-md-4{
+			padding-left: 40px;
+		}
+	}
 }
 

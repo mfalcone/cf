@@ -54,7 +54,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 			  'key' => '_grupo',
 			  'value' => '_concejales',
 		    )
-		  ));
+		   ),'order'=>'ASC');
 	$loop = new WP_Query( $args );
 
 	while ( $loop->have_posts() ) : $loop->the_post(); 

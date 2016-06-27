@@ -1,32 +1,50 @@
 section.container{
 	
-	h1{
-		font-family: $myiriad;
-		border-bottom: 1px solid $rojo; 
-		font-size:2.5rem;
-		font-weight: bold;
-		color:$gris;
-		padding-bottom: 5px;
-	}
 	
 	h2{
-		font-family: $myiriad;
 		font-size: 2rem;
 	}
 
 	.graph-group{
+
+		h2{
+			font-size: 4rem;
+		    margin-bottom: 40px;
+			margin-top: 40px;
+		}
+
 		
 		.slice text {
 				font-size: 10px;
 				font-family: Arial;
 				fill:$crema;
 			} 
+
+		svg{
+			margin-left:auto;
+			margin-right: auto;
+			display: block;
+		}
 	}
 
 	.chart{
 		padding:0;
+		h3{
+			font-size:4rem;
+		}
+		p{
+			font-family:$akzidenz;
+			font-size: 2rem;
+		}
+
+		li{
+			width: 50%;
+			list-style: none;
+			float:left;
+		}
 	}
 
+	
 
 	/*sueldos concejales y donaciones*/
 	
@@ -127,6 +145,7 @@ section.container{
     margin-top: -65px;
     border-radius: 10px;
     background:#FFF;
+    margin-bottom: 50px;
 }
 
 .concejales{

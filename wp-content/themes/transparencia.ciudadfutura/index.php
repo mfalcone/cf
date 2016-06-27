@@ -11,7 +11,7 @@
 		</div>
  <style type="text/css">
 		.slice text {
-			font-size: 10px;
+			font-size: 12px;
 			font-family: Arial;
 			fill:#FFFFFF;
 		}   
@@ -22,8 +22,7 @@
 </style>
 
 <section class="container">
-	<div class="col-md-8  col-md-offset-2 chart">
-
+	
 	<?php 
 
 	$args = array( 'post_type' => 'movimientos', 'posts_per_page' => 4 );
@@ -40,9 +39,9 @@
 			$exclude = array('_edit_last', '_wp_page_template', '_edit_lock');
 			?>
 			<script type="text/javascript">
-					var w = 300,                        //width
-					h = 300,                            //height
-					r = 150,                            //radius
+					var w = 400,                        //width
+					h = 400,                            //height
+					r = 200,                            //radius
 					color = ["#C31F24", "#DE5A48", "#EEC94B", "#45B29D", "#344D5C", "#B2181C", "#E2493D","#3A9E8A","#375D70"];//d3.scale.category20c();     //builtin range of colors
 					data = [
 			<?php foreach( $meta as $key => $value ) {
@@ -101,7 +100,6 @@
 		</div>
 
 	<?php endwhile; // end of the loop. ?>
-	</div>
 </section>
 
 
