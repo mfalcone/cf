@@ -39,7 +39,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
     <th class="tg-yw4l">Monto</th>
   </tr>
 
-<?php $args = array( 'post_type' => 'subsidios', 'posts_per_page' => 4 );
+<?php $args = array( 'post_type' => 'subsidios', 'posts_per_page' => -1 );
 	$loop = new WP_Query( $args );
 	while ( $loop->have_posts() ) : $loop->the_post(); 
 

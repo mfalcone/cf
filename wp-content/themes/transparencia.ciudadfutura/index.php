@@ -10,12 +10,7 @@
 
 		</div>
  <style type="text/css">
-		.slice text {
-			font-size: 12px;
-			font-family: Arial;
-			fill:#FFFFFF;
-		}   
-
+	
 		.slice path {
 		  stroke: #fff;
 		}
@@ -39,9 +34,9 @@
 			$exclude = array('_edit_last', '_wp_page_template', '_edit_lock');
 			?>
 			<script type="text/javascript">
-					var w = 400,                        //width
-					h = 400,                            //height
-					r = 200,                            //radius
+					var w = 450,                        //width
+					h = 450,                            //height
+					r = 220,                            //radius
 					color = ["#C31F24", "#DE5A48", "#EEC94B", "#45B29D", "#344D5C", "#B2181C", "#E2493D","#3A9E8A","#375D70"];//d3.scale.category20c();     //builtin range of colors
 					data = [
 			<?php foreach( $meta as $key => $value ) {
@@ -62,7 +57,7 @@
 							.attr("transform", "translate(" + r + "," + r + ")")    //move the center of the pie chart from 0, 0 to radius, radius
 					var arc = d3.svg.arc()              //this will create <path> elements for us using arc data
 						.outerRadius(r)
-						.innerRadius(r-70);
+						.innerRadius(r-100);
 					var pie = d3.layout.pie()           //this will create arc data for us given a list of values
 						.value(function(d) { return d.value; });    //we must tell it out to access the value of each element in our data array
 					var arcs = vis.selectAll("g.slice")     //this selects all <g> elements with class slice (there aren't any yet)

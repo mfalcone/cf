@@ -12,20 +12,21 @@
   <? wp_head() ?>
 
 <body <?php body_class(); ?>>
-	<div class="container">
-	<?php //wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu-header' ) ); ?>
-<?php /* Primary navigation */
-wp_nav_menu( array(
-  'menu' => 'top_menu',
-  'depth' => 2,
-  'container' => false,
-  'menu_class' => 'nav nav-justified',
-  //Process nav menu using our custom nav walker
-  'walker' => new wp_bootstrap_navwalker())
-);
-?>
-
-</div>
+	<div class="menu-wrap">
+		<div class="container">
+		<?php //wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu-header' ) ); ?>
+		<?php /* Primary navigation */
+		wp_nav_menu( array(
+		  'menu' => 'top_menu',
+		  'depth' => 2,
+		  'container' => false,
+		  'menu_class' => 'nav nav-justified',
+		  //Process nav menu using our custom nav walker
+		  'walker' => new wp_bootstrap_navwalker())
+		);
+		?>
+		</div>
+	</div>
 	<header>
 				<div class="row">
 					<div class="col-md-4 pull-right">

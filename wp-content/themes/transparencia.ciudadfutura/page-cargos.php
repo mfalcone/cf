@@ -39,15 +39,27 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		<div class="donacion" style="width:70%">
 			DONACIÓN AL INSTRUMENTO 70%
 		</div>
+		<div class="sueldo" style="width:30%">
+			SUELDO NETO 30%
+		</div>
 	</div>
-	<div class="num_total col-md-2">
-		<h4>100%</h4>
-		<h5>SUELDO TOTAL</h5>
+	<div class="col-md-4">
+		<div class="row">
+			<div class="num_total col-md-4">
+				<h4>100%</h4>
+				<h5>SUELDO TOTAL</h5>
+			</div>
+			<div class="num_donacion col-md-4">
+				<h4>70%</h4>
+				<h5>DONACIÓN AL INSTRUMENTO</h5>
+			</div>
+			<div class="num_sueldo col-md-4">
+				<h4>$16.080</h4>
+				<h5>SUELDO NETO</h5>
+			</div>
+		</div>
 	</div>
-	<div class="num_donacion col-md-2">
-		<h4>70%</h4>
-		<h5>DONACIÓN AL INSTRUMENTO</h5>
-	</div>
+	
 </div>
 <?php $args = array( 'post_type' => 'personas', 'posts_per_page' => -1, 'meta_query' => array (
 		    array (
@@ -78,23 +90,34 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 <h2>Equipo Concejales</h2>
 <div class="barras">
 	<div class="col-md-8">
-	<div class="total">
-		SUELDO TOTAL 100%
+		<div class="total">
+			SUELDO TOTAL 100%
+		</div>
+		<div class="donacion" style="width:50%">
+			DONACIÓN AL INSTRUMENTO 50%
+		</div>
+		<div class="sueldo" style="width:50%">
+			SUELDO NETO 50%
+		</div>
 	</div>
-	<div class="donacion" style="width:50%">
-		DONACIÓN AL INSTRUMENTO 50%
+	<div class="col-md-4">
+		<div class="row">
+			<div class="num_total col-md-4">
+				<h4>100%</h4>
+				<h5>SUELDO TOTAL</h5>
+			</div>
+			<div class="num_donacion col-md-4">
+				<h4>50%</h4>
+				<h5>DONACIÓN AL INSTRUMENTO</h5>
+			</div>
+			<div class="num_sueldo col-md-4">
+				<h4>$16.080</h4>
+				<h5>SUELDO NETO</h5>
+			</div>
+		</div>
 	</div>
+	
 </div>
-<div class="num_total col-md-2">
-	<h4>100%</h4>
-	<h5>SUELDO TOTAL</h5>
-</div>
-<div class="num_donacion col-md-2">
-	<h4>50%</h4>
-	<h5>DONACIÓN AL INSTRUMENTO</h5>
-</div>
-</div>
-
 <?php $args = array( 'post_type' => 'personas', 'posts_per_page' => -1, 'meta_query' => array (
 		    array (
 			  'key' => '_grupo',
@@ -103,9 +126,9 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		    )
 		  ),'order'=>'ASC');
 	$loop = new WP_Query( $args );
-
+	$index = 0;
 	while ( $loop->have_posts() ) : $loop->the_post(); 
-
+	$index++;
 	$nombre = get_post_meta(get_the_ID(), '_nombre', true); 
 	$imagen = get_post_meta(get_the_ID(), '_imagen', true);
 	$mail = get_post_meta(get_the_ID(), '_mail', true);
@@ -126,7 +149,15 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		break;
 	}
 ?>
-<div class="equipo col-md-3">
+<?php 
+	$res = $index % 4;
+	if($res===1){
+		$cortclase = "corte";
+	}else{
+		$cortclase = "nocorte";
+	}
+	?>
+	<div class="equipo col-md-3 <?php echo $cortclase;?>">
 	<img src="<?php echo $imagen;?>" alt="foto de <?php echo $nombre;?>" />
 	<h3><?php echo $nombre;?></h3>
 	<p class="mail"><?php echo $mail;?></p>
