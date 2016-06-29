@@ -29,7 +29,10 @@
 	</div>
 	<header>
 				<div class="row">
-					<div class="col-md-4 pull-right">
+					<div id="caren" class="concejal"></div>
+					<div id="juan" class="concejal"></div>
+					<div id="pitu" class="concejal"></div>
+					<div class="col-md-3 pull-right cartel">
 							<h2>DONAMOS EL 70% DE NUESTROS SUELDOS PARA MANTENER NUESTRA AUTONOMÍA</h2>
 					</div>
 					
