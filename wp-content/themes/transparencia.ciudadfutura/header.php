@@ -13,6 +13,9 @@
 
 <body <?php body_class(); ?>>
 	<div class="menu-wrap">
+		<div class="menulink">
+			<span class="glyphicon glyphicon-align-justify"></span>
+		</div>
 		<div class="container">
 		<?php //wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu-header' ) ); ?>
 		<?php /* Primary navigation */
@@ -32,8 +35,14 @@
 					<div id="caren" class="concejal"></div>
 					<div id="juan" class="concejal"></div>
 					<div id="pitu" class="concejal"></div>
-					<div class="col-md-3 pull-right cartel">
-							<h2>DONAMOS EL 70% DE NUESTROS SUELDOS PARA MANTENER NUESTRA AUTONOMÍA</h2>
+					<div class="col-md-4 pull-right cartel">
+						<div class="cont-wrapper">
+								<p class="ideas-acciones">
+									IDEAS CLARAS <span class="glyphicon glyphicon-cloud"></span> <br>
+									ACCIONES CONCRETAS <span class="glyphicon glyphicon-cloud-download"></span> 
+								</p>
+								<h2>DONAMOS EL 70% DE NUESTROS SUELDOS PARA MANTENER NUESTRA AUTONOMÍA FINANCIERA Y POLÍTICA</h2>
+						</div>
 					</div>
 					
 			</div>

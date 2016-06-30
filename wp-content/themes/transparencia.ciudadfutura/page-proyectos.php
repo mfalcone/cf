@@ -49,12 +49,30 @@ get_header(); // This fxn gets the header.php file and renders it ?>
     $estado = get_post_meta(get_the_ID(), '_estado', true);
 	$file = get_post_meta(get_the_ID(), '_file', true);
 	
+	
+	switch ($estado) {
+		case '_aprobado':
+			$estado = "Aprobado";
+			break;
+		case '_en_comision':
+			$estado = "En Comisión";
+			break;
+		case '_en_archivo':
+			$estado = "En Archivo";
+			break;
+		case '_rechazado':
+			$estado = "Rechazado";
+			break;
+		case '_despacho':
+			$estado = "Despacho";
+			break;
+	}
 ?>
   <tr>
     <td class="tg-yw4l"><?php echo $fecha ?></td>
     <td class="tg-yw4l"><a href="<?php echo $file ?>" target="_blank"><?php echo $titulo ?></a></td>
     <td class="tg-yw4l"><?php echo $autor ?></td>
-    <td class="tg-yw4l"><?php echo $estado ?></td>
+    <td class="tg-yw4l"><?php echo $estado; ?></td>
   </tr>
 	<?php endwhile; ?>
 </table>

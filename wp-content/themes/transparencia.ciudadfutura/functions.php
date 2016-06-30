@@ -222,8 +222,8 @@ function wpt_autor() {
 
 function wpt_estado() {
   global $post;
-  $posibles_estados =  array('_aprobado','_en_comision','_en_archivo');
-  $posibles_labels =  array('Aprobado','En comisión','En archivo');
+  $posibles_estados =  array('_aprobado','_en_comision','_en_archivo','_rechazado','_despacho');
+  $posibles_labels =  array('Aprobado','En comisión','En archivo','Rechazado','Despacho');
   
   $estado = get_post_meta($post->ID, '_estado', true);
   $index = 0;

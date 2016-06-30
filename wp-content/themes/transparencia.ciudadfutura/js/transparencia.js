@@ -5,7 +5,7 @@ jQuery(document).ready(function($){
 	})
 
 
-	$(window).scroll(function(){
+	/*$(window).scroll(function(){
 		var barra = $(window).scrollTop();
 		var posicion =  (barra * 1);
 		var pitu = (barra * 0.20);
@@ -22,6 +22,10 @@ jQuery(document).ready(function($){
 			'background-position': '0 ' + caren + 'px',
 		});
  
-	});
+	});*/
+
+	$(".menulink .glyphicon").click(function(){
+		$("#menu-menu-principal").slideToggle();
+	})
 
 })

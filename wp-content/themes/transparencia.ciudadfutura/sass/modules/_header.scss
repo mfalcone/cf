@@ -1,6 +1,10 @@
 .menu-wrap{
 	background:#FFF;
 }
+
+.menulink{
+		display: none;
+	}
 header{
 	width:100%;
 	background:url(img/concejo.jpg)  no-repeat center center fixed; 
@@ -12,24 +16,22 @@ header{
 	position:relative;
 	overflow: hidden;
 	background-position: 0 0;
+
+	
+	
 	.pull-right{
 		float:right;
 	}
 	
 	h2{
-		padding-top: 110px;
-	    font-size: 4.5rem;
+	    font-size: 3.5rem;
 	    color: #FFF;
-	    text-align: center;
-	    line-height: 6rem;
-	}
+	}		
 
 	.row{
 		margin:0;
 		position:relative;
-		.col-md-4{
-			padding-left: 40px;
-		}
+		height: 100%;
 		
 		#caren{
 			background: url(img/caren.png) no-repeat;
@@ -69,8 +71,22 @@ header{
 		}
 
 		.cartel{
-			background: rgba(194,34,43,0.7);
-			height: 670px;
+			background: rgba(194,34,43,1);
+			text-align: right;
+			height: 100%;
+			.cont-wrapper{
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+				padding-left: 3rem;
+				margin-top:25px;
+				.ideas-acciones{
+					font-size: 2.5rem;
+					font-weight: bold;
+					font-family:$akzidenz;
+					margin-bottom: 1rem;
+				}
+
+			}
 		}
 	}
 }
@@ -80,3 +96,68 @@ header{
     .cartel{height: 510px;}
 }
 
+
+@media all and (max-width: 1300px) {
+    header h2 { font-size:2.5rem;}
+    header .row .cartel .cont-wrapper .ideas-acciones{ font-size:2rem;}
+    header .row .cartel .cont-wrapper {margin-top:0;}
+}
+
+@media all and (max-width: 850px) {
+
+	.cartel{
+		display: none;
+	}
+}
+
+@media all and (min-width: 1500px) {
+	header h2 { font-size:5rem;}
+   }
+
+
+@media all and (max-width: 600px) {
+
+	.menulink{
+		display: block;
+	}
+
+	header .row #caren{
+		margin-left:-110px;
+	}
+
+	header .row #juan{
+		left:0%;
+	}
+
+	header .row #pitu{
+		left: 40%;
+	}
+
+	.concejal{
+		width: 400px;
+	}
+
+	.menulink{
+		font-size: 4rem;
+		margin-left:1rem;
+	}
+
+	#menu-menu-principal{
+		display: none;
+	}
+}
+
+
+@media all and (max-width: 375px) {
+	header .row #caren{
+		margin-left:-140px;
+	}
+
+	header .row #juan{
+		margin-left:-100px;
+	}
+
+	header .row #pitu{
+		margin-left: -80px;
+	}
+}
