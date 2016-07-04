@@ -34,9 +34,18 @@
 			$exclude = array('_edit_last', '_wp_page_template', '_edit_lock');
 			?>
 			<script type="text/javascript">
-					var w = 450,                        //width
-					h = 450,                            //height
-					r = 220,                            //radius
+
+				if(jQuery(window).width()>450){
+					var w = 450;
+					var h = 450;
+					var r = 220;	
+				}else{
+					var w = 310;
+					var h = 310;
+					var r = 130;
+				}
+
+				
 					color = ["#C31F24", "#DE5A48", "#EEC94B", "#45B29D", "#344D5C", "#B2181C", "#E2493D","#3A9E8A","#375D70"];//d3.scale.category20c();     //builtin range of colors
 					data = [
 			<?php foreach( $meta as $key => $value ) {

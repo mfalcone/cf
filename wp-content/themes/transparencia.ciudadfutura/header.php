@@ -4,6 +4,8 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
   <title><? wp_title() ?></title>
   <link rel="stylesheet" href="<? bloginfo('stylesheet_url') ?>" media="screen" />
+  <link rel="shortcut icon" href="http://ciudadfutura.com.ar/wp-content/themes/ciudadfutura/img/ciudad-futura-favicon.ico?384979801"/>
+
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-2.2.0.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/d3.min.js"></script>

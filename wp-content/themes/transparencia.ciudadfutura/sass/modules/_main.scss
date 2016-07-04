@@ -6,7 +6,7 @@ section.container{
 	}
 
 	.graph-group{
-
+		float:left;
 		h2{
 			font-size: 4rem;
 		    margin-bottom: 40px;
@@ -151,6 +151,12 @@ section.container{
     font-weight: bold;
     position: relative;
     z-index: 3;
+}
+
+@media all and (max-width: 850px) {
+	.main-texto{
+		padding:20px;
+	}
 }
 
 .concejales{

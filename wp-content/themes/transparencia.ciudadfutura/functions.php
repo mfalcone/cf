@@ -479,7 +479,7 @@ class new_general_setting {
     }
 }
 
-  require_once('wp_bootstrap_navwalker.php');
+require_once('wp_bootstrap_navwalker.php');
 add_theme_support( 'menus' );
 
 
@@ -490,3 +490,16 @@ wp_enqueue_script('my_amazing_script');
 
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );  
 
+
+function shortcode_gracias($atts) {
+  global $post;
+    extract(shortcode_atts(array(
+      'afavor'        => 0,
+      'encontra'      => 0,
+      'abstenciones'  => 0,
+   ), $atts));
+  require_once('votaciones.php');
+
+  return votaciones('caca',$post->ID).'<p id="'.$post->ID.'">A favor:'.$afavor.'<br>En contra :'.$encontra.'<br>Abstenciones :'.$abstenciones.'</p>';
+}
+add_shortcode('gracias', 'shortcode_gracias');

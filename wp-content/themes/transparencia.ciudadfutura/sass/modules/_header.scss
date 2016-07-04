@@ -108,6 +108,11 @@ header{
 	.cartel{
 		display: none;
 	}
+
+
+	section.container .chart li{
+		width:100% !important;
+	}
 }
 
 @media all and (min-width: 1500px) {
@@ -145,6 +150,12 @@ header{
 	#menu-menu-principal{
 		display: none;
 	}
+
+	.chart ul{
+		padding:0;
+	}
+
+
 }
 
 
