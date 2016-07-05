@@ -317,3 +317,48 @@ section.container{
 		margin-top:50px;
 	}
 }
+
+.votaciones{
+	overflow:auto;
+	margin-top:20px;
+	svg{
+		float:left;	
+	}
+
+	dl{
+		font-family:$akzidenz;
+		float:left;
+		font-size:3rem;
+		margin-left:40px;
+		margin-top:60px;
+		dt{
+			
+			&.aprobados{
+				color:#179338;
+			}
+
+			&.rechazados{
+				color:#C32024;
+			}
+
+			&.abstenciones{
+				color:#666666;
+			}
+		}
+
+		dd{
+
+		}
+	}
+}
+
+.tags{
+	margin-bottom:40px;
+	.tag{
+		border:1px solid #666;
+		padding:5px;
+		background:#CCC;
+		border-radius:4px;
+		cursor:pointer;
+	}
+}

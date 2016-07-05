@@ -19,6 +19,8 @@ function ms_create_admin_menu() {
 
 // Registers the new post type and taxonomy
 
+
+
 function wpt_event_posttype() {
   register_post_type( 'movimientos',
     array(
@@ -82,10 +84,11 @@ register_post_type( 'proyectos',
         'not_found_in_trash' => __( 'No proyectos found in trash' )
       ),
       'public' => true,
-      'supports' => array( 'title',  'thumbnail' ),
+      'supports' => array( 'title', 'thumbnail','tags'),
       'capability_type' => 'post',
       'rewrite' => array("slug" => "proyectos"), // Permalinks format
       'menu_position' => 6,
+      'taxonomies' => array('post_tag'),
       'register_meta_box_cb' => 'add_proyectos_metaboxes'
     )
   );
@@ -463,6 +466,10 @@ add_action('save_post', 'wpt_save_events_meta', 1, 2); // save the custom fields
 add_action('save_post', 'wpt_save_proyectos_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_personas_meta', 1, 2); // save the custom fieldsx<
 
+
+
+
+
 $new_general_setting = new new_general_setting();
 
 class new_general_setting {
@@ -491,7 +498,7 @@ wp_enqueue_script('my_amazing_script');
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );  
 
 
-function shortcode_gracias($atts) {
+function shortcode_votaciones($atts) {
   global $post;
     extract(shortcode_atts(array(
       'afavor'        => 0,
@@ -500,6 +507,19 @@ function shortcode_gracias($atts) {
    ), $atts));
   require_once('votaciones.php');
 
-  return votaciones('caca',$post->ID).'<p id="'.$post->ID.'">A favor:'.$afavor.'<br>En contra :'.$encontra.'<br>Abstenciones :'.$abstenciones.'</p>';
+  return votaciones($post->ID,$afavor,$encontra,$abstenciones);
 }
-add_shortcode('gracias', 'shortcode_gracias');
+add_shortcode('votaciones', 'shortcode_votaciones');
+
+
+function shortcode_video($atts){
+
+   extract(shortcode_atts(array(
+      'url'        => 0,
+   ), $atts));
+   $urlpart = explode("v=",$url);
+  $code = '<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/'.$urlpart[1].'" width="100%" height="150" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>';
+  return $code;
+}
+
+add_shortcode('video', 'shortcode_video');

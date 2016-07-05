@@ -38,6 +38,13 @@ get_header(); // This fxn gets the header.php file and renders it ?>
     <th class="tg-yw4l">Estado</th>
   </tr>
 
+<?php $tags = get_tags(); ?>
+<div class="tags">
+<?php foreach ( $tags as $tag ) { ?>
+    <span class="tag" data-href="<?php echo $tag->slug ; ?> " rel="tag"><?php echo $tag->name; ?></span>
+<?php } ?>
+</div>    
+
 <?php $args = array( 'post_type' => 'proyectos', 'posts_per_page' => -1 );
 	$loop = new WP_Query( $args );
 	while ( $loop->have_posts() ) : $loop->the_post(); 
@@ -68,11 +75,15 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 			break;
 	}
 ?>
-  <tr>
+<?php 
+	$posttags = get_the_tags();
+?>
+
+  <tr class="<?php if ($posttags) {foreach($posttags as $tag) {echo $tag->slug . ' '; }}	;?>">
     <td class="tg-yw4l"><?php echo $fecha ?></td>
-    <td class="tg-yw4l"><a href="<?php echo $file ?>" target="_blank"><?php echo $titulo ?></a></td>
+    <td class="tg-yw4l"><?php if($file != ""){?><a href="<?php echo $file;  ?>" target="_blank"><?php echo $titulo ?></a><?php }else{ echo $titulo; }?></td>
     <td class="tg-yw4l"><?php echo $autor ?></td>
-    <td class="tg-yw4l"><?php echo $estado; ?></td>
+    <td class="tg-yw4l"><?php echo $estado;?></td>
   </tr>
 	<?php endwhile; ?>
 </table>

@@ -10,8 +10,7 @@
       <section class="article_content" itemprop="description">
       	<? the_content(); ?>
       </section>
-
-    </article>
+</article>
 
   <? endif ?>
 
