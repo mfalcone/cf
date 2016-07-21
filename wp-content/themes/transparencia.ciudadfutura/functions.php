@@ -93,6 +93,32 @@ register_post_type( 'proyectos',
     )
   );
 
+
+register_post_type( 'agenda',
+    array(
+      'labels' => array(
+        'name' => __( 'Agenda' ),
+        'singular_name' => __( 'Evento' ),
+        'add_new' => __( 'Agregar nuevo evento' ),
+        'add_new_item' => __( 'Agregar nuevo evento' ),
+        'edit_item' => __( 'Editar Evento' ),
+        'new_item' => __( 'Agregar nuevo Evento' ),
+        'view_item' => __( 'Ver Evento' ),
+        'search_items' => __( 'Buscar evento' ),
+        'not_found' => __( 'No se encontraron eventos' ),
+        'not_found_in_trash' => __( 'No eventos found in trash' )
+      ),
+      'public' => true,
+      'supports' => array( 'title', 'thumbnail'),
+      'capability_type' => 'post',
+      'rewrite' => array("slug" => "eventos"), // Permalinks format
+      'menu_position' => 7,
+      'register_meta_box_cb' => 'add_eventos_metaboxes'
+    )
+  );
+
+
+
 register_post_type( 'Personas',
     array(
       'labels' => array(
@@ -317,6 +343,60 @@ echo '</select>';
 
 }
 
+$otherpost;
+function wpt_concejal() {
+  global $post;
+  $preserve_post = $post;
+  echo '<input type="hidden" name="eventmeta_noncename_agenda" id="eventmeta_noncename_agenda" value="' . 
+  wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
+  
+  $concejal = get_post_meta($post->ID, '_concejal', true);
+  //echo '<input type="text" name="_concejal" value="' . $concejal  . '" class="widefat" />';
+  echo '<select size="1" name="_concejal" id="c3">';
+  $args = array( 'post_type' => 'personas', 'posts_per_page' => -1, 'meta_query' => array (
+        array (
+        'key' => '_grupo',
+        'value' => '_concejales',
+        )
+       ),'order'=>'ASC');
+  $looppersonas = new WP_Query( $args );
+  while ( $looppersonas->have_posts()) :
+    $looppersonas->the_post(); 
+    $nombre = get_the_title(get_the_ID()); 
+    $selected = ($nombre === $concejal) ? ' selected="selected"' : '';
+    echo '<option value="'.$nombre.'" name="'.$nombre.'" '.$selected.'>'.$nombre.'</option>';
+  endwhile;
+  $post = $preserve_post;
+  setup_postdata( $post );
+  echo '</select>';
+}
+
+
+function wpt_a_pedido() {
+  global $post;
+  $apedido = get_post_meta($post->ID, '_apedido', true);
+  echo '<input type="text" name="_apedido" value="' . $apedido  . '" class="widefat" />';
+}
+
+function wpt_reunion_con() {
+  global $post;
+  $reunioncon = get_post_meta($post->ID, '_reunioncon', true);
+  echo '<input type="text" name="_reunioncon" value="' . $reunioncon  . '" class="widefat" />';
+}
+
+function wpt_tema_con() {
+  global $post;
+  $reunion = get_post_meta($post->ID, '_tema', true);
+  echo '<input type="text" name="_tema" value="' . $reunion  . '" class="widefat" />';
+}
+
+function wpt_fecha_agenda() {
+  global $post;
+  $fechagenda = get_post_meta($post->ID, '_fecha_agenda', true);
+  echo '<input type="text" name="_fecha_agenda" id="_fecha_agenda" value="' . $fechagenda  . '" class="widefat" />';
+}
+
+
 function add_personas_metaboxes() {
   add_meta_box('wpt_nombre', 'Nombre y apellido', 'wpt_nombre', 'personas', 'normal', 'high');
   add_meta_box('wpt_foto', 'Foto', 'wpt_foto', 'personas', 'normal', 'high');
@@ -326,6 +406,15 @@ function add_personas_metaboxes() {
 }
 
 
+function add_eventos_metaboxes(){
+  add_meta_box('wpt_concejal', 'Concejal', 'wpt_concejal', 'agenda', 'normal', 'high');
+  add_meta_box('wpt_a_pedido', 'A pedido', 'wpt_a_pedido', 'agenda', 'normal', 'high');
+  add_meta_box('wpt_reunion_con', 'Reunion Con', 'wpt_reunion_con', 'agenda', 'normal', 'high');
+  add_meta_box('wpt_tema_con', 'Tema', 'wpt_tema_con', 'agenda', 'normal', 'high');
+  add_meta_box('wpt_fecha_agenda', 'Fecha', 'wpt_fecha_agenda', 'agenda', 'normal', 'high');
+  
+}
+
 
 
 /*custom fields*/
@@ -333,6 +422,7 @@ function add_personas_metaboxes() {
 add_action( 'add_meta_boxes', 'add_subsidios_metaboxes' );
 add_action( 'add_meta_boxes', 'add_proyectos_metaboxes' );
 add_action( 'add_meta_boxes', 'add_personas_metaboxes' );
+add_action( 'add_meta_boxes', 'add_eventos_metaboxes' );
 
 
 
@@ -424,6 +514,42 @@ function wpt_save_proyectos_meta($post_id, $post) {
 
 }
 
+function wpt_save_agenda_meta($post_id, $post) {
+  
+  // verify this came from the our screen and with proper authorization,
+  // because save_post can be triggered at other times
+  if ( !wp_verify_nonce( $_POST['eventmeta_noncename_agenda'], plugin_basename(__FILE__) )) {
+  return $post->ID;
+  }
+
+  // Is the user allowed to edit the post or page?
+  if ( !current_user_can( 'edit_post', $post->ID ))
+    return $post->ID;
+
+  // OK, we're authenticated: we need to find and save the data
+  // We'll put it into an array to make it easier to loop though.
+  
+  $agenda_meta['_concejal'] = $_POST['_concejal'];
+  $agenda_meta['_apedido'] = $_POST['_apedido'];
+  $agenda_meta['_reunioncon'] = $_POST['_reunioncon'];
+  $agenda_meta['_tema'] = $_POST['_tema'];
+  $agenda_meta['_fecha_agenda'] = $_POST['_fecha_agenda'];
+  
+  // Add values of $events_meta as custom fields
+  
+  foreach ($agenda_meta as $key => $value) { // Cycle through the $events_meta array!
+    if( $post->post_type == 'revision' ) return; // Don't store custom data twice
+    $value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
+    if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
+      update_post_meta($post->ID, $key, $value);
+    } else { // If the custom field doesn't have a value
+      add_post_meta($post->ID, $key, $value);
+    }
+    if(!$value) delete_post_meta($post->ID, $key); // Delete if blank
+  }
+
+}
+
 
 function wpt_save_personas_meta($post_id, $post) {
   
@@ -465,6 +591,7 @@ function wpt_save_personas_meta($post_id, $post) {
 add_action('save_post', 'wpt_save_events_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_proyectos_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_personas_meta', 1, 2); // save the custom fieldsx<
+add_action('save_post', 'wpt_save_agenda_meta', 1, 2); // save the custom fieldsx<
 
 
 
