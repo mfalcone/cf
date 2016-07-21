@@ -27,4 +27,33 @@ jQuery(document).ready(function($){
 	})
 
 
+	$("#contact_form li span").click(function(){
+
+		$("#contact_form li span").not(this).attr("class","glyphicon glyphicon-unchecked")		
+
+	
+		if($(this).attr("class") == "glyphicon glyphicon-unchecked"){
+			$(this).attr("class","glyphicon glyphicon-check");
+			if($(this).parent().attr("id")=="otro"){
+				console.log("mostrar")
+				$("#otro_input").show();
+			}
+		}else{
+			$(this).attr("class","glyphicon glyphicon-unchecked");
+		}
+	
+	})
+
+
+$("#agenda dt").click(function(){
+	$(this).next().find("ul").slideToggle();
+	if($(this).find("span").attr("class")=="glyphicon glyphicon-triangle-right"){
+		$(this).find("span").attr("class","glyphicon glyphicon-triangle-bottom");
+	}else{
+		$(this).find("span").attr("class","glyphicon glyphicon-triangle-right");	
+	}
+	$("#agenda dt").not(this).next().find("ul").slideUp();
+	$("#agenda dt").not(this).find("span").attr("class","glyphicon glyphicon-triangle-right")
+})
+
 })

@@ -35,6 +35,11 @@ section.container{
 		p{
 			font-family:$akzidenz;
 			font-size: 2rem;
+
+			&.desc{
+				font-family:  Arial, "Helvetica Neue", Helvetica, sans-serif;
+				font-size:1.2rem;
+			}
 		}
 
 		li{
@@ -360,5 +365,100 @@ section.container{
 		background:#CCC;
 		border-radius:4px;
 		cursor:pointer;
+		line-height: 40px;
+		white-space: nowrap;
+	}
+}
+
+#contact_form{
+	p{
+		margin-bottom: 40px;
+	}
+	input{
+		clear: left;
+		background: #CCC;
+		border:none;
+		width:40%;
+		height: 30px;
+		padding:4px;
+		color:#333;
+		outline-width: 0;
+	}
+
+	label{
+		clear:left;
+		margin-top:20px;
+		font-family:$akzidenz;
+		font-size:3rem;
+	}
+
+	input, label{
+		float:left;
+	}
+
+	.dinero{
+		float:left;
+		clear:left;
+		width:40%;
+
+		li{
+			list-style: none;
+			font-family: $akzidenz;
+			font-size:3rem;
+
+			span{
+				cursor: pointer;
+			}
+		}
+	}
+
+	#otro_input{
+		display:none;
+		float:right;
+		width:70%;
+	}
+
+	.enviar{
+	font-family: $akzidenz;
+	float: left;
+    clear: left;
+    background: #CCC;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    font-size: 3rem;
+	}
+
+	p.descarga{
+		float: left;
+		clear: left;
+		margin-top:20px;
+		font-family: $akzidenz;
+		font-size:3rem;
+	}
+}
+
+#agenda{
+	dt{
+	    padding: 20px;
+	    background: #CCC;
+	    margin-bottom: 20px;
+		cursor:pointer;
+	    h2{
+	    	display: inline;
+	    	margin-left:5px;
+	    }
+	}
+
+	dd{
+		ul{
+
+			display:none;
+
+			li{
+				margin-bottom:10px;
+				border-bottom:1px solid;
+			}
+		}
 	}
 }

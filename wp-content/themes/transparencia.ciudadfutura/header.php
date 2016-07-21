@@ -1,3 +1,12 @@
+<?php
+if ( !is_user_logged_in() ) {
+	if (new DateTime() < new DateTime("2016-07-26 10:00:00")) {
+ 		header('Location: '.get_site_url().'/presentacion/');
+ 	}
+}
+?>
+
+
 <!DOCTYPE html><html>
 <head>
   <meta charset='utf-8'>

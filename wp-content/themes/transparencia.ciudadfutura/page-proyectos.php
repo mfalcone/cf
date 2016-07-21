@@ -45,7 +45,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 <?php } ?>
 </div>    
 
-<?php $args = array( 'post_type' => 'proyectos', 'posts_per_page' => -1 );
+<?php $args = array( 'post_type' => 'proyectos', 'posts_per_page' => -1, 'meta_key'=>'_proyecto', 'orderby' => 'meta_value', 'order' => 'ASC'  );
 	$loop = new WP_Query( $args );
 	while ( $loop->have_posts() ) : $loop->the_post(); 
 

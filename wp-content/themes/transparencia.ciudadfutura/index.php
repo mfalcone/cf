@@ -30,8 +30,23 @@
 			<div id="data-<?php echo get_the_ID(); ?>" class="col-md-6 chart"></div>
 
 			<?php
+
 			$meta = get_post_meta( get_the_ID() ); 
+
+			foreach( $meta as $key => $value ) {
+				$exp_key = explode('_', $key);
+				if($exp_key[0] == 'data'){
+			         
+			         $arr_result[$key] =  $value[0];
+			         $arr_exclude[] = $key;
+			         
+			    }
+			}
 			$exclude = array('_edit_last', '_wp_page_template', '_edit_lock');
+			$exclude = array_merge($exclude,$arr_exclude);
+			
+			//print_r($arr_result);
+			
 			?>
 			<script type="text/javascript">
 
@@ -57,6 +72,17 @@
 			}
 			?>
 			];
+			 data_desc = [
+			<?php 
+			foreach ($arr_result as $clave=>$valor){?>
+				{"etiqueta":"<?php echo $clave; ?>", "valor":"<?php echo $valor; ?>"}, 
+			<?php
+			}
+			?>
+			];
+
+
+
 					var vis = d3.select("#chart<?php echo get_the_ID(); ?>")
 						.append("svg:svg")              //create the SVG element inside the <body>
 						.data([data])                   //associate our data with the document
@@ -92,9 +118,16 @@
 						
 						$("#data-<?php echo get_the_ID(); ?>").html("<ul>");
 						$.each(data,function(ind,val){
-							console.log(data[ind].value)	
+								
 							var $li=$('<li></li>');
 							$li.html('<h3>'+data[ind].value+'%</h3><p>'+data[ind].label+'</p>');
+							$.each(data_desc,function(indice,val){
+								var etiqueta = val.etiqueta.replace("data_","");
+								if(data[ind].label == etiqueta){
+									$li.append('<p class="desc">'+val.valor+'</p>');
+								}
+							})
+							
 							$li.find("h3").css("color",color[ind])
 							$("#data-<?php echo get_the_ID(); ?> ul").append($li);
 						
