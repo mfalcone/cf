@@ -44,16 +44,74 @@ jQuery(document).ready(function($){
 	
 	})
 
+window.aporte ="";
 
-$("#agenda dt").click(function(){
-	$(this).next().find("ul").slideToggle();
-	if($(this).find("span").attr("class")=="glyphicon glyphicon-triangle-right"){
-		$(this).find("span").attr("class","glyphicon glyphicon-triangle-bottom");
-	}else{
-		$(this).find("span").attr("class","glyphicon glyphicon-triangle-right");	
-	}
-	$("#agenda dt").not(this).next().find("ul").slideUp();
-	$("#agenda dt").not(this).find("span").attr("class","glyphicon glyphicon-triangle-right")
+$("#contact_form .dinero span").click(function(){
+	aporte = $(this).data("check");
 })
+
+$("#otro_input").change(function(){
+	aporte = $(this).val();
+})
+
+
+	function validateEmail(email) 
+{
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
+
+
+	$("#enviar").click(function(){
+		var nombre = $('#nombre').val();
+		if(nombre==""){
+			alert("por favor ingrese su nombre")
+			return;	
+		}
+		var domicilio = $('#direccion').val();
+		var telefono = $('#telefono').val();
+		var email = $('#mail').val();
+		var dni = $('#dni').val();
+		var cuil = $('#cuil').val();
+		var localidad = $('#localidad').val();
+		var codigo = $('#codigo').val();
+		
+		mailvalido = validateEmail(email);
+		if(!mailvalido){
+			alert("por favor ingreso una dirección de correo válida")
+			return;
+		}
+		if(window.aporte==""){
+			alert("por favor ingresá tu aporte");
+			return;
+		}
+		var facebook = $('#facebook').val();
+		var ocupacion = $("#ocupacion").val();
+		var aporte = $("#aporte").val();
+
+		var jason = {
+			'nombre':nombre,
+			'domicilio':domicilio,
+			'dni':dni,
+			'telefono':telefono,
+			'email':email,
+			'facebook':facebook,
+			'cuil':cuil,
+			'localidad':localidad,
+			'codigo':codigo,
+			'aporte':window.aporte
+		}
+		console.log(jason)
+		$.ajax({
+			type: "POST",
+			cache: false,
+			url: $("#contact_form").data("form")+"/aporte.php",
+			data: "data="+JSON.stringify(jason),
+			success: function(data) {
+				alert(data);
+			}
+		});
+	})
 
 })

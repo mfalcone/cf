@@ -4,6 +4,12 @@
 <head>
     <title>Cuentas Claras</title>
    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/coming.css">
+   <!-- for Facebook -->          
+<meta property="og:title" content="Presentación Pública Cuentas Claras" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="<?php bloginfo('template_directory'); ?>/img/banner_web_portal_transp.png" />
+<meta property="og:url" content="" />
+<meta property="og:description" content="A través de esta web cualquier ciudadano podrá ver en cualquier momento las definiciones económicas y políticas que le dan vida a Ciudad Futura." />
 </head>
 <body>
 
