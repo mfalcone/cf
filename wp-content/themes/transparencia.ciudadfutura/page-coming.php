@@ -8,7 +8,7 @@
 <meta property="og:title" content="Presentación Pública Cuentas Claras" />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="<?php bloginfo('template_directory'); ?>/img/banner_web_portal_transp.png" />
-<meta property="og:url" content="" />
+<meta property="og:url" content="<?php echo get_permalink(); ?>" />
 <meta property="og:description" content="A través de esta web cualquier ciudadano podrá ver en cualquier momento las definiciones económicas y políticas que le dan vida a Ciudad Futura." />
 </head>
 <body>
