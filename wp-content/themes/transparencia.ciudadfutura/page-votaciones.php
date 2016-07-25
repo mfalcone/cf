@@ -41,7 +41,7 @@ if ($category_query->have_posts()) {
         $category_query->the_post();
         ?>
         <div class="votacion">
-        <h2><?php the_title(); ?></h2>
+        <h2><span class="fecha"><?php  echo get_post_meta(get_the_ID(), 'fecha', true); ?></span> <?php the_title(); ?></h2>
         <div><?php the_content(); ?></div>
         </div>
         <?php

@@ -53,9 +53,16 @@ var end = new Date('07/26/2016 10:00 AM');
                 <?php while ( have_posts() ) : the_post(); 
                 // If we have a post to show, start a loop that will display it
                 ?>
+                <div class="wrap" style="width:50%;margin-left: auto;margin-right: auto;margin-bottom:20px;">
+                 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/kedrLWxVX8c" width="100%" height="150" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
+                </div>
                 <img src="<?php bloginfo('template_directory'); ?>/img/icon.png" alt="isologo Ciudad Futura">
+                
                 <div class="container">
+
                         <div class="main-texto">
+
+
                                 <h1>
                                     <?php the_title(); ?>
                                 </h1>

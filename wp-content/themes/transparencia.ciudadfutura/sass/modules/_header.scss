@@ -103,6 +103,25 @@ header{
     header .row .cartel .cont-wrapper {margin-top:0;}
 }
 
+
+@media all and (max-width: 1200px) {
+	.menulink{
+		display: block;
+		font-size:3rem;
+	}
+
+	#menu-menu-principal{
+		display: none;
+	}
+
+	#menu-menu-principal li{
+		display: block;
+		width: 100%;
+	}
+}
+
+
+
 @media all and (max-width: 850px) {
 
 	.cartel{
@@ -122,9 +141,7 @@ header{
 
 @media all and (max-width: 600px) {
 
-	.menulink{
-		display: block;
-	}
+
 
 	header .row #caren{
 		margin-left:-110px;
@@ -147,9 +164,7 @@ header{
 		margin-left:1rem;
 	}
 
-	#menu-menu-principal{
-		display: none;
-	}
+	
 
 	.chart ul{
 		padding:0;

@@ -114,4 +114,17 @@ $("#otro_input").change(function(){
 		});
 	})
 
+	$(".concejales .bt").click(function(){
+		var $modal = $(this).next();
+		$modal.wrap( "<div class='modal-wrap'></div>" );
+		$modal.show();
+		if(!$modal.find(".close").size()){
+			$modal.append('<span class="close glyphicon glyphicon-remove"></span>');
+			$modal.find(".close").click(function(e){
+				$modal.hide();
+				$modal.unwrap();
+			})
+		}
+	})
+
 })

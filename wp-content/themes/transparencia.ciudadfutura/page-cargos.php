@@ -47,7 +47,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		<div class="row">
 			<div class="num_total col-md-4">
 				<h4>100%</h4>
-				<h5>SUELDO TOTAL</h5>
+				<h5>SUELDO TOTAL<br>$58.634</h5>
 			</div>
 			<div class="num_donacion col-md-4">
 				<h4>70%</h4>
@@ -88,7 +88,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 
 
 <h2>Equipo Concejales</h2>
-<div class="barras">
+<!--<div class="barras">
 	<div class="col-md-8">
 		<div class="total">
 			SUELDO TOTAL 100%
@@ -117,6 +117,15 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		</div>
 	</div>
 	
+</div>-->
+
+<div class="col-md-8 cabecera-equipo">
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/BL78uRLq1sY" width="100%" height="150" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
+</div>
+<div class="col-md-4 cabecera-equipo">
+	<h2>EQUIDAD DE GENERO</h2>
+	<h4>El Equipo del Bloque Ciudad Futura está compuesto por 20 personas, de las cuales 10 son mujeres y 10 hombres. Todos profesionales, pero no de la política. En el video, el día a día de la oficina. Abajo, una pequeña bio de cada uno de ellas y ellos.
+</h4>
 </div>
 <?php $args = array( 'post_type' => 'personas', 'posts_per_page' => -1, 'meta_query' => array (
 		    array (

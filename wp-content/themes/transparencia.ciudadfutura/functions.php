@@ -631,10 +631,11 @@ function shortcode_votaciones($atts) {
 			'afavor'        => 0,
 			'encontra'      => 0,
 			'abstenciones'  => 0,
+			'ausentes'  => 0,
 	 ), $atts));
 	require_once('votaciones.php');
 
-	return votaciones($post->ID,$afavor,$encontra,$abstenciones);
+	return votaciones($post->ID,$afavor,$encontra,$abstenciones,$ausentes);
 }
 add_shortcode('votaciones', 'shortcode_votaciones');
 
@@ -645,7 +646,7 @@ function shortcode_video($atts){
 			'url'        => 0,
 	 ), $atts));
 	 $urlpart = explode("v=",$url);
-	$code = '<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/'.$urlpart[1].'" width="100%" height="150" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>';
+	$code = '<div class="video-wrapper"><div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/'.$urlpart[1].'" width="100%" height="150" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div></div>';
 	return $code;
 }
 

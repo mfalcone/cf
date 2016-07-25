@@ -1,7 +1,7 @@
-<?php function votaciones($postid,$afavor,$encontra,$abstensiones){ 
+<?php function votaciones($postid,$afavor,$encontra,$abstensiones,$ausentes){ 
 return <<<HTML
     <div class="votaciones">
-	    <svg version="1.1" id="sfv-{$postid}" x="0px" y="0px" width="547px" height="424px" viewBox="0 0 547 424">
+	    <svg version="1.1" id="sfv-{$postid}" x="0px" y="0px" width="391px" height="283px" viewBox="0 0 547 424">
 			<circle cx="23.695" cy="398.999" r="23.695" id="c-{$postid}-0"/>
 			<circle cx="139.475" cy="396.472" r="23.695" id="c-{$postid}-1"/>
 			<circle cx="24.7" cy="333.929" r="23.695" id="c-{$postid}-2"/>
@@ -38,6 +38,8 @@ return <<<HTML
 			<dd>{$encontra}</dd>
 			<dt class="abstenciones">Abstenciones:</dt>
 			<dd>{$abstensiones}</dd>
+			<dt class="ausentes">Ausentes:</dt>
+			<dd>{$ausentes}</dd>
 		</dl>
 	</div>
     <script type="text/javascript">
@@ -46,6 +48,7 @@ return <<<HTML
     	 var aprobados = {$afavor};
     	 var encontra = {$encontra};
     	 var abstensiones = {$abstensiones};
+    	 var ausentes = {$ausentes};
     	 for (var i = 0; i < aprobados; i++) {
 	    	 d3.select("#c-{$postid}-"+i).attr("fill","#179338")
     	 }
@@ -55,6 +58,10 @@ return <<<HTML
 
     	 for(var z = x; z < encontra + aprobados + abstensiones; z++ ){
     	 	 d3.select("#c-{$postid}-"+z).attr("fill","#666666")
+    	 }
+
+    	 for(var y = z; y < encontra + aprobados + abstensiones + ausentes; y++ ){
+    	 	 d3.select("#c-{$postid}-"+y).attr("fill","#CCCCCC")
     	 }
     	 
     </script>

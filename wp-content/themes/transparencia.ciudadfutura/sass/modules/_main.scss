@@ -9,7 +9,7 @@ section.container{
 		float:left;
 		h2{
 			font-size: 4rem;
-		    margin-bottom: 40px;
+			margin-bottom: 40px;
 			margin-top: 40px;
 		}
 
@@ -43,9 +43,15 @@ section.container{
 		}
 
 		li{
-			width: 50%;
 			list-style: none;
 			float:left;
+			height: 360px;
+		    margin-top: 10px;
+		    padding-top: 10px;
+
+			&:nth-child(odd) {
+				background-color: #CCC;
+				}
 		}
 	}
 
@@ -143,19 +149,37 @@ section.container{
 
 	/*end of subsidios*/
 	
-	
+
+
 }
+
+
+	.votacion{
+		clear:left;
+		padding-top:80px;
+		h2{
+			font-size:4.5rem;
+			margin-bottom:20px;
+
+			.fecha{
+				color:#c2222b;
+				font-family:$akzidenz;
+
+			}
+		}
+	}
+
 
 .main-texto{
 	box-shadow: 0px 0px 29px 0px rgba(0,0,0,0.75);
 	padding: 30px 70px;
-    margin-top: -65px;
-    border-radius: 10px;
-    background:#FFF;
-    margin-bottom: 50px;
-    font-weight: bold;
-    position: relative;
-    z-index: 3;
+	margin-top: -65px;
+	border-radius: 10px;
+	background:#FFF;
+	margin-bottom: 50px;
+	font-weight: bold;
+	position: relative;
+	z-index: 3;
 }
 
 @media all and (max-width: 850px) {
@@ -171,13 +195,80 @@ section.container{
 		max-width: 222px;
 		border-radius:50%;
 		margin-left: auto;
-	    margin-right: auto;
-	    display: block;
-	    margin-bottom: 20px;
+		margin-right: auto;
+		display: block;
+		margin-bottom: 20px;
+	}
+	
+	.modal-wrap{
+		position: fixed;
+		z-index: 900;
+		background: rgba(0,0,0,0.5);
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	.djb{
+		position: relative;
+		width: 100%;
+		height: 80%;
+		background: #FFF;
+		z-index: 100;
+		top: 10%;
+		display: none;
+		border-radius: 10px;
+		border: 1px solid #CCC;
+		overflow: auto;
+		max-width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+		
+		h2{
+			margin:0 0 20px 0;
+			margin-top:20px!important;
+		}
+
+		.close{
+			position:absolute;
+			top:10px;
+			right: 10px;
+			cursor:pointer;
+
+		}
 	}
 
 	.mail{
 		font-family:$akzidenz;
+	}
+
+	.bt{
+		cursor:pointer;
+	}
+
+	dl{
+		width: 45%;
+		float: left;
+		text-align: left;
+		margin-left: 4%;
+
+		dt{
+			font-weight: bold;
+			margin-top:10px;
+		}
+
+		dd{
+			border-bottom:1px solid #CCC;
+			padding-bottom:10px;
+			padding-top:10px;
+
+		img{
+			float:right;
+			margin-top:-50px;
+		}
+
+		}
 	}
 }
 
@@ -187,29 +278,29 @@ section.container{
 		max-width: 200px;
 		border-radius:50%;
 		margin-left: auto;
-	    margin-right: auto;
-	    display: block;
-	    margin-bottom: 20px;
+		margin-right: auto;
+		display: block;
+		margin-bottom: 20px;
 	}
 	hr{
 		display: block;
-	    height: 1px;
-	    border: 0;
-	    border-top: 1px solid #ccc;
-	    margin: 1em 0;
-	    padding: 0; 
+		height: 1px;
+		border: 0;
+		border-top: 1px solid #ccc;
+		margin: 1em 0;
+		padding: 0; 
 
-	    &.gobierno{
+		&.gobierno{
 			background:$rojo_claro;
-	    }
+		}
 
-	    &.politica{
+		&.politica{
 			background:$allo;
-	    }
+		}
 
-	    &.comunicacion{
+		&.comunicacion{
 			background:$azul;
-	    }
+		}
 	}
 
 	.mail{
@@ -219,9 +310,9 @@ section.container{
 	.grupo{
 		font-family:$akzidenz;
 		float: left;
-    	width: 90%;
-    	font-weight: normal;
-	    font-size: 1.8rem;
+		width: 90%;
+		font-weight: normal;
+		font-size: 1.8rem;
 	}
 	.glyphicon{
 		font-size: 2rem;
@@ -229,24 +320,24 @@ section.container{
 		cursor:pointer;
 		&.gobierno{
 			color:$rojo_claro;
-	    }
+		}
 
-	    &.politica{
+		&.politica{
 			color:$allo;
-	    }
+		}
 
-	    &.comunicacion{
+		&.comunicacion{
 			color:$azul;
-	    }
+		}
 	}
 
 	.bio{
 		float:left;
-    	width:100%;
-   		background: $crema;
-    	padding: 10px;
-    	display: none;
-  	}
+		width:100%;
+		background: $crema;
+		padding: 10px;
+		display: none;
+	}
 
 
 	&.corte{
@@ -316,28 +407,42 @@ section.container{
 	}
 }
 
+.cabecera-equipo{
+	margin-bottom:30px;
+
+	h2{
+		margin-top:0 !important;
+		margin-bottom: 10px;
+	}
+}
+
 .page-template-page-cargos{
 
 	.container h2{
 		margin-top:50px;
+		clear:left;
+		margin-bottom: 10px;
 	}
 }
 
 .votaciones{
 	overflow:auto;
-	margin-top:20px;
+	width:50%;
+	float:left;
 	svg{
-		float:left;	
+		float:right;
+		margin-bottom: 20px;	
 	}
 
 	dl{
 		font-family:$akzidenz;
+		font-size:2.3rem;
+		width: 100%;
+		text-align:right;
 		float:left;
-		font-size:3rem;
-		margin-left:40px;
-		margin-top:60px;
 		dt{
-			
+			display: inline;
+			margin-left:10px;
 			&.aprobados{
 				color:#179338;
 			}
@@ -349,12 +454,49 @@ section.container{
 			&.abstenciones{
 				color:#666666;
 			}
+
+			&.ausentes{
+				color:#CCCCCC;
+			}
 		}
 
 		dd{
-
+			display: inline;
 		}
 	}
+
+
+}
+
+.video-wrapper{
+	width:50%;
+	float:left;
+}
+
+@include max-screen(1000px){ 
+	.votaciones{
+		width:100%;
+		svg{
+			float:none;
+			margin-left: auto;
+	    	margin-right: auto;
+	    	display: block;
+			margin-top:20px;
+		}
+
+		dl{
+			text-align:center;
+		}
+	}
+
+.video-wrapper{
+	width:100%;
+	float:none;
+
+}
+
+
+
 }
 
 .tags{
@@ -421,12 +563,12 @@ section.container{
 	.enviar{
 	font-family: $akzidenz;
 	float: left;
-    clear: left;
-    background: #CCC;
-    width: 100px;
-    text-align: center;
-    padding: 10px;
-    font-size: 3rem;
+	clear: left;
+	background: #CCC;
+	width: 100px;
+	text-align: center;
+	padding: 10px;
+	font-size: 3rem;
 	}
 
 	p.descarga{
@@ -440,14 +582,14 @@ section.container{
 
 #agenda{
 	dt{
-	    padding: 20px;
-	    background: #CCC;
-	    margin-bottom: 20px;
+		padding: 20px;
+		background: #CCC;
+		margin-bottom: 20px;
 		cursor:pointer;
-	    h2{
-	    	display: inline;
-	    	margin-left:5px;
-	    }
+		h2{
+			display: inline;
+			margin-left:5px;
+		}
 	}
 
 	dd{
@@ -462,3 +604,7 @@ section.container{
 		}
 	}
 }
+
+
+
+
