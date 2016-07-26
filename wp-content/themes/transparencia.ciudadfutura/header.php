@@ -1,6 +1,6 @@
 <?php
 if ( !is_user_logged_in() ) {
-	if (new DateTime() < new DateTime("2016-07-26 10:00:00")) {
+	if (new DateTime() < new DateTime("2016-07-26 14:00:00")) {
  		header('Location: '.get_site_url().'/presentacion/');
  	}
 }

@@ -14,7 +14,7 @@
 <body>
 
 <script type="text/javascript">
-var end = new Date('07/26/2016 10:00 AM');
+var end = new Date('07/26/2016 01:00 PM');
 
     var _second = 1000;
     var _minute = _second * 60;
