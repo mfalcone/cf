@@ -60,6 +60,6 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		<li id="otro"> <span class="glyphicon glyphicon-unchecked" data-check="otro"></span> otro <input type="text" id="otro_input"></li>
 	</ul>
 	<div class="enviar" id="enviar">Enviar</div>
-	<p class="descarga">DESCARGÁ EL PDF <a href="#">ACÁ</a>, IMPRIMILO Y COMPLETALO CON TUS DATOS BANCARIOS</p>
+	<!--<p class="descarga">DESCARGÁ EL PDF <a href="#">ACÁ</a>, IMPRIMILO Y COMPLETALO CON TUS DATOS BANCARIOS</p>-->
 </div>
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>

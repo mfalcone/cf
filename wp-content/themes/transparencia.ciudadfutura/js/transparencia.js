@@ -114,7 +114,7 @@ $("#otro_input").change(function(){
 		});
 	})
 
-	$(".concejales .bt").click(function(){
+	$(".concejales .bt, .abrir-modal").click(function(){
 		var $modal = $(this).next();
 		$modal.wrap( "<div class='modal-wrap'></div>" );
 		$modal.show();
