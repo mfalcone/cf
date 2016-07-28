@@ -26,7 +26,7 @@
 	<?php if ( empty( $_POST['page'] ) ) : ?>
 
 		<ul id="activity-stream" class="activity-list item-list">
-
+	gola
 	<?php endif; ?>
 
 	<?php while ( bp_activities() ) : bp_the_activity(); ?>

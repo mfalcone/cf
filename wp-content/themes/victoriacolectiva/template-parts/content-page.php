@@ -15,9 +15,10 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		hola
 		<?php
 			the_content();
-
+			echo 'chau';
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'victoriacolectiva' ),
 				'after'  => '</div>',
