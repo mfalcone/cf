@@ -13,38 +13,7 @@
 </head>
 <body>
 
-<script type="text/javascript">
-var end = new Date('07/26/2016 01:00 PM');
 
-    var _second = 1000;
-    var _minute = _second * 60;
-    var _hour = _minute * 60;
-    var _day = _hour * 24;
-    var timer;
-
-    function showRemaining() {
-        var now = new Date();
-        var distance = end - now;
-        if (distance < 0) {
-
-            clearInterval(timer);
-            document.getElementById('countdown').innerHTML = 'EXPIRED!';
-
-            return;
-        }
-        var days = Math.floor(distance / _day);
-        var hours = Math.floor((distance % _day) / _hour);
-        var minutes = Math.floor((distance % _hour) / _minute);
-        var seconds = Math.floor((distance % _minute) / _second);
-
-        document.getElementById('dias').innerHTML = days;
-        document.getElementById('horas').innerHTML = hours;
-        document.getElementById('minutos').innerHTML = minutes;
-        document.getElementById('segundos').innerHTML = seconds;
-    }
-
-    timer = setInterval(showRemaining, 1000);
-</script>
 
 <?php if ( have_posts() ) : 
             // Do we have any posts in the databse that match our query?
@@ -79,14 +48,6 @@ var end = new Date('07/26/2016 01:00 PM');
                 </article>
 
             <?php endif; // OK, I think that takes care of both scenarios (having a post or not having a post to show) ?>
-<div class="main-texto">
-            <p class="estara">La web estará online en:</p>
-
-<div class="count-wrap"><div id="dias" class="count"></div><p>Dias</p></div>
-<div class="count-wrap"><div id="horas" class="count"></div><p>Horas</p></div>
-<div class="count-wrap"><div id="minutos" class="count"></div><p>Minutos</p></div>
-<div class="count-wrap"><div id="segundos" class="count"></div><p>segundos</p></div>
-</div>
 
 </body>
 </html>

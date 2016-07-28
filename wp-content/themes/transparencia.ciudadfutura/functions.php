@@ -655,13 +655,27 @@ add_shortcode('video', 'shortcode_video');
 function fb_opengraph() {
 		global $post;
 		?>  
-		<meta property="og:title" content="<?php echo the_title(); ?>"/>
+		<meta property="og:title" content="Cuentas Claras"/>
 		<meta property="og:description" content="<?php echo $excerpt; ?>"/>
 		<meta property="og:type" content="article"/>
-		<meta property="og:url" content="<?php echo the_permalink(); ?>"/>
+		<meta property="og:url" content="<?php echo get_permalink(); ?>"/>
 		<meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
 		<meta property="og:image" content="<?php echo  get_stylesheet_directory_uri() . '/img/banner_web_portal_transp.png'; ?>"/>
 
 <?php
 }
 add_action('wp_head', 'fb_opengraph', 5);
+
+
+function shortcode_img($atts){
+
+	 extract(shortcode_atts(array(
+			'url'        => 0,
+	 ), $atts));
+	$code = '<div class="abrir-modal"><span class="glyphicon glyphicon-plus"></span> ver detalle de la votación</div>';
+	$code .= '<div class="modal"><img src="'.$url.'"/></div>';
+	return $code;
+}
+
+add_shortcode('modal-votaciones', 'shortcode_img');
+

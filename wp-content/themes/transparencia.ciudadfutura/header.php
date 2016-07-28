@@ -1,6 +1,6 @@
 <?php
 if ( !is_user_logged_in() ) {
-	if (new DateTime() < new DateTime("2016-07-26 14:00:00")) {
+	if (new DateTime() < new DateTime("2016-07-27 14:00:00")) {
  		header('Location: '.get_site_url().'/presentacion/');
  	}
 }
@@ -18,7 +18,16 @@ if ( !is_user_logged_in() ) {
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-2.2.0.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/d3.min.js"></script>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-75871000-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
   <!--[if lt IE 9]><script src="<?= get_template_directory_uri(); ?>/js/html5shiv.js"></script><![endif]-->
   <? wp_head() ?>
 
@@ -49,7 +58,7 @@ if ( !is_user_logged_in() ) {
 					<div class="col-md-4 pull-right cartel">
 						<div class="cont-wrapper">
 								<p class="ideas-acciones">
-									IDEAS CLARAS <span class="glyphicon glyphicon-cloud"></span> <br>
+									CUENTAS CLARAS <span class="glyphicon glyphicon-cloud"></span> <br>
 									ACCIONES CONCRETAS <span class="glyphicon glyphicon-cloud-download"></span> 
 								</p>
 								<h2>DONAMOS EL 70% DE NUESTROS SUELDOS PARA MANTENER NUESTRA AUTONOMÍA FINANCIERA Y POLÍTICA</h2>
