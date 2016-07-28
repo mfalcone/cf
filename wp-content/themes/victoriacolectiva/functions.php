@@ -49,7 +49,7 @@ function my_redirect() {
         	print_r("a");
             }
 }
-add_action( 'template_redirect', 'my_redirect' );
+//add_action( 'template_redirect', 'my_redirect' );
 
 // used for tracking error messages
 function pippin_errors(){

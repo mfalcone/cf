@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Development (trunk) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-07-28 14:45-0300\n"
+"PO-Revision-Date: 2016-07-28 16:50-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -885,9 +885,9 @@ msgid ""
 msgstr ""
 "{{requesting-user.name}} quiere ingresar al grupo &quot;{{group.name}}&quot;. Como vos sos el administrador de este grupo, tenés que acepta o rechazar su petición.\n"
 "\n"
-"To manage this and all other pending requests, visit: {{{group-requests.url}}}\n"
+"para visitar este y otros requerimientos, ingresá a  {{{group-requests.url}}}\n"
 "\n"
-"To view {{requesting-user.name}}'s profile, visit: {{{profile.url}}}"
+"Para visitar el perfil de  {{requesting-user.name}}, andá a : {{{profile.url}}}"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-core/bp-core-functions.php:3335
@@ -1316,7 +1316,7 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/activity/index.php:108
 msgid "My Favorites %s"
-msgstr ""
+msgstr "Mis favoritos %s"
 
 #: bp-activity/bp-activity-admin.php:724 bp-groups/bp-groups-admin.php:655
 #: bp-members/classes/class-bp-members-admin.php:939
@@ -2595,7 +2595,7 @@ msgstr ""
 #: bp-xprofile/classes/class-bp-xprofile-component.php:242
 msgctxt "Profile header sub menu"
 msgid "Change Profile Photo"
-msgstr ""
+msgstr "Cambiar foto de perfil"
 
 #: bp-members/classes/class-bp-members-component.php:295
 msgctxt "Member profile view"
@@ -2786,7 +2786,7 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/members/single/profile/change-avatar.php:84
 msgid "Your profile photo will be used on your profile and throughout the site. To change your profile photo, please create an account with <a href=\"http://gravatar.com\">Gravatar</a> using the same email address as you used to register with this site."
-msgstr ""
+msgstr "Tu foto de perfil será visible en todas tus actividades, para cambiar tu foto, please create an account with <a href=\"http://gravatar.com\">Gravatar</a> using the same email address as you used to register with this site."
 
 #: bp-templates/bp-legacy/buddypress/members/single/profile/change-avatar.php:52
 msgid "Crop Your New Profile Photo"
@@ -2818,7 +2818,7 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/members/single/profile/change-avatar.php:24
 msgid "Your profile photo will be used on your profile and throughout the site. If there is a <a href=\"http://gravatar.com\">Gravatar</a> associated with your account email we will use that, or you can upload an image from your computer."
-msgstr ""
+msgstr "Tu foto de perfil será visible en todas tus actividades."
 
 #: bp-templates/bp-legacy/buddypress/members/single/profile/change-avatar.php:11
 msgid "Change Profile Photo"
@@ -3512,7 +3512,7 @@ msgstr ""
 #: bp-activity/classes/class-bp-activity-component.php:200
 msgctxt "Profile activity screen sub nav"
 msgid "Favorites"
-msgstr ""
+msgstr "Favoritos"
 
 #: bp-activity/classes/class-bp-activity-component.php:213
 msgctxt "Profile activity screen sub nav"
@@ -3537,7 +3537,7 @@ msgstr ""
 #: bp-activity/classes/class-bp-activity-component.php:305
 msgctxt "My Account Activity sub nav"
 msgid "Favorites"
-msgstr ""
+msgstr "Favoritos"
 
 #: bp-activity/classes/class-bp-activity-component.php:316
 msgctxt "My Account Activity sub nav"
@@ -4384,7 +4384,7 @@ msgstr ""
 #. Display Name] | Favorites"
 #: bp-activity/bp-activity-actions.php:598
 msgid "%1$s | %2$s | Favorites"
-msgstr ""
+msgstr "%1$s | %2$s | Favoritos"
 
 #. translators: accessibility text
 #: bp-activity/classes/class-bp-activity-list-table.php:501
@@ -5848,7 +5848,7 @@ msgstr ""
 
 #: bp-core/bp-core-functions.php:1110
 msgid "right now"
-msgstr ""
+msgstr "ahora"
 
 #: bp-core/admin/bp-core-admin-slugs.php:187
 msgid "Associate WordPress Pages with the following BuddyPress Registration pages."
@@ -5917,7 +5917,7 @@ msgstr ""
 
 #: bp-themes/bp-default/activity/index.php:71
 msgid "My Favorites <span>%s</span>"
-msgstr ""
+msgstr "Mis Favoritos <span>%s</span>"
 
 #: bp-activity/bp-activity-template.php:3188
 msgid "Send a public message on your activity stream."
@@ -9016,7 +9016,7 @@ msgstr ""
 
 #: bp-members/bp-members-activity.php:50
 msgid "%s became a registered member"
-msgstr ""
+msgstr "%s es un miembro registrado"
 
 #: bp-members/bp-members-screens.php:372
 msgid "Your account is now active!"
@@ -9171,7 +9171,7 @@ msgstr ""
 #: bp-members/classes/class-bp-registration-theme-compat.php:100
 #: bp-themes/bp-default/registration/register.php:23
 msgid "Create an Account"
-msgstr ""
+msgstr "Crear una cuenta"
 
 #: bp-themes/bp-default/registration/activate.php:13
 msgid "Activate your Account"
