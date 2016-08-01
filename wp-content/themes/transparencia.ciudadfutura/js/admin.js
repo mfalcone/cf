@@ -74,7 +74,7 @@ $('#meta-image-button_persona').click(function(e){
 	        dateFormat : 'dd/mm/yy'
 	    });
 
-    jQuery('#_fecha_agenda').datepicker({
+    jQuery('#_fecha_agenda, #_fecha_respuesta').datepicker({
             dateFormat: 'yy-mm-dd'
         });
 });

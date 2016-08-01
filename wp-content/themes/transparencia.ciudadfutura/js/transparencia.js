@@ -44,6 +44,17 @@ jQuery(document).ready(function($){
 	
 	})
 
+
+	$(".respuesta .desarrollo dt").click(function(){
+		$span = $(this).find("span");
+		if($span.attr("class") == "glyphicon glyphicon-chevron-down"){
+			$span.attr("class","glyphicon glyphicon-chevron-up")
+		}else{
+			$span.attr("class","glyphicon glyphicon-chevron-down")
+		}
+		$(this).next().slideToggle();
+	})
+
 window.aporte ="";
 
 $("#contact_form .dinero span").click(function(){

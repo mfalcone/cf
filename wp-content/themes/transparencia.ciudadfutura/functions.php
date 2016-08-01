@@ -118,6 +118,30 @@ register_post_type( 'agenda',
 	);
 
 
+register_post_type( 'respuesta',
+		array(
+			'labels' => array(
+				'name' => __( 'Respuestas' ),
+				'singular_name' => __( 'Respuesta' ),
+				'add_new' => __( 'Agregar nueva respuesta' ),
+				'add_new_item' => __( 'Agregar nueva respuesta' ),
+				'edit_item' => __( 'Editar Respuesta' ),
+				'new_item' => __( 'Agregar nueva Respuesta' ),
+				'view_item' => __( 'Ver Respuesta' ),
+				'search_items' => __( 'Buscar respuesta' ),
+				'not_found' => __( 'No se encontraron respuestas' ),
+				'not_found_in_trash' => __( 'No respuestas found in trash' )
+			),
+			'public' => true,
+			'supports' => array( 'title', 'thumbnail'),
+			'capability_type' => 'post',
+			'rewrite' => array("slug" => "notasclaras"), // Permalinks format
+			'menu_position' => 8,
+			'register_meta_box_cb' => 'add_respuestas_metaboxes'
+		)
+	);
+
+
 
 register_post_type( 'Personas',
 		array(
@@ -397,6 +421,8 @@ function wpt_fecha_agenda() {
 }
 
 
+
+
 function add_personas_metaboxes() {
 	add_meta_box('wpt_nombre', 'Nombre y apellido', 'wpt_nombre', 'personas', 'normal', 'high');
 	add_meta_box('wpt_foto', 'Foto', 'wpt_foto', 'personas', 'normal', 'high');
@@ -416,6 +442,58 @@ function add_eventos_metaboxes(){
 }
 
 
+function wpt_fecha_respuesta() {
+
+	global $post;
+	echo '<input type="hidden" name="eventmeta_noncename_respuesta" id="eventmeta_noncename_respuesta" value="' . 
+	wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
+	
+	$fecharespuesta = get_post_meta($post->ID, '_fecha_respuesta', true);
+	echo '<input type="text" name="_fecha_respuesta" id="_fecha_respuesta" value="' . $fecharespuesta  . '" class="widefat" />';
+}
+
+function wpt_nota() {
+	global $post;
+	$nota = get_post_meta($post->ID, '_nota', true);
+	echo '<input type="text" name="_nota" value="' . $nota  . '" class="widefat" />';
+}
+
+function wpt_categoria() {
+	global $post;
+	$categoria = get_post_meta($post->ID, '_categoria', true);
+	echo '<input type="text" name="_categoria" value="' . $categoria  . '" class="widefat" />';
+}
+
+function wpt_concepto() {
+	global $post;
+	$concepto = get_post_meta($post->ID, '_concepto', true);
+	echo '<input type="text" name="_concepto" value="' . $concepto  . '" class="widefat" />';
+}
+
+function wpt_desarrollo() {
+	global $post;
+	$desarrollo = get_post_meta($post->ID, '_desarrollo', true);
+	 wp_editor( $desarrollo, '_desarrollo', array(
+        'wpautop'       => true,
+        'media_buttons' => true,
+        'textarea_name' => '_desarrollo',
+        'textarea_rows' => 10,
+        'teeny'         => true
+    ) );
+
+}
+
+
+function add_respuestas_metaboxes(){
+	add_meta_box('wpt_fecha_respuesta', 'Fecha', 'wpt_fecha_respuesta', 'respuesta', 'normal', 'high');
+	add_meta_box('wpt_nota', 'Nota', 'wpt_nota', 'respuesta', 'normal', 'high');
+	add_meta_box('wpt_concepto', 'Concepto', 'wpt_concepto', 'respuesta', 'normal', 'high');
+	add_meta_box('wpt_categoria', 'Categoría', 'wpt_categoria', 'respuesta', 'normal', 'high');
+	add_meta_box('wpt_desarrollo', 'Desarrollo', 'wpt_desarrollo', 'respuesta', 'normal', 'high');
+	
+}
+
+
 
 /*custom fields*/
 
@@ -423,6 +501,7 @@ add_action( 'add_meta_boxes', 'add_subsidios_metaboxes' );
 add_action( 'add_meta_boxes', 'add_proyectos_metaboxes' );
 add_action( 'add_meta_boxes', 'add_personas_metaboxes' );
 add_action( 'add_meta_boxes', 'add_eventos_metaboxes' );
+add_action( 'add_meta_boxes', 'add_respuestas_metaboxes' );
 
 
 
@@ -551,6 +630,43 @@ function wpt_save_agenda_meta($post_id, $post) {
 }
 
 
+function wpt_save_respuesta_meta($post_id, $post) {
+
+	// verify this came from the our screen and with proper authorization,
+	// because save_post can be triggered at other times
+	if ( !wp_verify_nonce( $_POST['eventmeta_noncename_respuesta'], plugin_basename(__FILE__) )) {
+	return $post->ID;
+	}
+
+	// Is the user allowed to edit the post or page?
+	if ( !current_user_can( 'edit_post', $post->ID ))
+		return $post->ID;
+
+	// OK, we're authenticated: we need to find and save the data
+	// We'll put it into an array to make it easier to loop though.
+	
+	$respuesta_meta['_fecha_respuesta'] = $_POST['_fecha_respuesta'];
+	$respuesta_meta['_nota'] = $_POST['_nota'];
+	$respuesta_meta['_categoria'] = $_POST['_categoria'];
+	$respuesta_meta['_desarrollo'] = $_POST['_desarrollo'];
+	$respuesta_meta['_concepto'] = $_POST['_concepto'];
+	
+	// Add values of $events_meta as custom fields
+	
+	foreach ($respuesta_meta as $key => $value) { // Cycle through the $events_meta array!
+		if( $post->post_type == 'revision' ) return; // Don't store custom data twice
+		$value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
+		if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
+			update_post_meta($post->ID, $key, $value);
+		} else { // If the custom field doesn't have a value
+			add_post_meta($post->ID, $key, $value);
+		}
+		if(!$value) delete_post_meta($post->ID, $key); // Delete if blank
+	}
+
+}
+
+
 function wpt_save_personas_meta($post_id, $post) {
 	
 	// verify this came from the our screen and with proper authorization,
@@ -592,6 +708,7 @@ add_action('save_post', 'wpt_save_events_meta', 1, 2); // save the custom fields
 add_action('save_post', 'wpt_save_proyectos_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_personas_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_agenda_meta', 1, 2); // save the custom fieldsx<
+add_action('save_post', 'wpt_save_respuesta_meta', 1, 2); // save the custom fieldsx<
 
 
 
