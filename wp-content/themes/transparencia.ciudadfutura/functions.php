@@ -796,3 +796,31 @@ function shortcode_img($atts){
 
 add_shortcode('modal-votaciones', 'shortcode_img');
 
+
+/*Creacion de la admin page */
+
+add_action( 'admin_menu', 'wpse_91693_register' );
+
+function wpse_91693_register()
+{
+    add_menu_page(
+        'Contactos del formulario',     // page title
+        'Aportes de la gente',     // menu title
+        'editor',   // capability
+        'include-text',     // menu slug
+        'wpse_91693_render' // callback function
+    );
+}
+function wpse_91693_render()
+{
+    global $title;
+    global $wpdb;
+
+    //$file = plugin_dir_path( __FILE__ ) . "included.html";
+
+    include( get_template_directory() . '/includes/aportes.php');
+
+    //if ( file_exists( $file ) )
+     //   require $file;
+
+}

@@ -1,0 +1,47 @@
+.map-container{
+	background:$rojo;
+	margin-top:60px;
+	padding:20px 0;
+	
+	h2{
+		font-size:4rem;
+		color: #FFF;
+		margin-bottom:30px;
+	}
+	svg{
+		background:#FFF;
+		display: block;
+		margin-left:auto;
+		margin-right: auto;
+		
+		#sec_2{
+			fill:#B0B0B0;
+			&:hover{
+			fill:$rojo;
+			}
+		}
+		#sec_17{
+			fill:#DADADA
+		}
+
+		#sec_10{
+			fill:#C3C3C3;
+			&:hover{
+			fill:$rojo;
+			}
+		}
+	
+		#sec_20{
+			fill:#BFBFBF;
+			&:hover{
+			fill:$rojo;
+			}
+		}
+		
+		polygon{
+			cursor:pointer;
+			pointer-events:all;
+		}
+
+	}
+}

@@ -59,16 +59,19 @@ function fb_opengraph() {
         return;
     }
 }
+
 add_action('wp_head', 'fb_opengraph', 5);
 
 function wpt_posicion() {
   global $post;
+  echo '<input type="hidden" name="eventmeta_noncename" id="eventmeta_noncename" value="' . 
+  wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
   $posibles_posiciones =  array('_baja','_media','_alta','_fuego');
   $posibles_labels =  array('Baja','Media','Alta','Fuego');
   
   $posicion = get_post_meta($post->ID, '_posicion', true);
   $index = 0;
-  echo '<select size="1" name="_posicion" id="t3">';
+  echo '<select size="1" name="_posicion" id="_posicion">';
    foreach($posibles_posiciones as $opt)
    {
     $selected = ($opt === $posicion) ? ' selected="selected"' : '';
@@ -80,7 +83,7 @@ echo '</select>';
 }
 
 function add_posiciones_metaboxes() {
-  add_meta_box('wpt_posicion', 'Estado', 'wpt_posicion');
+  add_meta_box('wpt_posicion', 'Estado', 'wpt_posicion','post');
 }
 
 add_action( 'add_meta_boxes', 'add_posiciones_metaboxes' );
@@ -91,7 +94,7 @@ function wpt_save_estados_meta($post_id, $post) {
   
   // verify this came from the our screen and with proper authorization,
   // because save_post can be triggered at other times
-  if ( !wp_verify_nonce( $_POST['eventmeta_noncename_proyecto'], plugin_basename(__FILE__) )) {
+  if ( !wp_verify_nonce( $_POST['eventmeta_noncename'], plugin_basename(__FILE__) )) {
   return $post->ID;
   }
 
@@ -102,11 +105,7 @@ function wpt_save_estados_meta($post_id, $post) {
   // OK, we're authenticated: we need to find and save the data
   // We'll put it into an array to make it easier to loop though.
   
-  $proyectos_meta['_proyecto'] = $_POST['_proyecto'];
-  $proyectos_meta['_titulo'] = $_POST['_titulo'];
-  $proyectos_meta['_autor'] = $_POST['_autor'];
-  $proyectos_meta['_estado'] = $_POST['_estado'];
-  $proyectos_meta['_file'] = $_POST['_file'];
+  $proyectos_meta['_posicion'] = $_POST['_posicion'];
   
   // Add values of $events_meta as custom fields
   
@@ -124,8 +123,61 @@ function wpt_save_estados_meta($post_id, $post) {
 }
 
 
+
+function noticias_en_los_barrios() {
+  register_post_type( 'seccionales',
+    array(
+      'labels' => array(
+        'name' => __( 'Ciudad Futura en los barrios' ),
+        'singular_name' => __( 'noticias del mes en las seccionales' ),
+        'add_new' => __( 'Agregar Noticia sobre seccionales' ),
+        'add_new_item' => __( 'Agregar Noticia sobre seccionales' ),
+        'edit_item' => __( 'Editar Noticia sobre seccionales' ),
+        'new_item' => __( 'Agregar Noticia sobre seccionales' ),
+        'view_item' => __( 'ver Noticia sobre seccionales' ),
+        'search_items' => __( 'Buscar Noticia sobre seccionales' ),
+        'not_found' => __( 'No se encontraron  Noticia sobre seccionales' ),
+        'not_found_in_trash' => __( 'No Noticias found in trash' )
+      ),
+      'public' => true,
+      'supports' => array( 'title','custom-fields','thumbnail' ),
+      'capability_type' => 'post',
+      'rewrite' => array("slug" => "noticias-en-las-seccionales"), // Permalinks format
+      'menu_position' => 5,
+      'show_ui' => true,
+    //'show_in_menu' => 'my-shop',
+    )
+  );
+};
+
+add_action( 'init', 'noticias_en_los_barrios' );
+
+
 add_action('save_post', 'wpt_save_estados_meta', 1, 2); // save the custom fieldsx<
 
+add_action( 'after_setup_theme', 'setup' );
+
+function setup() {
+    // ...
+     
+    add_image_size( 'alta-image', 409, 306, true );
+    add_image_size( 'media-image', 230, 136, true );
+     
+    // ...
+}
+
+
+// load css into the website's front-end
+function mytheme_enqueue_style() {
+    wp_enqueue_style( 'mytheme-style', get_stylesheet_uri() ); 
+    wp_deregister_script('jquery');
+    wp_register_script('jquery',get_template_directory_uri() . '/js/jquery-2.2.0.min.js' , false, null);
+    wp_enqueue_script('jquery');
+    wp_register_script('my_amazing_script', get_template_directory_uri() . '/js/hacer.js', array('jquery'),'1.1', true);
+    wp_enqueue_script('my_amazing_script');
+
+}
+add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_style' );
 
 
 

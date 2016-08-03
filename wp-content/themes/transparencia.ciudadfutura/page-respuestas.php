@@ -50,8 +50,6 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		<dl class="encabezado">
 			<dt>Fecha de publicación:</dt>
 			<dd><?php echo date("d/m/Y", strtotime($fecha_respuesta));?></dd>
-			<dt>Nota:</dt>
-			<dd><?php echo $nota;?></dd>
 			<dt>Concepto:</dt>
 			<dd><?php echo $concepto;?></dd>
 		</dl>

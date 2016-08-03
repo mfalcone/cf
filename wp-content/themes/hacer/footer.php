@@ -11,29 +11,16 @@
 // Removing this fxn call will disable all kinds of plugins. 
 // Move it if you like, but keep it around.
 ?>
+<div class="modal-wrapper">
+	<div class="modal">
+		<div class="cerrar"><span class="glyphicon glyphicon-remove"></span> </div>
+		<div class="inner-modal">
+			
+		</div>
+	</div>
+</div>
 <footer>
-	<section>
-		<div class="blog">
-			<?php $my_query = new WP_Query('category_name=actualizaciones&showposts=1'); ?>
-			<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-			<a href="<?php the_permalink() ?>"></a>
-			<h3>[BLOG] ULTIMA ENTRADA</h3>
-			<p><?php the_title(); ?></p>
-			<?php endwhile; ?>
-		</div>
-		<div class="logo">
-			<img src="<?php bloginfo('template_directory');?>/img/iso_footer.png" alt="logo">
-			<a href="<?php echo get_site_url(); ?>">www.ciudadfutura.com.ar</a>
-		</div>
-		<div class="videoblog">
-			<?php $my_query = new WP_Query('category_name=video&showposts=1'); ?>
-			<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-			<a href="<?php the_permalink() ?>"></a>
-			<h3>[VIDEOBLOG] ULTIMA ENTRADA</h3>
-			<p><?php the_title(); ?></p>
-			<?php endwhile; ?>
-		</div>
-	</section>
+	
 </footer>
    </body>
    </html>
