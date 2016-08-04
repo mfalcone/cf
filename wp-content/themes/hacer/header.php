@@ -19,14 +19,23 @@
 // (right here) into the head of your website. 
 // Removing this fxn call will disable all kinds of plugins and Wordpress default insertions. 
 // Move it if you like, but I would keep it around.
+  $meses = array("0","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+  $today = getdate();
+  $month = $today['mon'];
+  $lastmonth =  $month-1;
+  $monthtowatch = $lastmonth-2;
 ?>
 
  </head>
 <body <?php body_class( 'class-name' ); ?>>
 <header id="main-header">
   <div class="container">
-    <h1><?php bloginfo('name');?></h1>
-    <h1><?php bloginfo('description');?></h1>
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php  echo get_template_directory_uri(); ?>/img/logo.png" alt=""></a>
+    <hgroup>
+      <h2><?php bloginfo('description');?></h2>
+      <h3><?php echo $meses[$monthtowatch]; ?> en Ciudad Futura</h3>
+      <h4>Ver meses anteriores</h4>
+    </hgroup>
     <div class="meses"><?php wp_get_archives('type=monthly&limit=12'); ?></div>
   </div>
 </header>

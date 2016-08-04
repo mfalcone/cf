@@ -1,0 +1,48 @@
+.analisis{
+	position:relative;
+	margin-top:20px;
+	padding:0;
+	img{
+		width: 100%;
+	}
+	
+	.meta{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+	}
+
+	h1{
+		font-size:4rem;
+		background: rgba(0,0,0,0.5);
+		color: #FFF;
+		padding:25px;
+	}
+
+	.excerpt{
+		font-size: 2.5rem;
+	    background: rgba(255,255,255,0.5);
+	    height: 100%;
+	    position: absolute;
+	    top: 0;
+	    width:100%;
+	    display: none;
+
+	    .inner-excerpt{
+	    	position:absolute;
+	    	bottom:10px;
+	    	left:10px;
+	    	line-height: 3.5rem;
+	    }
+	}
+
+	a{
+		&:hover{
+			.excerpt{
+				display:block;
+			}
+		}
+	}
+}

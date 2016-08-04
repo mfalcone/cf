@@ -4,8 +4,33 @@
 	border-bottom:2px solid #FFF;
 	background:$rojo;
 	position:relative;
-	 
+	
+	img{
+		float:left;
+		margin-top:30px;
+	} 
     .meses{
 		display: none;
+	}
+	
+	hgroup{
+		float:left;
+		margin-left: 30px;
+		color: #FFF;
+		margin-top: 30px;
+		}
+
+	h2{
+		font-size: 1.8rem;
+		font-style: italic;
+	}
+	h3{
+		font-size: 1.6rem;
+		margin-top:10px;
+	}
+
+	h4{
+		margin-top:10px;
+		font-size:1.2rem;
 	}
 }

@@ -9,16 +9,26 @@
 	.modal{
 		background:#FFF;
 		border-radius: 10px;
-		width: 80%;
 		height: 80%;
 		top:10%;
 		position: relative;
-    	left: 10%;
-
+    	
     	.cerrar{
     		position: absolute;
-    		top: 0;
-    		right: 0;
+    		top: 10px;
+    		right: 10px;
+    		cursor:pointer;
+    	}
+
+    	.inner-modal{
+    		margin-top:50px;
+
+    		h2{
+    			font-size:2.5rem;
+    		}
+    		p{
+    			margin-top:40px;
+    		}
     	}
 	}
 }
@@ -27,4 +37,9 @@ footer{
 	background:$rojo;
 	height:20vh;
 	margin-top:60px;
+
+	img{
+		float:right;
+		margin-top:20px;
+	}
 }

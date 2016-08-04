@@ -7,31 +7,30 @@
 
 get_header(); // This fxn gets the header.php file and renders it ?>
 
+<section class="container single">
 			<?php if ( have_posts() ) : 
 			// Do we have any posts in the databse that match our query?
 			?>
 
-				<?php while ( have_posts() ) : the_post(); 
-				// If we have a post to show, start a loop that will display it
+				<?php while ( have_posts() ) : the_post();
+					$thumbID = get_post_thumbnail_id( $post->ID );
+					$imgDestacada = wp_get_attachment_url( $thumbID );
+				 ?>
 				
-				if (in_category('actualizaciones')) {
-					include(TEMPLATEPATH . '/single_blog.php');
-				}else{
-					include(TEMPLATEPATH . '/single_article.php');
-				} 
-					
+				<div class="col-md-12">			
+					<div class="image-wrapper"><img src="<?php echo $imgDestacada; ?>" alt=""></div>
+					<h1><?php the_title();?></h1>
+					<div class="expert">
+						<?php the_excerpt(); ?>
+					</div>
+					<div class="content">
+						<?php the_content();?>
+					</div>
+				</div>
 
-				endwhile; // OK, let's stop the post loop once we've displayed it ?>
-				
-			
+				<?php endwhile; // OK, let's stop the post loop once we've displayed it ?>
+	
 
-
-			<?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
-				
-				<article class="post error">
-					<h1 class="404">No hay nada</h1>
-				</article>
-
-			<?php endif; // OK, I think that takes care of both scenarios (having a post or not having a post to show) ?>
-
+			<?php endif; ?>
+</section>
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>
