@@ -23,7 +23,13 @@
   $today = getdate();
   $month = $today['mon'];
   $lastmonth =  $month-1;
-  $monthtowatch = $lastmonth-2;
+  if($_GET['mes']){
+    $monthtowatch = $_GET['mes'];
+    $GLOBALS['monthtowatch'] = $monthtowatch;
+  }else{
+  $monthtowatch = $lastmonth;
+  $GLOBALS['monthtowatch'] = $monthtowatch;
+  };
 ?>
 
  </head>

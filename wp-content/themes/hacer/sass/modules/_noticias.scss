@@ -1,5 +1,12 @@
-.noticias{
+.admin-bar .fuego .nota{
+	bottom:-32px;
+}
 
+.noticias{
+	
+	img{
+		border:1px solid #666;
+	}
 }
 
 .fuego{
@@ -8,7 +15,13 @@
 	background-size: cover;
 	background-position:center center;
 	background-repeat:no-repeat;
-	
+	.volanta{
+		background:#000;
+		color:#FFF;
+		text-align: left;
+		padding: 5px 0 5px 10px;
+		margin-top:-20px;
+	}
 	.nota{
 		position:absolute;
 		bottom:0;
@@ -23,7 +36,6 @@
 		}
 
 		.excerpt{
-			margin-top:2%;
 		}
 	}
 }
@@ -44,6 +56,7 @@
 
 	h1{
 		font-size:2rem;
+		margin-top:20px;
 	}
 
 	.excerpt{

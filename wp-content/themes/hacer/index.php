@@ -9,10 +9,11 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 
 <div class="noticias">
 <?php 
-	$today = getdate();
+	/*$today = getdate();
 	$month = $today['mon'];
-	$lastmonth =  $month-1;
-	$monthtowatch = $lastmonth;
+	$lastmonth =  $month;
+	*/
+	$monthtowatch = $GLOBALS['monthtowatch'];
 
 	$args = array('posts_per_page' => 1, 'monthnum' =>$monthtowatch, 'meta_query' => array (
 		    array (
@@ -29,6 +30,12 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 
 	<section class="fuego" style="background-image:url(<?php echo $imgDestacada;?>)">
 			<div class="nota">
+			<?php $volanta = get_post_meta( get_the_ID(), 'volanta', true ); 
+				if($volanta){ ?>
+					<div class="volanta"><div class="container"><?php echo $volanta; ?></div></div>
+			<?php }
+			?>
+
 			<a href="<?php the_permalink();?>">
 				<div class="container">
 				<h1><?php the_title(); ?></h1>
@@ -56,7 +63,6 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				<?php the_post_thumbnail( 'alta-image' ); ?>
 				<h1><?php the_title(); ?></h1>
 				<div class="excerpt">
-				<h2><?php the_title(); ?></h2>
 				<?php the_excerpt(); ?>
 				</div>
 			</a>
@@ -92,6 +98,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 <section class="map-container">
 	<div class="container">
 	<h1>Ciudad Futura en los Barrios</h1>
+	<p>Clickeá sobre cada seccional para conocer las actividades del mes en todos los puntos de la ciudad.</p>
 	<?php $args = array( 'post_type' => 'seccionales', 'posts_per_page' => 1,'monthnum' =>$monthtowatch);
 	$loop = new WP_Query( $args );
 

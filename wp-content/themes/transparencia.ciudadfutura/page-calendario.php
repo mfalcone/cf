@@ -40,7 +40,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
   </tr>
 
 
-<?php $args = array( 'post_type' => 'agenda', 'posts_per_page' => -1, 'meta_key'=>'_fecha_agenda', 'orderby' => 'meta_value', 'order' => 'ASC'  );
+<?php $args = array( 'post_type' => 'agenda', 'posts_per_page' => -1, 'meta_key'=>'_fecha_agenda', 'orderby' => 'meta_value', 'order' => 'DESC'  );
 	$loop = new WP_Query( $args );
 	//print_r($loop);
 	while ( $loop->have_posts() ) : $loop->the_post(); 

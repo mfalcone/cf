@@ -1,7 +1,9 @@
 jQuery(document).ready(function($){
 	/*SVG MAP*/
-	$("polygon").click(function(){
+	$("polygon, path").click(function(){
 		var id = $(this).attr("id");
+		console.log(id)
+		
 		var title = id.split("_");
 		title = title[1];
 		texto = noticias[id];
