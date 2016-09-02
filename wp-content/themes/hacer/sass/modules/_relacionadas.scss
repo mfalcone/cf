@@ -1,0 +1,29 @@
+.aside-wrapp{
+	background: #CCC;
+    overflow: auto;
+    padding-top: 20px;
+    margin-bottom: -60px;
+    margin-top: 20px;
+    padding-bottom:40px;
+	
+}
+
+.aside{
+	h2{
+		margin-bottom: 20px;
+		font-size: 2rem;
+	}
+	ul{
+		li{
+			float: left;
+		    width: 23%;
+		    margin-right: 2%;
+		    list-style: none;
+
+			img{
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
+}

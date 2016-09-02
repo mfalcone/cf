@@ -128,7 +128,8 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 
 	<?php endwhile; ?>
 		<?php get_template_part( 'map');?>
-	</section>
+	</div>
+</section>
 <section class="container analisis">
 	<?php $args = array( 'category_name' => 'analisis', 'posts_per_page' => 1,'monthnum' =>$monthtowatch);
 	$loop = new WP_Query( $args );
@@ -137,9 +138,9 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		$imgDestacada = wp_get_attachment_url( $thumbID );
 	?>
 	<a href="<?php the_permalink(); ?>">
+	<h1><?php the_title(); ?></h1>
 	<img src="<?php echo $imgDestacada;?>" alt="<?php the_title(); ?>">
 	<div class="meta">
-		<h1><?php the_title(); ?></h1>
 		<div class="excerpt">
 			<div class="inner-excerpt">
 				<?php the_excerpt(); ?>
@@ -150,12 +151,13 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 	<?php endwhile; ?>
 </section>
 <section class="container proyecto">
-	<?php $args = array( 'category_name' => 'proyecto', 'posts_per_page' => 1,'monthnum' =>$monthtowatch);
+	<?php $args = array( 'category_name' => 'proyecto', 'posts_per_page' => 2,'monthnum' =>$monthtowatch);
 	$loop = new WP_Query( $args );
 	while ( $loop->have_posts() ) : $loop->the_post();
 		$thumbID = get_post_thumbnail_id( $post->ID );
 		$imgDestacada = wp_get_attachment_url( $thumbID );
 	?>
+	<div class="inner-proyecto">
 	<a href="<?php the_permalink(); ?>">
 	<div class="col-md-4">
 		<?php the_post_thumbnail( 'alta-image' ); ?>
@@ -165,6 +167,18 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		<?php the_excerpt(); ?>
 	</div>
 	</a>
+	</div>
 	<?php endwhile; ?>
-</section
+</section>
+<section class="container humor">
+	<?php $args = array( 'category_name' => 'humor', 'posts_per_page' => 1,'monthnum' =>$monthtowatch);
+	$loop = new WP_Query( $args );
+	while ( $loop->have_posts() ) : $loop->the_post();
+		$thumbID = get_post_thumbnail_id( $post->ID );
+		$imgDestacada = wp_get_attachment_url( $thumbID );
+	?>
+		<h1><?php the_title(); ?></h1>
+		<?php the_content(); ?>
+	<?php endwhile; ?>
+</section>
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>

@@ -34,6 +34,10 @@ foreach($result as $row)
 			<td><?php echo utf8_decode($row->facebook); ?></td>
 		</tr>
 		<tr>
+			<td class="label">Teléfono:</td>
+			<td><?php echo utf8_decode($row->telefono); ?></td>
+		</tr>
+		<tr>
 			<td class="label">Cuil:</td>
 			<td><?php echo utf8_decode($row->cuil); ?></td>
 		</tr>

@@ -1,9 +1,15 @@
 .proyecto{
 	padding-left:0;
 	margin-top:20px;
+	.inner-proyecto{
+		clear:left;
+		padding-bottom:20px;
+		border-bottom: 1px dashed;
+		overflow: auto;
+		margin-top: 20px;
+	}
 	.col-md-4{
 		padding:0;
-
 		img{
 			max-width: 100%;
 		}

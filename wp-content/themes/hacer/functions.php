@@ -79,14 +79,39 @@ function wpt_posicion() {
     $index++;
     }
 echo '</select>';
-
 }
+
 
 function add_posiciones_metaboxes() {
   add_meta_box('wpt_posicion', 'Estado', 'wpt_posicion','post');
 }
 
 add_action( 'add_meta_boxes', 'add_posiciones_metaboxes' );
+
+
+function wpt_layout() {
+  global $post;
+  $layout = get_post_meta($post->ID, 'layout', true);
+  echo '<input type="hidden" name="eventmeta_noncename" id="layoutmeta_noncename" value="' . 
+  wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
+  $posibilidades = array('main','dos-columnas');
+  $labeles = array('Columna Principal','Dos Columnas');
+  $indice = 0;
+  foreach($posibilidades as $opciones){
+    $checked = ($opciones===$layout) ? 'checked':'';
+      echo '<input type="radio" name="layout" value="'.$opciones.'" '.$checked.'>'.$labeles[$indice].'<br>';
+      $indice++;
+  }
+
+}
+
+function add_layout_metaboxes() {
+  add_meta_box('wpt_layout', 'Layout', 'wpt_layout','post');
+}
+
+
+add_action( 'add_meta_boxes', 'add_layout_metaboxes' );
+
 
 
 
@@ -106,6 +131,7 @@ function wpt_save_estados_meta($post_id, $post) {
   // We'll put it into an array to make it easier to loop though.
   
   $proyectos_meta['_posicion'] = $_POST['_posicion'];
+  $proyectos_meta['layout'] = $_POST['layout'];
   
   // Add values of $events_meta as custom fields
   
@@ -173,12 +199,131 @@ function mytheme_enqueue_style() {
     wp_deregister_script('jquery');
     wp_register_script('jquery',get_template_directory_uri() . '/js/jquery-2.2.0.min.js' , false, null);
     wp_enqueue_script('jquery');
-    wp_register_script('my_amazing_script', get_template_directory_uri() . '/js/hacer.js', array('jquery'),'1.1', true);
+    wp_register_script('fancybox', get_template_directory_uri() . '/js/jquery.fancybox.js', array('jquery'),false, false);
+    wp_enqueue_script('fancybox');
+    wp_register_script('my_amazing_script', get_template_directory_uri() . '/js/hacer.js', array('jquery'),false,false);
     wp_enqueue_script('my_amazing_script');
 
 }
 add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_style' );
 
 
+/**
+ * Custom WP gallery
+ */
+add_shortcode('gallery', 'my_gallery_shortcode');    
+function my_gallery_shortcode($attr) {
+   $post = get_post();
 
-?>
+  static $instance = 0;
+  $instance++;
+
+  if ( ! empty( $attr['ids'] ) ) {
+      // 'ids' is explicitly ordered, unless you specify otherwise.
+      if ( empty( $attr['orderby'] ) )
+          $attr['orderby'] = 'post__in';
+      $attr['include'] = $attr['ids'];
+  }
+
+  // Allow plugins/themes to override the default gallery template.
+  $output = apply_filters('post_gallery', '', $attr);
+  if ( $output != '' )
+      return $output;
+
+  // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
+  if ( isset( $attr['orderby'] ) ) {
+      $attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
+      if ( !$attr['orderby'] )
+          unset( $attr['orderby'] );
+  }
+
+  extract(shortcode_atts(array(
+      'order'      => 'ASC',
+      'orderby'    => 'menu_order ID',
+      'id'         => $post->ID,
+      'itemtag'    => 'li',
+      'icontag'    => 'figure',
+      'captiontag' => 'figcaption',
+      'columns'    => 3,
+      'size'       => 'thumbnail',
+      'include'    => '',
+      'exclude'    => ''
+  ), $attr));
+
+  $id = intval($id);
+  if ( 'RAND' == $order )
+      $orderby = 'none';
+
+  if ( !empty($include) ) {
+      $_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+
+      $attachments = array();
+      foreach ( $_attachments as $key => $val ) {
+          $attachments[$val->ID] = $_attachments[$key];
+      }
+  } elseif ( !empty($exclude) ) {
+      $attachments = get_children( array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+  } else {
+      $attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+  }
+
+  if ( empty($attachments) )
+      return '';
+
+  if ( is_feed() ) {
+      $output = "\n";
+      foreach ( $attachments as $att_id => $attachment )
+          $output .= wp_get_attachment_link($att_id, $size, true) . "\n";
+      return $output;
+  }
+
+  $itemtag = tag_escape($itemtag);
+  $captiontag = tag_escape($captiontag);
+  $icontag = tag_escape($icontag);
+  $valid_tags = wp_kses_allowed_html( 'post' );
+  if ( ! isset( $valid_tags[ $itemtag ] ) )
+      $itemtag = 'li';
+  if ( ! isset( $valid_tags[ $captiontag ] ) )
+      $captiontag = 'figcaption';
+  if ( ! isset( $valid_tags[ $icontag ] ) )
+      $icontag = 'figure';
+
+  $columns = intval($columns);
+  $itemwidth = $columns > 0 ? floor(100/$columns) : 100;
+  $float = is_rtl() ? 'right' : 'left';
+
+  $selector = "gallery-{$instance}";
+
+  $gallery_style = $gallery_div = '';
+  if ( apply_filters( 'use_default_gallery_style', true ) )
+      
+  $size_class = sanitize_html_class( $size );
+  $gallery_div = "<ul id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+  $output = $gallery_div;//apply_filters( 'gallery_style', $gallery_style . "\n\t\t" . $gallery_div );
+
+  $i = 0;
+  foreach ( $attachments as $id => $attachment ) {
+      $link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, $size, false, false) : wp_get_attachment_link($id, $size, true, false);
+
+      $output .= "<{$itemtag} class='gallery-item col-md-4'>";
+      $output .= "
+          <{$icontag} class='gallery-icon'>
+              $link
+          </{$icontag}>";
+      if ( $captiontag && trim($attachment->post_excerpt) ) {
+          $output .= "
+              <{$captiontag} class='wp-caption-text gallery-caption'>
+              " . wptexturize($attachment->post_excerpt) . "
+              </{$captiontag}>";
+      }
+      $output .= "</{$itemtag}>";
+      if ( $columns > 0 && ++$i % $columns == 0 )
+          $output .= '<br style="clear: both" />';
+  }
+
+  $output .= "
+          <br style='clear: both;' />
+      </ul>\n";
+
+  return $output;
+}

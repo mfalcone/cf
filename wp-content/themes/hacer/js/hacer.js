@@ -2,8 +2,7 @@ jQuery(document).ready(function($){
 	/*SVG MAP*/
 	$("polygon, path").click(function(){
 		var id = $(this).attr("id");
-		console.log(id)
-		
+		console.log("me toma")
 		var title = id.split("_");
 		title = title[1];
 		texto = noticias[id];
@@ -16,6 +15,31 @@ jQuery(document).ready(function($){
 
 	$(".modal-wrapper .cerrar").click(function(){
 		$(".modal-wrapper").fadeOut();
+	})
+	$(".gallery a").click(function(e){
+		e.preventDefault();
+		imgurl = $(this).attr("href");
+		$img = $('<img src="'+imgurl+'"/>');
+		$(".modal-wrapper .inner-modal").html($img);
+		$(".modal-wrapper .inner-modal").parent().attr("class","modal col-md-10 col-md-offset-1")
+		$(".modal-wrapper").fadeIn();
+	})
+
+
+	$(".humor a").click(function(e){
+		e.preventDefault();
+		imgurl = $(this).attr("href");
+		$img = $('<img src="'+imgurl+'"/>');
+		$(".modal-wrapper .inner-modal").html($img);
+		$(".modal-wrapper .inner-modal").parent().attr("class","modal col-md-10 col-md-offset-1")
+		$(".modal-wrapper").fadeIn();
+		$(".modal-wrapper div").removeClass("container");
+	})
+	
+
+	$("#main-header h4").click(function(){
+		$(this).toggleClass("selected");
+		$(".meses").toggle();
 	})
 
 })	

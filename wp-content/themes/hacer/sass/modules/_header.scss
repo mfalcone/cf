@@ -4,33 +4,116 @@
 	border-bottom:2px solid #FFF;
 	background:$rojo;
 	position:relative;
-	
+	z-index:1;
+	@include screen(320px,480px) { 
+				height:80px;
+			}
+	.container{
+		@include screen(320px,480px) { 
+				padding-right:5px;
+			}
+	}
 	img{
 		float:left;
-		margin-top:30px;
+		margin-top:20px;
+		@include screen(320px,480px) { 
+				width:48%;
+			}
 	} 
+	
+	a{
+		float:left;
+		color:#FFF;
+		h2{
+			margin-top: 4px;
+			float: left;
+			clear: left;
+		}
+		&:hover{
+				h2{
+					color:#000;
+				}
+		}
+	}
+
     .meses{
 		display: none;
+		position: absolute;
+		top: 80px;
+		left: 264px;
+		background: #000;
+		color: #FFF;
+		width: 400px;
+		li{
+			list-style: none;
+			padding:0;
+			a{
+				color:#FFF;
+				display: block;
+				padding: 10px;
+				width:100%;
+				&:hover{
+					background:$rojo;
+				}
+			}
+		}
+	}
+
+	.container{
+		position: relative;
 	}
 	
 	hgroup{
 		float:left;
 		margin-left: 30px;
 		color: #FFF;
-		margin-top: 30px;
+		margin-top: 20px;
+			@include screen(320px,480px) { 
+				padding:0;
+				margin:25px 0 0 0;
+				text-align: right;
+				float:right;
+			}
 		}
 
 	h2{
 		font-size: 1.8rem;
 		font-style: italic;
+		@include screen(320px,480px) { 
+				font-size:1.2rem;
+			}
 	}
 	h3{
-		font-size: 1.6rem;
-		margin-top:10px;
+		font-size: 2.3rem;
+		@include screen(320px,480px) { 
+				font-size:1rem;
+			}
 	}
 
 	h4{
 		margin-top:10px;
 		font-size:1.2rem;
+		cursor:pointer;
+		&.selected{
+			background: #000;
+			color: $rojo;
+			padding: 5px 0 5px 10px;
+    		width: 400px;
+		}
+		@include screen(320px,480px) { 
+				display:none;
+			}
 	}
+
+
+
+}
+
+h1.nombremes{
+	background: rgba(255,255,255,0.5);
+    width: 100%;
+    position: absolute;
+    padding: 10px;
+    font-size: 4rem;
+    z-index:2;
 }

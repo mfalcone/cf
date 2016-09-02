@@ -1,5 +1,7 @@
 .single{
 	.image-wrapper{
+		max-height: 500px;
+		overflow: hidden;
 		img{
 			width: 100%;
 		}
@@ -41,12 +43,39 @@
 		h2,h3{
 			padding:20px 0;
 		}
-
+		img{
+			max-width: 100%;
+			height: auto;
+		}
 		img.alignnone{
 			display:block;
 			margin-left:auto;
 			margin-right: auto;
 			border:4px solid #333;
+		}
+
+		a{
+			color:$rojo;
+			
+			&:hover{
+				color:#000;
+			}
+		}
+	}
+
+	.dos-col-texto{
+		padding:0;
+		.expert{
+			margin-top:0;
+		}
+	}
+
+	.dos-col-title{
+		margin-bottom: 20px;
+	}
+	.col-md-6{
+		img{
+			max-width: 100%;
 		}
 	}
 }
