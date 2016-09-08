@@ -1,0 +1,118 @@
+<manifest alg="2" build="2015.2.1.352" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="www.ciudadfutura.com.ar" resolutions="1x" timestamp="1472929829915">
+  <folder name="css">
+    <file name="site_global.css" crc="4173481052"/>
+    <file name="index.css" crc="4185629116" ref="index"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="169078940" ref="phone>index:index"/>
+    <file name="museutils.js" crc="3851988764" ref="phone>index:index"/>
+    <file name="whatinput.js" crc="86476730" ref="phone>index:index"/>
+    <file name="museconfig.js" crc="169177150" ref="phone>index:index"/>
+    <file name="pie.js" crc="3831537696" ref="phone>index:index"/>
+    <file name="jquery.watch.js" crc="3842844514" ref="phone>index:index"/>
+    <file name="jquery.musemenu.js" crc="4150485998" ref="phone>index:index"/>
+    <file name="webpro.js" crc="4067903014" ref="phone>index:index"/>
+    <file name="musewpslideshow.js" crc="4265225696" ref="phone>index:index"/>
+    <file name="jquery.museoverlay.js" crc="4075157096" ref="phone>index:index"/>
+    <file name="touchswipe.js" crc="474750357" ref="phone>index:index"/>
+    <file name="musewpdisclosure.js" crc="338211507" ref="phone>index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="271560940" ref="phone>index:index"/>
+    <file name="html5shiv.js" crc="4241844378" ref="phone>index:index"/>
+    <file name="require.js" crc="4108833657" ref="phone>index:index"/>
+    <file name="jquery.scrolleffects.js" crc="511146689" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="footer.png" crc="3807038718" seo="true" ref="phone>index:index"/>
+    <file name="logo-u4944.png" crc="3876593825" ref="phone>index"/>
+    <file name="logo-u4944-a.png" crc="3876593825" ref="phone>index"/>
+    <file name="icon-recentwork.png" crc="512937447" seo="true" ref="phone>index:index"/>
+    <file name="webdesign.jpg" crc="4216113312" seo="true" ref="phone>index"/>
+    <file name="mobileapps.jpg" crc="3916095743" seo="true" ref="phone>index"/>
+    <file name="branding-crop-u4686.png" crc="3919700824" ref="phone>index"/>
+    <file name="branding-crop-u4688.png" crc="411971180" ref="phone>index"/>
+    <file name="branding-crop-u4684.png" crc="411971180" ref="phone>index"/>
+    <file name="blank.gif" crc="4208392903" ref="phone>index:index"/>
+    <file name="branding.png" crc="3868035783" seo="true" ref="phone>index"/>
+    <file name="arrow-up.png" crc="79589905" ref="phone>index:index"/>
+    <file name="arrow-down.png" crc="425679959" ref="phone>index:index"/>
+    <file name="icon-close.png" crc="39018193" ref="phone>index:index"/>
+    <file name="loading.gif" crc="3815509949" ref="phone>index:index"/>
+    <file name="team-image.jpg" crc="311708277" ref="phone>index"/>
+    <file name="icon-team.png" crc="4214693514" seo="true" ref="phone>index:index"/>
+    <file name="icon-quote.png" crc="444579975" seo="true" ref="phone>index"/>
+    <file name="icon-getintouch.png" crc="149059447" seo="true" ref="phone>index:index"/>
+    <file name="icon_facebook500.png" crc="3917133083" seo="true" ref="phone>index:index"/>
+    <file name="icon_twitter.png" crc="4158872068" seo="true" ref="phone>index:index"/>
+    <file name="icon_googleplus-revised.png" crc="411831727" seo="true" ref="phone>index"/>
+    <file name="icon_instagram.png" crc="3865211146" seo="true" ref="phone>index"/>
+    <file name="icon_tumblr.png" crc="431699437" seo="true" ref="phone>index"/>
+    <file name="icon_rss.png" crc="3849996989" seo="true" ref="phone>index"/>
+    <file name="musethemes_logo.png" crc="4153756007" seo="true" ref="phone>index"/>
+    <file name="cf_logo.png" crc="3691025" seo="true" ref="index"/>
+    <file name="tira.jpg" crc="3803264324" ref="index"/>
+    <file name="logo_header.png" crc="3996322365" seo="true" ref="index"/>
+    <file name="cartel_descarga.png" crc="401387944" seo="true" ref="index"/>
+    <file name="volantes_web.png" crc="343362171" seo="true" ref="index"/>
+    <file name="evento_festival.png" crc="4062598577" seo="true" ref="index"/>
+    <file name="pictos_final.png" crc="4015532015" seo="true" ref="index"/>
+    <file name="fondo_ok.jpg" crc="4283366778" ref="index"/>
+    <file name="ipp-ieu2783-fr.png" crc="111873330" ref="index"/>
+    <file name="ipp.png" crc="111873330" ref="index"/>
+    <file name="ucrp-ieu2773-fr.png" crc="4125717175" ref="index"/>
+    <file name="ucrp.png" crc="4125717175" ref="index"/>
+    <file name="fpv_ok-ieu2768-fr.png" crc="4268967355" ref="index"/>
+    <file name="fpv_ok.png" crc="4268967355" ref="index"/>
+    <file name="pj_ok-ieu2778-fr.png" crc="4116226971" ref="index"/>
+    <file name="pj_ok.png" crc="4116226971" ref="index"/>
+    <file name="pps_ok-ieu6365-fr.png" crc="4120180286" ref="index"/>
+    <file name="pps_ok.png" crc="4120180286" ref="index"/>
+    <file name="ne_ok-ieu6674-fr.png" crc="4050875237" ref="index"/>
+    <file name="ne_ok.png" crc="4050875237" ref="index"/>
+    <file name="sppr-ieu6480-fr.png" crc="227821049" ref="index"/>
+    <file name="sppr.png" crc="227821049" ref="index"/>
+    <file name="cttep-ieu6662-fr.png" crc="4087381211" ref="index"/>
+    <file name="cttep.png" crc="4087381211" ref="index"/>
+    <file name="amsa-ieu6486-fr.png" crc="427779081" ref="index"/>
+    <file name="amsa.png" crc="427779081" ref="index"/>
+    <file name="atte-ieu6482-fr.png" crc="496093680" ref="index"/>
+    <file name="atte.png" crc="496093680" ref="index"/>
+    <file name="fecof-ieu6478-fr.png" crc="4152137277" ref="index"/>
+    <file name="fecof.png" crc="4152137277" ref="index"/>
+    <file name="actra-ieu6484-fr.png" crc="3926896259" ref="index"/>
+    <file name="actra.png" crc="3926896259" ref="index"/>
+    <file name="sadopp-ieu6668-fr.png" crc="3950077226" ref="index"/>
+    <file name="sadopp.png" crc="3950077226" ref="index"/>
+    <file name="pg_ok-ieu6414-fr.png" crc="210919751" ref="index"/>
+    <file name="pg_ok.png" crc="210919751" ref="index"/>
+    <file name="madres_ok-ieu6420-fr.png" crc="142129334" ref="index"/>
+    <file name="madres_ok.png" crc="142129334" ref="index"/>
+    <file name="cta-ieu6416-fr.png" crc="286489962" ref="index"/>
+    <file name="cta.png" crc="286489962" ref="index"/>
+    <file name="ffaa-ieu6412-fr.png" crc="248705653" ref="index"/>
+    <file name="ffaa.png" crc="248705653" ref="index"/>
+    <file name="mishi-ieu6418-fr.png" crc="457866121" ref="index"/>
+    <file name="mishi.png" crc="457866121" ref="index"/>
+    <file name="fsp-ieu6650-fr.png" crc="405590047" ref="index"/>
+    <file name="fsp.png" crc="405590047" ref="index"/>
+    <file name="coad-ieu6451-fr.png" crc="49912535" ref="index"/>
+    <file name="coad.png" crc="49912535" ref="index"/>
+    <file name="ecur-ieu6445-fr.png" crc="507886818" ref="index"/>
+    <file name="ecur.png" crc="507886818" ref="index"/>
+    <file name="fl-ieu6449-fr.png" crc="240737756" ref="index"/>
+    <file name="fl.png" crc="240737756" ref="index"/>
+    <file name="techo-ieu6447-fr.png" crc="3780997208" ref="index"/>
+    <file name="techo.png" crc="3780997208" ref="index"/>
+    <file name="te-ieu6453-fr.png" crc="35208659" ref="index"/>
+    <file name="te.png" crc="35208659" ref="index"/>
+    <file name="fuego.png" crc="3791868931" seo="true" ref="index"/>
+    <file name="-laresistenciasomostodos-favicon.ico" crc="285430897" ref="index"/>
+  </folder>
+  <folder name="phone">
+    <folder name="css">
+      <file name="index.css" crc="510877562" ref="phone>index"/>
+      <file name="iefonts_index.css" crc="228749258" ref="phone>index"/>
+    </folder>
+    <file name="index.html" crc="4228651192" seo="true" mt="1472724709797" redirect="true"/>
+  </folder>
+  <file name="index.html" crc="220451284" seo="true" mt="1472929481127" redirect="true"/>
+</manifest>
