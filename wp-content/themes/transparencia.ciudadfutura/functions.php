@@ -167,6 +167,52 @@ register_post_type( 'Personas',
 	);
 
 
+register_post_type( 'Concejales',
+		array(
+			'labels' => array(
+				'name' => __( 'Concejales' ),
+				'singular_name' => __( 'Concejal' ),
+				'add_new' => __( 'Agregar nuevo concejal' ),
+				'add_new_item' => __( 'Agregar nuevo concejal' ),
+				'edit_item' => __( 'Editar concejal' ),
+				'new_item' => __( 'Agregar nuevo concejal' ),
+				'view_item' => __( 'Ver Concejal' ),
+				'search_items' => __( 'Buscar Concejal' ),
+				'not_found' => __( 'No se encontraron concejales' ),
+				'not_found_in_trash' => __( 'No Concejales found in trash' )
+			),
+			'public' => true,
+			'supports' => array( 'title',  'thumbnail' ),
+			'capability_type' => 'post',
+			'rewrite' => array("slug" => "concejal"), // Permalinks format
+			'menu_position' => 6,
+			'register_meta_box_cb' => 'add_concejales_metaboxes'
+		)
+	);
+
+register_post_type( 'votaciones',
+		array(
+			'labels' => array(
+				'name' => __( 'votaciones' ),
+				'singular_name' => __( 'votacion' ),
+				'add_new' => __( 'Agregar nuevo votacion' ),
+				'add_new_item' => __( 'Agregar nuevo votaciones' ),
+				'edit_item' => __( 'Editar votaciones' ),
+				'new_item' => __( 'Agregar nuevo votaciones' ),
+				'view_item' => __( 'Ver votaciones' ),
+				'search_items' => __( 'Buscar votaciones' ),
+				'not_found' => __( 'No se encontraron votaciones' ),
+				'not_found_in_trash' => __( 'No votaciones found in trash' )
+			),
+			'public' => true,
+			'supports' => array( 'title',  'thumbnail' ),
+			'capability_type' => 'post',
+			'rewrite' => array("slug" => "concejal"), // Permalinks format
+			'menu_position' => 6,
+			'register_meta_box_cb' => 'add_votaciones_metaboxes'
+		)
+	);
+
 	flush_rewrite_rules();
 
 }
@@ -442,6 +488,7 @@ function add_eventos_metaboxes(){
 }
 
 
+
 function wpt_fecha_respuesta() {
 
 	global $post;
@@ -483,6 +530,83 @@ function wpt_desarrollo() {
 
 }
 
+function add_concejales_metaboxes() {
+	add_meta_box('wpt_nombre_concejal', 'Nombre', 'wpt_nombre_concejal', 'concejales', 'normal', 'high');
+	add_meta_box('wpt_agrupacion', 'Logo de agrupación', 'wpt_agrupacion', 'concejales', 'normal', 'high');
+}
+
+function add_votaciones_metaboxes() {
+	add_meta_box('wpt_concejales', 'Nombre', 'wpt_concejales', 'votaciones', 'normal', 'high');
+}
+
+function wpt_concejales() {
+	global $post;
+	$preserve_post = $post;
+	echo '<input type="hidden" name="eventmeta_noncename_agenda" id="eventmeta_noncename_agenda" value="' . 
+	wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
+	
+	//$concejal = get_post_meta($post->ID, '_concejal', true);
+	//echo '<input type="text" name="_concejal" value="' . $concejal  . '" class="widefat" />';
+	//echo '<select size="1" name="_concejal" id="c3">';
+	echo '<input type="hidden" name="concejales_totales" id="concejales_totales" value="0">';
+	$args = array( 'post_type' => 'concejales', 'posts_per_page' => -1,'order'=>'ASC');
+	$loopconcejales = new WP_Query( $args );
+	echo '<table class="concejales">';
+ 	echo '<tr>';
+    echo '<th>Nombre Concejal</th>';
+    echo '<th>A favor</th>';
+    echo '<th>En contra</th>';
+    echo '<th>Abstención</th>';
+    echo '<th>Ausente</th>';
+  	echo '</tr>';
+  	while ( $loopconcejales->have_posts()) :
+		$loopconcejales->the_post(); 
+		$nombre = get_post_meta(get_the_ID(), '_nombre_concejal', true); 
+		$imagen = get_post_meta(get_the_ID(), '_imagen_agrupacion', true); 
+		echo '<tr>';
+		echo '<td class="nombre-concejal"><img src="'.$imagen.'"><span>'.$nombre.'</span></td><td><input type="radio" name="'.$nombre.'" value="afavor"></td><td><input type="radio" name="'.$nombre.'" value="encontra"></td><td><input type="radio" name="'.$nombre.'" value="abstencion"></td><td><input type="radio" name="'.$nombre.'" value="ausente"></td>';
+		echo '</tr>';
+	endwhile;
+	$post = $preserve_post;
+	setup_postdata( $post );
+	echo '</table>';
+	echo '<table class="totales"><tr>';
+	echo '<td>total a favor: <input type="text" id="totalafavor" name="totalafavor" value="0" disabled></td>';
+	echo '<td>total en contra: <input type="text" id="totalencontra" name="totalencontra" value="0" disabled></td>';
+	echo '<td>total abstencion: <input type="text" id="totalabstencion" name="totalabstencion" value="0" disabled></td>';
+	echo '<td>total ausente: <input type="text" id="totalausente" name="totalausente" value="0" disabled></td>';
+	echo '</tr></table>';
+	
+}
+
+
+function wpt_nombre_concejal() {
+	global $post;
+	
+	echo '<input type="hidden" name="eventmeta_noncename_concejal" id="eventmeta_noncename_concejal" value="' . 
+	wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
+	
+	$nombre_concejal = get_post_meta($post->ID, '_nombre_concejal', true);
+	
+	echo '<input type="text" name="_nombre_concejal" value="' . $nombre_concejal  . '" class="widefat" />';
+
+}
+
+function wpt_agrupacion() {
+	global $post;
+	
+	$imagen_agrupacion = get_post_meta($post->ID, '_imagen_agrupacion', true);
+	
+	if($imagen_agrupacion){
+		echo '<img src="'.$imagen_agrupacion.'"/><br>';
+		
+	}
+	
+	echo ' <input type="text" name="_imagen_agrupacion" id="_imagen_agrupacion" value="'.$imagen_agrupacion.'" />';
+	echo ' <input type="button" id="meta-image-button_concejal" class="button" value="Seleccionar Imagen" />';
+
+};
+
 
 function add_respuestas_metaboxes(){
 	add_meta_box('wpt_fecha_respuesta', 'Fecha', 'wpt_fecha_respuesta', 'respuesta', 'normal', 'high');
@@ -512,6 +636,7 @@ function my_enqueue($hook) {
 		wp_enqueue_media();
 		wp_enqueue_script('jquery-ui-datepicker');
 		wp_enqueue_style('jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');
+		wp_enqueue_style('admin-style',  get_template_directory_uri() . '/css/admin.css');
 
 		wp_enqueue_script( 'my_custom_script', get_template_directory_uri() . '/js/admin.js' );
 }
@@ -704,11 +829,45 @@ function wpt_save_personas_meta($post_id, $post) {
 }
 
 
+function wpt_save_concejales_meta($post_id, $post) {
+	
+	// verify this came from the our screen and with proper authorization,
+	// because save_post can be triggered at other times
+	if ( !wp_verify_nonce( $_POST['eventmeta_noncename_concejal'], plugin_basename(__FILE__) )) {
+	return $post->ID;
+	}
+
+	// Is the user allowed to edit the post or page?
+	if ( !current_user_can( 'edit_post', $post->ID ))
+		return $post->ID;
+
+	// OK, we're authenticated: we need to find and save the data
+	// We'll put it into an array to make it easier to loop though.
+	
+	$concejales_meta['_nombre_concejal'] = $_POST['_nombre_concejal'];
+	$concejales_meta['_imagen_agrupacion'] = $_POST['_imagen_agrupacion'];
+	
+	// Add values of $events_meta as custom fields
+	
+	foreach ($concejales_meta as $key => $value) { // Cycle through the $events_meta array!
+		if( $post->post_type == 'revision' ) return; // Don't store custom data twice
+		$value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
+		if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
+			update_post_meta($post->ID, $key, $value);
+		} else { // If the custom field doesn't have a value
+			add_post_meta($post->ID, $key, $value);
+		}
+		if(!$value) delete_post_meta($post->ID, $key); // Delete if blank
+	}
+
+}
+
 add_action('save_post', 'wpt_save_events_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_proyectos_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_personas_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_agenda_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_respuesta_meta', 1, 2); // save the custom fieldsx<
+add_action('save_post', 'wpt_save_concejales_meta', 1, 2); // save the custom fieldsx<
 
 
 
@@ -738,6 +897,8 @@ function wpb_adding_scripts() {
 wp_register_script('my_amazing_script', get_template_directory_uri() . '/js/transparencia.js' , array('jquery'),'1.1', true);
 wp_enqueue_script('my_amazing_script');
 }
+
+
 
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );  
 

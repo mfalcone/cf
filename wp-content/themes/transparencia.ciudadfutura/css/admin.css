@@ -1,0 +1,23 @@
+table.concejales{
+	width:100%;
+}
+
+table.concejales td{
+	text-align: center;
+}
+
+
+table.concejales td img{
+float:left;
+max-width: 90px;
+}
+
+table.concejales td.nombre-concejal{
+	text-align: left;
+}
+
+
+table.concejales td.nombre-concejal span{
+	line-height: 50px;
+	padding-left: 20px;
+}
