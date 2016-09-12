@@ -28,7 +28,7 @@
  
             // Grabs the attachment selection and creates a JSON representation of the model.
             var media_attachment = meta_image_frame.state().get('selection').first().toJSON();
- 			console.log(media_attachment.url)
+ 			
             // Sends the attachment URL to our custom image input field.
             $('#_file').val(media_attachment.url);
         });
@@ -61,7 +61,7 @@ $('#meta-image-button_persona').click(function(e){
  
             // Grabs the attachment selection and creates a JSON representation of the model.
             var media_attachment = meta_image_frame.state().get('selection').first().toJSON();
-            console.log(media_attachment.url)
+            
             // Sends the attachment URL to our custom image input field.
             $('#_imagen').val(media_attachment.url);
         });
@@ -94,7 +94,7 @@ $('#meta-image-button_concejal').click(function(e){
  
             // Grabs the attachment selection and creates a JSON representation of the model.
             var media_attachment = meta_image_frame.state().get('selection').first().toJSON();
-            console.log(media_attachment.url)
+            
             // Sends the attachment URL to our custom image input field.
             $('#_imagen_agrupacion').val(media_attachment.url);
             $("#wpt_agrupacion .inside").prepend('<img src="'+media_attachment.url+'"><br>')
@@ -104,13 +104,13 @@ $('#meta-image-button_concejal').click(function(e){
         meta_image_frame.open();
 });
 
-window.tablaConcejales = [];
+// votaciones
+
         
     $("table.concejales input").click(function(e){
         var valor = $(e.target).val();
         var valorTotal = $("#total"+valor).val();
         var $mytr = $(e.target).parents("tr");
-        console.log($mytr.data('valor'))
         if($mytr.data('valor')){
             var valoranterior = $mytr.data('valor');
             var valorTotalAnterior = $("#total"+valoranterior).val();
@@ -147,21 +147,55 @@ Array.prototype.pushIfNotExist = function(element, comparer) {
 
     function chekarsiExiste(mijson){
         tablaConcejales.pushIfNotExist(mijson, function(e) { 
-            console.log(e)
+            
             if(e.nombre==mijson.nombre){
                 e.valor = mijson.valor;
             };
             return e.nombre === mijson.nombre 
         });
+
     var tbs = JSON.stringify(tablaConcejales);
     $("#concejales_totales").val(tbs)
     }
+
+    if($("#concejales_votaciones").size()){
+
+        if($("#concejales_totales").val()){
+
+
+        var jsonstr = $("#concejales_totales").val();
+        var jsonData = JSON.parse(jsonstr);
+         window.tablaConcejales = jsonData;
+        $.each(jsonData,function(ind,val){
+            $(".concejales input[name="+val.nombre+"][value="+val.valor+"]").prop("checked", true);
+            $(".concejales input[name="+val.nombre+"]").parents("tr").data("valor",val.valor)
+        })
+
+        }else{
+            window.tablaConcejales = [];
+        }
+
+        $(window).scroll(function() {    
+                var scroll = $(window).scrollTop();
+                if (scroll >= 750) {
+                    $(".concejales tr:eq(0)").addClass("tableheader");
+                    $(".concejales tr:eq(0)").width($("#post-body-content").width())
+                    $(".concejales tr:eq(0) th").width($("#post-body-content").width()/6)
+                    $(".concejales tr:eq(0) th:eq(0)").width($("#post-body-content").width()/2)
+
+                } else {
+                    $(".concejales tr:eq(0)").removeClass("tableheader");
+                }
+        });
+    }
+
+/*fin del admin de votaciones*/
 
 	jQuery('#_proyecto, #_sesion').datepicker({
 	        dateFormat : 'dd/mm/yy'
 	    });
 
-    jQuery('#_fecha_agenda, #_fecha_respuesta').datepicker({
+    jQuery('#_fecha_agenda, #_fecha_respuesta, #_fecha_votaciones').datepicker({
             dateFormat: 'yy-mm-dd'
         });
 });

@@ -205,9 +205,9 @@ register_post_type( 'votaciones',
 				'not_found_in_trash' => __( 'No votaciones found in trash' )
 			),
 			'public' => true,
-			'supports' => array( 'title',  'thumbnail' ),
+			'supports' => array( 'title',  'thumbnail' ,'editor'),
 			'capability_type' => 'post',
-			'rewrite' => array("slug" => "concejal"), // Permalinks format
+			'rewrite' => array("slug" => "votaciones"), // Permalinks format
 			'menu_position' => 6,
 			'register_meta_box_cb' => 'add_votaciones_metaboxes'
 		)
@@ -536,22 +536,29 @@ function add_concejales_metaboxes() {
 }
 
 function add_votaciones_metaboxes() {
-	add_meta_box('wpt_concejales', 'Nombre', 'wpt_concejales', 'votaciones', 'normal', 'high');
+	add_meta_box('wpt_fecha_votaciones', 'Fecha de la Votación', 'wpt_fecha_votaciones', 'votaciones', 'normal', 'high');
+	add_meta_box('wpt_concejales', 'Concejales', 'wpt_concejales', 'votaciones', 'normal', 'high');
+	add_meta_box('wpt_video_votaciones', 'Video', 'wpt_video_votaciones', 'votaciones', 'normal', 'high');
 }
 
 function wpt_concejales() {
 	global $post;
 	$preserve_post = $post;
-	echo '<input type="hidden" name="eventmeta_noncename_agenda" id="eventmeta_noncename_agenda" value="' . 
+	$concejales_totales = get_post_meta($post->ID, 'concejales_totales', true);
+	$totalafavor = get_post_meta($post->ID, 'totalafavor', true);
+	$totalencontra = get_post_meta($post->ID, 'totalencontra', true);
+	$totalabstencion = get_post_meta($post->ID, 'totalabstencion', true);
+	$totalausente = get_post_meta($post->ID, 'totalausente', true);
+	echo '<input type="hidden" name="eventmeta_noncename_votaciones" id="eventmeta_noncename_votaciones" value="' . 
 	wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
 	
 	//$concejal = get_post_meta($post->ID, '_concejal', true);
 	//echo '<input type="text" name="_concejal" value="' . $concejal  . '" class="widefat" />';
 	//echo '<select size="1" name="_concejal" id="c3">';
-	echo '<input type="hidden" name="concejales_totales" id="concejales_totales" value="0">';
+	echo '<input type="hidden" name="concejales_totales" id="concejales_totales" value="'.htmlspecialchars($concejales_totales).'">';
 	$args = array( 'post_type' => 'concejales', 'posts_per_page' => -1,'order'=>'ASC');
 	$loopconcejales = new WP_Query( $args );
-	echo '<table class="concejales">';
+	echo '<table class="concejales" id="concejales_votaciones">';
  	echo '<tr>';
     echo '<th>Nombre Concejal</th>';
     echo '<th>A favor</th>';
@@ -571,14 +578,27 @@ function wpt_concejales() {
 	setup_postdata( $post );
 	echo '</table>';
 	echo '<table class="totales"><tr>';
-	echo '<td>total a favor: <input type="text" id="totalafavor" name="totalafavor" value="0" disabled></td>';
-	echo '<td>total en contra: <input type="text" id="totalencontra" name="totalencontra" value="0" disabled></td>';
-	echo '<td>total abstencion: <input type="text" id="totalabstencion" name="totalabstencion" value="0" disabled></td>';
-	echo '<td>total ausente: <input type="text" id="totalausente" name="totalausente" value="0" disabled></td>';
+	echo '<td>total a favor: <input type="text" id="totalafavor" name="totalafavor" value="'.$totalafavor.'" ></td>';
+	echo '<td>total en contra: <input type="text" id="totalencontra" name="totalencontra" value="'.$totalencontra.'" ></td>';
+	echo '<td>total abstencion: <input type="text" id="totalabstencion" name="totalabstencion" value="'.$totalabstencion.'" ></td>';
+	echo '<td>total ausente: <input type="text" id="totalausente" name="totalausente" value="'.$totalausente.'" ></td>';
 	echo '</tr></table>';
-	
 }
 
+function wpt_video_votaciones(){
+	global $post;
+	$videos_votaciones = get_post_meta($post->ID, 'videos_votaciones', true);
+	echo '<label for="videos_votaciones">URL de YouTube: </label>';
+	echo '<input type="text" name="videos_votaciones" id="videos_votaciones" value="'.$videos_votaciones.'">';
+}
+
+
+function wpt_fecha_votaciones() {
+
+	global $post;
+	$fechavotaciones = get_post_meta($post->ID, '_fecha_votaciones', true);
+	echo '<input type="text" name="_fecha_votaciones" id="_fecha_votaciones" value="' . $fechavotaciones  . '" class="widefat" />';
+}
 
 function wpt_nombre_concejal() {
 	global $post;
@@ -831,23 +851,15 @@ function wpt_save_personas_meta($post_id, $post) {
 
 function wpt_save_concejales_meta($post_id, $post) {
 	
-	// verify this came from the our screen and with proper authorization,
-	// because save_post can be triggered at other times
 	if ( !wp_verify_nonce( $_POST['eventmeta_noncename_concejal'], plugin_basename(__FILE__) )) {
 	return $post->ID;
 	}
 
-	// Is the user allowed to edit the post or page?
 	if ( !current_user_can( 'edit_post', $post->ID ))
 		return $post->ID;
-
-	// OK, we're authenticated: we need to find and save the data
-	// We'll put it into an array to make it easier to loop though.
 	
 	$concejales_meta['_nombre_concejal'] = $_POST['_nombre_concejal'];
 	$concejales_meta['_imagen_agrupacion'] = $_POST['_imagen_agrupacion'];
-	
-	// Add values of $events_meta as custom fields
 	
 	foreach ($concejales_meta as $key => $value) { // Cycle through the $events_meta array!
 		if( $post->post_type == 'revision' ) return; // Don't store custom data twice
@@ -862,12 +874,46 @@ function wpt_save_concejales_meta($post_id, $post) {
 
 }
 
+
+function wpt_save_votaciones_meta($post_id, $post) {
+	
+	if ( !wp_verify_nonce( $_POST['eventmeta_noncename_votaciones'], plugin_basename(__FILE__) )) {
+	return $post->ID;
+	}
+
+	if ( !current_user_can( 'edit_post', $post->ID ))
+		return $post->ID;
+	
+	$votaciones_meta['concejales_totales'] = $_POST['concejales_totales'];
+	$votaciones_meta['videos_votaciones'] = $_POST['videos_votaciones'];
+	$votaciones_meta['totalafavor'] = $_POST['totalafavor'];
+	$votaciones_meta['totalencontra'] = $_POST['totalencontra'];
+	$votaciones_meta['totalabstencion'] = $_POST['totalabstencion'];
+	$votaciones_meta['totalausente'] = $_POST['totalausente'];
+	$votaciones_meta['_fecha_votaciones'] = $_POST['_fecha_votaciones'];
+	
+	foreach ($votaciones_meta as $key => $value) { // Cycle through the $events_meta array!
+		if( $post->post_type == 'revision' ) return; // Don't store custom data twice
+		$value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
+		if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
+			update_post_meta($post->ID, $key, $value);
+		} else { // If the custom field doesn't have a value
+			add_post_meta($post->ID, $key, $value);
+		}
+		if(!$value) delete_post_meta($post->ID, $key); // Delete if blank
+	}
+
+}
+
+
+
 add_action('save_post', 'wpt_save_events_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_proyectos_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_personas_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_agenda_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_respuesta_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_concejales_meta', 1, 2); // save the custom fieldsx<
+add_action('save_post', 'wpt_save_votaciones_meta', 1, 2); // save the custom fieldsx<
 
 
 

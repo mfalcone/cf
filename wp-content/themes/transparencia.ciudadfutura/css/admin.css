@@ -14,10 +14,30 @@ max-width: 90px;
 
 table.concejales td.nombre-concejal{
 	text-align: left;
+	width: 50%;
 }
 
 
 table.concejales td.nombre-concejal span{
 	line-height: 50px;
 	padding-left: 20px;
+}
+
+#videos_votaciones{
+	width: 100%;
+}
+
+.totales input{
+	pointer-events:none;
+}
+
+.tableheader{
+	position: fixed;
+	background: #FFF;
+	top:32px;
+	border-bottom:1px solid #333;
+}
+
+table.concejales tr:nth-child(odd) {
+   background-color: #ccc;
 }
