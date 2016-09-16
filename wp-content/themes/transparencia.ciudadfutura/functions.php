@@ -348,6 +348,14 @@ function wpt_file() {
 
 };
 
+function wpt_resumen() {
+	global $post;
+	
+	$resumen = get_post_meta($post->ID, '_resumen', true);
+	echo '<textarea rows="1" cols="40" name="_resumen" id="_resumen" style="width:100%">'.$resumen.'</textarea>';
+
+};
+
 
 
 
@@ -357,6 +365,7 @@ function add_proyectos_metaboxes() {
 	add_meta_box('wpt_autor', 'Autor', 'wpt_autor', 'proyectos', 'normal', 'high');
 	add_meta_box('wpt_estado', 'Estado', 'wpt_estado', 'proyectos', 'normal', 'high');
 	add_meta_box('wpt_file', 'Archivo', 'wpt_file', 'proyectos', 'normal', 'high');
+	add_meta_box('wpt_resumen', 'Resumen', 'wpt_resumen', 'proyectos', 'normal', 'high');
 }
 
 function wpt_nombre() {
@@ -556,7 +565,7 @@ function wpt_concejales() {
 	//echo '<input type="text" name="_concejal" value="' . $concejal  . '" class="widefat" />';
 	//echo '<select size="1" name="_concejal" id="c3">';
 	echo '<input type="hidden" name="concejales_totales" id="concejales_totales" value="'.htmlspecialchars($concejales_totales).'">';
-	$args = array( 'post_type' => 'concejales', 'posts_per_page' => -1,'order'=>'ASC');
+	$args = array( 'post_type' => 'concejales', 'posts_per_page' => -1,'order'=>'DESC');
 	$loopconcejales = new WP_Query( $args );
 	echo '<table class="concejales" id="concejales_votaciones">';
  	echo '<tr>';
@@ -722,6 +731,7 @@ function wpt_save_proyectos_meta($post_id, $post) {
 	$proyectos_meta['_autor'] = $_POST['_autor'];
 	$proyectos_meta['_estado'] = $_POST['_estado'];
 	$proyectos_meta['_file'] = $_POST['_file'];
+	$proyectos_meta['_resumen'] = $_POST['_resumen'];
 	
 	// Add values of $events_meta as custom fields
 	

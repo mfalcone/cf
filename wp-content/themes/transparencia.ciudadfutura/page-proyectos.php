@@ -45,7 +45,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 <?php } ?>
 </div>    
 
-<?php $args = array( 'post_type' => 'proyectos', 'posts_per_page' => -1, 'meta_key'=>'_proyecto', 'orderby' => 'meta_value', 'order' => 'ASC'  );
+<?php $args = array( 'post_type' => 'proyectos', 'posts_per_page' => -1, 'meta_key'=>'_proyecto', 'orderby' => 'meta_value', 'order' => 'DESC'  );
 	$loop = new WP_Query( $args );
 	while ( $loop->have_posts() ) : $loop->the_post(); 
 
@@ -55,6 +55,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 	$autor = get_post_meta(get_the_ID(), '_autor', true);
     $estado = get_post_meta(get_the_ID(), '_estado', true);
 	$file = get_post_meta(get_the_ID(), '_file', true);
+	$resumen = get_post_meta(get_the_ID(), '_resumen', true);
 	
 	
 	switch ($estado) {
@@ -80,12 +81,13 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 ?>
 
   <tr class="<?php if ($posttags) {foreach($posttags as $tag) {echo $tag->slug . ' '; }}	;?>">
-    <td class="tg-yw4l"><?php echo $fecha ?></td>
-    <td class="tg-yw4l"><?php if($file != ""){?><a href="<?php echo $file;  ?>" target="_blank"><?php echo $titulo ?></a><?php }else{ echo $titulo; }?></td>
+    <td class="tg-yw4l"><?php echo date("d/m/Y", strtotime($fecha)); ?></td>
+    <td class="tg-yw4l"><?php if($file != ""){?><a href="<?php echo $file;  ?>" title="<?php echo $resumen;  ?>" target="_blank"><?php echo $titulo ?></a><?php }else{ echo $titulo; }?></td>
     <td class="tg-yw4l"><?php echo $autor ?></td>
     <td class="tg-yw4l"><?php echo $estado;?></td>
   </tr>
 	<?php endwhile; ?>
 </table>
 </div>
+
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>

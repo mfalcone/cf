@@ -152,11 +152,29 @@ section.container{
 
 
 }
+	.multivotaciones{
+		margin-bottom: 50px;
+		overflow: auto;
+	    border-bottom: 1px solid;
+	    padding-bottom: 50px;
+		
+		h1{
+			margin-bottom: 30px;
+		}
 
+	    a{
+	    	color: #333;
+	    }
+	}
 
 	.votacion{
 		clear:left;
-		padding-top:80px;
+		.date{
+			color:$rojo;
+		}
+		.content{
+			margin-bottom: 50px;
+		}
 		h2{
 			font-size:4.5rem;
 			margin-bottom:20px;
@@ -170,6 +188,42 @@ section.container{
 
 		.alignleft{
 			float:left;
+		}
+		
+		.vervotos{
+			float:right;
+			cursor: pointer;
+		}
+		.tablas{
+			float:left;
+			width: 100%;
+			margin-top:60px;
+			h2{
+				font-size:3rem;
+				text-align: center;
+				border-bottom:1px solid;
+			}
+			ul{
+				padding:0;
+				margin:0;
+				li{
+					list-style: none;
+					background:#CCC;
+					margin-bottom: 10px;
+					overflow: auto;
+    				line-height: 50px;
+					padding-left:10px;
+					img{
+						float:right;
+						max-width: 100px;
+					}
+				}
+			}
+
+
+			&.ocultas{
+				display:none;
+			}
 		}
 	}
 
@@ -514,6 +568,19 @@ section.container{
 .video-wrapper{
 	width:50%;
 	float:left;
+
+	.inner-wrapper{
+		    position: relative;
+		    height: 0;
+
+		    iframe{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+		    }
+	}
 }
 
 @include max-screen(1000px){ 
@@ -754,3 +821,21 @@ section.container{
 	margin-top:50px;
 }
 
+.tooltip{
+    position:absolute;
+    z-index:999;
+    left:-9999px;
+    background-color:#dedede;
+    padding:5px;
+    border:1px solid #fff;
+    width:250px;
+
+	p{
+	    margin:0;
+	    padding:0;
+	    color:#fff;
+	    background-color:#222;
+	    padding:2px 7px;
+	}
+
+}

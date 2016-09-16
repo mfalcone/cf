@@ -192,7 +192,7 @@ Array.prototype.pushIfNotExist = function(element, comparer) {
 /*fin del admin de votaciones*/
 
 	jQuery('#_proyecto, #_sesion').datepicker({
-	        dateFormat : 'dd/mm/yy'
+	        dateFormat : 'yy-mm-dd'
 	    });
 
     jQuery('#_fecha_agenda, #_fecha_respuesta, #_fecha_votaciones').datepicker({
