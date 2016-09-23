@@ -189,11 +189,197 @@ Array.prototype.pushIfNotExist = function(element, comparer) {
         });
     }
 
+
+ 
+
+    if($("#wpt_mapa").size()){
+
+        var map;
+        var markersArray=[];
+        window.pinsenproyecto = []
+       
+        var jsonstr = $("#_pins_en_proyecto").val();
+        if(jsonstr!=""){
+            jsonstr = unescape(jsonstr);
+            var jsonData = JSON.parse(jsonstr);
+            window.pinsenproyecto = jsonData;
+        }
+        
+
+        //var latitudLongitud = new google.maps.LatLng($("#"+me.myid+" .latFld").val(), $("#"+me.myid+" .lngFld").val());
+        counter = 0;
+        placeMarker = function (location,cont) {
+
+            console.log(location)
+            // first remove all markers if there are any
+            //deleteOverlays();
+
+            var marker = new google.maps.Marker({
+                position: location, 
+                map: map
+            });
+            counter++
+           
+            var pins = JSON.stringify(window.pinsenproyecto);
+            pins = escape(pins);
+            $("#_pins_en_proyecto").val(pins);
+            // add marker in markers array
+            markersArray.push(marker);
+            marker.set("editing", false);
+        
+            //(4)Create a div element to display the HTML strings.
+            var htmlBox = document.createElement("div");
+            if(cont){
+                var txt = cont;
+            }else{
+                var txt = "editar contenido"
+            }
+            htmlBox.innerHTML =  txt;
+            htmlBox.style.width = "300px";
+            htmlBox.style.height = "100px";
+            
+            //(5)Create a textarea for edit the HTML strings.
+            var textBox = document.createElement("textarea");
+            $(textBox).data("counter",counter);
+            textBox.innerText = "";
+            textBox.style.width = "300px";
+            textBox.style.height = "100px";
+            textBox.style.display = "none";
+            
+            //(6)Create a div element for container.
+            var container = document.createElement("div");
+            $(container).addClass("contenido");
+            container.style.position = "relative";
+            container.appendChild(htmlBox);
+            container.appendChild(textBox);
+            
+            //(7)Create a button to switch the edit mode
+            var editBtn = document.createElement("button");
+            editBtn.innerText = "Editar";
+            container.appendChild(editBtn);
+
+            var borrarBtn = document.createElement("button");
+            borrarBtn.innerText = "Borrar Marcador";
+            container.appendChild(borrarBtn);
+            
+            var infowindow = new google.maps.InfoWindow({
+                  content : container
+                });
+
+            google.maps.event.addListener(marker, "click", function() {
+             infowindow.open(map, marker);
+            });
+            
+            google.maps.event.addDomListener(editBtn, "click", function(e) {
+                e.preventDefault();
+                 marker.set("editing", !marker.editing);
+            });
+
+            google.maps.event.addDomListener(borrarBtn, "click", function(e) {
+                e.preventDefault();
+                $.each(window.pinsenproyecto,function(ind,val){
+                    
+                    if(val.lng == location.lng()){
+                        window.pinsenproyecto.splice(ind,1)
+                    }
+                  })
+                var pins = JSON.stringify(window.pinsenproyecto);
+                pins = escape(pins);
+              $("#_pins_en_proyecto").val(pins);
+                marker.setMap(null);
+                
+            });
+
+            google.maps.event.addListener(marker, "editing_changed", function(){
+              textBox.style.display = this.editing ? "block" : "none";
+              htmlBox.style.display = this.editing ? "none" : "block";
+              editBtn.innerText =  this.editing ? "fin de edición" : "editar";
+            });
+
+            google.maps.event.addDomListener(textBox, "change", function(e){
+              htmlBox.innerHTML = textBox.value;
+              marker.set("html", textBox.value);
+              var identificador = $(e.target).data("counter");
+              //marcador.text=textBox.value;
+              console.log(identificador);
+              $.each(window.pinsenproyecto,function(ind,val){
+                    if((identificador-1) == ind){
+                        console.log("se da")
+                        val.text = textBox.value;
+                    }
+              })
+               var pins = JSON.stringify(window.pinsenproyecto);
+              pins = escape(pins);
+              $("#_pins_en_proyecto").val(pins);
+             
+            });
+
+             infowindow.open(map, marker);
+                //map.setCenter(location);
+        }
+
+       
+
+        var geocoder = new google.maps.Geocoder();
+       
+        var latlng = new google.maps.LatLng(-32.944243, -60.650539);
+            var myOptions = {
+                zoom: 13,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var elem = $("#mapa")[0];
+            map = new google.maps.Map(elem, myOptions);
+
+            google.maps.event.addListener(map, "click", function(event)
+            {
+                /*$("#"+me.myid+" .latFld").val(event.latLng.lat())
+                $("#"+me.myid+" .lngFld").val(event.latLng.lng())
+                me.codeLatLng();*/
+                placeMarker(event.latLng);
+                //console.log(event)
+                 var marcador = {
+                lng:event.latLng.lng(),
+                lat:event.latLng.lat(),
+                text:""
+            }
+            
+           
+            window.pinsenproyecto.push(marcador)
+
+                //console.log(event.pixel)
+               
+            });
+    
+        if(jsonstr!=""){
+             $.each(window.pinsenproyecto,function(ind,val){
+                    //console.log(val)
+                    var latitudLongitud = new google.maps.LatLng(val.lat, val.lng);
+                    //console.log(latitudLongitud.lat());
+                    //console.log(latitudLongitud.lng());
+                    placeMarker(latitudLongitud,val.text);
+                    
+                   /* setTimeout(function(){
+                        $("#mapa .contenido:eq("+ind+") div").html(val.text);
+                        $("#mapa .contenido:eq("+ind+") textarea").text(val.text);
+                       
+                   },1500)*/
+              })
+            
+        }
+
+    }
+
 /*fin del admin de votaciones*/
 
-	jQuery('#_proyecto, #_sesion').datepicker({
+	jQuery('#_proyecto').datepicker({
 	        dateFormat : 'yy-mm-dd'
 	    });
+    
+    jQuery('#_sesion').datepicker({
+            dateFormat : 'dd/mm/yy'
+        });
+
 
     jQuery('#_fecha_agenda, #_fecha_respuesta, #_fecha_votaciones').datepicker({
             dateFormat: 'yy-mm-dd'

@@ -1,6 +1,6 @@
 <?php
 if(is_user_logged_in()){
-		wp_redirect(home_url().'/activity'); exit;
+		wp_redirect(home_url().'/actividad'); exit;
 	} 
 
 /**
@@ -49,5 +49,7 @@ get_header(); ?>
 		<a href="<?php echo get_site_url(); ?>/registrar">Registrar</a>
 
 <?php
+if(is_user_logged_in()){
 get_sidebar();
 get_footer();
+}

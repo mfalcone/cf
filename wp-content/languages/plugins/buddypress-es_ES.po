@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Development (trunk) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-07-28 16:50-0300\n"
+"PO-Revision-Date: 2016-09-23 14:57-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 "Project-Id-Version: Development (trunk)\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
@@ -3440,7 +3440,7 @@ msgstr ""
 #: bp-activity/classes/class-bp-activity-component.php:125
 msgctxt "component directory title"
 msgid "Site-Wide Activity"
-msgstr ""
+msgstr "Actividad"
 
 #. translators: Sitewide activity RSS title - "[Site Name] | Site Wide
 #. Activity"
@@ -5881,7 +5881,7 @@ msgstr ""
 
 #: bp-themes/bp-default/activity/entry.php:60
 msgid "Comment <span>%s</span>"
-msgstr ""
+msgstr "Comentario <span>%s</span>"
 
 #: bp-groups/bp-groups-functions.php:1210
 msgid "%1$s posted an update in the group %2$s"
@@ -7559,7 +7559,7 @@ msgstr ""
 #: bp-themes/bp-default/activity/entry.php:68
 #: bp-themes/bp-default/functions.php:182
 msgid "Favorite"
-msgstr ""
+msgstr "Favorito"
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:337
 #: bp-templates/bp-legacy/buddypress/groups/single/invites-loop.php:74
@@ -7709,14 +7709,14 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/activity/post-form.php:47
 #: bp-themes/bp-default/activity/post-form.php:35
 msgid "Post Update"
-msgstr ""
+msgstr "Publicar"
 
 #. translators: accessibility text
 #: bp-templates/bp-legacy/buddypress/activity/post-form.php:54
 #: bp-templates/bp-legacy/buddypress/activity/post-form.php:58
 #: bp-themes/bp-default/activity/post-form.php:42
 msgid "Post in"
-msgstr ""
+msgstr "Publicar en"
 
 #: bp-themes/bp-default/archive.php:10
 msgid "You are browsing the archive for %1$s."
@@ -9327,7 +9327,7 @@ msgstr "Hace %s"
 #: bp-themes/bp-default/activity/post-form.php:45
 #: bp-themes/bp-default/members/single/profile/profile-wp.php:8
 msgid "My Profile"
-msgstr ""
+msgstr "Mi Perfil"
 
 #: bp-core/admin/bp-core-admin-functions.php:1069
 #: bp-members/bp-members-actions.php:55
@@ -9389,7 +9389,7 @@ msgstr "Borrar"
 #: bp-themes/bp-default/activity/comment.php:40
 #: bp-themes/bp-default/groups/single/forum/edit.php:10
 msgid "Reply"
-msgstr ""
+msgstr "Responder"
 
 #: bp-templates/bp-legacy/buddypress/activity/index.php:123
 #: bp-themes/bp-default/activity/index.php:79

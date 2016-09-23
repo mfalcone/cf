@@ -44,7 +44,7 @@ if (!current_user_can('manage_options')) {
 function my_redirect() {  
     //if you have the page id of landing. I would tell you to use if( is_page('page id here') instead
     //Don't redirect if user is logged in or user is trying to sign up or sign in
-    if(!is_front_page()  && !is_page(29) && !is_admin() && !is_user_logged_in()){
+    if(!is_front_page()  && !is_page('29') && !is_admin() && !is_user_logged_in()){
         	wp_safe_redirect( home_url( '/' ) );
         	print_r("a");
             }
@@ -92,8 +92,52 @@ function pippin_login_member() {
 			wp_set_current_user($user->ID, $_POST['pippin_user_login']);	
 			do_action('wp_login', $_POST['pippin_user_login']);
  
-			wp_redirect(home_url().'/activity'); exit;
+			wp_redirect(home_url().'/actividad'); exit;
 		}
 	}
 }
 add_action('init', 'pippin_login_member');
+
+
+// add the custom column header
+function philopress_modify_user_columns($column_headers) {
+
+        $column_headers['extended'] = 'Extended';
+  
+        return $column_headers;
+}
+add_action('manage_users_page_bp-signups_columns','philopress_modify_user_columns');
+
+// dump all the pending user's meta data in the custom column
+function philopress_signup_custom_column( $str, $column_name, $signup_object ) {
+
+	if ( $column_name == 'extended' ) 
+             return print_r( $signup_object->meta, true );
+
+        return $str;
+}
+add_filter( 'bp_members_signup_custom_column', 'philopress_signup_custom_column', 1, 3 );
+
+/*esta función setea el rol  de usuarioredsocial cuando se aprueba un usuario */
+
+add_action('bp_core_activated_user', 'bp_custom_registration_role',10 , 3);
+
+function bp_custom_registration_role($user_id, $key, $user) {
+   $userdata = array();
+   $userdata['ID'] = $user_id;
+   $userdata['role'] = 'usuarioredsocial';
+    wp_update_user($userdata);
+
+
+  }
+
+
+  function mandarMail(){
+  	$to = 'maxifalcone@gmail.com';
+	$subject = 'probando esta garompa';
+	$message =  'si esto anda me hago puto';
+
+	wp_mail( $to, $subject, $message );
+  }
+
+  //add_action('init', 'mandarMail');

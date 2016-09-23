@@ -144,6 +144,24 @@
 
 
 
+		<?php }else if($post->post_type == "barrios"){
+			
+			$mapa = get_post_meta(get_the_ID(), '_pins_en_proyecto', true); 
+
+			?>
+			<div class="barrios">
+				<h1><?php the_title();?></h1>
+				<div class="content">
+					<?php the_content(); ?>
+				</div>
+				<div id="mapa">
+					
+				</div>
+				<script type="text/javascript">
+					pinsenmapa = "<?php echo $mapa; ?>";
+					
+				</script>
+			</div>
 		<?php }?>
 
       </section>

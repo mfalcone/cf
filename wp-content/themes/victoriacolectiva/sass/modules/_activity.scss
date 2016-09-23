@@ -1,0 +1,42 @@
+div.activity{
+	ul{
+		list-style:none;
+		padding:0;
+		li{
+			background: #FFF;
+			margin-bottom: 20px;
+    		padding: 10px;
+    		overflow: auto;
+		
+			.activity-avatar{
+				float:left;
+			}
+			.activity-content{
+				float:left;
+				margin-left:10px;
+				margin-bottom: 20px;
+			}
+
+			.activity-time-since{
+				display: block;
+				width: 100%;
+				color: #BBB;
+			}
+
+			.activity-comments{
+				clear: left;
+				background: #CCC;
+				width: 100%;
+
+				form{
+					display:none;
+				}
+
+				li{
+					background:none;
+				}
+			}
+		}
+
+	}
+}

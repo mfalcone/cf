@@ -9,6 +9,12 @@
  *
  * @package victoriacolectiva
  */
+ if(!is_user_logged_in()){
+	if(!is_front_page() && !is_page('registrar')){
+		wp_redirect(home_url());
+	}
+}
+
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -22,44 +28,63 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="container">
-	
+		<?php if ( current_user_can('organico') ) : ?>
+		<?php endif; ?>
 	<header id="masthead" class="site-header" role="banner">
-		<div class="jumbotron">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
-
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
+		<div class="cf-icon">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"></a>
 		</div><!-- .site-branding -->
+		<div class="user">
+			<?php 
+				global $current_user;
+				$username = $current_user->user_login;
+				echo $username;
+			?>
+			<?php bp_loggedin_user_avatar( 'width=' . bp_core_avatar_thumb_width() . '&height=' . bp_core_avatar_thumb_height() ); ?>
+			<a href="<?php echo wp_logout_url(home_url()); ?>">Salir <span class="glyphicon glyphicon-off"></span></a>
+		</div>
+	</header><!-- #masthead -->
+	<?php if(is_user_logged_in()):?>
+	<aside id="sidebar">
+		<ul id="main-menu">
+			<li><a href="<?php echo get_home_url(); ?>/actividad"><span class="glyphicon glyphicon-flag"></span></a></li>
+			<li><a href="<?php echo get_home_url(); ?>/info-basica"><span class="glyphicon glyphicon-folder-open"></span></a></li>
+		</ul>
+		<div class="barra-lateral">
+			<?php if(is_page('actividad')): ?>
+				<span class="selected">Muro</span>
+			<?php elseif(is_page('info-basica')): ?>
+				<span class="selected">Soy info basica</span>
+				<ul>
+					<li><a href="<?php echo get_home_url(); ?>/agenda">Agenda</a></li>
+				</ul>
+			<?php endif;?>
+			<div class="buscador">
+				<form action="<?php echo bp_search_form_action(); ?>" method="post" id="search-form">
+					<label for="search-terms" class="accessibly-hidden"><?php _e( 'Buscar:', 'buddypress' ); ?></label>
+					<input type="text" id="search-terms" name="search-terms" value="<?php echo isset( $_REQUEST['s'] ) ? esc_attr( $_REQUEST['s'] ) : ''; ?>" />
+
+					<?php echo bp_search_form_type_select(); ?>
+
+					<input type="submit" name="search-submit" id="search-submit" value="<?php esc_attr_e( 'Buscar', 'buddypress' ); ?>" />
+
+					<?php wp_nonce_field( 'bp_search_form' ); ?>
+
+				</form><!-- #search-form -->
+			</div>
+
+		</div>
+	</aside>
+<?php endif;?>
+<div id="page" class="container">
+
 		<?php if(is_user_logged_in()):?>
-		<form action="<?php echo bp_search_form_action(); ?>" method="post" id="search-form">
-							<label for="search-terms" class="accessibly-hidden"><?php _e( 'Buscar:', 'buddypress' ); ?></label>
-							<input type="text" id="search-terms" name="search-terms" value="<?php echo isset( $_REQUEST['s'] ) ? esc_attr( $_REQUEST['s'] ) : ''; ?>" />
-
-							<?php echo bp_search_form_type_select(); ?>
-
-							<input type="submit" name="search-submit" id="search-submit" value="<?php esc_attr_e( 'Buscar', 'buddypress' ); ?>" />
-
-							<?php wp_nonce_field( 'bp_search_form' ); ?>
-
-						</form><!-- #search-form -->
-		<nav id="site-navigation" class="navbar navbar-default">
+		
 			<div class="container">
 				<?php 
 
-				wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'nav navbar-nav' ) ); ?>
+				//wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'nav navbar-nav' ) ); ?>
 			</div>
-		</nav><!-- #site-navigation -->
 	<?php endif;?>
-	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

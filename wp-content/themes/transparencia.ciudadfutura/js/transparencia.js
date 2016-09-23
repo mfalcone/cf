@@ -78,22 +78,22 @@ jQuery(document).ready(function($){
 		$(this).next().slideToggle();
 	})
 
-window.aporte ="";
+	window.aporte ="";
 
-$("#contact_form .dinero span").click(function(){
-	aporte = $(this).data("check");
-})
+	$("#contact_form .dinero span").click(function(){
+		aporte = $(this).data("check");
+	})
 
-$("#otro_input").change(function(){
-	aporte = $(this).val();
-})
+	$("#otro_input").change(function(){
+		aporte = $(this).val();
+	})
 
 
 	function validateEmail(email) 
-{
-    var re = /\S+@\S+\.\S+/;
-    return re.test(email);
-}
+	{
+	    var re = /\S+@\S+\.\S+/;
+	    return re.test(email);
+	}
 
 
 
@@ -164,5 +164,170 @@ $("#otro_input").change(function(){
 	$(".vervotos").click(function(e){
 			$(this).next().slideToggle();
 	})
+
+
+	if($("#mapa").size()){
+
+		var map;
+		window.pinsenproyecto = []
+       
+        var jsonstr = pinsenmapa;
+        jsonstr = unescape(jsonstr);
+        var jsonData = JSON.parse(jsonstr);
+        window.pinsenproyecto = jsonData;
+        
+
+        //var latitudLongitud = new google.maps.LatLng($("#"+me.myid+" .latFld").val(), $("#"+me.myid+" .lngFld").val());
+        /*counter = 0;
+        placeMarker = function (location) {
+
+            console.log(location)
+            // first remove all markers if there are any
+            //deleteOverlays();
+
+            var marker = new google.maps.Marker({
+                position: location, 
+                map: map
+            });
+            counter++
+           
+            var pins = JSON.stringify(window.pinsenproyecto);
+            pins = escape(pins);
+            $("#_pins_en_proyecto").val(pins);
+            // add marker in markers array
+            markersArray.push(marker);
+            marker.set("editing", false);
+        
+            //(4)Create a div element to display the HTML strings.
+            var htmlBox = document.createElement("div");
+            htmlBox.innerHTML =  "Editar contenido";
+            htmlBox.style.width = "300px";
+            htmlBox.style.height = "100px";
+            
+            //(5)Create a textarea for edit the HTML strings.
+            var textBox = document.createElement("textarea");
+            $(textBox).data("counter",counter);
+            textBox.innerText = "";
+            textBox.style.width = "300px";
+            textBox.style.height = "100px";
+            textBox.style.display = "none";
+            
+            //(6)Create a div element for container.
+            var container = document.createElement("div");
+            $(container).addClass("contenido");
+            container.style.position = "relative";
+            container.appendChild(htmlBox);
+            container.appendChild(textBox);
+            
+            //(7)Create a button to switch the edit mode
+            var editBtn = document.createElement("button");
+            editBtn.innerText = "Editar";
+            container.appendChild(editBtn);
+
+            var borrarBtn = document.createElement("button");
+            borrarBtn.innerText = "Borrar Marcador";
+            container.appendChild(borrarBtn);
+            
+            var infowindow = new google.maps.InfoWindow({
+                  content : container
+                });
+
+            google.maps.event.addListener(marker, "click", function() {
+             infowindow.open(map, marker);
+            });
+            
+            google.maps.event.addDomListener(editBtn, "click", function(e) {
+                e.preventDefault();
+                 marker.set("editing", !marker.editing);
+            });
+
+            google.maps.event.addDomListener(borrarBtn, "click", function(e) {
+                e.preventDefault();
+                $.each(window.pinsenproyecto,function(ind,val){
+                    
+                    if(val.lng == location.lng()){
+                        window.pinsenproyecto.splice(ind,1)
+                    }
+                  })
+                var pins = JSON.stringify(window.pinsenproyecto);
+                pins = escape(pins);
+              $("#_pins_en_proyecto").val(pins);
+                marker.setMap(null);
+                
+            });
+
+            google.maps.event.addListener(marker, "editing_changed", function(){
+              textBox.style.display = this.editing ? "block" : "none";
+              htmlBox.style.display = this.editing ? "none" : "block";
+            });
+
+            google.maps.event.addDomListener(textBox, "change", function(e){
+              htmlBox.innerHTML = textBox.value;
+              marker.set("html", textBox.value);
+              var identificador = $(e.target).data("counter");
+              //marcador.text=textBox.value;
+              console.log(identificador);
+              $.each(window.pinsenproyecto,function(ind,val){
+                    if((identificador-1) == ind){
+                        console.log("se da")
+                        val.text = textBox.value;
+                    }
+              })
+               var pins = JSON.stringify(window.pinsenproyecto);
+              pins = escape(pins);
+              $("#_pins_en_proyecto").val(pins);
+             
+            });
+
+             infowindow.open(map, marker);
+                //map.setCenter(location);
+        }*/
+
+       
+
+        var geocoder = new google.maps.Geocoder();
+       
+        var latlng = new google.maps.LatLng(-32.944243, -60.650539);
+            var myOptions = {
+                zoom: 13,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var elem = $("#mapa")[0];
+            map = new google.maps.Map(elem, myOptions);
+			var LatLngList = [];
+            $.each(window.pinsenproyecto,function(ind,val){
+
+            	var latitudLongitud = new google.maps.LatLng(val.lat, val.lng);
+            	LatLngList.push(latitudLongitud)
+            	var marker = new google.maps.Marker({
+	                position: latitudLongitud, 
+	                map: map
+		        });
+
+	            var infowindow = new google.maps.InfoWindow({
+	                  content : val.text,
+	                  maxWidth: 200
+	                });
+	            infowindow.open(map, marker);
+	            google.maps.event.addListener(marker, "click", function() {
+	             infowindow.open(map, marker);
+	            });
+
+	        })
+            var bounds = new google.maps.LatLngBounds ();
+			//  Go through each...
+			for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
+			  //  And increase the bounds to take this point
+			  bounds.extend (LatLngList[i]);
+			}
+			map.fitBounds (bounds);
+	        console.log(LatLngList);
+
+
+    
+
+
+	}
 
 })

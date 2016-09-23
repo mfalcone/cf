@@ -1,0 +1,50 @@
+#sidebar{
+	position:fixed;
+	height:100%;
+	top:0;
+	z-index:1;
+	padding-top:40px;
+
+	#main-menu{
+		width: 45px;
+		background:$gris_oscuro_dos;
+		height: 100%;
+		float:left;
+		list-style: none;
+		padding:0;
+		li{
+			padding:0;
+			margin:0;
+			font-size: 2rem;
+			text-align: center;
+			margin-top: 20px;
+			a{
+				color: #FFF;
+			}
+		}
+	}
+
+	.barra-lateral{
+		float: left;
+		height: 100%;
+		width: 130px;
+		background:$gris_oscuro_tres;
+		padding-top:10px;
+		.selected{
+			    width: 90%;
+			    background: $rojo;
+			    display: block;
+			    float: right;
+			    padding: 5%;
+			    color:#FFF;
+		}
+	}
+
+	.buscador{
+		display:none;
+	}
+}
+
+.admin-bar #sidebar{
+	padding-top:70px;
+}

@@ -213,6 +213,30 @@ register_post_type( 'votaciones',
 		)
 	);
 
+
+register_post_type( 'barrios',
+		array(
+			'labels' => array(
+				'name' => __( 'barrios' ),
+				'singular_name' => __( 'barrios' ),
+				'add_new' => __( 'Agregar nuevo Barrio' ),
+				'add_new_item' => __( 'Agregar nuevo barrios' ),
+				'edit_item' => __( 'Editar barrios' ),
+				'new_item' => __( 'Agregar nuevo barrios' ),
+				'view_item' => __( 'Ver barrios' ),
+				'search_items' => __( 'Buscar barrios' ),
+				'not_found' => __( 'No se encontraron barrios' ),
+				'not_found_in_trash' => __( 'No barrios found in trash' )
+			),
+			'public' => true,
+			'supports' => array( 'title',  'thumbnail' ,'editor'),
+			'capability_type' => 'post',
+			'rewrite' => array("slug" => "ciudad_futura_en_tu_barrio"), // Permalinks format
+			'menu_position' => 6,
+			'register_meta_box_cb' => 'add_barrios_metaboxes'
+		)
+	);
+
 	flush_rewrite_rules();
 
 }
@@ -280,6 +304,20 @@ function wpt_monto(){
 	$monto = get_post_meta($post->ID, '_monto', true);
 	echo '<input type="text" name="_monto" id="_monto" value="' . $monto . '" />'; 
 }
+
+
+function add_barrios_metaboxes() {
+	add_meta_box('wpt_mapa', 'Insertar Pins en mapa', 'wpt_mapa', 'barrios', 'normal', 'high');
+}
+
+
+function wpt_mapa(){
+	 global $post;
+	$pins_en_mapa = get_post_meta($post->ID, '_pins_en_proyecto', true);
+	echo '<input type="hidden" name="_pins_en_proyecto" id="_pins_en_proyecto" value="' . $pins_en_mapa . '" />'; 
+	echo '<div id="mapa"></div>';
+}
+
 
 // Add the Events Meta Boxes
 
@@ -664,6 +702,7 @@ function my_enqueue($hook) {
 		}
 		wp_enqueue_media();
 		wp_enqueue_script('jquery-ui-datepicker');
+		wp_enqueue_script('google-map-api','https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyChYCQ7TAvJC6E_I4XCnEuOTDuOV-_lOWY'); 
 		wp_enqueue_style('jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');
 		wp_enqueue_style('admin-style',  get_template_directory_uri() . '/css/admin.css');
 
@@ -916,6 +955,29 @@ function wpt_save_votaciones_meta($post_id, $post) {
 }
 
 
+function wpt_save_barrios_meta($post_id, $post) {
+	
+	
+
+	if ( !current_user_can( 'edit_post', $post->ID ))
+		return $post->ID;
+	
+	$barrios_meta['_pins_en_proyecto'] = $_POST['_pins_en_proyecto'];
+	
+	foreach ($barrios_meta as $key => $value) { // Cycle through the $events_meta array!
+		if( $post->post_type == 'revision' ) return; // Don't store custom data twice
+		$value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
+		if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
+			update_post_meta($post->ID, $key, $value);
+		} else { // If the custom field doesn't have a value
+			add_post_meta($post->ID, $key, $value);
+		}
+		if(!$value) delete_post_meta($post->ID, $key); // Delete if blank
+	}
+
+}
+
+
 
 add_action('save_post', 'wpt_save_events_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_proyectos_meta', 1, 2); // save the custom fieldsx<
@@ -924,6 +986,7 @@ add_action('save_post', 'wpt_save_agenda_meta', 1, 2); // save the custom fields
 add_action('save_post', 'wpt_save_respuesta_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_concejales_meta', 1, 2); // save the custom fieldsx<
 add_action('save_post', 'wpt_save_votaciones_meta', 1, 2); // save the custom fieldsx<
+add_action('save_post', 'wpt_save_barrios_meta', 1, 2); // save the custom fieldsx<
 
 
 
@@ -950,8 +1013,10 @@ add_theme_support( 'menus' );
 
 
 function wpb_adding_scripts() {
+wp_enqueue_script('google-map-api','https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyChYCQ7TAvJC6E_I4XCnEuOTDuOV-_lOWY',array('jquery')); 
 wp_register_script('my_amazing_script', get_template_directory_uri() . '/js/transparencia.js' , array('jquery'),'1.1', true);
 wp_enqueue_script('my_amazing_script');
+
 }
 
 
