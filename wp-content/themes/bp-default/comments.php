@@ -25,6 +25,7 @@
 			}
 		}
 ?>
+comments
 	<div id="comments">
 
 		<h3>

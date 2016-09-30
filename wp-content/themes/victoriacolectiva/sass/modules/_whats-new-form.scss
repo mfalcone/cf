@@ -1,10 +1,13 @@
+#content .bpfb_form_container{
+	background:$gris_claro_back;
+}
 #whats-new-form{
 	padding:20px;
 	background:#FFF;
 	border-radius:20px;
--webkit-box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.75);
 	textarea{
 		height: 2.2em;
 	}

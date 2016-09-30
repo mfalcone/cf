@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+404
 	<div id="content">
 		<div class="padder one-column">
 			<?php do_action( 'bp_before_404' ); ?>

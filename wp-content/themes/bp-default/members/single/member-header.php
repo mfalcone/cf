@@ -7,8 +7,7 @@
  * @subpackage bp-default
  */
 
-?>
-
+get_header( 'buddypress' ); ?>
 <?php do_action( 'bp_before_member_header' ); ?>
 
 <div id="item-header-avatar">

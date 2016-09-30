@@ -1,0 +1,55 @@
+.blog{
+	header{
+		background: #d0d7da;
+		padding: 10px;
+	}
+
+	.bt{
+		overflow: auto;		
+	}
+
+	.escribir{
+		background:#799199;
+		color: #FFF;
+		padding:10px;
+		float:right;
+		display: block;
+		cursor:pointer;
+	}
+
+	.editor{
+		display: none;
+	}
+
+	.posteos{
+		margin-top:50px;
+		.fotos{
+			background:#FFF;
+			overflow: auto;
+			margin-bottom: 20px;
+			padding:0;
+			&.odd{
+				.contenido{
+					float:left;
+				}
+				.foto{
+					float:right;
+				}
+			}
+			&.even{
+				.contenido{
+					float:right;
+				}
+				.foto{
+					float:left;
+				}
+			}
+
+			img{
+				max-width: 100%;
+				height: auto;
+			}
+
+		}
+	}
+}

@@ -1,8 +1,7 @@
 <?php get_header( 'buddypress' ); ?>
 
-	<div id="content">
+	<div id="content" class="registrarse">
 		<div class="padder">
-
 		<?php do_action( 'bp_before_register_page' ); ?>
 
 		<div class="page" id="register-page">
@@ -20,20 +19,17 @@
 
 			<?php if ( 'request-details' == bp_get_current_signup_step() ) : ?>
 
-				<h2><?php _e( 'Create an Account', 'buddypress' ); ?></h2>
-
+				<h2>Datos de usuario</h2>
 				<?php do_action( 'template_notices' ); ?>
-
-				<p><?php _e( 'Registering for this site is easy, just fill in the fields below and we\'ll get a new account set up for you in no time.', 'buddypress' ); ?></p>
-
+				<h3>Completa tus datos personales y de contacto</h3>
+				
 				<?php do_action( 'bp_before_account_details_fields' ); ?>
 
 				<div class="register-section" id="basic-details-section">
 
 					<?php /***** Basic Account Details ******/ ?>
 
-					<h4><?php _e( 'Account Details', 'buddypress' ); ?></h4>
-
+					
 					<label for="signup_username"><?php _e( 'Username', 'buddypress' ); ?> <?php _e( '(required)', 'buddypress' ); ?></label>
 					<?php do_action( 'bp_signup_username_errors' ); ?>
 					<input type="text" name="signup_username" id="signup_username" value="<?php bp_signup_username_value(); ?>" />

@@ -2,7 +2,7 @@
 /*
 Template Name: Links
 */
-?>
+?>verga
 
 <?php get_header(); ?>
 

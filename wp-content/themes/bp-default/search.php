@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+search
 	<div id="content">
 		<div class="padder">
 

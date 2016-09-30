@@ -1,5 +1,6 @@
 html{
 	font-size: 62.5%;
+	height:100%;
 }
 
 @font-face {
@@ -11,5 +12,22 @@ html{
 }
 
 body{
-	background:$gris_claro_back
+	background:$gris_claro_back;
+	min-height:100%;
+	&.logged-out{
+		background:url(img/back.jpg) no-repeat center center fixed;
+		background-size: cover;
+	}
+}
+
+input, textarea{
+	outline:none;
+}
+
+ul{
+	margin:0;padding:0;
+
+	li{
+		list-style: none;
+	}
 }

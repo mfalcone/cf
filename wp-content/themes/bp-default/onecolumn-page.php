@@ -9,8 +9,10 @@
  * @since BuddyPress (1.5)
  */
 
+
 get_header(); ?>
 
+one column
 	<div id="content">
 		<div class="padder one-column">
 

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+page
 	<div id="content">
 		<div class="padder">
 

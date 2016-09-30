@@ -1,0 +1,104 @@
+.logged-out{
+
+	.site-content{
+		padding:0;
+		height: 100vh;
+	}
+
+	.container{
+		height: 100vh;
+	}
+}
+
+.login{
+	height: 300px;
+	background: #FFF;
+	top: 50%;
+	position: relative;
+	margin-top:-150px;
+	padding:0;
+	box-shadow: 0px 10px 12px 8px rgba(0,0,0,0.75);
+	h1{
+		font-size:1.5rem;
+		background:$rojo;
+		margin:0;
+		padding:10px;
+		color: #FFF;
+		text-align: center;
+
+		img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 10px;
+		}
+	}
+
+	h2{
+		font-size:1.5rem;
+		text-align: center;
+		margin: 0;
+		padding:0;
+		padding-top:10px;
+	}
+
+	form{
+		padding:10px;
+		
+		p{
+			background: $gris_claro_back;
+			border-radius: 7px;
+			padding: 5px 0;
+			height: 35px;
+			
+		}
+		
+		span.glyphicon{
+			font-size:1.5rem;
+			color:$gris_oscuro_tres;
+			width: 20%;
+			text-align: center;
+			float:left;
+			clear:left;
+			line-height:25px;
+		}
+
+		input{
+			float:left;
+			padding: 5px;
+			margin-top: -5px;
+			height: 35px;
+			width:80%;
+	    	border-radius: 0 5px 5px 0;
+	    	border: 1px solid $gris_claro_back;
+		}
+
+		#login-submit{
+			width:50%;
+			border-radius:5px;
+			background:$rojo;
+			text-align: center;
+			color: #FFF;
+			margin-left:auto;
+			margin-right: auto;
+			margin-top:10px;
+			display: block;
+			float:none;
+		}
+	}
+
+	.registrarse{
+		text-align: center;
+		a{
+			background:$gris_claro_back;
+			padding:10px;
+			display: block;
+			border-top:1px solid $gris_oscuro_tres;
+			&:hover{
+				background: $gris_oscuro_dos;
+				color: #FFF;
+				text-decoration: none;
+			}
+		}
+	}
+}

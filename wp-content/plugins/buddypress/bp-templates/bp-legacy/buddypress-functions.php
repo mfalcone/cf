@@ -1762,6 +1762,7 @@ function bp_legacy_theme_ajax_messages_star_handler() {
  * @return array          an array to inform about the css handle to attach the css rules to
  */
 function bp_legacy_theme_cover_image( $params = array() ) {
+	print_r("cover image");
 	if ( empty( $params ) ) {
 		return;
 	}

@@ -49,6 +49,24 @@
 		<ul id="main-menu">
 			<li><a href="<?php echo get_home_url(); ?>/actividad"><span class="glyphicon glyphicon-flag"></span></a></li>
 			<li><a href="<?php echo get_home_url(); ?>/info-basica"><span class="glyphicon glyphicon-folder-open"></span></a></li>
+			<?php if( current_user_can('organico')) {  ?> 
+
+				<?php 
+					$user_id = get_current_user_id();
+					$args = array(
+							'type'=>'active',
+							'per_page'=>1,
+							'user_id'=>$user_id
+					);
+					if ( bp_has_groups($args) ) : 
+					while ( bp_groups() ) : bp_the_group();
+				?>
+				<li><a href="<?php bp_group_permalink() ?>"><span class="glyphicon glyphicon-comment"></span></a></li> 
+				<?php endwhile; ?>	
+
+				<li><a href="<?php echo get_home_url(); ?>/blog"><span class="glyphicon glyphicon-heart"></span></a></li>
+				<?php endif;?> 
+			<?php } ?>
 		</ul>
 		<div class="barra-lateral">
 			<?php if(is_page('actividad')): ?>
@@ -58,6 +76,35 @@
 				<ul>
 					<li><a href="<?php echo get_home_url(); ?>/agenda">Agenda</a></li>
 				</ul>
+			<?php elseif(bp_is_page( BP_GROUPS_SLUG )): ?>
+				<?php 
+					$currentslug = bp_get_current_group_slug();
+					$user_id = get_current_user_id();
+					$args = array(
+							'type'=>'active',
+							'per_page'=>999,
+							'user_id'=>$user_id
+					);
+					if ( bp_has_groups($args) ) : ?>
+					<ul>
+					<?php while ( bp_groups() ) : bp_the_group(); ?>
+						<?php
+							ob_start();
+							bp_group_slug();
+							$slugs = ob_get_contents();
+							ob_end_clean();
+						?>
+						<li>
+							<?php if($currentslug == $slugs){?>
+								<span class="selected"><?php bp_group_name() ?></span>
+							<?php }else{?>
+								<a href="<?php bp_group_permalink() ?>"><?php bp_group_name() ?></a>
+							<?php }?>
+
+						</li>
+					<?php endwhile; ?>	
+					</ul>
+				<?php endif;?>
 			<?php endif;?>
 			<div class="buscador">
 				<form action="<?php echo bp_search_form_action(); ?>" method="post" id="search-form">
