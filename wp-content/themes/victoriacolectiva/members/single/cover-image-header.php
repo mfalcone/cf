@@ -31,7 +31,10 @@ do_action( 'bp_before_member_header' ); ?>
 			<div id="item-header-content">
 
 				<?php if ( bp_is_active( 'activity' ) && bp_activity_do_mentions() ) : ?>
-					<h2 class="user-nicename">@<?php bp_displayed_user_mentionname(); ?></h2>
+					<div class="name-header col-md-5">
+						<h2 class="user-nicename">@<?php bp_displayed_user_mentionname(); ?></h2>
+						<span class="activity"><?php bp_last_activity( bp_displayed_user_id() ); ?></span>
+					</div>
 				<?php endif; ?>
 				<div class="cabecera-del-miembro">
 					<div id="item-buttons"><?php
@@ -43,7 +46,7 @@ do_action( 'bp_before_member_header' ); ?>
 						 */
 						do_action( 'bp_member_header_actions' ); ?></div><!-- #item-buttons -->
 
-					<span class="activity"><?php bp_last_activity( bp_displayed_user_id() ); ?></span>
+					
 				</div>
 				<?php
 

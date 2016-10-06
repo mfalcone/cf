@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Development (trunk) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-09-28 15:26-0300\n"
+"PO-Revision-Date: 2016-10-06 16:12-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -307,7 +307,7 @@ msgstr ""
 #: bp-messages/classes/class-bp-messages-component.php:154
 #: bp-messages/classes/class-bp-messages-component.php:252
 msgid "Messages %s"
-msgstr ""
+msgstr "Mensajes %s"
 
 #. translators: %s: Unread message count for the current user
 #: bp-messages/classes/class-bp-messages-component.php:257
@@ -340,7 +340,7 @@ msgstr ""
 #: bp-activity/classes/class-bp-activity-component.php:264
 msgctxt "Toolbar Mention logged in user"
 msgid "Mentions %s"
-msgstr ""
+msgstr "Menciones %s"
 
 #: bp-blogs/bp-blogs-template.php:1154
 msgid "%s is your new site."
@@ -354,7 +354,7 @@ msgstr ""
 #. translators: %s: Site count for the current user
 #: bp-blogs/classes/class-bp-blogs-component.php:184
 msgid "Sites %s"
-msgstr ""
+msgstr "Sitios %s"
 
 #: bp-core/admin/bp-core-admin-functions.php:305
 msgid "The following active BuddyPress Components do not have associated WordPress Pages: %s."
@@ -1348,7 +1348,7 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:226
 #: bp-templates/bp-legacy/buddypress/members/single/profile/change-cover-image.php:11
 msgid "Change Cover Image"
-msgstr ""
+msgstr "Cambiar foto de portada"
 
 #. translators: accessibility text
 #: bp-templates/bp-legacy/buddypress/groups/single/forum/edit.php:113
@@ -1377,7 +1377,7 @@ msgstr ""
 #: bp-xprofile/classes/class-bp-xprofile-component.php:255
 msgctxt "Profile header sub menu"
 msgid "Change Cover Image"
-msgstr ""
+msgstr "Cambiar foto de Portada"
 
 #: bp-xprofile/classes/class-bp-xprofile-component.php:364
 msgctxt "My Account Profile sub nav"
@@ -2463,7 +2463,7 @@ msgstr ""
 
 #: bp-groups/bp-groups-template.php:1651
 msgid "Viewing 1 group"
-msgstr ""
+msgstr "Viendo 1 grupo"
 
 #: bp-groups/bp-groups-template.php:2646
 msgid "This action should not be used directly. Please use the BuddyPress Group Extension API to generate Manage tabs."
@@ -2600,7 +2600,7 @@ msgstr "Cambiar foto de perfil"
 #: bp-members/classes/class-bp-members-component.php:295
 msgctxt "Member profile view"
 msgid "View"
-msgstr ""
+msgstr "Ver"
 
 #: bp-xprofile/bp-xprofile-admin.php:32
 msgctxt "xProfile admin page title"
@@ -2610,7 +2610,7 @@ msgstr ""
 #: bp-members/classes/class-bp-members-component.php:279
 msgctxt "Member profile main navigation"
 msgid "Profile"
-msgstr ""
+msgstr "Perfil"
 
 #: bp-core/bp-core-template.php:542
 msgctxt "search form"
@@ -2620,7 +2620,7 @@ msgstr ""
 #: bp-activity/classes/class-bp-activity-component.php:276
 msgctxt "My Account Activity sub nav"
 msgid "Activity"
-msgstr ""
+msgstr "Actividad"
 
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/avatars/index.php:40
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:181
@@ -2640,12 +2640,12 @@ msgstr ""
 #: bp-xprofile/classes/class-bp-xprofile-component.php:444
 msgctxt "My Account Settings sub nav"
 msgid "Profile"
-msgstr ""
+msgstr "Perfil"
 
 #: bp-xprofile/classes/class-bp-xprofile-component.php:230
 msgctxt "Profile header sub menu"
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:200
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:167
@@ -2698,7 +2698,7 @@ msgstr ""
 #: bp-themes/bp-default/groups/single/activity.php:10
 #: bp-themes/bp-default/members/single/activity.php:20
 msgid "&mdash; Everything &mdash;"
-msgstr ""
+msgstr "&mdash; Todo &mdash;"
 
 #: bp-xprofile/classes/class-bp-xprofile-component.php:354
 msgctxt "My Account Profile sub nav"
@@ -2708,43 +2708,43 @@ msgstr ""
 #: bp-xprofile/classes/class-bp-xprofile-component.php:344
 msgctxt "My Account Profile sub nav"
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: bp-xprofile/classes/class-bp-xprofile-component.php:335
 msgctxt "My Account Profile sub nav"
 msgid "View"
-msgstr ""
+msgstr "Ver"
 
 #: bp-xprofile/classes/class-bp-xprofile-component.php:327
 msgctxt "My Account Profile"
 msgid "Profile"
-msgstr ""
+msgstr "Perfil"
 
 #: bp-xprofile/classes/class-bp-xprofile-component.php:220
 msgctxt "Profile header sub menu"
 msgid "View"
-msgstr ""
+msgstr "Ver"
 
 #: bp-xprofile/classes/class-bp-xprofile-component.php:210
 msgctxt "Profile header menu"
 msgid "Profile"
-msgstr ""
+msgstr "Perfil"
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:232
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:206
 #: bp-templates/bp-legacy/buddypress/members/single/profile/change-avatar.php:57
 msgid "Profile photo preview"
-msgstr ""
+msgstr "Previsualización de la foto de perfil"
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:229
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:203
 #: bp-templates/bp-legacy/buddypress/members/single/profile/change-avatar.php:54
 msgid "Profile photo to crop"
-msgstr ""
+msgstr "recortar foto de perfil"
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:227
 msgid "Crop Group Profile Photo"
-msgstr ""
+msgstr "Recortar foto de Perfil"
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:212
 msgid "To skip the group profile photo upload process, hit the \"Next Step\" button."
@@ -2753,21 +2753,21 @@ msgstr ""
 #: bp-xprofile/classes/class-bp-xprofile-component.php:154
 msgctxt "Visibility level setting"
 msgid "My Friends"
-msgstr ""
+msgstr "Mis Amigos"
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:201
 msgid "Crop Profile Photo"
-msgstr ""
+msgstr "Recortar foto de Perfil"
 
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/avatars/index.php:41
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:183
 msgid "Delete Group Profile Photo"
-msgstr ""
+msgstr "Borrar foto de perfil del grupo"
 
 #: bp-xprofile/classes/class-bp-xprofile-component.php:147
 msgctxt "Visibility level setting"
 msgid "All Members"
-msgstr ""
+msgstr "Todos los miembros"
 
 #: bp-xprofile/classes/class-bp-xprofile-component.php:139
 msgctxt "Visibility level setting"
@@ -3459,12 +3459,12 @@ msgstr ""
 #: bp-activity/bp-activity-admin.php:36
 msgctxt "Admin Dashbord SWA page title"
 msgid "Activity"
-msgstr ""
+msgstr "Actividad"
 
 #: bp-activity/bp-activity-admin.php:37
 msgctxt "Admin Dashbord SWA menu"
 msgid "Activity"
-msgstr ""
+msgstr "Actividad"
 
 #: bp-activity/bp-activity-admin.php:238
 msgid "<strong>Link</strong> - Used by some types of activity (e.g blog posts and comments, and forum topics and replies) to store a link back to the original content."
@@ -3473,12 +3473,12 @@ msgstr ""
 #: bp-activity/bp-activity-admin.php:1016
 msgctxt "Admin SWA page"
 msgid "Activity"
-msgstr ""
+msgstr "Actividad"
 
 #: bp-activity/classes/class-bp-activity-list-table.php:377
 msgctxt "Admin SWA column header"
 msgid "Activity"
-msgstr ""
+msgstr "Actividad"
 
 #: bp-activity/classes/class-bp-activity-list-table.php:378
 msgctxt "Admin SWA column header"
@@ -3497,7 +3497,7 @@ msgstr ""
 #: bp-activity/classes/class-bp-activity-component.php:166
 msgctxt "Profile activity screen nav"
 msgid "Activity"
-msgstr ""
+msgstr "Actividad"
 
 #: bp-activity/classes/class-bp-activity-component.php:176
 msgctxt "Profile activity screen sub nav"
@@ -3507,7 +3507,7 @@ msgstr ""
 #: bp-activity/classes/class-bp-activity-component.php:187
 msgctxt "Profile activity screen sub nav"
 msgid "Mentions"
-msgstr ""
+msgstr "Menciones"
 
 #: bp-activity/classes/class-bp-activity-component.php:200
 msgctxt "Profile activity screen sub nav"
@@ -3522,7 +3522,7 @@ msgstr ""
 #: bp-activity/classes/class-bp-activity-component.php:226
 msgctxt "Profile activity screen sub nav"
 msgid "Groups"
-msgstr ""
+msgstr "Grupos"
 
 #: bp-activity/classes/class-bp-activity-component.php:268
 msgctxt "Toolbar Mention logged in user"
@@ -3547,12 +3547,12 @@ msgstr ""
 #: bp-activity/classes/class-bp-activity-component.php:327
 msgctxt "My Account Activity sub nav"
 msgid "Groups"
-msgstr ""
+msgstr "Grupos"
 
 #: bp-activity/classes/class-bp-activity-component.php:350
 msgctxt "Page and <title>"
 msgid "My Activity"
-msgstr ""
+msgstr "Mi Actividad"
 
 #: bp-xprofile/classes/class-bp-xprofile-field-type-datebox.php:29
 msgctxt "xprofile field type"
@@ -4078,7 +4078,7 @@ msgstr ""
 
 #: bp-messages/bp-messages-screens.php:133
 msgid "Messages <span class=\"%s\">%s</span>"
-msgstr ""
+msgstr "Mensaje <span class=\"%s\">%s</span>"
 
 #: bp-core/admin/bp-core-admin-functions.php:335
 msgid "Each BuddyPress Component needs its own WordPress page. The following WordPress Pages have more than one component associated with them: %s."
@@ -4269,7 +4269,7 @@ msgstr ""
 #. Name] | Mentions"
 #: bp-activity/bp-activity-actions.php:566
 msgid "%1$s | %2$s | Mentions"
-msgstr ""
+msgstr "%1$s | %2$s | Menciones"
 
 #: bp-activity/bp-activity-actions.php:569
 msgid "Activity feed mentioning %s."
@@ -4362,7 +4362,7 @@ msgstr ""
 #. Activity"
 #: bp-activity/bp-activity-actions.php:476 bp-groups/bp-groups-actions.php:557
 msgid "%1$s | %2$s | Activity"
-msgstr ""
+msgstr "%1$s | %2$s | Actividad"
 
 #: bp-activity/bp-activity-actions.php:479
 msgid "Activity feed for %s."
@@ -4509,17 +4509,17 @@ msgstr ""
 #: bp-core/bp-core-functions.php:634
 msgctxt "Page title for the Activity directory."
 msgid "Activity"
-msgstr ""
+msgstr "Actividad"
 
 #: bp-core/bp-core-functions.php:635
 msgctxt "Page title for the Groups directory."
 msgid "Groups"
-msgstr ""
+msgstr "Grupos"
 
 #: bp-core/bp-core-functions.php:636
 msgctxt "Page title for the Sites directory."
 msgid "Sites"
-msgstr ""
+msgstr "Sitios"
 
 #: bp-core/bp-core-functions.php:637
 msgctxt "Page title for the Members directory."
@@ -4762,7 +4762,7 @@ msgstr ""
 #: bp-groups/bp-groups-admin.php:167
 msgctxt "Groups per page (screen options)"
 msgid "Groups"
-msgstr ""
+msgstr "Grupos"
 
 #: bp-groups/bp-groups-admin.php:206
 msgid "Start typing a username to add a new member."
@@ -5375,7 +5375,7 @@ msgstr ""
 #: bp-activity/bp-activity-admin.php:275
 msgctxt "Activity items per page (screen options)"
 msgid "Activity"
-msgstr ""
+msgstr "Actividad"
 
 #: bp-activity/bp-activity-functions.php:1393
 msgid "Replied to a status update"
@@ -5494,7 +5494,7 @@ msgstr ""
 
 #: bp-activity/bp-activity-admin.php:1044
 msgid "Reply to Activity"
-msgstr ""
+msgstr "Responder a la actividad"
 
 #: bp-activity/bp-activity-admin.php:92
 msgid "ERROR: Please type a reply."
@@ -5824,7 +5824,7 @@ msgstr ""
 
 #: bp-messages/bp-messages-template.php:1349
 msgid "Private Message"
-msgstr ""
+msgstr "Mensaje Privado"
 
 #: bp-themes/bp-default/forums/index.php:44
 msgid "My Topics <span>%s</span>"
@@ -5877,7 +5877,7 @@ msgstr ""
 
 #: bp-activity/bp-activity-template.php:3189
 msgid "Public Message"
-msgstr ""
+msgstr "Mensaje Público"
 
 #: bp-themes/bp-default/activity/entry.php:60
 msgid "Comment <span>%s</span>"
@@ -5967,7 +5967,7 @@ msgstr ""
 #: bp-themes/bp-default/groups/groups-loop.php:47
 #: bp-themes/bp-default/groups/single/group-header.php:42
 msgid "active %s"
-msgstr ""
+msgstr "activo %s"
 
 #: bp-core/bp-core-buddybar.php:674 bp-core/bp-core-buddybar.php:690
 #: bp-core/bp-core-buddybar.php:710
@@ -6200,7 +6200,7 @@ msgstr ""
 #: bp-themes/bp-default/groups/single/activity.php:8
 #: bp-themes/bp-default/members/single/activity.php:18
 msgid "Show:"
-msgstr ""
+msgstr "Mostrar:"
 
 #: bp-groups/bp-groups-activity.php:35
 #: bp-themes/bp-default/activity/index.php:117
@@ -6274,7 +6274,7 @@ msgstr ""
 
 #: bp-blogs/bp-blogs-activity.php:241
 msgid "%1$s wrote a new post, %2$s"
-msgstr ""
+msgstr "%1$s escribió un nuevo artículo, %2$s"
 
 #: bp-blogs/bp-blogs-activity.php:367
 msgid "%1$s commented on the post, %2$s"
@@ -6282,7 +6282,7 @@ msgstr ""
 
 #: bp-blogs/bp-blogs-activity.php:239
 msgid "%1$s wrote a new post, %2$s, on the site %3$s"
-msgstr ""
+msgstr "%1$s escribió un nuevo artículo, %2$s, en el sitio %3$s"
 
 #: bp-activity/bp-activity-actions.php:150
 msgid "Activity deleted successfully"
@@ -6719,7 +6719,7 @@ msgstr ""
 
 #: bp-groups/bp-groups-activity.php:138 bp-groups/bp-groups-activity.php:444
 msgid "%1$s joined the group %2$s"
-msgstr ""
+msgstr "%1$s ingresó al grupo %2$s"
 
 #: bp-groups/bp-groups-notifications.php:325
 msgid "%1$d new membership requests for the group \"%2$s\""
@@ -6727,7 +6727,7 @@ msgstr ""
 
 #: bp-groups/bp-groups-activity.php:107
 msgid "%1$s created the group %2$s"
-msgstr ""
+msgstr "%1$s creo el grupo %2$s"
 
 #: bp-core/deprecated/1.5.php:358
 msgid "%1$s mentioned you in the group \"%2$s\""
@@ -7459,7 +7459,7 @@ msgstr ""
 #: bp-messages/classes/class-bp-messages-component.php:162
 #: bp-messages/classes/class-bp-messages-component.php:261
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #: bp-messages/bp-messages-screens.php:218
 msgid "A member sends you a new message"
@@ -7652,7 +7652,7 @@ msgstr ""
 
 #: bp-themes/bp-default/activity/index.php:21
 msgid "Site Activity"
-msgstr ""
+msgstr "Actividad del sitio"
 
 #: bp-templates/bp-legacy/buddypress/activity/index.php:55
 #: bp-themes/bp-default/activity/index.php:39
@@ -8587,7 +8587,7 @@ msgstr "Dirección de correo electrónico"
 #: bp-templates/bp-legacy/buddypress/members/register.php:98
 #: bp-themes/bp-default/registration/register.php:45
 msgid "Choose a Password"
-msgstr ""
+msgstr "Contraseña"
 
 #: bp-templates/bp-legacy/buddypress/members/register.php:110
 #: bp-themes/bp-default/registration/register.php:49
@@ -8597,7 +8597,7 @@ msgstr "Confirma la contraseña"
 #: bp-templates/bp-legacy/buddypress/members/register.php:156
 #: bp-themes/bp-default/registration/register.php:67
 msgid "Profile Details"
-msgstr ""
+msgstr "Detalles del perfil"
 
 #: bp-templates/bp-legacy/buddypress/members/register.php:264
 #: bp-themes/bp-default/registration/register.php:217
@@ -8612,7 +8612,7 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/members/register.php:344
 #: bp-themes/bp-default/registration/register.php:255
 msgid "Complete Sign Up"
-msgstr ""
+msgstr "Registrarse"
 
 #: bp-templates/bp-legacy/buddypress/members/register.php:376
 #: bp-themes/bp-default/registration/register.php:272
@@ -8840,7 +8840,7 @@ msgstr ""
 #: bp-activity/classes/class-bp-activity-component.php:30
 #: bp-core/bp-core-functions.php:2389
 msgid "Activity Streams"
-msgstr ""
+msgstr "Flujo de actividad"
 
 #: bp-xprofile/classes/class-bp-xprofile-field.php:1481
 msgid "Enabled"
@@ -8887,7 +8887,7 @@ msgstr ""
 #: bp-groups/classes/class-bp-groups-widget.php:75
 #: bp-groups/classes/class-bp-groups-widget.php:202
 msgid "Groups"
-msgstr ""
+msgstr "Grupos"
 
 #: bp-activity/bp-activity-screens.php:331
 #: bp-activity/classes/class-bp-activity-oembed-component.php:140
@@ -9091,7 +9091,7 @@ msgstr ""
 #: bp-core/bp-core-functions.php:2393 bp-core/deprecated/2.1.php:530
 #: bp-notifications/classes/class-bp-notifications-component.php:262
 msgid "Notifications"
-msgstr ""
+msgstr "Notificaciones"
 
 #: bp-core/deprecated/2.1.php:77 bp-core/deprecated/2.1.php:272
 msgid "Manage Comments"

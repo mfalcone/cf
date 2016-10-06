@@ -67,10 +67,10 @@
 
 						<?php while ( bp_profile_fields() ) : bp_the_profile_field(); ?>
 
-							<div class="editfield">
+							<div class="editfield <?php if ( !bp_get_the_profile_field_is_required() ) : ?>no-requerido<?php endif; ?>">
 
 								<?php if ( 'textbox' == bp_get_the_profile_field_type() ) : ?>
-
+									<div></div>
 									<label for="<?php bp_the_profile_field_input_name(); ?>"><?php bp_the_profile_field_name(); ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><?php _e( '(required)', 'buddypress' ); ?><?php endif; ?></label>
 									<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
 									<input type="text" name="<?php bp_the_profile_field_input_name(); ?>" id="<?php bp_the_profile_field_input_name(); ?>" value="<?php bp_the_profile_field_edit_value(); ?>" />

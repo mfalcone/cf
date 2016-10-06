@@ -1,0 +1,38 @@
+#right-sidebar{
+	position: fixed;
+    height: 100%;
+    background: $gris_medio;
+    top: 0;
+    right: 0;
+    width:0;
+    padding-top:90px;
+
+	.pestania{
+		position:absolute;
+		top:70px;
+		left:-30px;
+		background:$gris_medio;
+		color: #FFF;
+		font-size:2rem;
+		padding:5px;
+		border-radius: 0 0 0 5px;
+	}
+    .hash,h2{
+    	font-size:2rem;
+    	float:left;
+    }
+    h2{
+    	padding: 0;
+    	margin:0;
+    }
+    &.open{
+    	width: 200px;
+    }
+
+    .agenda{
+    	clear:left;
+    	li{
+
+    	}
+    }
+}

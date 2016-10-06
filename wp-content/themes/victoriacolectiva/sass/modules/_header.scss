@@ -35,7 +35,39 @@
 			margin-left:20px;
 		}
 	}
+	.buscador{
+		float:left;
+		width: 40%;
+		input{
+			color: $gris_oscuro_dos;
+			
+			&[type="text"]{
+				float:left;
+			}
+		}
 
+		label[for="search-terms"]{
+			float:left;
+		}
+
+		.propiedaes{
+			display: none;
+			float:left;
+		}
+	}
+
+	.ahora{
+		float:left;
+		width:40%;
+		ul{
+			position:relative;
+		}
+		li{
+			position:absolute;
+			left:0;
+			top:0;
+		}
+	}
 }
 
 .logged-in{

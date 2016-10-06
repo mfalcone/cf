@@ -4,11 +4,12 @@
 	background-position:center center;
 	background-size:cover;
 	position:relative;
+	margin-bottom:10px;
 	#item-header-avatar{
 		margin-left:auto;
 		margin-right: auto;
 		width: 150px;
-		margin-top:150px;
+		padding-top:150px;
 		img{
 			border-radius:80px;
 			border:5px solid #FFF;
@@ -21,9 +22,7 @@
 		height: 90px;
 		background: url(img/bk_nombre_member.png);
 		color: #FFF;
-		h2{
-			float:left;
-		}
+		
 
 		#item-buttons{
 			float:left;
@@ -35,19 +34,76 @@
 		.activity{
 			float:left;
 		}
+
+		.name-header{
+			h2{
+				float:left;
+				padding: 0;
+				margin:5px 0 0 0;
+			}
+			span.activity{
+				clear:left;
+			}
+		}
 	}
 
 	.cabecera-del-miembro{
 		background:#000;
 		color: #FFF;
-		height: 20px;
+		height: 40px;
 		clear:left;
 		width: 100%;
+
+		.generic-button{
+			border:1px solid $gris_medio;
+			padding:5px;
+			margin-left:5px;
+			margin-top:5px;
+			&#post-mention{
+
+			}
+
+			&#send-private-message{
+
+			}
+
+			a{
+				color:#FFF;
+			}
+		}
 	}
 }
 
 .home-profile{
 	#item-nav{
+		width:100%;
+		li{
+			padding:0 5px;
+			border-right:1px solid $gris_link;
+		}
 	}	
+}
 
+.bp-user{
+	.item-list-tabs{
+		width:100%;
+		margin-top:10px;
+	}
+
+	.actividad-wrapper{
+
+		.item-list-tabs{
+			background:$gris_medio;
+			padding-top:10px;
+			ul{
+				position:relative;
+				left:50%;
+				margin-left:-25%;
+			}
+		}
+	}
+
+	.bpfb_form_container{
+		margin-top:80px;
+	}
 }

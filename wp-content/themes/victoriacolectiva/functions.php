@@ -222,10 +222,10 @@ function bp_custom_registration_role($user_id, $key, $user) {
    $userdata = array();
    $userdata['ID'] = $user_id;
    $userdata['role'] = 'usuarioredsocial';
-    wp_update_user($userdata);
-
-
-  }
+   wp_update_user($userdata);
+   update_user_meta( $user_id, 'init','1');
+   
+   }
 
 
 // Example of function to customize the display of the cover image
@@ -337,3 +337,19 @@ function add_users_to_bpgroup() {
     endif;
 }
 add_action ( 'load-users.php', 'add_users_to_bpgroup' );
+
+// modifica el meta user despues que se modificó 
+function activarUsuario( $field_id, $value ) {
+	$user_id = get_current_user_id();
+	$init =  get_user_meta($user_id,'init');
+	if($init[0]=="1"){
+		update_user_meta( $user_id, 'init','0');
+	}
+//…
+}
+add_action( 'xprofile_profile_field_data_updated', 'activarUsuario');
+
+//$install_path = get_home_path();
+$path =ABSPATH.'/wp-content/themes/victoriacolectiva';
+require_once( $path . '/includes/custom-event-post.php');
+require_once( $path . '/includes/custom-ahora-post.php');

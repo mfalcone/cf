@@ -34,6 +34,36 @@
 		<div class="cf-icon">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"></a>
 		</div><!-- .site-branding -->
+		<div class="header-container">
+			<div class="buscador">
+				<form action="<?php echo bp_search_form_action(); ?>" method="post" id="search-form">
+					<label for="search-terms" class="accessibly-hidden"><?php _e( 'Buscar:', 'buddypress' ); ?></label>
+					
+					<input type="text" id="search-terms" name="search-terms" value="<?php echo isset( $_REQUEST['s'] ) ? esc_attr( $_REQUEST['s'] ) : ''; ?>" />
+					
+					<div class="propiedaes">
+						<?php echo bp_search_form_type_select(); ?>
+						<input type="submit" name="search-submit" id="search-submit" value="<?php esc_attr_e( 'Buscar', 'buddypress' ); ?>" />
+					</div>
+					
+
+					<?php wp_nonce_field( 'bp_search_form' ); ?>
+
+				</form><!-- #search-form -->
+			</div>
+			<div class="ahora">
+				#Ahora en Ciudad Futura:
+				<ul>
+						<?php 
+						$args = array('post_type' => 'ahora','posts_per_page' => -1);
+						$loop = new WP_Query( $args );
+						//print_r($loop);
+						while ( $loop->have_posts() ) : $loop->the_post(); ?>
+							<li><?php the_title();?></li>
+						<?php endwhile; ?>
+				</ul>
+			</div>
+		</div>
 		<div class="user">
 			<?php 
 				global $current_user;
@@ -106,20 +136,6 @@
 					</ul>
 				<?php endif;?>
 			<?php endif;?>
-			<div class="buscador">
-				<form action="<?php echo bp_search_form_action(); ?>" method="post" id="search-form">
-					<label for="search-terms" class="accessibly-hidden"><?php _e( 'Buscar:', 'buddypress' ); ?></label>
-					<input type="text" id="search-terms" name="search-terms" value="<?php echo isset( $_REQUEST['s'] ) ? esc_attr( $_REQUEST['s'] ) : ''; ?>" />
-
-					<?php echo bp_search_form_type_select(); ?>
-
-					<input type="submit" name="search-submit" id="search-submit" value="<?php esc_attr_e( 'Buscar', 'buddypress' ); ?>" />
-
-					<?php wp_nonce_field( 'bp_search_form' ); ?>
-
-				</form><!-- #search-form -->
-			</div>
-
 		</div>
 	</aside>
 <?php endif;?>
@@ -134,4 +150,5 @@
 			</div>
 	<?php endif;?>
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content right-side-opens">
+	

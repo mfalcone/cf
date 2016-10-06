@@ -31,12 +31,20 @@
 		background:$gris_oscuro_tres;
 		padding-top:10px;
 		.selected{
-			    width: 90%;
 			    background: $rojo;
 			    display: block;
-			    float: right;
-			    padding: 5%;
 			    color:#FFF;
+				padding: 5%;
+			
+		}
+
+		li{
+			margin-left:10px;
+			a{
+				color: #FFF;
+				padding: 5%;
+				display: block;
+			}
 		}
 	}
 

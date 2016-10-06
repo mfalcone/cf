@@ -1,5 +1,9 @@
 .actividad-wrapper{
-	overflow:auto;
+	height:10px;
+	li{
+		padding:0 10px;
+		border-right: 1px solid;
+	}
 }
 
 .activity-type-tabs{
@@ -22,6 +26,7 @@ div.activity{
 	ul{
 		list-style:none;
 		padding:0;
+		margin-top:20px;
 		li{
 			background: #FFF;
 			margin-bottom: 20px;

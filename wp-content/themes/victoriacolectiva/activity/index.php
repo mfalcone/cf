@@ -8,7 +8,19 @@
  */
 
 get_header( 'buddypress' ); ?>
+	<?php 
+	$userid= get_current_user_id();
+  	$init = get_user_meta($userid,'init');
+	//print_r($meta);
+	if($init[0]=="1"){
+		$urlfinal = bp_core_get_user_domain($userid).'profile/edit/group/1/';?>
+		Aca mostraría el tour y redireccionaría a <?php echo $urlfinal; ?>
 
+	<?php	
+	}
+	//muestra l
+	//bp_profile_field_data('field=Domicilio&user_id='.$userid);
+	?>
 	<?php do_action( 'bp_before_directory_activity_page' ); ?>
 
 	<div id="content">

@@ -54,6 +54,7 @@ get_header( 'buddypress' ); ?>
 	</div><!-- #item-nav -->
 
 	<div id="item-body">
+		
 
 		<?php
 
@@ -65,8 +66,8 @@ get_header( 'buddypress' ); ?>
 		do_action( 'bp_before_member_body' );
 
 		if ( bp_is_user_activity() || !bp_current_component() ) :
+		
 			bp_get_template_part( 'members/single/activity' );
-
 		elseif ( bp_is_user_blogs() ) :
 			bp_get_template_part( 'members/single/blogs'    );
 

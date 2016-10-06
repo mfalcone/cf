@@ -1,8 +1,12 @@
 .site-content{
 	padding-left:150px;
-
+	
 	a{
 		color:$gris_link;
+	}
+
+	&.right-side-opens{
+		padding-right:150px;
 	}
 }
 
