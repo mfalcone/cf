@@ -1,7 +1,7 @@
 #right-sidebar{
 	position: fixed;
     height: 100%;
-    background: $gris_medio;
+    background: #cecdcd;
     top: 0;
     right: 0;
     width:0;
@@ -9,13 +9,14 @@
 
 	.pestania{
 		position:absolute;
-		top:70px;
+		top:40px;
 		left:-30px;
-		background:$gris_medio;
+		background:#cecdcd;
 		color: #FFF;
 		font-size:2rem;
 		padding:5px;
 		border-radius: 0 0 0 5px;
+		cursor:pointer;
 	}
     .hash,h2{
     	font-size:2rem;
@@ -35,4 +36,8 @@
 
     	}
     }
+}
+
+.admin-bar #right-sidebar .pestania{
+	top:72px;
 }

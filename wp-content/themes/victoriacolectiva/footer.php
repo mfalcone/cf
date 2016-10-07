@@ -46,7 +46,7 @@
 	<?php endwhile; ?>
 
 	</aside>
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer open" role="contentinfo">
 		<div class="site-info">
 			footer
 		</div><!-- .site-info -->

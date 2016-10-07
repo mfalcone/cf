@@ -82,3 +82,20 @@
 		margin-top:-60px;
 	}
 }
+
+.show{
+	background: #ced5d7;
+    width: 100%;
+    padding-left: 200px;
+    position: fixed;
+    top: 40px;
+    z-index: 2;
+    overflow: auto;
+    height: 0;
+}
+
+.admin-bar{
+	.show{
+		top:72px;
+	}
+}

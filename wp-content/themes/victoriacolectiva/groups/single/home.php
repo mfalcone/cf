@@ -7,13 +7,37 @@
 
 			<?php do_action( 'bp_before_group_home_content' ); ?>
 
-			<div id="item-header" role="complementary">
+			<div id="item-header" class="container" role="complementary">
 
 				<?php locate_template( array( 'groups/single/group-header.php' ), true ); ?>
 
 			</div><!-- #item-header -->
 
-			<div id="item-nav">
+			<div class="container">
+			<div class="row">
+				<div class="item-list-tabs no-ajax col-md-4" id="subnav" role="navigation">
+				<ul>
+					<?php do_action( 'bp_group_activity_syndication_options' ); ?>
+
+					<li id="activity-filter-select" class="last">
+						<label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label> 
+						<select id="activity-filter-by">
+							<option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
+							<option value="activity_update"><?php _e( 'Updates', 'buddypress' ); ?></option>
+
+							<?php if ( bp_is_active( 'forums' ) ) : ?>
+								<option value="new_forum_topic"><?php _e( 'Forum Topics', 'buddypress' ); ?></option>
+								<option value="new_forum_post"><?php _e( 'Forum Replies', 'buddypress' ); ?></option>
+							<?php endif; ?>
+
+							<option value="joined_group"><?php _e( 'Group Memberships', 'buddypress' ); ?></option>
+
+							<?php do_action( 'bp_group_activity_filter_options' ); ?>
+						</select>
+					</li>
+				</ul>
+				</div><!-- .item-list-tabs -->
+				<div id="item-nav" class="col-md-4">
 				<div class="item-list-tabs no-ajax" id="object-nav" role="navigation">
 					<ul>
 
@@ -23,7 +47,9 @@
 
 					</ul>
 				</div>
-			</div><!-- #item-nav -->
+				</div><!-- #item-nav -->
+			</div><!-- #row< -->
+			</div><!-- #container< -->
 
 			<div id="item-body">
 

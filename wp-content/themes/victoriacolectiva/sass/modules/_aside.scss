@@ -2,11 +2,11 @@
 	position:fixed;
 	height:100%;
 	top:0;
-	z-index:1;
+	z-index:3;
 	padding-top:40px;
 
 	#main-menu{
-		width: 45px;
+		width: 190px;
 		background:$gris_oscuro_dos;
 		height: 100%;
 		float:left;
@@ -15,38 +15,71 @@
 		li{
 			padding:0;
 			margin:0;
-			font-size: 2rem;
 			text-align: center;
-			margin-top: 20px;
+			margin-top: 5px;
+
+			&.muro{
+				h3{
+					border-left:2px solid $verde;
+
+				}
+			}
+
+			&.quiero{
+				h3{
+					border-left:2px solid $celeste;
+				}
+				.selected{
+					background:$celeste;
+				}
+
+			}
+
+			&.hacer{
+				h3{
+					border-left:2px solid $rojo;
+				}
+				.selected{
+					background:$rojo;
+				}
+			}
+
 			a{
-				color: #FFF;
+				color: #C6C6C6;
+			}
+
+			h3{
+				background:$gris_oscuro_tres;
+				color: #C6C6C6;
+			    font-size: 2rem;
+			    text-transform: uppercase;
+			    font-family: 'Montserrat';
+			    height: 50px;
+			    line-height: 50px;
+			    text-align: left;
+			    margin:0;padding:0;
+				padding-left: 10px;
+			    
+			    span{
+			    	margin-right:10px;
+			    }
+			}
+
+			ul{
+				padding-left:10px;
+				li{
+					text-align: left;
+					a{
+						color: #FFF;
+					}
+					.selected{
+						display: block;
+					}
+				}
 			}
 		}
 	}
 
-	.barra-lateral{
-		float: left;
-		height: 100%;
-		width: 130px;
-		background:$gris_oscuro_tres;
-		padding-top:10px;
-		.selected{
-			    background: $rojo;
-			    display: block;
-			    color:#FFF;
-				padding: 5%;
-			
-		}
-
-		li{
-			margin-left:10px;
-			a{
-				color: #FFF;
-				padding: 5%;
-				display: block;
-			}
-		}
-	}
 
 	.buscador{
 		display:none;

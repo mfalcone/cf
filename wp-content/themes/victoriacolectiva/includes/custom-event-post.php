@@ -52,12 +52,30 @@ function horaFin() {
 	echo '<input type="time" name="hora_fin" id="horario_fin" value="' . $hora_fin  . '" class="widefat" />';
 }
 
+function userLevel() {
+	global $post;
+	$posibles_estados =  array('_ingresante','_organico');
+	$posibles_labels =  array('Ingresante','Organico');
+	
+	$estado = get_post_meta($post->ID, 'nivel-usuario', true);
+	$index = 0;
+	echo '<select size="1" name="nivel-usuario" id="t3">';
+	 foreach($posibles_estados as $opt)
+	 {
+		$selected = ($opt === $estado) ? ' selected="selected"' : '';
+		echo '<option value="'.$opt.'" name="'.$opt.'" '.$selected.'>'.$posibles_labels[$index].'</option>';
+		$index++;
+		}
+echo '</select>';
+}
+
 
 function add_eventos_metaboxes(){
 	add_meta_box('fechaInicio', 'Fecha de Incio', 'fechaInicio', 'agenda', 'normal', 'high');
 	add_meta_box('horaInicio', 'Horario de Inicio', 'horaInicio', 'agenda', 'normal', 'high');
 	add_meta_box('fechaFin', 'Fecha de Fin', 'fechaFin', 'agenda', 'normal', 'high');
 	add_meta_box('horaFin', 'Horario de Fin', 'horaFin', 'agenda', 'normal', 'high');
+	add_meta_box('userLevel', 'Nivel de usuario', 'userLevel', 'agenda', 'normal', 'high');
 
 }
 
@@ -86,6 +104,7 @@ function wpt_save_agenda_meta($post_id, $post) {
 	$agenda_meta['fecha_fin'] = $_POST['fecha_fin'];
 	$agenda_meta['horario_inicio'] = $_POST['horario_inicio'];
 	$agenda_meta['horario_fin'] = $_POST['horario_fin'];
+	$agenda_meta['nivel-usuario'] = $_POST['nivel-usuario'];
 	
 	// Add values of $events_meta as custom fields
 	

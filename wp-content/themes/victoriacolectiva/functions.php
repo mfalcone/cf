@@ -14,6 +14,19 @@
  * Enqueue scripts and styles.
  */
 
+
+if ( ! defined( 'BP_AVATAR_THUMB_WIDTH' ) )
+	define( 'BP_AVATAR_THUMB_WIDTH', 50 ); //change this with your desired thumb width
+
+if ( ! defined( 'BP_AVATAR_THUMB_HEIGHT' ) )
+	define( 'BP_AVATAR_THUMB_HEIGHT', 50 ); //change this with your desired thumb height
+
+if ( ! defined( 'BP_AVATAR_FULL_WIDTH' ) )
+	define( 'BP_AVATAR_FULL_WIDTH', 560 ); //change this with your desired full size,weel I changed it to 260 :)
+
+if ( ! defined( 'BP_AVATAR_FULL_HEIGHT' ) )
+	define( 'BP_AVATAR_FULL_HEIGHT', 560 ); //change this to default height for full avatar
+
 function bp_dtheme_setup() {
 
 	// Load the AJAX functions for the theme
@@ -348,6 +361,9 @@ function activarUsuario( $field_id, $value ) {
 //…
 }
 add_action( 'xprofile_profile_field_data_updated', 'activarUsuario');
+
+
+
 
 //$install_path = get_home_path();
 $path =ABSPATH.'/wp-content/themes/victoriacolectiva';

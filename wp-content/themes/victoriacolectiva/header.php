@@ -51,18 +51,7 @@
 
 				</form><!-- #search-form -->
 			</div>
-			<div class="ahora">
-				#Ahora en Ciudad Futura:
-				<ul>
-						<?php 
-						$args = array('post_type' => 'ahora','posts_per_page' => -1);
-						$loop = new WP_Query( $args );
-						//print_r($loop);
-						while ( $loop->have_posts() ) : $loop->the_post(); ?>
-							<li><?php the_title();?></li>
-						<?php endwhile; ?>
-				</ul>
-			</div>
+			
 		</div>
 		<div class="user">
 			<?php 
@@ -77,37 +66,15 @@
 	<?php if(is_user_logged_in()):?>
 	<aside id="sidebar">
 		<ul id="main-menu">
-			<li><a href="<?php echo get_home_url(); ?>/actividad"><span class="glyphicon glyphicon-flag"></span></a></li>
-			<li><a href="<?php echo get_home_url(); ?>/info-basica"><span class="glyphicon glyphicon-folder-open"></span></a></li>
-			<?php if( current_user_can('organico')) {  ?> 
-
-				<?php 
-					$user_id = get_current_user_id();
-					$args = array(
-							'type'=>'active',
-							'per_page'=>1,
-							'user_id'=>$user_id
-					);
-					if ( bp_has_groups($args) ) : 
-					while ( bp_groups() ) : bp_the_group();
-				?>
-				<li><a href="<?php bp_group_permalink() ?>"><span class="glyphicon glyphicon-comment"></span></a></li> 
-				<?php endwhile; ?>	
-
-				<li><a href="<?php echo get_home_url(); ?>/blog"><span class="glyphicon glyphicon-heart"></span></a></li>
-				<?php endif;?> 
-			<?php } ?>
-		</ul>
-		<div class="barra-lateral">
-			<?php if(is_page('actividad')): ?>
-				<span class="selected">Muro</span>
-			<?php elseif(is_page('info-basica')): ?>
-				<span class="selected">Soy info basica</span>
+			<li class="muro"><h3><a href="<?php echo get_home_url(); ?>/actividad"><span class="glyphicon glyphicon-comment"></span>MURO</a></h3></li>
+			<li class="quiero"><h3><span class="glyphicon glyphicon-heart"></span>Quiero</h3>
 				<ul>
-					<li><a href="<?php echo get_home_url(); ?>/agenda">Agenda</a></li>
+					<li>hola</li>
 				</ul>
-			<?php elseif(bp_is_page( BP_GROUPS_SLUG )): ?>
-				<?php 
+			</li>
+			<li class="hacer"><h3><span class="glyphicon glyphicon-forward"></span>Hacer</h3>
+			<ul>
+					<?php 
 					$currentslug = bp_get_current_group_slug();
 					$user_id = get_current_user_id();
 					$args = array(
@@ -116,8 +83,7 @@
 							'user_id'=>$user_id
 					);
 					if ( bp_has_groups($args) ) : ?>
-					<ul>
-					<?php while ( bp_groups() ) : bp_the_group(); ?>
+					<?php while ( bp_groups() ) : bp_the_group(s); ?>
 						<?php
 							ob_start();
 							bp_group_slug();
@@ -132,12 +98,26 @@
 							<?php }?>
 
 						</li>
-					<?php endwhile; ?>	
-					</ul>
-				<?php endif;?>
-			<?php endif;?>
-		</div>
+					<?php endwhile; ?>
+					<li><a href="<?php echo get_home_url(); ?>/blog">Momentos CF</a></li>
+					<?php endif;?>
+			</li>
+		</ul>
 	</aside>
+	<div class="show">
+			<div class="ahora">
+				#Ahora en Ciudad Futura:
+				<ul>
+						<?php 
+						$args = array('post_type' => 'ahora','posts_per_page' => -1);
+						$loop = new WP_Query( $args );
+						//print_r($loop);
+						while ( $loop->have_posts() ) : $loop->the_post(); ?>
+							<li><?php the_title();?></li>
+						<?php endwhile; ?>
+				</ul>
+			</div>
+		</div>
 <?php endif;?>
 <div id="page" class="container">
 
