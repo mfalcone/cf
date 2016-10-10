@@ -1,10 +1,10 @@
-<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
+<div class="item-list-tabs no-ajax" id="subnav-admin" role="navigation">
 	<ul>
 		<?php bp_group_admin_tabs(); ?>
 	</ul>
 </div><!-- .item-list-tabs -->
 
-<form action="<?php bp_group_admin_form_action(); ?>" name="group-settings-form" id="group-settings-form" class="standard-form" method="post" enctype="multipart/form-data" role="main">
+<form class="form-admin" action="<?php bp_group_admin_form_action(); ?>" name="group-settings-form" id="group-settings-form" class="standard-form" method="post" enctype="multipart/form-data" role="main">
 
 <?php do_action( 'bp_before_group_admin_content' ); ?>
 
@@ -23,13 +23,14 @@
 
 	<p>
 		<label for="group-notifiy-members">
-			<input type="checkbox" name="group-notify-members" value="1" /> <?php _e( 'Notify group members of these changes via email', 'buddypress' ); ?>
+			 <?php _e( 'Notify group members of these changes via email', 'buddypress' ); ?>
 		</label>
+		<input type="checkbox" name="group-notify-members" value="1" />
 	</p>
 
 	<?php do_action( 'bp_after_group_details_admin' ); ?>
 
-	<p><input type="submit" value="<?php esc_attr_e( 'Save Changes', 'buddypress' ); ?>" id="save" name="save" /></p>
+	<p class="submit-container"><input type="submit" value="<?php esc_attr_e( 'Save Changes', 'buddypress' ); ?>" id="save" name="save" /></p>
 	<?php wp_nonce_field( 'groups_edit_group_details' ); ?>
 
 <?php endif; ?>
@@ -54,20 +55,20 @@
 	<?php endif; ?>
 
 	<h4><?php _e( 'Privacy Options', 'buddypress' ); ?></h4>
-
-	<div class="radio">
-		<label>
+	<div class="radio opciones-privacidad">
+		<fieldset>
+			<label>
+				<strong><?php _e( 'This is a public group', 'buddypress' ); ?></strong>
+				<ul>
+					<li><?php _e( 'Any site member can join this group.', 'buddypress' ); ?></li>
+					<li><?php _e( 'This group will be listed in the groups directory and in search results.', 'buddypress' ); ?></li>
+					<li><?php _e( 'Group content and activity will be visible to any site member.', 'buddypress' ); ?></li>
+				</ul>
+			</label>
 			<input type="radio" name="group-status" value="public"<?php bp_group_show_status_setting( 'public' ); ?> />
-			<strong><?php _e( 'This is a public group', 'buddypress' ); ?></strong>
-			<ul>
-				<li><?php _e( 'Any site member can join this group.', 'buddypress' ); ?></li>
-				<li><?php _e( 'This group will be listed in the groups directory and in search results.', 'buddypress' ); ?></li>
-				<li><?php _e( 'Group content and activity will be visible to any site member.', 'buddypress' ); ?></li>
-			</ul>
-		</label>
-
+		</fieldset>
+		<fieldset>
 		<label>
-			<input type="radio" name="group-status" value="private"<?php bp_group_show_status_setting( 'private' ); ?> />
 			<strong><?php _e( 'This is a private group', 'buddypress' ); ?></strong>
 			<ul>
 				<li><?php _e( 'Only users who request membership and are accepted can join the group.', 'buddypress' ); ?></li>
@@ -75,9 +76,10 @@
 				<li><?php _e( 'Group content and activity will only be visible to members of the group.', 'buddypress' ); ?></li>
 			</ul>
 		</label>
-
+		<input type="radio" name="group-status" value="private"<?php bp_group_show_status_setting( 'private' ); ?> />
+		</fieldset>
+		<fieldset>
 		<label>
-			<input type="radio" name="group-status" value="hidden"<?php bp_group_show_status_setting( 'hidden' ); ?> />
 			<strong><?php _e( 'This is a hidden group', 'buddypress' ); ?></strong>
 			<ul>
 				<li><?php _e( 'Only users who are invited can join the group.', 'buddypress' ); ?></li>
@@ -85,32 +87,9 @@
 				<li><?php _e( 'Group content and activity will only be visible to members of the group.', 'buddypress' ); ?></li>
 			</ul>
 		</label>
+		<input type="radio" name="group-status" value="hidden"<?php bp_group_show_status_setting( 'hidden' ); ?> />
+		</fieldset>
 	</div>
-
-	<hr />
-
-	<h4><?php _e( 'Group Invitations', 'buddypress' ); ?></h4>
-
-	<p><?php _e( 'Which members of this group are allowed to invite others?', 'buddypress' ); ?></p>
-
-	<div class="radio">
-		<label>
-			<input type="radio" name="group-invite-status" value="members"<?php bp_group_show_invite_status_setting( 'members' ); ?> />
-			<strong><?php _e( 'All group members', 'buddypress' ); ?></strong>
-		</label>
-
-		<label>
-			<input type="radio" name="group-invite-status" value="mods"<?php bp_group_show_invite_status_setting( 'mods' ); ?> />
-			<strong><?php _e( 'Group admins and mods only', 'buddypress' ); ?></strong>
-		</label>
-
-		<label>
-			<input type="radio" name="group-invite-status" value="admins"<?php bp_group_show_invite_status_setting( 'admins' ); ?> />
-			<strong><?php _e( 'Group admins only', 'buddypress' ); ?></strong>
-		</label>
- 	</div>
-
-	<hr />
 
 	<?php do_action( 'bp_after_group_settings_admin' ); ?>
 

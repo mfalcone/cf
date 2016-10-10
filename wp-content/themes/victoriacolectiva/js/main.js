@@ -42,4 +42,21 @@ function InOut( elem )
 	 	$('#content').stop(true, true).delay(1500).animate({top:'60px'}, 500);
 	 	$('#right-sidebar').stop(true, true).delay(1500).animate({top:'80px'}, 500);
 	}
+
+	function ocultarSlidesSidebar(){
+		$(".quiero ul, .hacer ul").removeClass("active");
+		$(".quiero ul, .hacer ul").slideUp(300);
+	}
+	$(".quiero h3, .hacer h3").click(function(){
+		if($(this).next('ul').is(".active")){
+			ocultarSlidesSidebar();
+		}else{
+			ocultarSlidesSidebar();
+			$(this).next('ul').addClass("active");
+			$(this).next('ul').slideDown(300);
+		}
+	})
+	if($("body").is(".groups") || $("body").is(".page-template-page-blog")){
+		$(".hacer h3").trigger("click");
+	}
 })

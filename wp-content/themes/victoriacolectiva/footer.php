@@ -10,13 +10,12 @@
  */
 
 ?>
-
 	</div><!-- #content -->
 
 	<?php if(is_user_logged_in()){?>
 	<aside id="right-sidebar" class="open">
 	<div class="pestania"><span class="glyphicon glyphicon-list"></span></div>
-	<span class="hash">#</span><h2>la agenda</h2>
+	<span class="hash agenda">#</span><h2 class="agenda">Agenda</h2>
 	<ul class="agenda">	
 		<?php 
 			echo $today;
@@ -28,23 +27,43 @@
 							        'compare'	=> '>=',
 							        'value'		=> date("Y-m-d"),
 							        'type' => 'NUMERIC,'
+							    ),
+							    array(
+							        'key'		=> 'nivel-usuario',
+							        'compare'	=> '==',
+							        'value'		=> '_ingresante',
 							    )
 						    ),
 							'meta_key'=>'fecha_inicio', 
 							'orderby' => 'meta_value', 
-							'order' => 'DESC'  );
+							'order' => 'ASC'  );
 		$loop = new WP_Query( $args );
 		//print_r($loop);
 		while ( $loop->have_posts() ) : $loop->the_post(); ?>
-		<li>
-		<?php the_title(); ?>
-		<?php 
-		$fecha_inicio = get_post_meta(get_the_ID(), 'fecha_inicio', true); 
-		echo $fecha_inicio;?>
+			<li>
+			
+			<?php 
+			$fecha_inicio = get_post_meta(get_the_ID(), 'fecha_inicio', true); 
+			$hora_inicio = get_post_meta(get_the_ID(), 'horario_inicio', true); 
+			$fecha_fin = get_post_meta(get_the_ID(), 'fecha_fin', true); 
+			$horario_fin = get_post_meta(get_the_ID(), 'hora_fin', true);
+			?> 
+
+			<div class="date">
+			inicio: <?php echo date("d/m", strtotime($fecha_inicio));?> - <?php echo $hora_inicio;?><br>
+			fin:<?php echo date("d/m", strtotime($fecha_fin));?> - <?php echo $horario_fin;?></div>
+			<h3><?php the_title(); ?></h3>
+			<div class="content">
+				<?php the_content();?>
+			</div>
+			</li>
+		<?php endwhile; ?>
+		<li class="agenda-controles">
+			<a href=""><span class="glyphicon glyphicon-calendar"></span>Ver toda la agenda</a><br>
+			<a href="<?php echo get_home_url(); ?>/agregar-evento"><span class="glyphicon glyphicon-plus"></span>Agregar Evento</a>
 		</li>
 	</ul>
-	<?php endwhile; ?>
-
+	
 	</aside>
 	<footer id="colophon" class="site-footer open" role="contentinfo">
 		<div class="site-info">

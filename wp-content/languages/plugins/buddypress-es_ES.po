@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Development (trunk) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-10-07 14:30-0300\n"
+"PO-Revision-Date: 2016-10-10 17:26-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1296,7 +1296,7 @@ msgstr "URL"
 #: bp-groups/classes/class-bp-groups-component.php:594
 msgctxt "My Group screen nav"
 msgid "Members %s"
-msgstr ""
+msgstr "Miembros (%s)"
 
 #: bp-members/classes/class-bp-members-admin.php:1008
 msgid "Registered on: %s"
@@ -1843,8 +1843,8 @@ msgstr[1] ""
 #: bp-members/bp-members-template.php:488
 msgid "Viewing %1$s - %2$s of %3$s active member"
 msgid_plural "Viewing %1$s - %2$s of %3$s active members"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Viendo %1$s - %2$s de %3$s miembro activo"
+msgstr[1] "Viendo %1$s - %2$s de %3$s miembros activos"
 
 #: bp-members/bp-members-template.php:494
 msgid "Viewing %1$s - %2$s of %3$s member with friends"
@@ -1874,8 +1874,8 @@ msgstr[1] ""
 #: bp-members/bp-members-template.php:506
 msgid "Viewing %1$s - %2$s of %3$s member"
 msgid_plural "Viewing %1$s - %2$s of %3$s members"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Viendo %1$s - %2$s de %3$s miembro"
+msgstr[1] "Viendo %1$s - %2$s de %3$s miembros"
 
 #: bp-blogs/bp-blogs-template.php:236
 msgid "Viewing %1$s - %2$s of %3$s site"
@@ -2015,8 +2015,8 @@ msgstr "Has intentado poner en cola demasiados archivos."
 #: bp-groups/bp-groups-template.php:1653
 msgid "Viewing %1$s - %2$s of %3$s group"
 msgid_plural "Viewing %1$s - %2$s of %3$s groups"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Viendo %1$s - %2$s de %3$s grupo"
+msgstr[1] "Viendo %1$s - %2$s de %3$s grupos"
 
 #: bp-xprofile/classes/class-bp-xprofile-field.php:1312
 msgctxt "XProfile admin edit field"
@@ -2471,7 +2471,7 @@ msgstr ""
 
 #: bp-groups/bp-groups-activity.php:53
 msgid "Group Updates"
-msgstr ""
+msgstr "Actualizaciones de grupo"
 
 #: bp-groups/bp-groups-activity.php:196
 msgid "%1$s changed the name of the group %2$s from \"%3$s\" to \"%4$s\""
@@ -2615,7 +2615,7 @@ msgstr "Perfil"
 #: bp-core/bp-core-template.php:542
 msgctxt "search form"
 msgid "Members"
-msgstr ""
+msgstr "Miembros"
 
 #: bp-activity/classes/class-bp-activity-component.php:276
 msgctxt "My Account Activity sub nav"
@@ -2703,7 +2703,7 @@ msgstr "&mdash; Todo &mdash;"
 #: bp-xprofile/classes/class-bp-xprofile-component.php:354
 msgctxt "My Account Profile sub nav"
 msgid "Change Profile Photo"
-msgstr ""
+msgstr "Cambiar foto de perfil"
 
 #: bp-xprofile/classes/class-bp-xprofile-component.php:344
 msgctxt "My Account Profile sub nav"
@@ -2782,7 +2782,7 @@ msgstr ""
 #: bp-xprofile/classes/class-bp-xprofile-user-admin.php:162
 msgctxt "xprofile user-admin edit screen"
 msgid "Profile Photo"
-msgstr ""
+msgstr "Foto de perfil"
 
 #: bp-templates/bp-legacy/buddypress/members/single/profile/change-avatar.php:84
 msgid "Your profile photo will be used on your profile and throughout the site. To change your profile photo, please create an account with <a href=\"http://gravatar.com\">Gravatar</a> using the same email address as you used to register with this site."
@@ -2822,7 +2822,7 @@ msgstr "Tu foto de perfil será visible en todas tus actividades."
 
 #: bp-templates/bp-legacy/buddypress/members/single/profile/change-avatar.php:11
 msgid "Change Profile Photo"
-msgstr ""
+msgstr "Cambiar foto de perfil"
 
 #: bp-members/classes/class-bp-members-admin.php:675
 msgid "You cannot edit the requested user."
@@ -2830,7 +2830,7 @@ msgstr ""
 
 #: bp-members/classes/class-bp-members-admin.php:296
 msgid "Profile photo was deleted."
-msgstr ""
+msgstr "La foto de perfil fue borrada"
 
 #: bp-members/classes/class-bp-members-admin.php:766
 msgctxt "members user-admin edit screen"
@@ -2863,7 +2863,7 @@ msgstr ""
 
 #: bp-members/bp-members-template.php:2396
 msgid "Your Profile Photo"
-msgstr ""
+msgstr "Tu foto de perfil"
 
 #: bp-messages/bp-messages-notifications.php:127
 msgid "You have %s new private message"
@@ -2956,7 +2956,7 @@ msgstr ""
 
 #: bp-core/deprecated/2.1.php:502
 msgid "Edit %s's Profile Photo"
-msgstr ""
+msgstr "Editar %s's foto de perfil"
 
 #: bp-core/admin/bp-core-admin-functions.php:575
 msgid "By default, all but four of the BuddyPress components are enabled. You can selectively enable or disable any of the components by using the form below. Your BuddyPress installation will continue to function. However, the features of the disabled components will no longer be accessible to anyone using the site."
@@ -2973,7 +2973,7 @@ msgstr "Inicio"
 
 #: bp-groups/classes/class-bp-groups-component.php:659
 msgid "Photo"
-msgstr ""
+msgstr "Foto"
 
 #: bp-blogs/bp-blogs-template.php:952
 msgid "There was a problem; please correct the form below and try again."
@@ -2991,7 +2991,7 @@ msgstr ""
 #: bp-groups/bp-groups-admin.php:37
 msgctxt "Admin Groups menu"
 msgid "Groups"
-msgstr ""
+msgstr "Grupos"
 
 #: bp-members/classes/class-bp-members-admin.php:1355
 msgctxt "signup users"
@@ -3027,7 +3027,7 @@ msgstr ""
 #: bp-groups/bp-groups-admin.php:1153 bp-groups/bp-groups-template.php:4115
 #: bp-members/bp-members-template.php:504
 msgid "Viewing 1 member"
-msgstr ""
+msgstr "viendo 1 miembro"
 
 #: bp-core/bp-core-functions.php:638
 msgctxt "Page title for the user activation screen."
@@ -3287,7 +3287,7 @@ msgstr ""
 #: bp-groups/classes/class-bp-groups-component.php:179
 msgctxt "Component directory search"
 msgid "Search Groups..."
-msgstr ""
+msgstr "Buscar grupos…"
 
 #: bp-groups/classes/class-bp-groups-component.php:313
 msgctxt "Group screen nav"
@@ -3332,7 +3332,7 @@ msgstr ""
 #: bp-groups/classes/class-bp-groups-component.php:623
 msgctxt "My Group screen nav"
 msgid "Manage"
-msgstr ""
+msgstr "Configurar"
 
 #: bp-groups/classes/class-bp-groups-component.php:736
 msgctxt "My Account Groups"
@@ -3921,7 +3921,7 @@ msgstr ""
 #: bp-members/classes/class-bp-members-component.php:116
 msgctxt "component directory title"
 msgid "Members"
-msgstr ""
+msgstr "Miembros"
 
 #: bp-core/bp-core-template.php:3121
 msgctxt "component directory title"
@@ -3935,7 +3935,7 @@ msgstr ""
 #: bp-xprofile/bp-xprofile-activity.php:39
 #: bp-xprofile/bp-xprofile-activity.php:339
 msgid "Profile Updates"
-msgstr ""
+msgstr "Actualización de perfil"
 
 #: bp-templates/bp-legacy/buddypress/members/single/settings/profile.php:28
 #: bp-themes/bp-default/members/single/settings/profile.php:65
@@ -4490,7 +4490,7 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:56
 #: bp-themes/bp-default/groups/single/admin.php:26
 msgid "Notify group members of these changes via email"
-msgstr ""
+msgstr "Notificar a los miembros de este grupo a través de un correo electrónico"
 
 #: bp-groups/bp-groups-admin.php:738
 msgid "%s group has been permanently deleted."
@@ -4524,7 +4524,7 @@ msgstr "Sitios"
 #: bp-core/bp-core-functions.php:637
 msgctxt "Page title for the Members directory."
 msgid "Members"
-msgstr ""
+msgstr "Miembros"
 
 #: bp-core/bp-core-functions.php:639
 msgctxt "Page title for the user registration screen."
@@ -4680,7 +4680,7 @@ msgstr ""
 #: bp-members/classes/class-bp-core-members-widget.php:28
 msgctxt "widget name"
 msgid "(BuddyPress) Members"
-msgstr ""
+msgstr "(BuddyPress) miembros"
 
 #: bp-members/classes/class-bp-core-whos-online-widget.php:26
 msgctxt "widget name"
@@ -4752,12 +4752,12 @@ msgstr ""
 #: bp-groups/bp-groups-admin.php:134
 msgctxt "group admin edit screen"
 msgid "Add New Members"
-msgstr ""
+msgstr "Agregar nuevos miembros"
 
 #: bp-groups/bp-groups-admin.php:135
 msgctxt "group admin edit screen"
 msgid "Manage Members"
-msgstr ""
+msgstr "Gestionar miembros"
 
 #: bp-groups/bp-groups-admin.php:167
 msgctxt "Groups per page (screen options)"
@@ -4902,7 +4902,7 @@ msgstr ""
 #: bp-groups/classes/class-bp-groups-list-table.php:360
 msgctxt "Groups admin Members column header"
 msgid "# Members"
-msgstr ""
+msgstr "# miembros"
 
 #: bp-groups/classes/class-bp-groups-list-table.php:361
 msgctxt "Groups admin Last Active column header"
@@ -5815,12 +5815,12 @@ msgstr ""
 
 #: bp-themes/bp-default/groups/index.php:35
 msgid "All Groups <span>%s</span>"
-msgstr ""
+msgstr "Todos los grupos <span>%s</span>"
 
 #: bp-themes/bp-default/activity/index.php:39
 #: bp-themes/bp-default/members/index.php:35
 msgid "All Members <span>%s</span>"
-msgstr ""
+msgstr "Todos los miembros <span>%s</span>"
 
 #: bp-messages/bp-messages-template.php:1349
 msgid "Private Message"
@@ -5890,7 +5890,7 @@ msgstr ""
 #: bp-groups/bp-groups-template.php:2189 bp-groups/bp-groups-template.php:2265
 #: bp-groups/bp-groups-template.php:4001
 msgid "joined %s"
-msgstr ""
+msgstr "ingreso %s"
 
 #: bp-groups/bp-groups-notifications.php:638
 msgid "You were promoted to an admin in the group \"%s\""
@@ -5913,7 +5913,7 @@ msgstr ""
 #: bp-themes/bp-default/activity/index.php:61
 #: bp-themes/bp-default/groups/index.php:39
 msgid "My Groups <span>%s</span>"
-msgstr ""
+msgstr "Mis grupos<span>%s</span>"
 
 #: bp-themes/bp-default/activity/index.php:71
 msgid "My Favorites <span>%s</span>"
@@ -6206,21 +6206,21 @@ msgstr "Mostrar:"
 #: bp-themes/bp-default/activity/index.php:117
 #: bp-themes/bp-default/members/single/activity.php:50
 msgid "New Groups"
-msgstr ""
+msgstr "Nuevos Grupos"
 
 #: bp-activity/bp-activity-functions.php:1386
 #: bp-themes/bp-default/activity/index.php:99
 #: bp-themes/bp-default/groups/single/activity.php:11
 #: bp-themes/bp-default/members/single/activity.php:21
 msgid "Updates"
-msgstr ""
+msgstr "Actualizaciones"
 
 #: bp-groups/bp-groups-activity.php:44
 #: bp-themes/bp-default/activity/index.php:118
 #: bp-themes/bp-default/groups/single/activity.php:18
 #: bp-themes/bp-default/members/single/activity.php:51
 msgid "Group Memberships"
-msgstr ""
+msgstr "Miembros del grupo"
 
 #: bp-groups/bp-groups-activity.php:75
 #: bp-themes/bp-default/activity/index.php:111
@@ -6232,7 +6232,7 @@ msgstr ""
 #: bp-members/bp-members-activity.php:26
 #: bp-themes/bp-default/activity/index.php:128
 msgid "New Members"
-msgstr ""
+msgstr "Nuevos Miembros"
 
 #: bp-groups/bp-groups-activity.php:66
 #: bp-themes/bp-default/activity/index.php:110
@@ -6542,7 +6542,7 @@ msgstr ""
 
 #: bp-members/classes/class-bp-members-component.php:117
 msgid "Search Members..."
-msgstr ""
+msgstr "Buscar Miembros…"
 
 #: bp-themes/bp-default/functions.php:671
 msgid "Leave a reply"
@@ -6646,7 +6646,7 @@ msgstr ""
 
 #: bp-members/classes/class-bp-core-members-widget.php:231
 msgid "Default members to show:"
-msgstr ""
+msgstr "Miembros por defecto para mostrar"
 
 #: bp-members/classes/class-bp-core-members-widget.php:225
 #: bp-members/classes/class-bp-core-recently-active-widget.php:152
@@ -7195,7 +7195,7 @@ msgstr ""
 
 #: bp-groups/bp-groups-actions.php:409
 msgid "You joined the group!"
-msgstr ""
+msgstr "¡Ingresaste al grupo!"
 
 #: bp-groups/bp-groups-activity.php:33
 msgid "Created a group"
@@ -7203,7 +7203,7 @@ msgstr ""
 
 #: bp-groups/bp-groups-activity.php:42
 msgid "Joined a group"
-msgstr ""
+msgstr "ingresó al grupo"
 
 #: bp-groups/bp-groups-activity.php:64
 msgid "New group forum topic"
@@ -7355,7 +7355,7 @@ msgstr ""
 
 #: bp-core/deprecated/2.1.php:383
 msgid "Manage Members"
-msgstr ""
+msgstr "Gestionar Miembros"
 
 #: bp-core/deprecated/2.1.php:387
 msgid "Membership Requests"
@@ -7398,7 +7398,7 @@ msgstr ""
 
 #: bp-groups/bp-groups-template.php:4996 bp-groups/bp-groups-template.php:5021
 msgid "Recently Joined"
-msgstr ""
+msgstr "Recientemente ingresados"
 
 #: bp-groups/bp-groups-template.php:4997 bp-groups/bp-groups-template.php:5024
 msgid "Most Popular"
@@ -7662,7 +7662,7 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/activity/index.php:55
 #: bp-templates/bp-legacy/buddypress/members/index.php:53
 msgid "All Members %s"
-msgstr ""
+msgstr "Todos los miembros %s"
 
 #: bp-templates/bp-legacy/buddypress/activity/index.php:72
 #: bp-themes/bp-default/activity/index.php:49
@@ -7789,7 +7789,7 @@ msgstr ""
 #: bp-themes/bp-default/members/single/friends.php:20
 #: bp-themes/bp-default/members/single/groups.php:20
 msgid "Order By:"
-msgstr ""
+msgstr "Ordenar por:"
 
 #: bp-templates/bp-legacy/buddypress/blogs/index.php:89
 #: bp-templates/bp-legacy/buddypress/forums/index.php:88
@@ -7810,7 +7810,7 @@ msgstr ""
 #: bp-themes/bp-default/members/single/friends.php:22
 #: bp-themes/bp-default/members/single/groups.php:22
 msgid "Last Active"
-msgstr ""
+msgstr "Ultima actividad"
 
 #: bp-groups/bp-groups-template.php:4278
 #: bp-templates/bp-legacy/buddypress/blogs/index.php:91
@@ -8280,7 +8280,7 @@ msgstr ""
 #: bp-themes/bp-default/groups/single/admin.php:290
 #: bp-themes/bp-default/groups/single/members.php:87
 msgid "This group has no members."
-msgstr ""
+msgstr "Este grupo no tiene miembros"
 
 #: bp-templates/bp-legacy/buddypress/groups/single/requests-loop.php:57
 #: bp-templates/bp-legacy/buddypress/members/single/friends/requests.php:57
@@ -8406,7 +8406,7 @@ msgstr ""
 
 #: bp-themes/bp-default/members/index.php:21
 msgid "Members Directory"
-msgstr ""
+msgstr "Directorio de Miembros"
 
 #: bp-templates/bp-legacy/buddypress/members/index.php:86
 #: bp-templates/bp-legacy/buddypress/members/single/friends.php:22
@@ -8419,7 +8419,7 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/members/members-loop.php:142
 #: bp-themes/bp-default/members/members-loop.php:108
 msgid "Sorry, no members were found."
-msgstr ""
+msgstr "Lo siento, no se encontraron miembros"
 
 #: bp-templates/bp-legacy/buddypress/members/single/friends/requests.php:102
 #: bp-themes/bp-default/members/single/friends/requests.php:68
@@ -9184,7 +9184,7 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:319
 #: bp-themes/bp-default/groups/single/admin.php:231
 msgid "Members"
-msgstr ""
+msgstr "Miembros"
 
 #: bp-core/admin/bp-core-admin-functions.php:452
 #: bp-forums/bp-forums-loader.php:159 bp-forums/bp-forums-loader.php:214
@@ -9242,7 +9242,7 @@ msgstr ""
 
 #: bp-members/classes/class-bp-core-recently-active-widget.php:100
 msgid "There are no recently active members"
-msgstr ""
+msgstr "No hay miembros con actividad reciente"
 
 #: bp-friends/bp-friends-widgets.php:93 bp-members/bp-members-widgets.php:107
 msgid "There were no members found, please try another filter."

@@ -5,7 +5,7 @@
 		background: $rojo;
 		height: 100%;
 		float: left;
-		width: 110px;
+		width: 190px;
 
 		a{
 			width: 30px;
@@ -26,23 +26,34 @@
 		margin-top:5px;
 		a{
 			color: #FFF;
+			display:block;
+			float:left;
+			height: 30px;
+			padding:5px;
+			&:hover{
+				background:$rojo;
+			}
 		}
 
 		img{
-			height: 26px;
+			height: 30px;
 			width: auto;
-			margin-right: 20px;
 			margin-left:20px;
+			margin-top:-5px;
 		}
 	}
 	.buscador{
 		float:left;
 		width: 40%;
+		padding:6px;
 		input{
 			color: $gris_oscuro_dos;
 			
 			&[type="text"]{
 				float:left;
+				border-radius: 5px;
+				border:0;
+				padding:2px;
 			}
 		}
 
@@ -53,21 +64,11 @@
 		.propiedaes{
 			display: none;
 			float:left;
+			margin-left:5px;
 		}
 	}
 
-	.ahora{
-		float:left;
-		width:40%;
-		ul{
-			position:relative;
-		}
-		li{
-			position:absolute;
-			left:0;
-			top:0;
-		}
-	}
+
 }
 
 .logged-in{
@@ -92,6 +93,18 @@
     z-index: 2;
     overflow: auto;
     height: 0;
+
+    .ahora{
+
+    	h2{
+    		text-align: center;
+    		font-size:1.4rem;
+    		font-weight: bold;
+    	}
+    	li{
+    		text-align: center;
+    	}
+    }
 }
 
 .admin-bar{

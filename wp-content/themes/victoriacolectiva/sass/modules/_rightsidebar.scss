@@ -1,12 +1,12 @@
 #right-sidebar{
 	position: fixed;
-    height: 100%;
+    height: 90%;
     background: #cecdcd;
     top: 0;
     right: 0;
     width:0;
     padding-top:90px;
-
+    padding-left:10px;
 	.pestania{
 		position:absolute;
 		top:40px;
@@ -21,19 +21,74 @@
     .hash,h2{
     	font-size:2rem;
     	float:left;
+        height: 30px;
+        line-height: 3rem;
+        color: #FFF;
     }
+    .hash{
+        width: 20px;
+        margin-right: 5px;
+        text-align: center;
+
+        &.agenda{
+            background:$azul;
+        }
+    }
+
     h2{
     	padding: 0;
     	margin:0;
+        width: 165px;
+        padding-left:10px;
     }
     &.open{
     	width: 200px;
     }
 
-    .agenda{
-    	clear:left;
-    	li{
+    h2.agenda{
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,8dd875+100 */
+        background: $azul; /* Old browsers */
+        background: -moz-linear-gradient(left,  $azul 0%, $verde 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  $azul 0%,$verde 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  $azul 0%,$verde 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$azul', endColorstr='$verde',GradientType=1 ); /* IE6-9 */
+    }
 
+    ul.agenda{
+    	clear:left;
+        margin-top:40px;
+        li{ 
+            .date{
+                background:#FFF;
+                border-radius:5px;
+                width: 160px;
+                padding:5px;
+                margin-top:10px;
+                font-size:1rem;
+            }
+
+            h3{
+                font-size:1.6rem;
+                margin:5px 0 0 0;
+                padding:10px;
+                background:$verde;
+                color: #FFF;
+            }
+            .content{
+                border-bottom:1px solid;
+                padding-bottom:20px;
+                margin-top:10px;
+            }
+
+            &.agenda-controles{
+                margin-top:10px;
+                a{
+                    color:$rojo;
+                }
+                span{
+                    margin-right: 10px;
+                }
+            }
     	}
     }
 }

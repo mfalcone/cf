@@ -1,0 +1,28 @@
+#content-directorio{
+
+	h3{
+		margin:0;padding:0;
+		font-size: 2.5rem;
+		line-height: 45px;
+		padding-left:10px;
+	}
+	.agregar-grupo{
+		font-size:2rem;
+		text-align: center;
+		span.text{
+			font-size:1rem;
+			margin-top: -3px;
+   			display: block;
+		}
+	}
+
+	h3, .agregar-grupo{
+		background:$azul;
+		color: #FFF;
+		height: 40px;
+
+		a{
+			color: #FFF;
+		}
+	}
+}

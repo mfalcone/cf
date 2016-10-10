@@ -21,16 +21,20 @@
 			&.muro{
 				h3{
 					border-left:2px solid $verde;
-
 				}
 			}
 
 			&.quiero{
 				h3{
 					border-left:2px solid $celeste;
+					cursor:pointer;
 				}
 				.selected{
 					background:$celeste;
+				}
+
+				ul{
+					display:none;
 				}
 
 			}
@@ -38,9 +42,14 @@
 			&.hacer{
 				h3{
 					border-left:2px solid $rojo;
+					cursor:pointer;
 				}
 				.selected{
 					background:$rojo;
+				}
+
+				ul{
+					display:none;
 				}
 			}
 
@@ -59,7 +68,10 @@
 			    text-align: left;
 			    margin:0;padding:0;
 				padding-left: 10px;
-			    
+			    &:hover{
+			    	background:$rojo;
+			    	color:#FFF;
+			    }
 			    span{
 			    	margin-right:10px;
 			    }

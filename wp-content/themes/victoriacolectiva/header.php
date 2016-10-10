@@ -37,9 +37,8 @@
 		<div class="header-container">
 			<div class="buscador">
 				<form action="<?php echo bp_search_form_action(); ?>" method="post" id="search-form">
-					<label for="search-terms" class="accessibly-hidden"><?php _e( 'Buscar:', 'buddypress' ); ?></label>
 					
-					<input type="text" id="search-terms" name="search-terms" value="<?php echo isset( $_REQUEST['s'] ) ? esc_attr( $_REQUEST['s'] ) : ''; ?>" />
+					<input type="text" placeholder="buscar" id="search-terms" name="search-terms" value="<?php echo isset( $_REQUEST['s'] ) ? esc_attr( $_REQUEST['s'] ) : ''; ?>" />
 					
 					<div class="propiedaes">
 						<?php echo bp_search_form_type_select(); ?>
@@ -54,12 +53,13 @@
 			
 		</div>
 		<div class="user">
-			<?php 
-				global $current_user;
-				$username = $current_user->user_login;
-				echo $username;
-			?>
-			<?php bp_loggedin_user_avatar( 'width=' . bp_core_avatar_thumb_width() . '&height=' . bp_core_avatar_thumb_height() ); ?>
+			<a href="<?php echo bp_loggedin_user_domain(); ?>">
+				<?php 
+					global $current_user;
+					$username = $current_user->user_login;
+					echo $username;
+				?>
+				<?php bp_loggedin_user_avatar( 'width=' . bp_core_avatar_thumb_width() . '&height=' . bp_core_avatar_thumb_height() ); ?></a>
 			<a href="<?php echo wp_logout_url(home_url()); ?>">Salir <span class="glyphicon glyphicon-off"></span></a>
 		</div>
 	</header><!-- #masthead -->
@@ -79,7 +79,7 @@
 					$user_id = get_current_user_id();
 					$args = array(
 							'type'=>'active',
-							'per_page'=>999,
+							'per_page'=>3,
 							'user_id'=>$user_id
 					);
 					if ( bp_has_groups($args) ) : ?>
@@ -99,14 +99,23 @@
 
 						</li>
 					<?php endwhile; ?>
-					<li><a href="<?php echo get_home_url(); ?>/blog">Momentos CF</a></li>
 					<?php endif;?>
+					<?php if(is_page('groups')): ?>
+					<li><span class="selected">Ver todos los grupos</span></li>
+					<?php else: ?>
+					<li><a href="<?php echo get_home_url(); ?>/groups">Ver todos los grupos</a></li>
+					<?php endif; ?>
+					<?php if(is_page('blog')): ?>
+					<li><span class="selected">Momentos CF</span></li>
+					<?php else: ?>
+					<li><a href="<?php echo get_home_url(); ?>/blog">Momentos CF</a></li>
+					<?php endif; ?>	
 			</li>
 		</ul>
 	</aside>
 	<div class="show">
 			<div class="ahora">
-				#Ahora en Ciudad Futura:
+				<h2>#Ahora en Ciudad Futura:</h2>
 				<ul>
 						<?php 
 						$args = array('post_type' => 'ahora','posts_per_page' => -1);

@@ -7,15 +7,14 @@
 
 			<?php do_action( 'bp_before_group_home_content' ); ?>
 
-			<div id="item-header" class="container" role="complementary">
+			<div id="item-header" class="row" role="complementary">
 
 				<?php locate_template( array( 'groups/single/group-header.php' ), true ); ?>
 
 			</div><!-- #item-header -->
 
-			<div class="container">
-			<div class="row">
-				<div class="item-list-tabs no-ajax col-md-4" id="subnav" role="navigation">
+			<div class="row herramientas-grupos">
+				<div class="item-list-tabs no-ajax col-md-6" id="subnav" role="navigation">
 				<ul>
 					<?php do_action( 'bp_group_activity_syndication_options' ); ?>
 
@@ -37,7 +36,7 @@
 					</li>
 				</ul>
 				</div><!-- .item-list-tabs -->
-				<div id="item-nav" class="col-md-4">
+				<div id="item-nav" class="col-md-6">
 				<div class="item-list-tabs no-ajax" id="object-nav" role="navigation">
 					<ul>
 
@@ -49,9 +48,8 @@
 				</div>
 				</div><!-- #item-nav -->
 			</div><!-- #row< -->
-			</div><!-- #container< -->
-
-			<div id="item-body">
+			
+			<div id="item-body" class="row">
 
 				<?php do_action( 'bp_before_group_body' );
 
