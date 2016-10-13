@@ -19,15 +19,10 @@
 		</a>
 	</div>
 
-	<h5><?php if ( bp_is_group() )
-			printf( __( "What's new in %s, %s?", 'buddypress' ), bp_get_group_name(), bp_get_user_firstname() );
-		else
-			printf( __( "Que hay de nuevo, %s?", 'buddypress' ), bp_get_user_firstname() );
-	?></h5>
-
+	
 	<div id="whats-new-content">
 		<div id="whats-new-textarea">
-			<textarea name="whats-new" id="whats-new" class="bp-suggestions" cols="50" rows="10"><?php if ( isset( $_GET['r'] ) ) : ?>@<?php echo esc_textarea( $_GET['r'] ); ?> <?php endif; ?></textarea>
+			<textarea placeholder="¿Qué estás pensando?" name="whats-new" id="whats-new" class="bp-suggestions" cols="50" rows="10"><?php if ( isset( $_GET['r'] ) ) : ?>@<?php echo esc_textarea( $_GET['r'] ); ?> <?php endif; ?></textarea>
 		</div>
 
 		<div id="whats-new-options">

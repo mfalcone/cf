@@ -1,3 +1,15 @@
+body.registration{
+	background:#FFF;
+
+	#content{
+		padding-right:0;
+	}
+
+	#page{
+		max-width: 900px;
+	}
+}
+
 .registrarse{
 
 	.page{
@@ -12,4 +24,50 @@
 	.no-requerido{
 			display:none;
 		}
+	
+	.standard-form{
+		label{
+			width:100%;
+			color: $rojo;
+			text-align: left;
+			font-size:1.2rem;
+			margin-top:20px;
+		}
+	}
+
+	.input-wrapper{
+		float:left;
+		width: 100%;
+		
+		.asterix{
+			position: absolute;
+			margin-top:5px;
+			left:-5px;
+			color: $rojo;
+			font-size:2rem;
+		}
+	}
+	.error{
+		float:left;
+		background:$gris_claro_back;
+		border-bottom:1px solid $rojo;
+		border-top:1px solid $rojo;
+		width: 100%;
+	}
+	input{
+		padding:5px;
+		border-radius: 5px;
+		border:1px solid $gris_claro_back;
+	}
+
+	#domicilio{
+		width:100%;
+		height: 500px;
+		input{
+		font-size:2rem;
+		width: 700px;
+		}
+	}
+
+	
 }

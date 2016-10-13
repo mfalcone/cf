@@ -103,7 +103,7 @@ function wpt_save_agenda_meta($post_id, $post) {
 	$agenda_meta['fecha_inicio'] = $_POST['fecha_inicio'];
 	$agenda_meta['fecha_fin'] = $_POST['fecha_fin'];
 	$agenda_meta['horario_inicio'] = $_POST['horario_inicio'];
-	$agenda_meta['hora_fin'] = $_POST['hora_finfpr'];
+	$agenda_meta['hora_fin'] = $_POST['hora_fin'];
 	$agenda_meta['nivel-usuario'] = $_POST['nivel-usuario'];
 	
 	// Add values of $events_meta as custom fields

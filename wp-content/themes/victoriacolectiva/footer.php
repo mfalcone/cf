@@ -18,7 +18,6 @@
 	<span class="hash agenda">#</span><h2 class="agenda">Agenda</h2>
 	<ul class="agenda">	
 		<?php 
-			echo $today;
 			$args = array('post_type' => 'agenda',
 							'posts_per_page' => 2, 
 							'meta_query' => array(
@@ -50,8 +49,8 @@
 			?> 
 
 			<div class="date">
-			inicio: <?php echo date("d/m", strtotime($fecha_inicio));?> - <?php echo $hora_inicio;?><br>
-			fin:<?php echo date("d/m", strtotime($fecha_fin));?> - <?php echo $horario_fin;?></div>
+			inicio: <?php echo date("d/m", strtotime($fecha_inicio));?> - <?php echo $hora_inicio;?>hs. | 
+			fin:<?php echo date("d/m", strtotime($fecha_fin));?> - <?php echo $horario_fin;?>hs.</div>
 			<h3><?php the_title(); ?></h3>
 			<div class="content">
 				<?php the_content();?>

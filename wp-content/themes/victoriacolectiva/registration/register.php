@@ -7,7 +7,6 @@
 		<div class="page" id="register-page">
 
 			<form action="" name="signup_form" id="signup_form" class="standard-form" method="post" enctype="multipart/form-data">
-
 			<?php if ( 'registration-disabled' == bp_get_current_signup_step() ) : ?>
 				<?php do_action( 'template_notices' ); ?>
 				<?php do_action( 'bp_before_registration_disabled' ); ?>
@@ -19,9 +18,9 @@
 
 			<?php if ( 'request-details' == bp_get_current_signup_step() ) : ?>
 
-				<h2>Datos de usuario</h2>
+				<h2>Formulario de registro</h2>
 				<?php do_action( 'template_notices' ); ?>
-				<h3>Completa tus datos personales y de contacto</h3>
+				<h3>Completa con tus datos personales y de contacto</h3>
 				
 				<?php do_action( 'bp_before_account_details_fields' ); ?>
 
@@ -30,21 +29,35 @@
 					<?php /***** Basic Account Details ******/ ?>
 
 					
-					<label for="signup_username"><?php _e( 'Username', 'buddypress' ); ?> <?php _e( '(required)', 'buddypress' ); ?></label>
-					<?php do_action( 'bp_signup_username_errors' ); ?>
+					
+						<label for="signup_username"><?php _e( 'Username', 'buddypress' ); ?></label>
+						<?php do_action( 'bp_signup_username_errors' ); ?>
+					
+					<div class="input-wrapper">
+					<span class="asterix">*</span>
 					<input type="text" name="signup_username" id="signup_username" value="<?php bp_signup_username_value(); ?>" />
-
-					<label for="signup_email"><?php _e( 'Email Address', 'buddypress' ); ?> <?php _e( '(required)', 'buddypress' ); ?></label>
+					</div>
+				
+					<label for="signup_email"><?php _e( 'Email Address', 'buddypress' ); ?></label>
 					<?php do_action( 'bp_signup_email_errors' ); ?>
+					<div class="input-wrapper">
+					<span class="asterix">*</span>
 					<input type="text" name="signup_email" id="signup_email" value="<?php bp_signup_email_value(); ?>" />
-
-					<label for="signup_password"><?php _e( 'Choose a Password', 'buddypress' ); ?> <?php _e( '(required)', 'buddypress' ); ?></label>
+					</div>
+					
+					<label for="signup_password"><?php _e( 'Choose a Password', 'buddypress' ); ?></label>
 					<?php do_action( 'bp_signup_password_errors' ); ?>
+					<div class="input-wrapper">
+					<span class="asterix">*</span>
 					<input type="password" name="signup_password" id="signup_password" value="" />
+					</div>
 
-					<label for="signup_password_confirm"><?php _e( 'Confirm Password', 'buddypress' ); ?> <?php _e( '(required)', 'buddypress' ); ?></label>
+					<label for="signup_password_confirm"><?php _e( 'Confirm Password', 'buddypress' ); ?></label>
 					<?php do_action( 'bp_signup_password_confirm_errors' ); ?>
+					<div class="input-wrapper">
+					<span class="asterix">*</span>
 					<input type="password" name="signup_password_confirm" id="signup_password_confirm" value="" />
+					</div>
 
 					<?php do_action( 'bp_account_details_fields' ); ?>
 
@@ -60,8 +73,7 @@
 
 					<div class="register-section" id="profile-details-section">
 
-						<h4><?php _e( 'Profile Details', 'buddypress' ); ?></h4>
-
+					
 						<?php /* Use the profile field loop to render input fields for the 'base' profile field group */ ?>
 						<?php if ( bp_is_active( 'xprofile' ) ) : if ( bp_has_profile( array( 'profile_group_id' => 1, 'fetch_field_data' => false ) ) ) : while ( bp_profile_groups() ) : bp_the_profile_group(); ?>
 
@@ -71,9 +83,15 @@
 
 								<?php if ( 'textbox' == bp_get_the_profile_field_type() ) : ?>
 									<div></div>
-									<label for="<?php bp_the_profile_field_input_name(); ?>"><?php bp_the_profile_field_name(); ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><?php _e( '(required)', 'buddypress' ); ?><?php endif; ?></label>
+									<label for="<?php bp_the_profile_field_input_name(); ?>"><?php bp_the_profile_field_name(); ?></label>
 									<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
-									<input type="text" name="<?php bp_the_profile_field_input_name(); ?>" id="<?php bp_the_profile_field_input_name(); ?>" value="<?php bp_the_profile_field_edit_value(); ?>" />
+									<div class="input-wrapper">
+									 <?php if ( bp_get_the_profile_field_is_required() ) : ?><span class="asterix">*</span><?php endif; ?>
+									<input type="text" name="<?php bp_the_profile_field_input_name(); ?>" id="<?php bp_the_profile_field_input_name(); ?>" value="<?php bp_the_profile_field_edit_value(); ?>" placeholder="<?php if ( bp_get_the_profile_field_name() == 'Domicilio' ) {?>Ingresá tu Domicilio<?php } ?>" />
+									</div>
+									<?php if ( bp_get_the_profile_field_name() == 'Domicilio' ) {?>
+										<div id="domicilio"></div>
+									<?php } ?>
 
 								<?php endif; ?>
 
@@ -184,7 +202,7 @@
 
 								<?php do_action( 'bp_custom_profile_edit_fields' ); ?>
 
-								<p class="description"><?php bp_the_profile_field_description(); ?></p>
+								
 
 							</div>
 

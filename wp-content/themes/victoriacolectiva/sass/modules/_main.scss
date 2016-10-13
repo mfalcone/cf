@@ -6,10 +6,37 @@
 	}
 
 	&.right-side-opens{
-		padding-right:150px;
+		padding-right:210px;
 	}
 }
 
 .home-page{
 	
+}
+
+
+.standard-form, #primaryPostForm{
+	overflow:auto;
+	width:100%;
+		label{
+			clear:left;
+			float:left;
+			width:40%;
+			text-align:right;
+			padding-right:5px;
+			margin-top:5px;
+		}
+		input,textarea,select{
+			float:left;
+			margin-top:5px;
+		}
+
+		input[type="submit"], button[type="submit"]{
+			float:right;
+		}
+	
+	.field-visibility-settings-toggle,	.field-visibility-settings-notoggle{
+		display: none;
+	}
+
 }

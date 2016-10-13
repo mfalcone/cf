@@ -45,7 +45,7 @@ jq(document).ready( function() {
 	/**** Activity Posting ********************************************************/
 
 	/* Textarea focus */
-	jq('#whats-new').focus( function(){
+	/*jq('#whats-new').focus( function(){
 		jq("#whats-new-options").animate({
 			height:'40px'
 		});
@@ -58,10 +58,10 @@ jq(document).ready( function() {
 		if ( $whats_new_form.hasClass("submitted") ) {
 			$whats_new_form.removeClass("submitted");
 		}
-	});
+	});*/
 
 	/* On blur, shrink if it's empty */
-	jq('#whats-new').blur( function(){
+	/*jq('#whats-new').blur( function(){
 		if (!this.value.match(/\S+/)) {
 			this.value = "";
 			jq("#whats-new-options").animate({
@@ -72,7 +72,7 @@ jq(document).ready( function() {
 			});
 			jq("#aw-whats-new-submit").prop("disabled", true);
 		}
-	});
+	});*/
 
 	/* New posts */
 	jq("input#aw-whats-new-submit").click( function() {

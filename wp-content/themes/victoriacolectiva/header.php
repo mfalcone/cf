@@ -100,15 +100,23 @@
 						</li>
 					<?php endwhile; ?>
 					<?php endif;?>
+					
 					<?php if(is_page('groups')): ?>
 					<li><span class="selected">Ver todos los grupos</span></li>
 					<?php else: ?>
 					<li><a href="<?php echo get_home_url(); ?>/groups">Ver todos los grupos</a></li>
 					<?php endif; ?>
+					
 					<?php if(is_page('blog')): ?>
 					<li><span class="selected">Momentos CF</span></li>
 					<?php else: ?>
 					<li><a href="<?php echo get_home_url(); ?>/blog">Momentos CF</a></li>
+					<?php endif; ?>
+
+					<?php if(is_page('agenda-y-eventos')): ?>
+					<li><span class="selected">Agenda</span></li>
+					<?php else: ?>
+					<li><a href="<?php echo get_home_url(); ?>/agenda-y-eventos">Agenda</a></li>
 					<?php endif; ?>	
 			</li>
 		</ul>

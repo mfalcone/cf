@@ -363,7 +363,15 @@ function activarUsuario( $field_id, $value ) {
 add_action( 'xprofile_profile_field_data_updated', 'activarUsuario');
 
 
-
+function my_enqueue_stuff() {
+	$url = $_SERVER["REQUEST_URI"];
+	$register = strpos($url, 'registrar');
+	  if ($register!==false) {
+	   wp_enqueue_script('google-map-api','https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyChYCQ7TAvJC6E_I4XCnEuOTDuOV-_lOWY&libraries=places&'); 
+		wp_enqueue_style('jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css'); 
+	}
+}
+add_action( 'wp_enqueue_scripts', 'my_enqueue_stuff' );
 
 //$install_path = get_home_path();
 $path =ABSPATH.'/wp-content/themes/victoriacolectiva';

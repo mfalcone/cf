@@ -7,8 +7,8 @@
  */
 
 /** This action is documented in bp-templates/bp-legacy/buddypress/members/single/settings/profile.php */
-do_action( 'bp_before_member_settings_template' ); ?>
-
+do_action( 'bp_before_member_settings_template' ); 
+get_header(); ?>
 <form action="<?php echo bp_displayed_user_domain() . bp_get_settings_slug() . '/general'; ?>" method="post" class="standard-form" id="settings-form">
 
 	<?php if ( !is_super_admin() ) : ?>
@@ -57,3 +57,4 @@ do_action( 'bp_before_member_settings_template' ); ?>
 
 /** This action is documented in bp-templates/bp-legacy/buddypress/members/single/settings/profile.php */
 do_action( 'bp_after_member_settings_template' ); ?>
+<? get_footer() ?>
