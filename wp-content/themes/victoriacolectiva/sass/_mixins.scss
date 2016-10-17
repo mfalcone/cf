@@ -2,3 +2,29 @@
 	margin:0;
 	padding:0;
 }
+
+@mixin controles-conf($botones){
+		width:100%;
+		border: 1px solid #ccc;
+	    border-right: none;
+		margin:10px 0;
+		ul{
+			overflow: hidden;
+    		margin: 0;
+    		padding: 0;
+
+    		li{
+	    		list-style: none;
+			    float: left;
+			    text-align: center;
+			    border-left: 1px solid #fff;
+			    border-right: 1px solid #ccc;
+			    width: $botones; /* fallback for non-calc() browsers */
+			    box-sizing: border-box;
+
+			    &:first-child {
+				    border-left: none;
+				}
+    		}
+		}
+}

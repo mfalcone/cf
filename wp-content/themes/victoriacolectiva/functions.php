@@ -27,6 +27,8 @@ if ( ! defined( 'BP_AVATAR_FULL_WIDTH' ) )
 if ( ! defined( 'BP_AVATAR_FULL_HEIGHT' ) )
 	define( 'BP_AVATAR_FULL_HEIGHT', 560 ); //change this to default height for full avatar
 
+
+
 function bp_dtheme_setup() {
 
 	// Load the AJAX functions for the theme
@@ -49,10 +51,10 @@ function bp_dtheme_setup() {
 	add_theme_support( 'bp-default-responsive' );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
+	/*register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'buddypress' ),
 	) );
-
+*/
 	// This theme allows users to set a custom background
 	$custom_background_args = array(
 		'wp-head-callback' => 'bp_dtheme_custom_background_style'
@@ -128,14 +130,6 @@ function victoriacolectiva_scripts() {
 add_action( 'wp_enqueue_scripts', 'victoriacolectiva_scripts' );
 
 
-function register_my_menus() {
-  register_nav_menus(
-    array(
-      'header-menu' => __( 'Menu principal' ),
-    )
-  );
-}
-add_action( 'init', 'register_my_menus' );
 
 function is_login_page() {
     return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
@@ -366,14 +360,51 @@ add_action( 'xprofile_profile_field_data_updated', 'activarUsuario');
 function my_enqueue_stuff() {
 	$url = $_SERVER["REQUEST_URI"];
 	$register = strpos($url, 'registrar');
-	  if ($register!==false) {
+	$mapeo = strpos($url, 'mapeo');
+	  if ($register!==false || $mapeo!==false) {
 	   wp_enqueue_script('google-map-api','https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyChYCQ7TAvJC6E_I4XCnEuOTDuOV-_lOWY&libraries=places&'); 
 		wp_enqueue_style('jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css'); 
 	}
 }
 add_action( 'wp_enqueue_scripts', 'my_enqueue_stuff' );
 
+
+if ( function_exists('register_sidebar') )
+  register_sidebar(array(
+    'name' => 'Name of Widgetized Area',
+    'before_widget' => '<div class = "widgetizedArea">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+  )
+);
+
+function register_my_menu() {
+  register_nav_menus(
+  	array(
+  		'quiero-menu' => __( 'Menú Quiero' ),
+  		'hacer-menu' => __( 'Menú Hacer' ),
+  		)
+  	);
+}
+add_action( 'init', 'register_my_menu' );
+
+
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+function special_nav_class ($classes, $item) {
+    if (in_array('current-menu-item', $classes) ){
+        $classes[] = 'selected ';
+    }
+    return $classes;
+}
+
+
 //$install_path = get_home_path();
 $path =ABSPATH.'/wp-content/themes/victoriacolectiva';
 require_once( $path . '/includes/custom-event-post.php');
 require_once( $path . '/includes/custom-ahora-post.php');
+require_once( $path . '/includes/quiero-ayudar.php');
+require_once( $path . '/includes/quiero-mapeo.php');
+
+

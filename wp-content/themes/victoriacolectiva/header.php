@@ -52,7 +52,43 @@
 			</div>
 			
 		</div>
+		<div class="widget">
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Name of Widgetized Area") ) : ?>
+			<?php endif;?>
+		</div>
 		<div class="user">
+			<div id="bp-nav-menu-notifications-default" class="bp-nav-menu-submenu">
+                            <?php
+                                $notifications = bp_notifications_get_notifications_for_user( bp_loggedin_user_id(), 'object' );
+                                $count         = ! empty( $notifications ) ? count( $notifications ) : 0;
+                                $alert_class   = (int) $count > 0 ? 'pending-count alert' : 'count no-alert';
+                                $menu_title    = '<span id="ab-pending-notifications" class="' . $alert_class . '">' . number_format_i18n( $count ) . '</span>';
+                                $menu_link     = trailingslashit( bp_loggedin_user_domain() . bp_get_notifications_slug() );
+                                if ( ! empty( $notifications ) ) {
+                                	?>
+                                	<span class="number">1</span>
+                                	<ul><?php
+                                    foreach ( (array) $notifications as $notification ) {
+                                        ?>
+                                        <li id="bp-nav-menu-notification-<?php echo $notification->id; ?>" class="algo">
+                                            <a class="bp-nav-menu-item" href="<?php echo $notification->href; ?>">
+                                                <?php echo $notification->content; ?>
+                                            </a>
+                                        </li>
+                                        <?php
+                                    }?>
+                                   </ul> 
+                                <?php } else {
+                                    ?>
+                                    <span class="number">
+                                        <a class="bp-nav-menu-item" href="<?php echo $menu_link; ?>">
+                                            0
+                                        </a>
+                                    </span>
+                                    <?php
+                                }
+                            ?>
+            </div>
 			<a href="<?php echo bp_loggedin_user_domain(); ?>">
 				<?php 
 					global $current_user;
@@ -68,56 +104,40 @@
 		<ul id="main-menu">
 			<li class="muro"><h3><a href="<?php echo get_home_url(); ?>/actividad"><span class="glyphicon glyphicon-comment"></span>MURO</a></h3></li>
 			<li class="quiero"><h3><span class="glyphicon glyphicon-heart"></span>Quiero</h3>
-				<ul>
-					<li>hola</li>
-				</ul>
+				<?php wp_nav_menu( array( 'theme_location' => 'quiero-menu','container' => '' ) ); ?>
 			</li>
 			<li class="hacer"><h3><span class="glyphicon glyphicon-forward"></span>Hacer</h3>
-			<ul>
-					<?php 
-					$currentslug = bp_get_current_group_slug();
-					$user_id = get_current_user_id();
-					$args = array(
-							'type'=>'active',
-							'per_page'=>3,
-							'user_id'=>$user_id
-					);
-					if ( bp_has_groups($args) ) : ?>
-					<?php while ( bp_groups() ) : bp_the_group(s); ?>
-						<?php
-							ob_start();
-							bp_group_slug();
-							$slugs = ob_get_contents();
-							ob_end_clean();
-						?>
-						<li>
-							<?php if($currentslug == $slugs){?>
-								<span class="selected"><?php bp_group_name() ?></span>
-							<?php }else{?>
-								<a href="<?php bp_group_permalink() ?>"><?php bp_group_name() ?></a>
-							<?php }?>
 
-						</li>
-					<?php endwhile; ?>
-					<?php endif;?>
-					
-					<?php if(is_page('groups')): ?>
-					<li><span class="selected">Ver todos los grupos</span></li>
-					<?php else: ?>
-					<li><a href="<?php echo get_home_url(); ?>/groups">Ver todos los grupos</a></li>
-					<?php endif; ?>
-					
-					<?php if(is_page('blog')): ?>
-					<li><span class="selected">Momentos CF</span></li>
-					<?php else: ?>
-					<li><a href="<?php echo get_home_url(); ?>/blog">Momentos CF</a></li>
-					<?php endif; ?>
+				<ul>
+						<?php 
+						$currentslug = bp_get_current_group_slug();
+						$user_id = get_current_user_id();
+						$args = array(
+								'type'=>'active',
+								'per_page'=>3,
+								'user_id'=>$user_id
+						);
+						if ( bp_has_groups($args) ) : ?>
+						<?php while ( bp_groups() ) : bp_the_group(s); ?>
+							<?php
+								ob_start();
+								bp_group_slug();
+								$slugs = ob_get_contents();
+								ob_end_clean();
+							?>
+							<li>
+								<?php if($currentslug == $slugs){?>
+									<span class="selected"><?php bp_group_name() ?></span>
+								<?php }else{?>
+									<a href="<?php bp_group_permalink() ?>"><?php bp_group_name() ?></a>
+								<?php }?>
 
-					<?php if(is_page('agenda-y-eventos')): ?>
-					<li><span class="selected">Agenda</span></li>
-					<?php else: ?>
-					<li><a href="<?php echo get_home_url(); ?>/agenda-y-eventos">Agenda</a></li>
-					<?php endif; ?>	
+							</li>
+						<?php endwhile; ?>
+						<?php endif;?>
+						
+						<?php wp_nav_menu( array( 'theme_location' => 'hacer-menu','container' => '','items_wrap' => '%3$s') ); ?>
+				</ul>		
 			</li>
 		</ul>
 	</aside>

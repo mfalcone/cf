@@ -8,7 +8,7 @@
 
 get_header( 'buddypress' ); ?>
 
-<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
+<div class="item-list-tabs no-ajax" id="subnav-profile" role="navigation">
 	<ul>
 		<?php bp_get_options_nav(); ?>
 	</ul>

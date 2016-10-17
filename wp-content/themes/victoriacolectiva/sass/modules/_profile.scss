@@ -109,3 +109,74 @@
 		margin-top:80px;
 	}
 }
+
+	#subnav-profile{
+		@include controles-conf(25%);
+	}
+
+	.clear-value{
+		display:none;
+	}
+
+	.editfield{
+		float:left;
+		width: 100%;
+	}
+
+	.field_por-que-te-sumaste-a-hagamos-ciudadfutura-com-ar{
+		width: 49%;
+		font-size:1.2rem;
+		margin-right:1%;
+		label{
+			width: 100%;
+			text-align: left;
+			
+			&:first-child {
+				background: #f1dddd;
+				border:1px solid #efd3d7;
+				font-weight: bold;
+				color:$rojo;
+				padding:5px;
+			}
+		}
+	}
+
+	.field_te-queres-afiliar-a-ciudad-futura{
+		width: 49%;
+		font-size:1.2rem;
+
+		label{
+			width: 100%;
+			text-align: left;
+			padding-left:20px;
+		}
+		.radio{
+			label:first-child {
+				background: #f1dddd;
+				border:1px solid #efd3d7;
+				font-weight: bold;
+				color:$rojo;
+				padding:5px;
+			}
+			div{
+				label:first-child {
+					background:none;
+					border:none;
+					font-weight: normal;
+					color:#000;
+					padding-left:20px;
+				}
+			}
+		}
+	}
+
+	.field_custom{
+		font-size:1.2rem;
+		label:first-child{
+			display:none;
+		}
+		label{
+			float:left;
+			clear:none;
+		}
+	}

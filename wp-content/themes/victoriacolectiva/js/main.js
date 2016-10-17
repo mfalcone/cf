@@ -58,9 +58,13 @@ function InOut( elem )
 			$(this).next('ul').slideDown(300);
 		}
 	})
-	if($("body").is(".groups") || $("body").is(".page-template-page-blog") ||  $("body").is(".page-template-page-agenda-php") ){
+
+	if($(".quiero .selected").size()==1){
+		$(".quiero h3").trigger("click");
+	}else if($(".hacer .selected").size()==1){
 		$(".hacer h3").trigger("click");
 	}
+	
 
 	$("#whats-new-form textarea").on("input",function(){
 		$(this).height("82px").height($(this)[0].scrollHeight);
@@ -75,7 +79,6 @@ function InOut( elem )
             };
             var elem = $("#domicilio")[0];
             map = new google.maps.Map(elem, myOptions);
-        	console.log(google);
         	inputid = $("#domicilio").prev().find("input").attr("id");
 
         	var input = document.getElementById(inputid);
@@ -135,11 +138,131 @@ function InOut( elem )
 		      } else {
 		        bounds.extend(place.geometry.location);
 		      }
+		    	var lat = place.geometry.location.lat();
+		    	var lng = place.geometry.location.lng();
+		    	
+		    	$(".geolocalizacion").find("input").val("lat:"+lat+"/lng:"+lng)
+				 
+
 		    });
 		    map.fitBounds(bounds);
 		  });
 		  // [END region_getplaces]
-
-
         }
+
+
+       if($("#quiero-mapeo").size()){
+       	var latlng = new google.maps.LatLng(-32.944243, -60.650539);
+       		 var myOptions = {
+                zoom: 13,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var elem = $("#quiero-mapeo")[0];
+            map = new google.maps.Map(elem, myOptions);
+        	
+        	var input = document.getElementById("direccion");
+			var searchBox = new google.maps.places.SearchBox(input);
+			map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+			map.addListener('bounds_changed', function() {
+			    searchBox.setBounds(map.getBounds());
+			  });
+
+
+			google.maps.event.addDomListener(input, 'keydown', function(e) { 
+			    if (e.keyCode == 13) { 
+			        e.preventDefault(); 
+			    	}
+		    })
+
+		    google.maps.event.addListener(map, 'click', function(event) {
+			   placeMarker(event.latLng);
+			});
+
+		    var marker;
+			function placeMarker(location) {
+		     if (marker)
+       		 marker.setMap(null);
+       		  markers.forEach(function(marker) {
+		      marker.setMap(null);
+		    });
+		    markers = [];
+
+		    marker = new google.maps.Marker({
+		        position: location, 
+		        map: map
+		    });
+
+			var geocoder= new google.maps.Geocoder();
+			var latlng = new google.maps.LatLng(location.lat(), location.lng());
+			console.log(latlng)
+		  	$("#lat").val(location.lat());
+		    $("#lng").val(location.lng());
+		  	geocoder.geocode({
+		    'latLng': latlng
+		  }, function (results, status) {
+		    if (status === google.maps.GeocoderStatus.OK) {
+		      if (results[1]) {
+		        $("#direccion").val(results[1].formatted_address);
+		      } else {
+		        alert('No results found');
+		      }
+		    } else {
+		      alert('Geocoder failed due to: ' + status);
+		    }
+		  });
+
+
+
+		}
+
+			 var markers = [];
+		  // [START region_getplaces]
+		  // Listen for the event fired when the user selects a prediction and retrieve
+		  // more details for that place.
+		  searchBox.addListener('places_changed', function() {
+		    var places = searchBox.getPlaces();
+
+		    if (places.length == 0) {
+		      return;
+		    }
+
+		    // Clear out the old markers.
+		    if (marker)
+        marker.setMap(null);
+		    markers.forEach(function(marker) {
+		      marker.setMap(null);
+		    });
+		    markers = [];
+
+		    // For each place, get the icon, name and location.
+		    var bounds = new google.maps.LatLngBounds();
+		    places.forEach(function(place) {
+		     
+		      // Create a marker for each place.
+		      markers.push(new google.maps.Marker({
+		        map: map,
+		        title: place.name,
+		        position: place.geometry.location
+		      }));
+
+		      if (place.geometry.viewport) {
+		        // Only geocodes have viewport.
+		        bounds.union(place.geometry.viewport);
+		      } else {
+		        bounds.extend(place.geometry.location);
+		      }
+		    	var lat = place.geometry.location.lat();
+		    	var lng = place.geometry.location.lng();
+		    	
+		    	$("#lat").val(lat);
+		    	$("#lng").val(lng);
+				 
+
+		    });
+		    map.fitBounds(bounds);
+		  });
+		  // [END region_getplaces]
+       }
+
 })

@@ -83,9 +83,9 @@
 
 								<?php if ( 'textbox' == bp_get_the_profile_field_type() ) : ?>
 									<div></div>
-									<label for="<?php bp_the_profile_field_input_name(); ?>"><?php bp_the_profile_field_name(); ?></label>
+									<label for="<?php bp_the_profile_field_input_name(); ?>" class="<?php echo sanitize_title(bp_get_the_profile_field_name()); ?>"><?php bp_the_profile_field_name(); ?></label>
 									<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
-									<div class="input-wrapper">
+									<div class="input-wrapper <?php echo sanitize_title(bp_get_the_profile_field_name()); ?>" >
 									 <?php if ( bp_get_the_profile_field_is_required() ) : ?><span class="asterix">*</span><?php endif; ?>
 									<input type="text" name="<?php bp_the_profile_field_input_name(); ?>" id="<?php bp_the_profile_field_input_name(); ?>" value="<?php bp_the_profile_field_edit_value(); ?>" placeholder="<?php if ( bp_get_the_profile_field_name() == 'Domicilio' ) {?>Ingresá tu Domicilio<?php } ?>" />
 									</div>
@@ -131,9 +131,7 @@
 										<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
 										<?php bp_the_profile_field_options(); ?>
 
-										<?php if ( !bp_get_the_profile_field_is_required() ) : ?>
-											<a class="clear-value" href="javascript:clear( '<?php bp_the_profile_field_input_name(); ?>' );"><?php _e( 'Clear', 'buddypress' ); ?></a>
-										<?php endif; ?>
+										
 									</div>
 
 								<?php endif; ?>

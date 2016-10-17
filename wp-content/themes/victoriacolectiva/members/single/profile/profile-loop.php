@@ -23,10 +23,13 @@ do_action( 'bp_before_profile_loop_content' ); ?>
 
 			<div class="bp-widget <?php bp_the_profile_group_slug(); ?>">
 
-				<h4><?php bp_the_profile_group_name(); ?></h4>
-
+				<?php
+					$usuarioquesemuestra = bp_displayed_user_id();
+					$actualuser = get_current_user_id();
+				?>
+				
 				<table class="profile-fields">
-
+					<?php if($usuarioquesemuestra ==$actualuser || current_user_can( 'manage_options' )):?>
 					<?php while ( bp_profile_fields() ) : bp_the_profile_field(); ?>
 
 						<?php if ( bp_field_has_data() ) : ?>
@@ -40,7 +43,7 @@ do_action( 'bp_before_profile_loop_content' ); ?>
 							</tr>
 
 						<?php endif; ?>
-
+		
 						<?php
 
 						/**
@@ -51,7 +54,10 @@ do_action( 'bp_before_profile_loop_content' ); ?>
 						do_action( 'bp_profile_field_item' ); ?>
 
 					<?php endwhile; ?>
-
+					<?php else: ?>
+						Nombre y apellido:
+						<?php echo xprofile_get_field_data('1'); ?>
+					<?php endif; ?>
 				</table>
 			</div>
 
