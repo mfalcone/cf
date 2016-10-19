@@ -84,10 +84,15 @@
 				padding-left:10px;
 				li{
 					text-align: left;
+					padding:5px;
 					a{
 						color: #FFF;
 					}
-					.selected{
+					&.selected{
+						display: block;
+					}
+
+					span{
 						display: block;
 					}
 				}
