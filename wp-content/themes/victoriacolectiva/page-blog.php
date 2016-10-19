@@ -1,6 +1,5 @@
 <?php /* Template Name:Blog */ 
 
-
 $postTitleError = '';
 if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_nonce($_POST['post_nonce_field'], 'post_nonce')) {
 
@@ -54,7 +53,15 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 
 } 
 
-get_header(); ?>
+get_header(); 
+
+if ( !current_user_can('organico') ) : 
+
+	get_template_part( 'template-parts/nivel-usuario');
+		
+	else:
+?>
+
 	<div class="blog">
 		<header>
 			<?php if ( have_posts() ) : ?>
@@ -148,4 +155,5 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 		</section>
 	</div>
+	<?php endif; ?>
 <? get_footer() ?>

@@ -114,6 +114,22 @@
 		@include controles-conf(25%);
 	}
 
+	#subnav-notifications{
+		@include controles-conf(33.333%);
+	}
+
+	#subnav-messages{
+		@include controles-conf(25%);
+	}
+
+	#subnav-groups{
+		@include controles-conf(50%);
+	}
+
+	#notices-personal-li{
+		display: none;
+	}
+
 	.clear-value{
 		display:none;
 	}

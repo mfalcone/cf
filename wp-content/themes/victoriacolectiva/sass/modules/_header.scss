@@ -1,6 +1,21 @@
 #masthead{
 	display:none;
-	z-index:2;
+	z-index:4;
+
+	.menu-toggle{
+		float: left;
+	    font-size: 2rem;
+	    margin: 5px 10px;
+	    border: 1px solid;
+	    padding: 0px;
+	    width: 40px;
+	    text-align: center;
+		display:none;
+		 @include max-screen(1000px) {
+	        display:block;
+	    }
+	}
+
 	.cf-icon{
 		background: $rojo;
 		height: 100%;
@@ -8,12 +23,15 @@
 		width: 190px;
 
 		a{
-			width: 30px;
 			height: 22px;
 			background:url(img/logo.png);
 			display: block;
 		    margin-top: 7px;
 		    margin-left: 10px;
+		    background-repeat:no-repeat;
+		    padding-left:40px;
+		    color:#FFF;
+		    font-size:1.8rem;
 		}
 	}
 	
@@ -70,7 +88,22 @@
 
 #bp-nav-menu-notifications-default{
 	display:inline-block;
+	.number{
+		background:$rojo;
+		border-radius:15px;
+		display: block;
+		width: 25px;
+	    text-align: center;
+	    margin-top: 0px;
+	    margin-left: 10px;
+	    cursor:pointer;
+	    height: 25px;
+	    line-height: 25px;
+	}
 
+	ul{
+		display: none;
+	}
 	.algo{
 		background:$rojo;
 		float:left;

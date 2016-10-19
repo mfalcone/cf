@@ -8,21 +8,18 @@
 
 get_header( 'buddypress' ); ?>
 
-<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
+<div class="item-list-tabs no-ajax" id="subnav-messages" role="navigation">
 	<ul>
 
 		<?php bp_get_options_nav(); ?>
 
 	</ul>
-
+</div><!-- .item-list-tabs -->
 	<?php if ( bp_is_messages_inbox() || bp_is_messages_sentbox() ) : ?>
 
 		<div class="message-search"><?php bp_message_search_form(); ?></div>
 
 	<?php endif; ?>
-
-</div><!-- .item-list-tabs -->
-
 <?php
 switch ( bp_current_action() ) :
 

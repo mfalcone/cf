@@ -87,6 +87,7 @@ jq(document).ready( function() {
 		/* Remove any errors */
 		jq('div.error').remove();
 		button.addClass('loading');
+		button.val("publicando...")
 		button.prop('disabled', true);
 		form.addClass("submitted");
 
@@ -157,10 +158,11 @@ jq(document).ready( function() {
 			jq("#whats-new-options").animate({
 				height:'0px'
 			});
-			jq("form#whats-new-form textarea").animate({
+			/*jq("form#whats-new-form textarea").animate({
 				height:'20px'
-			});
-			jq("#aw-whats-new-submit").prop("disabled", true).removeClass('loading');
+			});*/
+			jq("input#aw-whats-new-submit").val("publicar")
+			jq("#aw-whats-new-submit").prop("disabled", false).removeClass('loading');
 		});
 
 		return false;

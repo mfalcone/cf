@@ -84,3 +84,28 @@ body.groups{
 		}
 	}
 }
+
+#group-dir-count-top{
+	width:100%;
+	background:$rojo_claro;
+	padding:5px;
+}
+
+ul#groups-list{
+	margin-top:20px;
+	li{
+		border-bottom:1px solid;
+		padding-bottom:10px;
+		margin-bottom:10px;
+		.item-avatar{
+			float:left;
+		}
+		.item{
+			padding-left:60px;
+			.item-title{
+				font-weight: bold;
+				font-size:1.6rem;
+			}
+		}
+	}
+}

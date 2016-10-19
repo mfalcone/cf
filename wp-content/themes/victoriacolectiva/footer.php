@@ -62,7 +62,10 @@
 			<a href="<?php echo get_home_url(); ?>/agregar-evento"><span class="glyphicon glyphicon-plus"></span>Agregar Evento</a>
 		</li>
 	</ul>
-	
+	<div class="widget">
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Barra derecha") ) : ?>
+			<?php endif;?>
+		</div>
 	</aside>
 	<footer id="colophon" class="site-footer open" role="contentinfo">
 		<div class="site-info">

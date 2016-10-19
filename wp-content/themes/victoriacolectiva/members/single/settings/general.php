@@ -7,8 +7,9 @@
  */
 
 /** This action is documented in bp-templates/bp-legacy/buddypress/members/single/settings/profile.php */
+get_header( 'buddypress' );
 do_action( 'bp_before_member_settings_template' ); 
-get_header(); ?>
+ ?>
 <form action="<?php echo bp_displayed_user_domain() . bp_get_settings_slug() . '/general'; ?>" method="post" class="standard-form" id="settings-form">
 
 	<?php if ( !is_super_admin() ) : ?>
@@ -17,12 +18,15 @@ get_header(); ?>
 		<input type="password" name="pwd" id="pwd" size="16" value="" class="settings-input small" <?php bp_form_field_attributes( 'password' ); ?>/> &nbsp;<a href="<?php echo wp_lostpassword_url(); ?>" title="<?php esc_attr_e( 'Password Lost and Found', 'buddypress' ); ?>"><?php _e( 'Lost your password?', 'buddypress' ); ?></a>
 
 	<?php endif; ?>
-
+	
+	<fieldset>
 	<label for="email"><?php _e( 'Account Email', 'buddypress' ); ?></label>
 	<input type="email" name="email" id="email" value="<?php echo bp_get_displayed_user_email(); ?>" class="settings-input" <?php bp_form_field_attributes( 'email' ); ?>/>
-
+	</fieldset>
+	<fieldset>
 	<label for="pass1"><?php _e( 'Change Password <span>(leave blank for no change)</span>', 'buddypress' ); ?></label>
 	<input type="password" name="pass1" id="pass1" size="16" value="" class="settings-input small password-entry" <?php bp_form_field_attributes( 'password' ); ?>/> &nbsp;<?php _e( 'New Password', 'buddypress' ); ?><br />
+	</fieldset>
 	<div id="pass-strength-result"></div>
 	<label for="pass2" class="bp-screen-reader-text"><?php _e( 'Repeat New Password', 'buddypress' ); ?></label>
 	<input type="password" name="pass2" id="pass2" size="16" value="" class="settings-input small password-entry-confirm" <?php bp_form_field_attributes( 'password' ); ?>/> &nbsp;<?php _e( 'Repeat New Password', 'buddypress' ); ?>

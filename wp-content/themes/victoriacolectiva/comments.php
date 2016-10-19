@@ -21,6 +21,4 @@ comment_form( $comments_args ); ?>
             </li>
         <?php } ?>
     </ol>
-<?php } else { ?>
-    <p>No comments yet</p>
-<?php } ?>
+<?php }

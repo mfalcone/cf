@@ -371,11 +371,11 @@ add_action( 'wp_enqueue_scripts', 'my_enqueue_stuff' );
 
 if ( function_exists('register_sidebar') )
   register_sidebar(array(
-    'name' => 'Name of Widgetized Area',
+    'name' => 'Barra derecha',
     'before_widget' => '<div class = "widgetizedArea">',
     'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
+    'before_title' => '<h2>',
+    'after_title' => '</h2>',
   )
 );
 
@@ -406,5 +406,6 @@ require_once( $path . '/includes/custom-event-post.php');
 require_once( $path . '/includes/custom-ahora-post.php');
 require_once( $path . '/includes/quiero-ayudar.php');
 require_once( $path . '/includes/quiero-mapeo.php');
+require_once( $path . '/includes/quiero-ser-parte.php');
 
 

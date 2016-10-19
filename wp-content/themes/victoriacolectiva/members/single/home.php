@@ -87,9 +87,11 @@ get_header( 'buddypress' ); ?>
 			bp_get_template_part( 'members/single/forums'   );
 
 		elseif ( bp_is_user_notifications() ) :
+			
 			bp_get_template_part( 'members/single/notifications' );
 
 		elseif ( bp_is_user_settings() ) :
+			
 			bp_get_template_part( 'members/single/settings' );
 
 		// If nothing sticks, load a generic template
@@ -119,6 +121,5 @@ get_header( 'buddypress' ); ?>
 </div><!-- #buddypress -->
 
 
-<?php get_sidebar( 'buddypress' ); ?>
 <?php get_footer( 'buddypress' ); ?>
 

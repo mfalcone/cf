@@ -13,9 +13,9 @@ jQuery(document).ready(function(){
 	wp.heartbeat.interval( 'fast' );
 	
 	jq(document).on( 'heartbeat-tick.bpln-data', function( event, data ) {
-        
-		if ( data.hasOwnProperty( 'bpln-data' ) ) {
+       if ( data.hasOwnProperty( 'bpln-data' ) ) {
 			var bpln_data = data['bpln-data'] ;
+			 
 			
 			update_last_notified( bpln_data.last_notified );
 			
@@ -69,14 +69,13 @@ jq( document ).on('bpln:new_notifications', function(evt, data ){
 	
 		update_count_text( jq('#ab-pending-notifications'), data.count );
 		
-		var my_act_notification_menu = jq('#wp-admin-bar-my-account-notifications > a span');
+		var my_act_notification_menu = jq('#bp-nav-menu-notifications-default .number');
 		//if the count menu does not exis
 		if(  ! my_act_notification_menu.get(0 ) ) {
 		
-			
-			if( jq('#wp-admin-bar-my-account-notifications').get(0) ) { 
-					jq('#wp-admin-bar-my-account-notifications > a').append(' <span class="count">'+data.count+" </span>");
-					jq('#wp-admin-bar-my-account-notifications-unread a').append(' <span class="count">'+data.count+" </span>");
+			if( jq('#bp-nav-menu-notifications-default').get(0) ) { 
+					jq('#bp-nav-menu-notifications-default .number').text(data.count);
+					//jq('#wp-admin-bar-my-account-notifications-unread a').append(' <span class="count">'+data.count+" </span>");
 			}
 		}else{
 			
@@ -94,6 +93,17 @@ jq( document ).on('bpln:new_notifications', function(evt, data ){
 			
 		}
 		
+		var list_parent2 = jq("#bp-nav-menu-notifications-default ul")
+		if( list_parent2.get(0) ) {
+			
+			list_parent2.append("<li>"+data.messages.join("</li><li>") + "</li>"  );
+			
+			
+		}else{
+			$("#bp-nav-menu-notifications-default").append("<ul></ul>");
+			var list_parent2 = jq("#bp-nav-menu-notifications-default ul");
+			list_parent2.append("<li>"+data.messages.join("</li><li>") + "</li>"  );
+		}
 		
 	}
 	

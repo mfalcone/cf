@@ -30,7 +30,7 @@ function InOut( elem )
 	})
 
 	$("#search-terms").blur(function(){
-		$(".propiedaes").fadeOut();
+		//$(".propiedaes").fadeOut();
 	})
 
 	$("#right-sidebar .pestania").click(function(){
@@ -263,6 +263,27 @@ function InOut( elem )
 		    map.fitBounds(bounds);
 		  });
 		  // [END region_getplaces]
-       }
+       }//fin del quiero mapeo
+       // notificaciones
+       $("#bp-nav-menu-notifications-default .number").click(function(){
+       		if($(".notification-wrapper").size()){
+       			$(".notification-wrapper").remove();
+       		}else{
+	       		$notifwrapper = $('<div class="notification-wrapper"></div>');
+	       		var contenido = $("#bp-nav-menu-notifications-default ul").clone();
+	       		console.log(contenido.html())
+	       		if(contenido.html()==undefined){
+	       			contenido = "<p>no hay notificaciones"
+	       		}
+	       		$("body").append($notifwrapper);
+	       		$(".notification-wrapper").html(contenido);
+	       		$(".notification-wrapper").fadeIn('slow');
+       		}
+       })
+
+       //mostrar el sidebar en ancho menor a 1000 px.
+       $(".menu-toggle").click(function(){
+       		$("#sidebar").toggle();
+       })
 
 })

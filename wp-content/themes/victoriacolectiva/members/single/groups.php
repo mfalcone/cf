@@ -8,13 +8,16 @@
 
 get_header( 'buddypress' ); ?>
 
-<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
+<div class="item-list-tabs no-ajax" id="subnav-groups" role="navigation">
 	<ul>
 		<?php if ( bp_is_my_profile() ) bp_get_options_nav(); ?>
+	</ul>
 
-		<?php if ( !bp_is_current_action( 'invites' ) ) : ?>
+</div><!-- .item-list-tabs -->
 
-			<li id="groups-order-select" class="last filter">
+	<?php if ( !bp_is_current_action( 'invites' ) ) : ?>
+
+			<div id="groups-order-select" class="last filter">
 
 				<label for="groups-order-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
 				<select id="groups-order-by">
@@ -33,13 +36,9 @@ get_header( 'buddypress' ); ?>
 					do_action( 'bp_member_group_order_options' ); ?>
 
 				</select>
-			</li>
+			</div>
 
 		<?php endif; ?>
-
-	</ul>
-</div><!-- .item-list-tabs -->
-
 <?php
 
 switch ( bp_current_action() ) :

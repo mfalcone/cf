@@ -31,8 +31,11 @@
 		<?php if ( current_user_can('organico') ) : ?>
 		<?php endif; ?>
 	<header id="masthead" class="site-header" role="banner">
+		<div class="menu-toggle">
+			<span class="glyphicon glyphicon-align-justify"></span>	
+		</div>
 		<div class="cf-icon">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"></a>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Hagamos</a>
 		</div><!-- .site-branding -->
 		<div class="header-container">
 			<div class="buscador">
@@ -52,10 +55,7 @@
 			</div>
 			
 		</div>
-		<div class="widget">
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Name of Widgetized Area") ) : ?>
-			<?php endif;?>
-		</div>
+		
 		<div class="user">
 			<div id="bp-nav-menu-notifications-default" class="bp-nav-menu-submenu">
                             <?php
@@ -66,7 +66,7 @@
                                 $menu_link     = trailingslashit( bp_loggedin_user_domain() . bp_get_notifications_slug() );
                                 if ( ! empty( $notifications ) ) {
                                 	?>
-                                	<span class="number">1</span>
+                                	<span class="number"><?php echo number_format_i18n( $count ); ?></span>
                                 	<ul><?php
                                     foreach ( (array) $notifications as $notification ) {
                                         ?>
@@ -81,9 +81,7 @@
                                 <?php } else {
                                     ?>
                                     <span class="number">
-                                        <a class="bp-nav-menu-item" href="<?php echo $menu_link; ?>">
                                             0
-                                        </a>
                                     </span>
                                     <?php
                                 }
