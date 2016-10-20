@@ -448,7 +448,7 @@ jq(document).ready( function() {
 
 			/* Hide any error messages */
 			jq( 'form#' + form.attr('id') + ' div.error').hide();
-			target.addClass('loading').prop('disabled', true);
+			//target.addClass('loading').prop('disabled', true);
 
 			var ajaxdata = {
 				action: 'new_activity_comment',

@@ -41,7 +41,7 @@ function InOut( elem )
 
 	if($("body").hasClass("activity")){
 	 	$('.show').stop(true, true).delay(1500).animate({height:'80px'}, 500);
-	 	$('#content').stop(true, true).delay(1500).animate({top:'60px'}, 500);
+	 	$('#page').stop(true, true).delay(1500).animate({top:'60px'}, 500);
 	 	$('#right-sidebar').stop(true, true).delay(1500).animate({top:'80px'}, 500);
 	}
 
@@ -283,7 +283,12 @@ function InOut( elem )
 
        //mostrar el sidebar en ancho menor a 1000 px.
        $(".menu-toggle").click(function(){
-       		$("#sidebar").toggle();
+       		$("#sidebar").toggleClass("open");
        })
+
+       $(".acomment-reply").click(function(e){
+       			console.log("qaaaa");
+				e.preventDefault();
+				})
 
 })

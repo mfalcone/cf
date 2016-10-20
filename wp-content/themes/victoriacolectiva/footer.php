@@ -69,7 +69,7 @@
 	</aside>
 	<footer id="colophon" class="site-footer open" role="contentinfo">
 		<div class="site-info">
-			footer
+			<div class="footer-logo"></div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 	<?php } ?>

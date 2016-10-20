@@ -104,6 +104,10 @@
 	.buscador{
 		display:none;
 	}
+
+	&.open{
+		display:block;
+	}
 }
 
 .admin-bar #sidebar{

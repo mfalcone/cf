@@ -12,7 +12,9 @@
 	margin-left:auto;
 	margin-right:auto;
 	overflow:hidden;
-
+	@include max-screen(700px) {
+		        width:100%;
+		    }
 	textarea{
 		height: 90px;
 		width: 100%;
@@ -40,15 +42,17 @@
 		margin-left:70px;
 	}
 
-	#aw-whats-new-submit{
+	#aw-whats-new-submit, #bpfb_cancel_action{
 		float:right;
 		background:$rojo;
 		color: #FFF;
 		border-radius:5px;
 		border:0;
 		padding:5px 10px;
-		margin-top:10px;
+		margin-bottom:10px;
 	}
+
+	
 
 	#whats-new-post-in-box{
 		display: none;
@@ -78,5 +82,51 @@
 			background-image:url(img/web_icon.jpg);
 			width:62px;
 		}
+
+		@include max-screen(700px) {
+		        #bpfb_addPhotos, #bpfb_addVideos, #bpfb_addLinks{
+		        	width: 21px;
+		        };
+		    }	
 	}
+	.bpfb_actions_container{
+		width:100%;
+	}
+	.bpfb_controls_container{
+		#bpfb_tmp_photo{
+			float:left;
+			.qq-uploader{
+				margin-right:10px;
+
+				.qq-upload-button{
+					background:$rojo;
+				}
+			}
+		}
+	}
+
+	#bpfb_submit, #bpfb_submit, #bpfb_cancel, #bpfb_cancel{
+			background:$rojo;
+			color: #FFF;
+			border-radius:5px;
+			border:0;
+			padding:5px 10px;
+			margin-bottom:10px;
+		}
+	
+	#bpfb_cancel_action,#bpfb_cancel, #bpfb_cancel{
+		background:$azul;
+	}
+
+	.bpfb_preview_container, .bpfb_preview_container{
+		td{
+			padding:10px;
+		}
+	}
+
+	.bpfb_preview_container{
+		margin-bottom:0;
+	}
+
+	
 }

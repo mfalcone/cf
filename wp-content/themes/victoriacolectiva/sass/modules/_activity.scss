@@ -14,13 +14,38 @@
 		border-right:1px solid $gris_oscuro_tres;
 		padding:0 10px;
 	}
+
+	 @include max-screen(1200px) {
+		       width:100%;
+		       ul{
+		       	display:table;
+			    width:100%;
+			    box-sizing:border-box;
+			    -moz-box-sizing:border-box;
+			    -webkit-box-sizing:border-box;
+			     li{
+			     	display:table-cell;
+			     	float:none;
+			     	text-align: center;
+			     }
+		       }
+		    }
 }
 
 .item-list-tabs.no-ajax{
+	float:right;
 	li{
 		float:left;
 	}
-float:right;
+	@include max-screen(1200px) {
+		width: 100%;
+		li{
+			float:none;
+			text-align: center;
+			border-right:none;
+			margin-top:20px;
+		}
+	}
 }
 
 div.activity{
@@ -36,6 +61,11 @@ div.activity{
 		
 			.activity-avatar{
 				float:left;
+				width:50px;
+				img{
+					max-width: 100%;
+					height:auto;
+				}
 			}
 			.activity-content{
 				margin-left:65px;
@@ -64,8 +94,41 @@ div.activity{
 
 			.activity-comments{
 				clear: left;
-				background: #CCC;
+				background: #E8E8E8;
 				width: 100%;
+				
+				.acomment-avatar{
+					float:left;
+				}
+
+				.comment-wrapper{
+					margin-left:60px;
+					background:#FFF;
+					padding:10px;
+					border-radius:10px;
+					position:relative;
+					&:after{
+						content: "";
+    					position: absolute;
+    					top: 16px;
+					    left: -20px;
+					    bottom: auto;
+					    border-width: 5px 20px 5px 0;
+					    border-color: transparent #FFF;
+					    border-style:solid;
+					}
+					.acomment-meta{
+						border-bottom:1px solid #CCC;
+					}
+
+
+				}
+				
+				.acomment-options{
+						margin-left:60px;
+						margin-top:10px;
+					}
+				
 
 				form{
 					display:none;
@@ -73,6 +136,11 @@ div.activity{
 
 				li{
 					background:none;
+
+					li{
+						border-left:1px solid #CCC;
+						margin-left:20px;
+					}
 				}
 			}
 		}
@@ -81,6 +149,26 @@ div.activity{
 
 	a{
 		color:$rojo;
+	}
+
+	.activity-inner{
+		iframe{
+			width:100%;
+		}
+	}
+
+	.activity-meta{
+		float:left;
+		clear:left;
+	}
+
+	.activity-header{
+		border-bottom:1px solid #CCC;
+		margin-bottom: 10px;
+		p{
+			color: #666;
+			margin-bottom:0;
+		}
 	}
 }
 

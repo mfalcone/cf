@@ -22,7 +22,9 @@
 		height: 100%;
 		float: left;
 		width: 190px;
-
+		@include max-screen(620px) {
+		        display:none;
+		    }
 		a{
 			height: 22px;
 			background:url(img/logo.png);
@@ -147,6 +149,10 @@
     		text-align: center;
     	}
     }
+
+    @include max-screen(700px) {
+		        display:none !important;
+		    }
 }
 
 .admin-bar{
