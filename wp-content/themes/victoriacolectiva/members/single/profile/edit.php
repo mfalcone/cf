@@ -18,8 +18,18 @@ if ( bp_has_profile( 'profile_group_id=' . bp_get_current_profile_group_id() ) )
 
 <form action="<?php bp_the_profile_group_edit_form_action(); ?>" method="post" id="profile-edit-form" class="standard-form <?php bp_the_profile_group_slug(); ?>">
 
-
 	<?php
+
+
+	$userid= get_current_user_id();
+  	$init = get_user_meta($userid,'init');
+  	$init[0]="1";
+	if($init[0]=="1"){?>
+		<div class="complete-profile">
+		Te invitamos a completar tu perfil para así formar parte de Ciudad Futura.
+		</div>
+	<?php	
+	}
 
 		/** This action is documented in bp-templates/bp-legacy/buddypress/members/single/profile/profile-wp.php */
 		do_action( 'bp_before_profile_field_content' ); ?>

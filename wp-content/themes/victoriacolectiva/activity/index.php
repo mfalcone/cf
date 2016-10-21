@@ -12,9 +12,9 @@ get_header( 'buddypress' ); ?>
 	$userid= get_current_user_id();
   	$init = get_user_meta($userid,'init');
 	//print_r($meta);
+	//$init[0]="1";
 	if($init[0]=="1"){
 		$urlfinal = bp_core_get_user_domain($userid).'profile/edit/group/1/';?>
-		Aca mostraría el tour y redireccionaría a <?php echo $urlfinal; ?>
 
 	<?php	
 	}
@@ -163,5 +163,94 @@ get_header( 'buddypress' ); ?>
 	</div><!-- #content -->
 
 	<?php do_action( 'bp_after_directory_activity_page' ); ?>
+<?php
+	if($init[0]=="1"){?>
+		<link href="<?php echo get_template_directory_uri();?>/_inc/css/bootstrap-tour-standalone.min.css" rel="stylesheet">
+		<script src="<?php echo get_template_directory_uri();?>/js/bootstrap-tour-standalone.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+		function mobile() {
+		   if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+		     return true;
+		   } else {
+		     return false;
+		   }
+		};
 
+		$(function() {
+		  if (mobile()) {
+		    return;
+		  }
+		  var tour = new Tour({
+		    template: ' <div class="popover tour"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <button class="btn btn-default" data-role="prev">«</button> <span data-role="separator"></span> <button class="btn btn-default" data-role="next">»</button> &nbsp;&nbsp;<button class="btn btn-default" data-role="end">Fin</button> </div> </div>',
+		    steps: [
+		    {
+		      title: "<h4>Si no lo hacemos entre todos, no lo hace nadie</h4>",
+		      content: "<p>El portal Hagamos es una herramienta más que creamos para que todas y todos puedan sumar su voz, opinar y participar.</p>  <p>Estés donde estés, tengas el tiempo que tengas, en Ciudad Futura todos tienen su lugar.</p> <p>El poder de la gente común crece si todos nos involucramos, por eso te necesitamos.</p> ",
+		      orphan: true,
+		    },
+		    {
+		      element: ".quiero",
+		      title: "<h4>QUIERO</h4>",
+		      content: "<p>En el menú QUIERO, te proponemos algunas maneras en las que podés participar de la construcción de CIUDAD FUTURA</p> <p>Desde conocer en persona nuestros proyectos prefigurativos hasta sumar tu aporte económico. En cada una de las opciones, vas a encontrar información detallada.</p>",
+		      onShow: function() {
+		        $('.quiero h3').click();
+		      },
+		      backdrop: false
+		    },
+		    {
+		      element: ".hacer",
+		      title: "<h4>HACER</h4>",
+		      content: "<p>Si ya sos militante de CIUDAD FUTURA, en este menú vas a encontrar tus grupos de trabajo y material de formación.</p>",
+		      onShow: function() {
+		        $('.hacer h3').click();
+		      },
+		      backdrop: false
+
+		    },
+		    {
+		      element: "#activity-stream",
+		      title: "<h4>Este es tu muro</h4>",
+		      content: "<p>HAGAMOS es el lugar donde nos encontramos con otras personas que quieren trabajar en una realidad mejor</p><p>Acá vas a ver la actividad del resto de las personas</p><p>Debatí con tus vecinos, buscá un tema en el que puedas aportar lo que sabes hacer!</p>",
+		    },
+		    {
+		      element: ".actividad-wrapper",
+		      title: "<h4>Demasiada información?</h4>",
+		      content: "Acá podés filtrar los contenidos que aparece en tu pantalla.",
+		      backdropPadding: 20,
+		    },
+		    {
+		      element: "#whats-new-form",
+		      title: "<h4>Lo más importante</h4>",
+		      content: "<p>HAGAMOS se creó para potenciar la voz de la gente común.</p><p>Compartí tus ideas y proyectos, contá lo que pasa en tu barrio.</p> ",
+		    },
+		    {
+		      element: "ul.agenda",
+		      title: "<h4>Contenido destacado</h4>",
+		      content: "<p>En esta sección vas a ver algunos eventos destacados, podés sumar el tuyo a la agenda.</p> <p>También te proponemos alunos debates e ideas de otros usuarios para que aportes tu opinión.</p>",
+		      placement: "left",
+		      backdrop: false
+		    },
+		    {
+		      orphan: true,
+		      title: "<h4>Listo!</h4>",
+		      content: "<p>Nos gustaría conocerte un poco más, en esta pantalla, podés agregar una foto de perfil, y responder algunas preguntas sobre tu relación con CIUDAD FUTURA.</p> <p>Gracias por sumarte!</p>",
+		      path: "<?php echo $urlfinal; ?>"
+		    }
+		    ],
+		    backdrop: true,
+		    onEnd: function(tour) {
+		      if (tour.getCurrentStep() !== 7) {
+		        window.location = "<?php echo $urlfinal; ?>"
+		      }
+		    },
+		    storage:false
+		  });
+
+		  tour.init();
+		  tour.start(true);
+		});
+		</script>
+	<?php	
+	}
+	?>
 <?php get_footer( 'buddypress' ); ?>

@@ -18,6 +18,7 @@ if(is_user_logged_in()){
 get_header(); ?>
 		
 		<?php 
+		if (isset($_GET['prob'])):
 		if($codes = pippin_errors()->get_error_codes()) {
 			echo '<div class="pippin_errors">';
 			    // Loop error codes and display errors
@@ -51,7 +52,11 @@ get_header(); ?>
 				<a href="<?php echo get_site_url(); ?>/registrar">Registrarse</a>
 			</div>
 		</div>
-		
+		<?php else:?>
+			<div class="coming-soon">
+				
+			</div>
+		<?php endif;?>
 
 <?php
 if(is_user_logged_in()){
