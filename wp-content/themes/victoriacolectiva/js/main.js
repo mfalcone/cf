@@ -13,7 +13,7 @@ function InOut( elem )
      .delay(2200)
      .fadeOut( 
                function(){ 
-                   if(elem.next().length > 0)
+                   if(elem.next().length > 1)
                    {InOut( elem.next() );}
                    else
                    {InOut( elem.siblings(':first'));}
@@ -287,8 +287,14 @@ function InOut( elem )
        })
 
        $(".acomment-reply").click(function(e){
-       			console.log("qaaaa");
-				e.preventDefault();
+       		e.preventDefault();
 				})
 
+       $("#fecha_inicio, #fecha_fin").datepicker({
+       		 dateFormat: "yy-mm-dd"
+       });
+
+       $("#horario_inicio, #horario_fin").datepicker({
+       	 	timeFormat: 'HH:MM'
+       })
 })

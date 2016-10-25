@@ -116,9 +116,12 @@ add_action( 'after_setup_theme', 'bp_dtheme_setup' );
 function victoriacolectiva_scripts() {
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery',  get_template_directory_uri() . '/js/jquery-1.12.3.min.js');
+	wp_enqueue_script('jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('jquery'), '1.8.6');
 	wp_enqueue_script( 'myfunctions',  get_template_directory_uri() . '/js/main.js',array('jquery'),'1.0' );
 	// wp_register_style() example
 	wp_register_style('style', get_template_directory_uri() . '/style.css');
+	  wp_register_style('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
+  wp_enqueue_style( 'jquery-ui' );   
 	wp_enqueue_style( 'style' );
 	wp_enqueue_script( 'bp-jquery-query' );
 	wp_enqueue_script( 'bp-jquery-cookie' );
@@ -397,6 +400,16 @@ function special_nav_class ($classes, $item) {
         $classes[] = 'selected ';
     }
     return $classes;
+}
+
+add_action('init','possibly_redirect');
+
+function possibly_redirect(){
+ global $pagenow;
+ if (( 'wp-login.php' == $pagenow ) && (!is_user_logged_in())) {
+  wp_redirect('http://hagamos.ciudadfutura.com.ar/');
+  exit();
+ }
 }
 
 

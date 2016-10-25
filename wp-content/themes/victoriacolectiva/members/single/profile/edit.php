@@ -23,8 +23,7 @@ if ( bp_has_profile( 'profile_group_id=' . bp_get_current_profile_group_id() ) )
 
 	$userid= get_current_user_id();
   	$init = get_user_meta($userid,'init');
-  	$init[0]="1";
-	if($init[0]=="1"){?>
+  	if($init[0]=="1"){?>
 		<div class="complete-profile">
 		Te invitamos a completar tu perfil para así formar parte de Ciudad Futura.
 		</div>

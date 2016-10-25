@@ -57,7 +57,7 @@ get_header(); ?>
 			$fecha_inicio = get_post_meta(get_the_ID(), 'fecha_inicio', true); 
 			$hora_inicio = get_post_meta(get_the_ID(), 'horario_inicio', true); 
 			$fecha_fin = get_post_meta(get_the_ID(), 'fecha_fin', true); 
-			$horario_fin = get_post_meta(get_the_ID(), 'hora_fin', true);
+			$horario_fin = get_post_meta(get_the_ID(), 'horario_fin', true);
 			?> 
 			<h3><?php the_title(); ?></h3>
 			<div class="date">

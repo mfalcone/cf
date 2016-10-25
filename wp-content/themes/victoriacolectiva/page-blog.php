@@ -1,6 +1,9 @@
 <?php /* Template Name:Blog */ 
 
 $postTitleError = '';
+$catslug=get_category_by_slug( 'momento_cf' );
+$cat = $catslug->term_id;
+
 if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_nonce($_POST['post_nonce_field'], 'post_nonce')) {
 
 	if(trim($_POST['postTitle']) === '') {
@@ -9,7 +12,6 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 	} else {
 		$postTitle = trim($_POST['postTitle']);
 	}
-	$cat=get_cat_ID( 'foto_del_dia' );
 
 	$post_information = array(
 		'post_title' => esc_attr(strip_tags($_POST['postTitle'])),
@@ -48,7 +50,7 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 		//update_post_meta($post_id, 'vsip_custom_two', esc_attr(strip_tags($_POST['customMetaTwo'])));*/
 
 		// Redirect
-		wp_redirect( home_url() ); exit;
+		wp_redirect( home_url()."/momentos-cf/" ); exit;
 	}
 
 } 
@@ -128,7 +130,7 @@ if ( !current_user_can('organico') ) :
 		</div>
 		<section class="posteos">
 			<?php
-			$args = array( 'category_name' => 'foto_del_dia', 'posts_per_page' => -1 );
+			$args = array( 'category_name' => 'momento_cf', 'posts_per_page' => -1 );
 			$loop = new WP_Query( $args );
 			$counter = 0;
 			while ( $loop->have_posts() ) : $loop->the_post(); $counter++; ?>
@@ -149,7 +151,7 @@ if ( !current_user_can('organico') ) :
 				$user_id = get_current_user_id();
 				$userpost = $post->post_author;
 				if ($user_id == $userpost){  ?>
-				<a href="<?php  echo get_home_url();?>/editar-la-foto-del-dia/?post=<?php echo $post->ID?>">editar</a>
+				<a href="<?php  echo get_home_url();?>/editar-el-momento/?post=<?php echo $post->ID?>">editar</a>
 				<?php	}?>
 			</article>
 			<?php endwhile; // end of the loop. ?>
