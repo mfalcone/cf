@@ -15,7 +15,7 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 
 	$post_information = array(
 		'post_title' => esc_attr(strip_tags($_POST['postTitle'])),
-		'post_content' => esc_attr(strip_tags($_POST['postContent'])),
+		'post_content' => ($_POST['postContent']),
 		'post_type' => 'post',
 		'post_status' => 'publish',
 		'post_category' => array($cat)
@@ -90,19 +90,24 @@ if ( !current_user_can('organico') ) :
 						<input type="text" name="postTitle" id="postTitle" value="<?php if(isset($_POST['postTitle'])) echo $_POST['postTitle'];?>" class="required" />
 
 					</fieldset>
-
+					
 					<?php if($postTitleError != '') { ?>
 						<span class="error"><?php echo $postTitleError; ?></span>
 						<div class="clearfix"></div>
 					<?php } ?>
-
+					
 					
 					<fieldset>
-								
+						
 						<label for="postContent">Contenido</label>
-
+						<div class="editor-wrap">
+						<div id="toolbar" style="display: none;">
+					    <a data-wysihtml5-command="bold" title="CTRL+B" class="bold">B</a> 
+					    <a data-wysihtml5-command="italic" title="CTRL+I" class="italic">I</a>
+					    <!--<a data-wysihtml5-action="change_view">switch to html view</a>-->
+					  </div>
 						<textarea name="postContent" id="postContent" rows="8" cols="30"><?php if(isset($_POST['postContent'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['postContent']); } else { echo $_POST['postContent']; } } ?></textarea>
-
+						</div>
 					</fieldset>
 
 					<fieldset>

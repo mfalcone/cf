@@ -12,8 +12,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
-"X-Poedit-Basepath: d:/xampp/htdocs/bpfb/wp-content/plugins/bpfb_the_edge/\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-Basepath: d:/xampp/htdocs/bpfb/wp-content/plugins/bpfb_the_edge\n"
+"X-Generator: Poedit 1.8.9\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: lib\n"
 "X-Poedit-SearchPath-1: lib/forms\n"
@@ -25,7 +25,7 @@ msgstr "Add photos"
 
 #: lib/bpfb_group_documents.php:32
 msgid "Please select a group to upload to"
-msgstr ""
+msgstr "For favor seleccione un grupo para subir."
 
 #: lib/bpfb_group_documents.php:184
 #, php-format
@@ -133,7 +133,7 @@ msgstr "Add photos"
 
 #: lib/class_bpfb_binder.php:136
 msgid "Add image URL"
-msgstr ""
+msgstr "Agregar URL de imagen"
 
 #: lib/class_bpfb_binder.php:137
 msgid "Add another image URL"
@@ -186,11 +186,11 @@ msgstr "Choose thumbnail"
 
 #: lib/class_bpfb_binder.php:149
 msgid "Paste video URL here"
-msgstr "Paste video URL here"
+msgstr "pegar URL del video aquí"
 
 #: lib/class_bpfb_binder.php:150
 msgid "Paste link here"
-msgstr "Paste link here"
+msgstr "Pegar enlace aquí"
 
 #: lib/class_bpfb_binder.php:151
 #, php-format

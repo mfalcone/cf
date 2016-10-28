@@ -1,0 +1,92 @@
+.page-template-page-ayudar-php{
+	#v_form{
+	    float: left;
+	    padding: 20px;
+	    width: 100%;
+	}
+
+	.col-md-6{
+		padding-left:0;
+	}
+}
+.quiero-img{
+		img{
+			max-width: 100%;
+			height:auto;
+		}
+	}
+
+.quiero-ayudar-posts{
+
+	h1{
+		&:before{
+			display:none;
+		}
+	}
+
+	img{
+		max-width:100%;
+		height: auto;
+	}
+
+	article{
+		padding:20px;
+		background: #FFF;
+	}
+		
+	
+	p{
+		margin-top:20px;
+		margin-bottom:10px;
+	}
+	
+	
+	textarea#comment{
+		width:100%;
+	}
+
+	input#submit{
+		@include boton();
+	}
+}
+
+.quiero-ayudar-posts, .page-template-default{
+
+	.avatar-wrapper{
+		float:left;
+	}
+
+	img{
+		max-width:100%;
+		height: auto;
+	}
+
+	.comentarios{
+		li{
+			padding:10px;
+			background:$gris_claro_back;
+			border-bottom:1px solid #FFF;
+			float:left;
+			width: 100%;
+		}
+	}
+
+	.comment-wrapper{
+		float:left;
+		background:#FFF;
+		border-radius:10px;
+		a{
+			color:$rojo;
+		}
+		&:after{
+			content: "";
+			position: absolute;
+			top: 16px;
+		    left: -20px;
+		    bottom: auto;
+		    border-width: 5px 20px 5px 0;
+		    border-color: transparent #FFF;
+		    border-style:solid;
+		}
+	}
+}

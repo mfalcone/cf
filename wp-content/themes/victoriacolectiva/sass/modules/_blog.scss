@@ -19,6 +19,8 @@
 
 	.editor{
 		display: none;
+		
+
 	}
 
 	.posteos{
@@ -53,3 +55,41 @@
 		}
 	}
 }
+
+.editor-wrap{
+	width:60%;
+	float:left;
+	margin-top:10px;
+
+		#toolbar{
+			background:#CCC;
+			padding:5px;
+			overflow: auto;
+		}
+	textarea{
+		width:100%;
+		margin-top:0;
+	}
+
+	.wysihtml5-command-active {
+	    background:#000;
+	    color: #FFF;
+	  }
+	  .bold{
+	  	font-weight: bold;
+	  }
+	  .italic{
+	  	font-style: italic;
+	  }
+	  .bold,.italic{
+	  	font-size: 1.7rem;
+	    border: 1px solid #666;
+	    width: 30px;
+	    padding: 5px;
+	    display: block;
+	    float: left;
+	    text-align: center;
+	    margin-right: 5px;
+	  }
+
+} 

@@ -21,7 +21,7 @@
 		background: $rojo;
 		height: 100%;
 		float: left;
-		width: 190px;
+		width: 210px;
 		@include max-screen(620px) {
 		        display:none;
 		    }
@@ -67,6 +67,9 @@
 		float:left;
 		width: 40%;
 		padding:6px;
+		@include max-screen(400px) {
+	        display:none;
+	    }
 		input{
 			color: $gris_oscuro_dos;
 			
@@ -113,6 +116,12 @@
 	}
 }
 
+img.avatar{
+	 @include max-screen(450px) {
+	        display:none;
+	    }
+}
+
 }
 
 .logged-in{
@@ -131,7 +140,6 @@
 .show{
 	background: #ced5d7;
     width: 100%;
-    padding-left: 200px;
     position: fixed;
     top: 40px;
     z-index: 2;

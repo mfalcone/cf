@@ -16,20 +16,20 @@ if(is_user_logged_in()){
  * @package victoriacolectiva
  */
 get_header(); ?>
+			<div class="login col-md-3 col-md-offset-5">
+			<?php 
+			if (isset($_GET['prob'])):
+			if($codes = pippin_errors()->get_error_codes()) {
+				echo '<div class="pippin_errors">';
+				    // Loop error codes and display errors
+				   foreach($codes as $code){
+				        $message = pippin_errors()->get_error_message($code);
+				        echo '<span class="error"><strong>' . __('Error') . '</strong>: ' . $message . '</span><br/>';
+				    }
+				echo '</div>';
+			}	
+			 ?>
 		
-		<?php 
-		if (isset($_GET['prob'])):
-		if($codes = pippin_errors()->get_error_codes()) {
-			echo '<div class="pippin_errors">';
-			    // Loop error codes and display errors
-			   foreach($codes as $code){
-			        $message = pippin_errors()->get_error_message($code);
-			        echo '<span class="error"><strong>' . __('Error') . '</strong>: ' . $message . '</span><br/>';
-			    }
-			echo '</div>';
-		}	
-		 ?>
-		<div class="login col-md-3 col-md-offset-5">
 			<h1>Bienvenido a la Red Social de Participación de <img src="<? echo get_template_directory_uri().'/img/logo_principal.png' ?>" alt="Ciudad Futura"></h1>
 			<h2>Iniciar sesión</h2>
 			<form id="pippin_login_form" class="pippin_form"action="" method="post">

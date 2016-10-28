@@ -1,0 +1,12 @@
+#map_form{
+	#direccion{
+		margin-top: 10px;
+		width: 80%;
+		height: 32px;
+		font-size: 1.7rem;
+	}
+
+	input[type="submit"]{
+		@include boton();
+	}
+}

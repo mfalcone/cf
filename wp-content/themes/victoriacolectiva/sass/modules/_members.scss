@@ -1,0 +1,20 @@
+#members-list{
+	background:#FFF;
+	li{
+		background:#FFF;
+		overflow: auto;
+		padding:10px;
+		margin-bottom:10px;
+	}
+	.item-avatar{
+		float:left;
+		margin-right:10px;
+	}
+	.item{
+		float:left;
+	}
+
+	a{
+		color:$rojo;
+	}
+}

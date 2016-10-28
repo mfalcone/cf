@@ -102,8 +102,14 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 			<fieldset>
 						
 				<label for="postContent"><?php _e('Post\'s Content:', 'framework') ?></label>
-
+				<div class="editor-wrap">
+				<div id="toolbar" style="display: none;">
+				    <a data-wysihtml5-command="bold" title="CTRL+B" class="bold">B</a> 
+				    <a data-wysihtml5-command="italic" title="CTRL+I" class="italic">I</a>
+				    <!--<a data-wysihtml5-action="change_view">switch to html view</a>-->
+				</div>
 				<textarea name="postContent" id="postContent" rows="8" cols="30"><?php echo $content; ?></textarea>
+				</div>
 
 			</fieldset>
 

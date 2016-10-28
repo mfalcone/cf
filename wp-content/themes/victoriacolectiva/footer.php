@@ -52,13 +52,17 @@
 			inicio: <?php echo date("d/m", strtotime($fecha_inicio));?> - <?php echo $hora_inicio;?>hs. | 
 			fin:<?php echo date("d/m", strtotime($fecha_fin));?> - <?php echo $horario_fin;?>hs.</div>
 			<h3><?php the_title(); ?></h3>
-			<div class="content">
-				<?php the_content();?>
+			<div class="content no">
+				<?php 
+					$my_content=apply_filters('the_content',$post->post_content);//this will get the content for you
+					$trimmed_my_content = wp_trim_words( $my_content, 10, '<a href="'. get_home_url() .'/agenda">&nbsp;<span class="moretext">Leer mas</span></a>' );
+    				echo $trimmed_my_content;
+				?>
 			</div>
 			</li>
 		<?php endwhile; ?>
 		<li class="agenda-controles">
-			<a href=""><span class="glyphicon glyphicon-calendar"></span>Ver toda la agenda</a><br>
+			<a href="<?php echo get_home_url(); ?>/agenda"><span class="glyphicon glyphicon-calendar"></span>Ver toda la agenda</a><br>
 			<a href="<?php echo get_home_url(); ?>/agregar-evento"><span class="glyphicon glyphicon-plus"></span>Agregar Evento</a>
 		</li>
 	</ul>

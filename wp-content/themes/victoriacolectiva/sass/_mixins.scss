@@ -28,3 +28,13 @@
     		}
 		}
 }
+
+@mixin boton(){
+	background:$rojo;
+	color: #FFF;
+	border-radius:5px;
+	border:0;
+	padding:5px 10px;
+	margin-bottom:10px;
+	float:right;
+}

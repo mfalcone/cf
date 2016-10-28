@@ -1,0 +1,124 @@
+.page-template-page-aportes-php{
+	.image{
+		img{
+			max-width: 100%;
+			height:auto;
+		}
+	}
+}
+
+#contact_form{
+	label{
+		clear:left;
+		width:30%;
+		text-align:right;
+		padding-right: 10px;
+	}
+	input{
+		margin-bottom:20px;
+	}
+	label, input{
+		float:left;
+	}
+
+	.dinero{
+		float:left;
+	}
+
+	.enviar{
+		@include boton();
+	}
+
+	#otro_input{
+		display: none;
+	}
+	
+	p{
+		font-size: 1.2rem;
+	    padding: 12px 42px;
+	    text-align: center;
+	    background:#eae8e9;
+	}
+
+	fieldset{
+		width:50%;
+		float:left;
+
+		label{
+			width:100%;
+			text-align: left;
+			color:$rojo;
+		}
+
+		input{
+			width:100%;
+		}
+		ul{
+			margin-bottom:10px;
+			float:left;
+		}
+		li{
+			float:left;
+			margin-right: 20px;
+			position: relative;
+    		padding-left: 30px;
+		}
+
+		.glyphicon{
+			margin-right: 10px;
+			font-size:2.5rem;
+			position: absolute;
+		    top: 0;
+		    left: 0;
+		}
+
+		.empty-circle{
+			border: 2px solid;
+		    border-radius: 12px;
+		    width: 19px;
+		    height: 19px;
+		    cursor:pointer;
+		}
+
+		.dinero{
+			li{
+				width:100%;
+				height: 40px;
+
+				input{
+					position: absolute;
+    				left: 0;
+    				top: 27px;
+				}
+			}
+		}
+	}
+
+	.enviar-wrapper{
+		width: 100%;
+		clear:left;
+	}
+}
+
+.row.llamada{
+	h3{
+		margin:0;
+		padding:0;
+		background:#FFF;
+		border:1px solid #cccbcb;
+		border-radius:5px;
+		text-transform: uppercase;
+		font-size:1.5rem;
+		cursor:pointer;	
+		span{
+			background:#CCC;
+			padding:10px;
+			margin-top:-1px;
+			border-top-left-radius: 5px;
+    		border-bottom-left-radius: 5px;
+		}
+	}
+	p{
+
+	}
+}

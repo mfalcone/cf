@@ -7,18 +7,23 @@
         'comment_notes_after' => '',
         // Redefine your own textarea (the comment body).
         'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><br /><textarea id="comment" name="comment" aria-required="true"></textarea></p>',
-);
-comment_form( $comments_args ); ?>
+);?>
 <?php if($comments) { ?>
-    <ol>
+    <ul class="comentarios">
         <?php foreach($comments as $comment) { ?>
-            <li id="comment-<?php comment_ID(); ?>">
+            <li id="comment-<?php comment_ID(); ?>" class="row">
                 <?php if ($comment->comment_approved == '0') { ?>
                     <p>Your comment is awaiting approval</p>
-                <?php }
-                comment_text(); ?>
-                <cite><?php comment_type(); ?> by <?php comment_author_link(); ?> on <?php comment_date(); ?> at <?php comment_time(); ?></cite>
+                <?php }?>
+                <div class="avatar-wrapper col-md-1"><?php echo get_avatar( $comment, $args['avatar_size'] ); ?></div>
+                <div class="comment-wrapper col-md-11"><span class="author"><?php comment_author_link(); ?></span><?php comment_text(); ?>
+                <cite>
+                    <?php comment_date(); ?> a las <?php comment_time(); ?>
+                </cite>
+                </div>
             </li>
         <?php } ?>
-    </ol>
+    </ul>
 <?php }
+
+comment_form( $comments_args ); ?>

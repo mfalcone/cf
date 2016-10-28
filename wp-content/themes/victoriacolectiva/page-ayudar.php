@@ -14,7 +14,20 @@ get_header(); ?>
 								<h1>
 									<?php the_title(); ?>
 								</h1>
-								<?php the_content(); ?>
+								<div class="col-md-12 quiero-img">
+									<?php 
+										if ( has_post_thumbnail() ) {
+											the_post_thumbnail('large');
+										}
+									?>
+								</div>
+								<div class="col-md-12">
+									<?php the_content(); ?>
+								</div>
+								
+								<div class="quiero">
+									<?php echo do_shortcode('[quiero-ayudar]');?>
+								</div>
 						</div>
 				</div>
 				
@@ -33,6 +46,7 @@ get_header(); ?>
 			<div class="contenido">
 				<div class="imagen"><?php the_post_thumbnail( 'large' ); ?></div>
 				<?php the_content();?>
+				<?php comments_template(); ?>
 			</div>
 		</article>	
 	<?php endwhile; ?>

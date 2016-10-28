@@ -7,7 +7,17 @@
  * @subpackage bp-default
  */
 
-get_header( 'buddypress' ); ?>
+get_header( 'buddypress' ); 
+	
+	if ( !current_user_can('organico') ) : 
+
+	get_template_part( 'template-parts/nivel-usuario');
+		
+	else:
+
+	?>
+	
+
 
 	<?php do_action( 'bp_before_directory_groups_page' ); ?>
 
@@ -87,6 +97,6 @@ get_header( 'buddypress' ); ?>
 	</div><!-- #content -->
 
 	<?php do_action( 'bp_after_directory_groups_page' ); ?>
-
+<?php endif;?>
 <?php get_footer( 'buddypress' ); ?>
 

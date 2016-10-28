@@ -44,7 +44,12 @@
 					<input type="text" placeholder="buscar" id="search-terms" name="search-terms" value="<?php echo isset( $_REQUEST['s'] ) ? esc_attr( $_REQUEST['s'] ) : ''; ?>" />
 					
 					<div class="propiedaes">
-						<?php echo bp_search_form_type_select(); ?>
+						<?php //echo bp_search_form_type_select(); ?>
+						<label for="search-which" class="accessibly-hidden">Filtrar por:</label>
+						<select name="search-which" id="search-which" style="width: auto">
+							<option value="members">Miembros</option>
+							<option value="groups">Grupos</option>
+						</select>
 						<input type="submit" name="search-submit" id="search-submit" value="<?php esc_attr_e( 'Buscar', 'buddypress' ); ?>" />
 					</div>
 					

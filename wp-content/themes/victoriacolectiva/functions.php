@@ -117,12 +117,16 @@ function victoriacolectiva_scripts() {
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery',  get_template_directory_uri() . '/js/jquery-1.12.3.min.js');
 	wp_enqueue_script('jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('jquery'), '1.8.6');
-	wp_enqueue_script( 'myfunctions',  get_template_directory_uri() . '/js/main.js',array('jquery'),'1.0' );
+	wp_enqueue_script( 'tiny_mce' );
+	wp_enqueue_script( 'myfunctions2',  get_template_directory_uri() . '/js/wysihtml5-0.3.0.js',array('jquery'),'1.0' );
+	wp_enqueue_script( 'myfunctions',  get_template_directory_uri() . '/js/main.js',array('jquery','myfunctions2'),'1.0' );
+	
 	// wp_register_style() example
 	wp_register_style('style', get_template_directory_uri() . '/style.css');
 	  wp_register_style('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
-  wp_enqueue_style( 'jquery-ui' );   
+	wp_enqueue_style( 'jquery-ui' );   
 	wp_enqueue_style( 'style' );
+
 	wp_enqueue_script( 'bp-jquery-query' );
 	wp_enqueue_script( 'bp-jquery-cookie' );
 	wp_enqueue_script( 'dtheme-ajax-js', get_template_directory_uri() . '/_inc/global.js', array( 'jquery' ), bp_get_version() );
@@ -150,7 +154,6 @@ function my_redirect() {
     //Don't redirect if user is logged in or user is trying to sign up or sign in
     if(!is_front_page()  && !is_page('29') && !is_admin() && !is_user_logged_in()){
         	wp_safe_redirect( home_url( '/' ) );
-        	print_r("a");
             }
 }
 //add_action( 'template_redirect', 'my_redirect' );
@@ -173,18 +176,18 @@ function pippin_login_member() {
 		if(!$user) {
 			//print_r(pippin_errors());
 			// if the user name doesn't exist
-			pippin_errors()->add('empty_username', __('Invalid username'));
+			pippin_errors()->add('empty_username', __('Nombre de usuario no válido'));
 		}
  
 		if(!isset($_POST['pippin_user_pass']) || $_POST['pippin_user_pass'] == '') {
 			// if no password was entered
-			pippin_errors()->add('empty_password', __('Please enter a password'));
+			pippin_errors()->add('empty_password', __('Por favor inserte una contraseña'));
 		}
  
 		// check the user's login with their password
 		if(!wp_check_password($_POST['pippin_user_pass'], $user->user_pass, $user->ID)) {
 			// if the password is incorrect for the specified user
-			pippin_errors()->add('empty_password', __('Incorrect password'));
+			pippin_errors()->add('empty_password', __('contraseña incorrecta'));
 		}
  
 		// retrieve all error messages
@@ -282,7 +285,7 @@ function bp_default_register_feature() {
     // Register the feature for your theme according to the defined settings.
     bp_set_theme_compat_feature( bp_get_theme_compat_id(), $cover_image_settings );
 }
-add_action( 'bp_after_setup_theme', 'bp_default_register_feature' );
+//add_action( 'bp_after_setup_theme', 'bp_default_register_feature' );
 
 
 add_filter('body_class','my_class_names');
@@ -411,6 +414,8 @@ function possibly_redirect(){
   exit();
  }
 }
+
+
 
 
 //$install_path = get_home_path();

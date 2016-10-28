@@ -351,6 +351,7 @@ jq(document).ready( function() {
 				jq("#content ul.activity-list").append(response.contents);
 
 				target.parent().hide();
+				$('a[href^="http://"]').not('a[href*=hagamos]').attr('target','_blank');
 			}, 'json' );
 
 			return false;

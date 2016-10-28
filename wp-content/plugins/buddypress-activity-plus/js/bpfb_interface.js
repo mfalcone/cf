@@ -198,6 +198,7 @@ var BpfbLinkHandler = function () {
 			}
 
 		});
+		$("#bpfb_link_no_thumbnail").trigger("click").hide();
 	};
 
 	var createLinkPreview = function () {

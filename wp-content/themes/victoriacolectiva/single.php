@@ -16,18 +16,13 @@ get_header(); ?>
 			if ( has_post_thumbnail() ) {
 				the_post_thumbnail('medium');
 			}
-			get_template_part( 'template-parts/content', get_post_format() );
-
-			//the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			
-		endwhile; // End of the loop.
+			get_template_part( 'template-parts/content', get_post_format() );?>
+			<?php comments_template(); ?>
+		<?php endwhile; // End of the loop.
 		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

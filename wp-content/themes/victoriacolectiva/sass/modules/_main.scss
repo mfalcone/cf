@@ -1,5 +1,10 @@
 #page{
 	position:relative;
+
+	.row{
+		margin-left:0;
+		margin-right:0;
+	}
 }
 
 .site-content{
@@ -106,11 +111,80 @@
 .coming-soon{
 	background-color:#000;
 	background-image:url(img/back_hagamos.png);
-	background-size: cover;
+	background-size: contain;
+	background-position: center;
 	background-repeat:no-repeat;
 	width:100%;
 	height:100%;
 	position:fixed;
 	top:0;
 	left:0;
+}
+
+#v_form{
+	input[type="submit"]{
+		@include boton();
+	}
+}
+
+body.page{
+	h1{
+	
+	&::before {
+		    content: "+ ";
+		    color: #53b1da; 
+		    font-size:3rem;
+		}
+	}
+
+	#comment{
+		width: 100%;
+		min-height: 100px;
+	}
+
+	input[type="submit"]{
+		@include boton();
+	}
+}
+
+.solo-organicos{
+	div{
+		text-align: center;
+		.glyphicon{
+			font-size:4rem;
+			background:$rojo;
+			color: #FFF;
+			border-radius:5px;
+			padding:10px;
+			}
+		}	
+
+		p{
+			text-align: center;
+			font-weight: bold;
+			margin-top:20px;
+		}
+}
+
+form{
+	padding-bottom:20px;
+}
+
+#message.info{
+	float:left;
+	padding:10px;
+}
+
+select{
+	color:#999;
+}
+
+.pippin_errors{
+	position: absolute;
+    top: -85px;
+    padding: 10px;
+    background: #f00;
+    height: 80px;
+    color: #fff;
+    width:100%;
 }

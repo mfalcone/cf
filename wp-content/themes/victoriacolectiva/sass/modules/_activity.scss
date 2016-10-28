@@ -5,6 +5,8 @@
 		padding:0 10px;
 		border-right: 1px solid;
 	}
+
+
 }
 
 .activity-type-tabs{
@@ -16,20 +18,20 @@
 	}
 
 	 @include max-screen(1200px) {
-		       width:100%;
-		       ul{
-		       	display:table;
-			    width:100%;
-			    box-sizing:border-box;
-			    -moz-box-sizing:border-box;
-			    -webkit-box-sizing:border-box;
-			     li{
-			     	display:table-cell;
-			     	float:none;
-			     	text-align: center;
-			     }
-		       }
-		    }
+			   width:100%;
+			   ul{
+				display:table;
+				width:100%;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				 li{
+					display:table-cell;
+					float:none;
+					text-align: center;
+				 }
+			   }
+			}
 }
 
 .item-list-tabs.no-ajax{
@@ -56,8 +58,8 @@ div.activity{
 		li{
 			background: #FFF;
 			margin-bottom: 20px;
-    		padding: 10px;
-    		overflow: auto;
+			padding: 10px;
+			overflow: auto;
 		
 			.activity-avatar{
 				float:left;
@@ -109,13 +111,13 @@ div.activity{
 					position:relative;
 					&:after{
 						content: "";
-    					position: absolute;
-    					top: 16px;
-					    left: -20px;
-					    bottom: auto;
-					    border-width: 5px 20px 5px 0;
-					    border-color: transparent #FFF;
-					    border-style:solid;
+						position: absolute;
+						top: 16px;
+						left: -20px;
+						bottom: auto;
+						border-width: 5px 20px 5px 0;
+						border-color: transparent #FFF;
+						border-style:solid;
 					}
 					.acomment-meta{
 						border-bottom:1px solid #CCC;
@@ -143,6 +145,10 @@ div.activity{
 					}
 				}
 			}
+
+			.comment-wrapper{
+				float:none;
+			}
 		}
 
 	}
@@ -154,6 +160,7 @@ div.activity{
 	.activity-inner{
 		iframe{
 			width:100%;
+			min-height: 400px;
 		}
 	}
 
@@ -169,6 +176,30 @@ div.activity{
 			color: #666;
 			margin-bottom:0;
 		}
+	}
+
+	.bpfb_final_link{
+		overflow: auto;
+		border-left: 1px solid #CCC;
+		margin-bottom: 20px;
+		.bpfb_link_contents{
+			width:90%;
+		}
+	}
+
+	.ac-form{
+		margin:10px;
+		padding-top:10px;
+		.ac-reply-avatar{
+			float:left;
+			margin-right: 10px;
+		}
+
+		textarea{
+			width:50%;
+		}
+
+
 	}
 }
 
