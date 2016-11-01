@@ -18,3 +18,30 @@
 		color:$rojo;
 	}
 }
+
+#message-threads{
+
+	td{
+		padding:5px;
+		background:#FFF;
+
+		&.bulk-select-check{
+			width:5%;
+			.bp-screen-reader-text{
+				display: none;
+			}
+		}
+
+		&.thread-from{
+			width:35%;
+			img{
+				float:left;
+				margin-right:5px;
+			}
+		}
+
+		.thread-excerpt{
+			display:none;
+		}
+	}
+}

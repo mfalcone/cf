@@ -176,7 +176,7 @@ function pippin_login_member() {
 		if(!$user) {
 			//print_r(pippin_errors());
 			// if the user name doesn't exist
-			pippin_errors()->add('empty_username', __('Nombre de usuario no válido'));
+			pippin_errors()->add('empty_username', __('Correo electrónico no válido'));
 		}
  
 		if(!isset($_POST['pippin_user_pass']) || $_POST['pippin_user_pass'] == '') {
@@ -285,7 +285,7 @@ function bp_default_register_feature() {
     // Register the feature for your theme according to the defined settings.
     bp_set_theme_compat_feature( bp_get_theme_compat_id(), $cover_image_settings );
 }
-//add_action( 'bp_after_setup_theme', 'bp_default_register_feature' );
+add_action( 'bp_after_setup_theme', 'bp_default_register_feature' );
 
 
 add_filter('body_class','my_class_names');
@@ -416,6 +416,17 @@ function possibly_redirect(){
 }
 
 
+function user_role_update( $user_id, $new_role ) {
+		if($new_role=="organico"){
+	        $site_url = get_bloginfo('wpurl');
+	        $user_info = get_userdata( $user_id );
+	        $to = $user_info->user_email;
+	        $subject = "Ya sos miembro orgánico";
+	        $message = "¡Bienvenido ".$user_info->display_name ."! A partir de ahora podrás acceder a la información completa de la Red Social “Hagamos”, ya que has sido incluido como miembro orgánico de Ciudad Futura. \n\nContinuemos construyendo hoy la sociedad que queremos para mañana.";
+	        wp_mail($to, $subject, $message);
+        }
+}
+add_action( 'set_user_role', 'user_role_update', 10, 2);
 
 
 //$install_path = get_home_path();

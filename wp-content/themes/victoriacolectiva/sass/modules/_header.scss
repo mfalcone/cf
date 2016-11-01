@@ -1,6 +1,6 @@
 #masthead{
 	display:none;
-	z-index:4;
+	z-index:14;
 
 	.menu-toggle{
 		float: left;
@@ -89,6 +89,12 @@
 			display: none;
 			float:left;
 			margin-left:5px;
+
+			#search-submit{
+				margin-left: 10px;
+				color: #FFF;
+    			margin-top: -4px;
+			}
 		}
 	}
 
@@ -145,7 +151,7 @@ img.avatar{
     z-index: 2;
     overflow: auto;
     height: 0;
-
+	z-index:12;
     .ahora{
 
     	h2{

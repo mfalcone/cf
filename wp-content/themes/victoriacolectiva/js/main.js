@@ -67,6 +67,10 @@ $(document).ready(function(){
 		$(this).height("82px").height($(this)[0].scrollHeight);
 	})
 
+	$("#activity-stream textarea").on("input",function(){
+		$(this).height("15px").height($(this)[0].scrollHeight);
+	})
+	
 	if($("body").hasClass("registration")){
 			var latlng = new google.maps.LatLng(-32.944243, -60.650539);
 			var myOptions = {

@@ -10,7 +10,7 @@
  * @package victoriacolectiva
  */
  if(!is_user_logged_in()){
-	if(!is_front_page() && !is_page('registrar')){
+	if(!is_front_page() && !is_page('registrar') &&!is_page('reset')){
 		wp_redirect(home_url());
 	}
 }
@@ -21,6 +21,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Hagamos Ciudad Futura es una red social para la participación ciudadana creada en Rosario por Ciudad Futura. El objetivo es que quien quiera brindar su aporte para la construcción de una sociedad más justa tenga un ámbito ideado acordemente para poder volcar sus ideas, proyectos y experiencias. La plataforma es de libre ingreso. ¡Bienvenidos!">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 

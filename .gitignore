@@ -1,2 +1,7 @@
 .DS_Store
 wp-content/themes/transparencia.ciudadfutura/sass/.sass-cache/*
+live/wp-config.php
+wp-content/themes/ciudadfutura/afiliado.php
+wp-content/themes/ciudadfutura/wp-config.php
+wp-content/themes/transparencia.ciudadfutura/aporte.php
+wp-content/themes/victoriacolectiva/aporte.php

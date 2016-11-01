@@ -383,7 +383,7 @@ jq(document).ready( function() {
 	/**** Activity Comments *******************************************************/
 
 	/* Hide all activity comment forms */
-	jq('form.ac-form').hide();
+	jq('.activity-comments li form.ac-form').hide();
 
 	/* Hide excess comments */
 	if ( jq('.activity-comments').length )
@@ -394,8 +394,9 @@ jq(document).ready( function() {
 		var target = jq(event.target);
 
 		/* Comment / comment reply links */
-		if ( target.hasClass('acomment-reply') || target.parent().hasClass('acomment-reply') ) {
+		if ( target.hasClass('acomment-reply') ) {
 			if ( target.parent().hasClass('acomment-reply') )
+			
 				target = target.parent();
 
 			var id = target.attr('id');
@@ -405,9 +406,9 @@ jq(document).ready( function() {
 			var c_id = target.attr('href').substr( 10, target.attr('href').length );
 			var form = jq( '#ac-form-' + a_id );
 
-			form.css( 'display', 'none' );
+			//form.css( 'display', 'none' );
 			form.removeClass('root');
-			jq('.ac-form').hide();
+			//jq('.ac-form').hide();
 
 			/* Hide any error messages */
 			form.children('div').each( function() {
@@ -633,7 +634,7 @@ jq(document).ready( function() {
 	});
 
 	/* Escape Key Press for cancelling comment forms */
-	jq(document).keydown( function(e) {
+	/*jq(document).keydown( function(e) {
 		e = e || window.event;
 		if (e.target)
 			element = e.target;
@@ -654,7 +655,7 @@ jq(document).ready( function() {
 					jq(element).parent().parent().parent().slideUp( 200 );
 			}
 		}
-	});
+	});*/
 
 	/**** Directory Search ****************************************************/
 

@@ -9,7 +9,6 @@
 get_header( 'buddypress' ); ?>
 
 <div id="buddypress" class="home-profile">
-
 	<?php
 	 
 	/**
@@ -25,11 +24,11 @@ get_header( 'buddypress' ); ?>
 		/**
 		 * If the cover image feature is enabled, use a specific header
 		 */
-		if ( bp_displayed_user_use_cover_image_header() ) :
+		/*if ( bp_displayed_user_use_cover_image_header() ) :*/
 			bp_get_template_part( 'members/single/cover-image-header' );
-		else :
+		/*else :
 			bp_get_template_part( 'members/single/member-header' );
-		endif;
+		endif;*/
 		?>
 
 	</div><!-- #item-header -->

@@ -2,7 +2,7 @@
 	position:fixed;
 	height:100%;
 	top:0;
-	z-index:3;
+	z-index:13;
 	padding-top:40px;
 	@include max-screen(1000px) {
 	        display:none;
