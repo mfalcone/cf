@@ -108,6 +108,8 @@ div.activity{
 					form{
 						padding-top:0;
 					}
+					
+					
 				}
 				.acomment-avatar{
 					float:left;
@@ -162,6 +164,10 @@ div.activity{
 			.comment-wrapper{
 				float:none;
 			}
+
+			input.loading{
+						background: #CCC;
+					}
 		}
 
 	}

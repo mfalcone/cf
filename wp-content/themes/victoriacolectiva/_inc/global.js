@@ -267,6 +267,7 @@ jq(document).ready( function() {
 
 		/* Delete activity stream items */
 		if ( target.hasClass('delete-activity') ) {
+
 			var li        = target.parents('div.activity ul li');
 			var id        = li.attr('id').substr( 9, li.attr('id').length );
 			var link_href = target.attr('href');
@@ -274,8 +275,7 @@ jq(document).ready( function() {
 
 			nonce = nonce[1];
 
-			target.addClass('loading');
-
+			target.text("borrando...").addClass('loading');
 			jq.post( ajaxurl, {
 				action: 'delete_activity',
 				'cookie': bp_get_cookies(),
@@ -427,7 +427,7 @@ jq(document).ready( function() {
 
 			form.slideDown( 200 );
 			jq.scrollTo( form, 500, {
-				offset:-100,
+				offset:-150,
 				easing:'swing'
 			} );
 			jq('#ac-form-' + ids[2] + ' textarea').focus();
@@ -440,7 +440,6 @@ jq(document).ready( function() {
 			var form        = target.parents( 'form' );
 			var form_parent = form.parent();
 			var form_id     = form.attr('id').split('-');
-
 			if ( !form_parent.hasClass('activity-comments') ) {
 				var tmp_id = form_parent.attr('id').split('-');
 				var comment_id = tmp_id[1];
@@ -450,7 +449,8 @@ jq(document).ready( function() {
 
 			/* Hide any error messages */
 			jq( 'form#' + form.attr('id') + ' div.error').hide();
-			//target.addClass('loading').prop('disabled', true);
+			var valoranterior = target.val();
+			target.val("enviando...").addClass('loading').prop('disabled', true);
 
 			var ajaxdata = {
 				action: 'new_activity_comment',
@@ -468,8 +468,7 @@ jq(document).ready( function() {
 			}
 
 			jq.post( ajaxurl, ajaxdata, function(response) {
-				target.removeClass('loading');
-
+				target.val(valoranterior).prop('disabled',false).removeClass('loading');
 				/* Check for errors and append if found. */
 				if ( response[0] + response[1] == '-1' ) {
 					form.append( jq( response.substr( 2, response.length ) ).hide().fadeIn( 200 ) );

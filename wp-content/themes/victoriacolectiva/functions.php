@@ -120,7 +120,11 @@ function victoriacolectiva_scripts() {
 	wp_enqueue_script( 'tiny_mce' );
 	wp_enqueue_script( 'myfunctions2',  get_template_directory_uri() . '/js/wysihtml5-0.3.0.js',array('jquery'),'1.0' );
 	wp_enqueue_script( 'myfunctions',  get_template_directory_uri() . '/js/main.js',array('jquery','myfunctions2'),'1.0' );
-	
+	$params = array(
+  'foo' => 'bar',
+  'setting' => 123,
+);
+	wp_localize_script( 'myfunctions', 'MyScriptParams', $params );
 	// wp_register_style() example
 	wp_register_style('style', get_template_directory_uri() . '/style.css');
 	  wp_register_style('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
@@ -129,7 +133,45 @@ function victoriacolectiva_scripts() {
 
 	wp_enqueue_script( 'bp-jquery-query' );
 	wp_enqueue_script( 'bp-jquery-cookie' );
+
+	wp_enqueue_script( 'bp-jquery-query' );
+	wp_enqueue_script( 'bp-jquery-cookie' );
+
+	// Enqueue scrollTo only on activity pages
+	if ( bp_is_activity_component() ) {
+		wp_enqueue_script( 'bp-jquery-scroll-to' );
+	}
+
+	// A similar check is done in BP_Core_Members_Widget, but due to a load order
+	// issue, we do it again here
+	if ( is_active_widget( false, false, 'bp_core_members_widget' ) && ! is_admin() && ! is_network_admin() ) {
+		wp_enqueue_script( 'bp-widget-members' );
+	}
+
+	// Enqueue the global JS - Ajax will not work without it
 	wp_enqueue_script( 'dtheme-ajax-js', get_template_directory_uri() . '/_inc/global.js', array( 'jquery' ), bp_get_version() );
+
+	// Add words that we need to use in JS to the end of the page so they can be translated and still used.
+	$params = array(
+		'my_favs'           => __( 'My Favorites', 'buddypress' ),
+		'accepted'          => __( 'Accepted', 'buddypress' ),
+		'rejected'          => __( 'Rejected', 'buddypress' ),
+		'show_all_comments' => __( 'Show all comments for this thread', 'buddypress' ),
+		'show_x_comments'   => __( 'Show all %d comments', 'buddypress' ),
+		'show_all'          => __( 'Show all', 'buddypress' ),
+		'comments'          => __( 'comments', 'buddypress' ),
+		'close'             => __( 'Close', 'buddypress' ),
+		'view'              => __( 'View', 'buddypress' ),
+		'mark_as_fav'	    => __( 'Favorite', 'buddypress' ),
+		'remove_fav'	    => __( 'Remove Favorite', 'buddypress' ),
+		'unsaved_changes'   => __( 'Your profile has unsaved changes. If you leave the page, the changes will be lost.', 'buddypress' ),
+	);
+	wp_localize_script( 'dtheme-ajax-js', 'BP_DTheme', $params );
+
+	// Maybe enqueue comment reply JS
+	if ( is_singular() && bp_is_blog_page() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
+	
 
 	wp_localize_script( 'dtheme-ajax-js', 'BP_DTheme', $params );
 
@@ -428,6 +470,19 @@ function user_role_update( $user_id, $new_role ) {
 }
 add_action( 'set_user_role', 'user_role_update', 10, 2);
 
+add_filter('style_loader_tag', 'development_disable_style_caching');
+function development_disable_style_caching($tag){
+	$fecha = filemtime( get_stylesheet_directory() . '/style.css' ) ;
+	return str_replace(get_bloginfo('version'), $fecha, $tag);
+}
+
+function wpse215386_remove_script_version( $src ){
+  $parts = explode( '?ver', $src );
+  $fecha = filemtime( get_template_directory() . '/js/main.js' ) ;
+  return $parts[0].'?ver='.$fecha;
+}
+// for .js files
+add_filter( 'script_loader_src', 'wpse215386_remove_script_version', 15, 1 );
 
 //$install_path = get_home_path();
 $path =ABSPATH.'/wp-content/themes/victoriacolectiva';
