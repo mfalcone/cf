@@ -17,7 +17,23 @@
 	<div class="pestania"><span class="glyphicon glyphicon-list"></span></div>
 	<span class="hash agenda">#</span><h2 class="agenda">Agenda</h2>
 	<ul class="agenda">	
-		<?php 
+		<?php
+			if ( current_user_can('organico') ){
+				$args = array('post_type' => 'agenda',
+							'posts_per_page' => -1, 
+							'meta_query' => array(
+							    array(
+							        'key'		=> 'fecha_inicio',
+							        'compare'	=> '>=',
+							        'value'		=> date("Y-m-d"),
+							        'type' => 'NUMERIC,'
+							    ),
+						    ),
+							'meta_key'=>'fecha_inicio', 
+							'orderby' => 'meta_value', 
+							'order' => 'ASC'  );
+			}else{
+
 			$args = array('post_type' => 'agenda',
 							'posts_per_page' => 2, 
 							'meta_query' => array(
@@ -36,6 +52,8 @@
 							'meta_key'=>'fecha_inicio', 
 							'orderby' => 'meta_value', 
 							'order' => 'ASC'  );
+		}
+
 		$loop = new WP_Query( $args );
 		//print_r($loop);
 		while ( $loop->have_posts() ) : $loop->the_post(); ?>

@@ -16,27 +16,14 @@ get_header(); ?>
 			if ( current_user_can('organico') ){
 				$args = array('post_type' => 'agenda',
 							'posts_per_page' => -1, 
-							'meta_query' => array(
-							    array(
-							        'key'		=> 'fecha_inicio',
-							        'compare'	=> '>=',
-							        'value'		=> date("Y-m-d"),
-							        'type' => 'NUMERIC,'
-							    ),
-						    ),
 							'meta_key'=>'fecha_inicio', 
 							'orderby' => 'meta_value', 
-							'order' => 'ASC'  );
+							'order' => 'DESC'  );
 			}else{
 				$args = array('post_type' => 'agenda',
 							'posts_per_page' => -1, 
 							'meta_query' => array(
-							    array(
-							        'key'		=> 'fecha_inicio',
-							        'compare'	=> '>=',
-							        'value'		=> date("Y-m-d"),
-							        'type' => 'NUMERIC,'
-							    ),
+							    
 							    array(
 							        'key'		=> 'nivel-usuario',
 							        'compare'	=> '==',
@@ -45,7 +32,7 @@ get_header(); ?>
 						    ),
 							'meta_key'=>'fecha_inicio', 
 							'orderby' => 'meta_value', 
-							'order' => 'ASC'  );
+							'order' => 'DESC'  );
 			}
 			
 		$loop = new WP_Query( $args );

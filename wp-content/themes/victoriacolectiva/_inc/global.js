@@ -359,7 +359,7 @@ jq(document).ready( function() {
 	});
 
 	// Activity "Read More" links
-	jq('div.activity').on('click', '.activity-read-more a', function(event) {
+	jq('div.activity').on('click', '.activity-read-more a', function(event) {	
 		var target = jq(event.target);
 		var link_id = target.parent().attr('id').split('-');
 		var a_id = link_id[3];
@@ -368,7 +368,7 @@ jq(document).ready( function() {
 		var inner_class = type == 'acomment' ? 'acomment-content' : 'activity-inner';
 		var a_inner = jq('li#' + type + '-' + a_id + ' .' + inner_class + ':first' );
 		jq(target).addClass('loading');
-
+		target.text("cargando...");
 		jq.post( ajaxurl, {
 			action: 'get_single_activity_content',
 			'activity_id': a_id
