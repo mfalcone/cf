@@ -100,8 +100,7 @@ get_header( 'buddypress' ); ?>
 						<li id="activity-filter-select" class="last">
 							<label for="activity-filter-by"><?php _e( 'Mostrar:', 'buddypress' ); ?></label>
 							<select id="activity-filter-by">
-								<option value="-1"><?php _e( '&mdash; Todo &mdash;', 'buddypress' ); ?></option>
-								<option value="activity_update"><?php _e( 'actualizaciones', 'buddypress' ); ?></option>
+								<option value="activity_update" selected><?php _e( 'actualizaciones', 'buddypress' ); ?></option>
 
 								<?php if ( bp_is_active( 'blogs' ) ) : ?>
 
@@ -222,7 +221,7 @@ get_header( 'buddypress' ); ?>
 		    {
 		      element: "ul.agenda",
 		      title: "<h4>Contenido destacado</h4>",
-		      content: "<p>En esta sección vas a ver algunos eventos destacados, podés sumar el tuyo a la agenda.</p> <p>También te proponemos alunos debates e ideas de otros usuarios para que aportes tu opinión.</p>",
+		      content: "<p>En esta sección vas a ver algunos eventos destacados, podés sumar el tuyo a la agenda.</p> <p>También te proponemos algunos debates e ideas de otros usuarios para que aportes tu opinión.</p>",
 		      placement: "left",
 		      backdrop: false
 		    },

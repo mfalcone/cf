@@ -375,6 +375,8 @@ jq(document).ready( function() {
 		},
 		function(response) {
 			jq(a_inner).slideUp(300).html(response).slideDown(300);
+			$('a[href^="http://"]').not('a[href*=hagamos]').attr('target','_blank');
+
 		});
 
 		return false;

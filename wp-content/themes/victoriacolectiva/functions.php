@@ -484,6 +484,16 @@ function wpse215386_remove_script_version( $src ){
 // for .js files
 add_filter( 'script_loader_src', 'wpse215386_remove_script_version', 15, 1 );
 
+
+function filtering_activity_default( $query ) {
+  if ( empty( $query ) && empty( $_POST ) ) {
+    $query = 'action=activity_update';
+  }
+  return $query;
+}
+add_filter( 'bp_ajax_querystring', 'filtering_activity_default', 999 );
+
+
 //$install_path = get_home_path();
 $path =ABSPATH.'/wp-content/themes/victoriacolectiva';
 require_once( $path . '/includes/custom-event-post.php');
@@ -491,5 +501,6 @@ require_once( $path . '/includes/custom-ahora-post.php');
 require_once( $path . '/includes/quiero-ayudar.php');
 require_once( $path . '/includes/quiero-mapeo.php');
 require_once( $path . '/includes/quiero-ser-parte.php');
+//require_once( $path . '/includes/contenido-destacado.php');
 
 

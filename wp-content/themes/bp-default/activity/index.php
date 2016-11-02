@@ -96,7 +96,7 @@ get_header( 'buddypress' ); ?>
 						<label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label>
 						<select id="activity-filter-by">
 							<option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
-							<option value="activity_update"><?php _e( 'Updates', 'buddypress' ); ?></option>
+							<option value="activity_update" selected="selected"><?php _e( 'Updates', 'buddypress' ); ?></option>
 
 							<?php if ( bp_is_active( 'blogs' ) ) : ?>
 

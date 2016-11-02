@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+
+	$('a[href^="http://"]').not('a[href*=hagamos]').attr('target','_blank');
+
 	$(".bt .escribir").click(function(){
 		$(".editor").slideToggle();
 	})
@@ -418,7 +421,7 @@ $(document).ready(function(){
 		delete_cookie("bp-activity-filter")
 	})
 	/*para que se abran todos los links en ventanas externas*/
-	$('a[href^="http://"]').not('a[href*=hagamos]').attr('target','_blank');
+	
 
 	/*prefiero que me llamen*/
 	$("#prefiero_que_me_llamen").click(function(){

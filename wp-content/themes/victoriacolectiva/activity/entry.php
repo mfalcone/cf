@@ -15,6 +15,7 @@
 <?php do_action( 'bp_before_activity_entry' ); ?>
 
 <li class="<?php bp_activity_css_class(); ?>" id="activity-<?php bp_activity_id(); ?>">
+
 	<div class="activity-avatar">
 		<a href="<?php bp_activity_user_link(); ?>">
 
@@ -83,6 +84,11 @@
 
 		<?php endif; ?>
 
+		<?php if ( current_user_can('administrator') ) : ?>
+			<div class="admin-control">
+				<span>Agregar a contenido destacado</span>
+			</div>
+		<?php endif; ?>
 	</div>
 
 	<?php do_action( 'bp_before_activity_entry_comments' ); ?>
