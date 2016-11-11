@@ -167,6 +167,66 @@ div.activity{
 			input.loading{
 						background: #CCC;
 					}
+			.like-unlike-wrapper{
+				position:relative;
+				display: inline-block;
+				padding-left:35px;
+			}
+			.dedos{
+				background:url(img/dedos.gif) no-repeat;
+				width: 40px;
+				height: 50px;
+				display: inline-block;
+				margin-right: -10px;
+				position:absolute;
+				top:-20px;
+				left:0;
+				background-position:0 0;
+
+				&.tres-dedos{
+					background-position:-160px 0;
+				}
+			}
+			.tachito-wrapper, .fav-wrapper, .comment-wrapper{
+				position:relative;
+				display: inline-block;
+				padding-left:30px;
+			}
+			.tachito{
+				background:url(img/tachito.gif) no-repeat;
+				width: 40px;
+				height: 50px;
+				display: inline-block;
+				margin-right: -10px;
+				position:absolute;
+				top:-5px;
+				left:0;
+				background-position:0 0;
+			}
+
+			.guardar{
+				background:url(img/guardar.gif) no-repeat;
+				width: 40px;
+				height: 50px;
+				display: inline-block;
+				margin-right: -10px;
+				position:absolute;
+				top:-6px;
+				left:0;
+				background-position:0 0;
+			}
+
+			.comenta{
+				background:url(img/comenta.gif) no-repeat;
+				width: 26px;
+				height: 27px;
+				display: inline-block;
+				margin-right: -10px;
+				position:absolute;
+				top:-4px;
+				left:0;
+				background-position:0 0;
+			}
 		}
 
 	}
@@ -176,6 +236,7 @@ div.activity{
 	}
 
 	.activity-inner{
+		margin-bottom:30px;
 		iframe{
 			width:100%;
 			min-height: 400px;
@@ -185,6 +246,36 @@ div.activity{
 	.activity-meta{
 		float:left;
 		clear:left;
+		border-top: 1px solid;
+   		padding-top: 20px;
+   		width: 90%;
+		a{
+			display: inline-block;
+			height: 40px;
+			position:relative;
+			margin-right:20px;
+		}
+
+		.gracias{
+			padding-left:35px;
+		}
+
+		.like-text{
+				position:relative;
+				z-index: 2;
+				left:35px;
+			}
+
+		.users-who-like{
+			margin: 0;
+		    padding: 0;
+		    background: #DDD;
+		    background: #EEE;
+		    margin-bottom: 10px;
+		    a{
+		    	height:auto;
+		    }
+		}
 	}
 
 	.activity-header{

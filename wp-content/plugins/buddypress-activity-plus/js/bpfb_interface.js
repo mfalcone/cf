@@ -436,6 +436,8 @@ function init () {
 	$(document).on('click', '#bpfb_submit', function () {
 		var params = _bpfbActiveHandler.get();
 		var group_id = $('#whats-new-post-in').length ? $('#whats-new-post-in').val() : 0;
+		console.log("aca se hizo click");
+		$("#bpfb_submit").prop("disabled",true).val("enviando...").addClass("loading");
 		$.post(ajaxurl, {
 			"action": "bpfb_update_activity_contents",
 			"data": params,
@@ -444,6 +446,7 @@ function init () {
 		}, function (data) {
 			_bpfbActiveHandler.destroy();
 			$text.val('');
+			console.log("aca ya se envió")
 			$('#activity-stream').prepend(data.activity);
 			/**
 			 * Handle image scaling in previews.

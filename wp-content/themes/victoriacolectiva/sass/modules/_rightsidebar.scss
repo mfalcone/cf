@@ -7,7 +7,12 @@
     width:0;
     padding-top:90px;
     padding-left:10px;
-	.pestania{
+    #right-sidebar-wrapper{
+        height: 100%;
+        overflow:auto;
+        padding-bottom:50px;
+    }
+  	.pestania{
 		position:absolute;
 		top:40px;
 		left:-30px;
@@ -112,8 +117,58 @@
  
 }
 
-
-
 .admin-bar #right-sidebar .pestania{
 	top:72px;
+}
+
+body.logged-out #right-sidebar{
+    padding-top:40px;
+
+    h3{
+        background:#3a3c44;
+        color: #FFF;
+        margin:0;
+        padding:10px;
+        font-size:1.8rem;
+        margin-bottom:10px;
+        span{
+            margin-right: 10px;
+        }
+    }
+
+    p{
+        padding:10px;
+    }
+
+    hr{
+        border-top: 1px dashed;
+        width: 88%;
+        margin-left: 10px;
+    }
+
+    form{
+        p{
+            margin:0;
+            padding:0 0 0 20px;
+
+            input{
+                width: 200px;
+                padding:5px;
+                position:relative;
+                top:-4px;
+                margin-left:-3px;
+            }
+
+            span{
+                background:#ededed;
+                color: #999;
+                padding:5px;
+                font-size:2rem;
+            }
+        }
+        #login-submit{
+            margin-right: 20px;
+            margin-top:15px;
+        }
+    }
 }

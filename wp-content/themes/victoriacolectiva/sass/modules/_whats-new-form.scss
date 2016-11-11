@@ -105,7 +105,7 @@
 		}
 	}
 
-	#bpfb_submit, #bpfb_submit, #bpfb_cancel, #bpfb_cancel{
+	#bpfb_submit, #bpfb_cancel, #bpfb_cancel{
 			@include boton();
 		}
 	
@@ -122,6 +122,13 @@
 	.bpfb_preview_container{
 		margin-bottom:0;
 	}
+
+	#aw-whats-new-submit.loading,
+	#bpfb_submit.loading{
+		background:#CCC;
+		color:#FFF;
+		}
+
 
 	
 }

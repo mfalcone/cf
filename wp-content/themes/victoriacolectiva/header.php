@@ -10,7 +10,7 @@
  * @package victoriacolectiva
  */
  if(!is_user_logged_in()){
-	if(!is_front_page() && !is_page('registrar') &&!is_page('reset')){
+	if(!is_front_page() && !is_page('registrar') &&!is_page('reset') &&!is_page('publicaciones-destacadas') &&!is_singular('contenido-destacado')){
 		wp_redirect(home_url());
 	}
 }
@@ -38,6 +38,7 @@
 		<div class="cf-icon">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Hagamos</a>
 		</div><!-- .site-branding -->
+		<?php if(is_user_logged_in()):?>
 		<div class="header-container">
 			<div class="buscador">
 				<form action="<?php echo bp_search_form_action(); ?>" method="post" id="search-form">
@@ -102,8 +103,12 @@
 				<?php bp_loggedin_user_avatar( 'width=' . bp_core_avatar_thumb_width() . '&height=' . bp_core_avatar_thumb_height() ); ?></a>
 			<a href="<?php echo wp_logout_url(home_url()); ?>">Salir <span class="glyphicon glyphicon-off"></span></a>
 		</div>
+		<?php else:?>
+			<h3>Para ver todo el contenido y participar en hagamos <a href="<?php echo home_url();?>/registrar">registrate</a></h3>
+		<?php endif;?>
 	</header><!-- #masthead -->
-	<?php if(is_user_logged_in()):?>
+	<?php
+	if(!is_front_page() && !is_page('registrar') &&!is_page('reset')){?>
 	<aside id="sidebar">
 		<ul id="main-menu">
 			<li class="muro"><h3><a href="<?php echo get_home_url(); ?>/actividad"><span class="glyphicon glyphicon-comment"></span>MURO</a></h3></li>
@@ -145,21 +150,12 @@
 			</li>
 		</ul>
 	</aside>
+	<div style="display:none"><?php if ( function_exists( 'ray_number_online_users' ) ) echo ray_number_online_users();?></div>
 	<div class="show">
-			<div class="ahora">
-				<h2>#Ahora en Ciudad Futura:</h2>
-				<ul>
-						<?php 
-						$args = array('post_type' => 'ahora','posts_per_page' => -1);
-						$loop = new WP_Query( $args );
-						//print_r($loop);
-						while ( $loop->have_posts() ) : $loop->the_post(); ?>
-							<li><?php the_title();?></li>
-						<?php endwhile; ?>
-				</ul>
-			</div>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Area superior") ) : ?>
+			<?php endif;?>
 		</div>
-<?php endif;?>
+<?php }?>
 <div id="page" class="container">
 
 		<?php if(is_user_logged_in()):?>

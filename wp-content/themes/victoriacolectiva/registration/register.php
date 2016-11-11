@@ -301,8 +301,7 @@
 		</div><!-- .padder -->
 	</div><!-- #content -->
 
-	<?php get_sidebar( 'buddypress' ); ?>
-
+	
 	<script type="text/javascript">
 		jQuery(document).ready( function() {
 			if ( jQuery('div#blog-details').length && !jQuery('div#blog-details').hasClass('show') )

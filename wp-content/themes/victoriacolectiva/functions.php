@@ -117,7 +117,7 @@ function victoriacolectiva_scripts() {
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery',  get_template_directory_uri() . '/js/jquery-1.12.3.min.js');
 	wp_enqueue_script('jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('jquery'), '1.8.6');
-	wp_enqueue_script( 'tiny_mce' );
+	wp_enqueue_script('custom-scroll', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js', array('jquery'), '1.8.6');
 	wp_enqueue_script( 'myfunctions2',  get_template_directory_uri() . '/js/wysihtml5-0.3.0.js',array('jquery'),'1.0' );
 	wp_enqueue_script( 'myfunctions',  get_template_directory_uri() . '/js/main.js',array('jquery','myfunctions2'),'1.0' );
 	$params = array(
@@ -128,7 +128,8 @@ function victoriacolectiva_scripts() {
 	// wp_register_style() example
 	wp_register_style('style', get_template_directory_uri() . '/style.css');
 	  wp_register_style('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
-	wp_enqueue_style( 'jquery-ui' );   
+	wp_enqueue_style( 'jquery-ui' );
+
 	wp_enqueue_style( 'style' );
 
 	wp_enqueue_script( 'bp-jquery-query' );
@@ -338,15 +339,7 @@ function my_class_names($classes) {
     return $classes;
 }
 
-  function mandarMail(){
-  	$to = 'maxifalcone@gmail.com';
-	$subject = 'probando esta garompa';
-	$message =  'si esto anda me hago puto';
 
-	wp_mail( $to, $subject, $message );
-  }
-
-  //add_action('init', 'mandarMail');
 
 
 function bp_remove_group_step_invites() {
@@ -417,15 +410,27 @@ function my_enqueue_stuff() {
 add_action( 'wp_enqueue_scripts', 'my_enqueue_stuff' );
 
 
-if ( function_exists('register_sidebar') )
-  register_sidebar(array(
-    'name' => 'Barra derecha',
-    'before_widget' => '<div class = "widgetizedArea">',
-    'after_widget' => '</div>',
-    'before_title' => '<h2>',
-    'after_title' => '</h2>',
-  )
-);
+if ( function_exists('register_sidebar') ){
+  	register_sidebar(array(
+	    'name' => 'Barra derecha',
+	    'before_widget' => '<div class = "widgetizedArea">',
+	    'after_widget' => '</div>',
+	    'before_title' => '<h2>',
+	    'after_title' => '</h2>',
+	  )
+	);
+
+  	register_sidebar(array(
+	    'name' => 'Area superior',
+	    'before_widget' => '<div class = "widgetizedArea">',
+	    'after_widget' => '</div>',
+	    'before_title' => '<h2>',
+	    'after_title' => '</h2>',
+	  	)
+	);
+}
+
+
 
 function register_my_menu() {
   register_nav_menus(
@@ -476,6 +481,7 @@ function development_disable_style_caching($tag){
 	return str_replace(get_bloginfo('version'), $fecha, $tag);
 }
 
+/*una custom var de la version para que no se  cachee el js*/
 function wpse215386_remove_script_version( $src ){
   $parts = explode( '?ver', $src );
   $fecha = filemtime( get_template_directory() . '/js/main.js' ) ;
@@ -494,6 +500,17 @@ function filtering_activity_default( $query ) {
 add_filter( 'bp_ajax_querystring', 'filtering_activity_default', 999 );
 
 
+function ray_number_online_users() {
+	$i = 0;
+	if ( bp_has_members( 'user_id=0&type=online&per_page=999&populate_extras=0') ) {
+		while ( bp_members() ) : bp_the_member();
+			$i++;
+		endwhile;
+	}
+
+	return $i;
+}
+
 //$install_path = get_home_path();
 $path =ABSPATH.'/wp-content/themes/victoriacolectiva';
 require_once( $path . '/includes/custom-event-post.php');
@@ -501,6 +518,8 @@ require_once( $path . '/includes/custom-ahora-post.php');
 require_once( $path . '/includes/quiero-ayudar.php');
 require_once( $path . '/includes/quiero-mapeo.php');
 require_once( $path . '/includes/quiero-ser-parte.php');
-//require_once( $path . '/includes/contenido-destacado.php');
+require_once( $path . '/includes/widget-ahora-en-ciudad-futura.php');
+require_once( $path . '/includes/contenido-destacado.php');
+
 
 

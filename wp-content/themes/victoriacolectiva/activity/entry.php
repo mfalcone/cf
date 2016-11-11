@@ -14,7 +14,7 @@
 
 <?php do_action( 'bp_before_activity_entry' ); ?>
 
-<li class="<?php bp_activity_css_class(); ?>" id="activity-<?php bp_activity_id(); ?>">
+<li class="<?php bp_activity_css_class(); ?>" id="activity-<?php bp_activity_id(); ?>" data-userid="<?php echo bp_get_activity_user_id();?>">
 
 	<div class="activity-avatar">
 		<a href="<?php bp_activity_user_link(); ?>">
@@ -57,13 +57,15 @@
 			<div class="activity-meta">
 
 				<?php if ( bp_activity_can_comment() ) : ?>
-
+					<div class="comment-wrapper">
+					<div class="comenta"></div>
 					<a href="<?php bp_activity_comment_link(); ?>" class="button acomment-reply bp-primary-action" id="acomment-comment-<?php bp_activity_id(); ?>"><?php printf( __( 'Comment <span>%s</span>', 'buddypress' ), bp_activity_get_comment_count() ); ?></a>
-
+					</div>
 				<?php endif; ?>
 
 				<?php if ( bp_activity_can_favorite() ) : ?>
-
+					<div class="fav-wrapper">
+					<div class="guardar"></div>
 					<?php if ( !bp_get_activity_is_favorite() ) : ?>
 
 						<a href="<?php bp_activity_favorite_link(); ?>" class="button fav bp-secondary-action" title="<?php esc_attr_e( 'Mark as Favorite', 'buddypress' ); ?>"><?php _e( 'Favorite', 'buddypress' ); ?></a>
@@ -73,10 +75,16 @@
 						<a href="<?php bp_activity_unfavorite_link(); ?>" class="button unfav bp-secondary-action" title="<?php esc_attr_e( 'Remove Favorite', 'buddypress' ); ?>"><?php _e( 'Remove Favorite', 'buddypress' ); ?></a>
 
 					<?php endif; ?>
+					</div>
 
 				<?php endif; ?>
 
-				<?php if ( bp_activity_user_can_delete() ) bp_activity_delete_link(); ?>
+				<?php if ( bp_activity_user_can_delete() ){ ?>
+					<div class="tachito-wrapper">
+					<div class="tachito"></div>
+					<?php bp_activity_delete_link(); ?>
+					</div>
+					<?php } ?>
 
 				<?php do_action( 'bp_activity_entry_meta' ); ?>
 
@@ -86,7 +94,12 @@
 
 		<?php if ( current_user_can('administrator') ) : ?>
 			<div class="admin-control">
-				<span>Agregar a contenido destacado</span>
+				<span class="glyphicon glyphicon-option-horizontal"></span>
+				<div class="form">
+					<input type="text" id="titulo" placeholder="ingresar titulo del Contenido Destacado" name="titulo">
+					<textarea id="justificacion" placeholder="¿por qué es un contenido destacado?"></textarea>
+					<span class="data-al-user"></span><input type="button" value="Ingresar Contenido destacado" id="enviar-contenido">
+				</div>
 			</div>
 		<?php endif; ?>
 	</div>

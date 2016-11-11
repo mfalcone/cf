@@ -50,7 +50,6 @@ get_header(); ?>
 			</div>
 		</article>	
 	<?php endwhile; ?>
-</table>
 </div>
 
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>

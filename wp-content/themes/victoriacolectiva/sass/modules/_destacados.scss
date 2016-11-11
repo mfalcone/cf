@@ -1,0 +1,93 @@
+.destacados{
+	
+	padding:20px;
+	padding-left:150px;
+	.bajo-titulo{
+		padding-left:20px;
+		font-weight: bold;
+		img{
+			width: 50px;
+		}
+	}
+	blockquote {
+  	position:relative;
+    margin: 10px;
+    background: #DDD;
+    padding: 20px;
+    margin-left: 20px;
+    border-left: 2px solid #999;
+    font-size:1.6rem;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+
+	}
+	blockquote:before
+	 {
+	  color: #ccc;
+	  content: "\201C";
+	  font-size: 5em;
+	  position:absolute;
+	  left:5px;
+	  top: 0.3em;
+	  line-height: 0.1em;
+	}
+
+	blockquote:after
+	 {
+	   color: #ccc;
+	  content: "\201D";
+	  font-size: 5em;
+	  position:absolute;
+	  right:3px;
+	  bottom: 0em;
+	  line-height: 0.1em;
+	}
+
+	article{
+		margin-bottom:40px;
+		border-bottom:1px solid;
+		padding-bottom:10px;
+		background:#FFF;
+		padding:10px;
+
+		img{
+			max-width: 100%;
+		}
+	}
+	.participa{
+		text-align: right;
+		a{
+			background: $rojo;
+			color:#FFF;
+			border-radius:5px;
+			padding:10px;
+		}
+	}
+	.social{
+		text-align: right;
+	}
+
+	.fb-like{
+		top:-5px;
+	}
+}
+
+body.page-template-page-publicaciones-destacadas, body.single-contenido-destacado{
+	background:#e4e3e3;
+}
+
+body.page-template-page-publicaciones-destacadas .site-content{
+	height:auto;
+}
+
+body.page-template-page-publicaciones-destacadas.logged-in .destacados,
+body.single-contenido-destacado.logged-in .destacados,
+{
+	padding-left:0px;
+}
+
+.single-contenido-destacado{
+	#content{
+		overflow:auto;
+	}
+}

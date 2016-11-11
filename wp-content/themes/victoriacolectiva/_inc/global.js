@@ -163,6 +163,9 @@ jq(document).ready( function() {
 			});*/
 			jq("input#aw-whats-new-submit").val("publicar")
 			jq("#aw-whats-new-submit").prop("disabled", false).removeClass('loading');
+			if(cargarlosLikes){
+				cargarlosLikes();
+			}
 		});
 
 		return false;
@@ -352,6 +355,9 @@ jq(document).ready( function() {
 
 				target.parent().hide();
 				$('a[href^="http://"]').not('a[href*=hagamos]').attr('target','_blank');
+				if(cargarlosLikes){
+					cargarlosLikes();
+				}
 			}, 'json' );
 
 			return false;

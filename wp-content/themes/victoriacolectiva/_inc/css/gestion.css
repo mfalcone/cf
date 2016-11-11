@@ -1,0 +1,52 @@
+.admin-control{
+	position: relative;
+}
+
+.admin-control span{
+	cursor:pointer;
+	background: #CCC;
+	float:right;
+	padding: 5px;
+	color: #FFF;
+	border-radius: 5px;
+}
+
+.admin-control .form{
+	display: none;	
+	position:absolute;
+	top: 30px;
+    right: 0;
+    background: #CCC;
+    z-index: 10;
+    width: 600px;
+    border-radius: 5px;
+    padding:10px;
+}
+
+.admin-control .form input[type="text"],
+.admin-control .form textarea{
+	width: 100%;
+	padding: 5px;
+}
+
+.admin-control .form input[type="button"]{
+	float:right;
+	background: #333;
+	color: #FFF;
+	border-radius: 5px;
+	border:0;
+}
+
+.admin-control .form input[type="text"]{
+	margin-bottom: 10px;
+}
+
+.admin-control .form textarea{
+	min-height: 100px;
+}
+
+.admin-control .data-al-user{
+	float:left;
+	width:60%;
+	color: #000;
+}

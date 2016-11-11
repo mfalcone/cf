@@ -64,6 +64,20 @@ body.groups{
 			}
 		}
 	}
+
+	.dir-form{
+		.col-md-10{
+			padding-left:0;
+		}
+	}
+
+	.dir-search{
+		margin:10px 0;
+	}
+
+	#group-cover-image{
+		display: none;
+	}
 }
 
 .herramientas-grupos{
@@ -105,6 +119,38 @@ ul#groups-list{
 			.item-title{
 				font-weight: bold;
 				font-size:1.6rem;
+			}
+		}
+
+		.action{
+			a{
+				color: $rojo;
+			}
+		}
+	}
+}
+#item-header-content{
+	.generic-button a{
+		@include boton();
+	}
+}
+
+#member-list{
+	li{
+		border-bottom: 1px solid;
+		margin-bottom: 10px;
+		background: #FFF;
+		padding-bottom: 10px;
+		.col-md-1{
+			padding:0;
+		}
+		.col-md-11{
+			padding-left:0;
+		}
+
+		h5{
+			a{
+				color: $rojo;
 			}
 		}
 	}

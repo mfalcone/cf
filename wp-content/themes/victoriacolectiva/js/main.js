@@ -7,24 +7,6 @@ $(document).ready(function(){
 		$(".editor").slideToggle();
 	})
 
-	function InOut( elem ){
-	 elem.delay()
-		 .fadeIn()
-		 .delay(2200)
-		 .fadeOut( 
-				   function(){ 
-					   if(elem.next().length > 1)
-					   {InOut( elem.next() );}
-					   else
-					   {InOut( elem.siblings(':first'));}
-							 
-					 }
-				 );
-	}
-
-	$('.ahora li').hide();
-	InOut( $('.ahora li:first') );
-
 	$("#search-terms").focus(function(){
 		$(".propiedaes").fadeIn();
 	})
@@ -40,9 +22,9 @@ $(document).ready(function(){
 	})
 
 	if($("body").hasClass("activity")){
-		$('.show').stop(true, true).delay(1500).animate({height:'80px'}, 500);
-		$('#page').stop(true, true).delay(1500).animate({top:'75px'}, 500);
-		$('#right-sidebar').stop(true, true).delay(1500).animate({top:'80px'}, 500);
+		$('.show').stop(true, true).delay(1500).animate({height:'120px'}, 500);
+		$('#page').stop(true, true).delay(1500).animate({top:'105px'}, 500);
+		$('#right-sidebar').stop(true, true).delay(1500).animate({top:'120px'}, 500);
 	}
 
 	function ocultarSlidesSidebar(){
@@ -478,6 +460,11 @@ if($(".page-template-page-blog").size() || $(".page-template-template-edit-foto"
     parserRules:  wysihtml5ParserRules
   });	
 }
+
+
+$("#right-sidebar-wrapper").mCustomScrollbar({
+    theme:"minimal-dark"
+});
 
 })
 
