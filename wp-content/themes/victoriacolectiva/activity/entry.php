@@ -57,7 +57,7 @@
 			<div class="activity-meta">
 
 				<?php if ( bp_activity_can_comment() ) : ?>
-					<div class="comment-wrapper">
+					<div class="comenta-wrapper">
 					<div class="comenta"></div>
 					<a href="<?php bp_activity_comment_link(); ?>" class="button acomment-reply bp-primary-action" id="acomment-comment-<?php bp_activity_id(); ?>"><?php printf( __( 'Comment <span>%s</span>', 'buddypress' ), bp_activity_get_comment_count() ); ?></a>
 					</div>
