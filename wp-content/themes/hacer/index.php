@@ -97,36 +97,13 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 </div>
 <section class="map-container">
 	<div class="container">
-	<h1>Ciudad Futura en los Barrios</h1>
-	<p>Clickeá sobre cada seccional para conocer las actividades del mes en todos los puntos de la ciudad.</p>
-	<?php $args = array( 'post_type' => 'seccionales', 'posts_per_page' => 1,'monthnum' =>$monthtowatch);
-	$loop = new WP_Query( $args );
-
-	while ( $loop->have_posts() ) : $loop->the_post(); 
-		$exclude = array('_edit_last', '_wp_page_template', '_edit_lock');
-		$meta = get_post_meta( get_the_ID() ); 
-		?>
+		<h1>Ciudad Futura en los Barrios</h1>
+		<p>Clickeá sobre cada seccional para conocer las actividades del mes en todos los puntos de la ciudad.</p>
 		<script type="text/javascript">
-		var noticias = {	
-		<?php	
-			foreach( $meta as $key => $value ) {
-
-				if( in_array( $key, $exclude) )
-				    continue;
-				?>
-				<?php 
-					$textToPrint = wpautop( $value[0], "<br>");
-					$textToPrint = str_replace(array("\r", "\n"), '', $textToPrint);
-				?>
-				<?php echo $key;?>:"<?php echo $textToPrint;?>",
-			         
-			  <?php  }
-			?>	
-			}
+		var url = "<?php echo get_site_url(); ?>"
+		var mesactual = <?php echo $monthtowatch; ?>;
+		var anio = "<?php echo date("Y"); ?>"
 		</script>
-			
-
-	<?php endwhile; ?>
 		<?php get_template_part( 'map');?>
 	</div>
 </section>

@@ -52,8 +52,15 @@ function horaFin() {
 	echo '<input type="time" name="hora_fin" id="horario_fin" value="' . $hora_fin  . '" class="widefat" />';
 }
 
+function mostrarAutor(){
+	global $post;
+	$autor_id = $post->post_author;
+	echo the_author_meta( 'display_name' , $autor_id );
+}
+
 function userLevel() {
 	global $post;
+	
 	$posibles_estados =  array('_ingresante','_organico');
 	$posibles_labels =  array('Ingresante','Organico');
 	
@@ -76,6 +83,7 @@ function add_eventos_metaboxes(){
 	add_meta_box('fechaFin', 'Fecha de Fin', 'fechaFin', 'agenda', 'normal', 'high');
 	add_meta_box('horaFin', 'Horario de Fin', 'horaFin', 'agenda', 'normal', 'high');
 	add_meta_box('userLevel', 'Nivel de usuario', 'userLevel', 'agenda', 'normal', 'high');
+	add_meta_box('mostrarAutor', 'Mostrar Autor', 'mostrarAutor', 'agenda', 'normal', 'high');
 
 }
 

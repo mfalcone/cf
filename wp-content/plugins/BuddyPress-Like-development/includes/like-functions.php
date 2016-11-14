@@ -468,7 +468,7 @@ function bp_like_get_some_likes( $id, $type, $start, $end) {
 
               $others = $others - 2;
 
-              $string .= '<small>You, %s, %s and %d ' . _n( 'other', 'others', $others ) . ' like this.</small>';
+              $string .= '<small>vos, %s, %s y %d otros agradecen.</small>';
 
               $string = sprintf( $string , $one , $two , $others );
         }
@@ -522,7 +522,7 @@ function bp_like_get_some_likes( $id, $type, $start, $end) {
               $others = $others - 3;
 
               $string .= '<small>';
-              $string .= '%s, %s, %s and %d ' . _n( 'other', 'others', $others ) . ' like this.</small>';
+              $string .= '%s, %s, %s y %d otros agradecen.</small>';
 
               $string = sprintf( $string , $one , $two , $three, $others );
         }

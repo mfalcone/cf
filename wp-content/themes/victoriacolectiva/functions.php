@@ -511,6 +511,8 @@ function ray_number_online_users() {
 	return $i;
 }
 
+
+
 //$install_path = get_home_path();
 $path =ABSPATH.'/wp-content/themes/victoriacolectiva';
 require_once( $path . '/includes/custom-event-post.php');

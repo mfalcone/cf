@@ -120,6 +120,7 @@ div.activity{
 					padding:10px;
 					border-radius:10px;
 					position:relative;
+					word-wrap: break-word;
 					&:after{
 						content: "";
 						position: absolute;
@@ -274,6 +275,7 @@ div.activity{
 		    margin-bottom: 10px;
 		    a{
 		    	height:auto;
+		    	margin-right:0;
 		    }
 		}
 	}

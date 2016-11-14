@@ -10,7 +10,7 @@
 // Move it if you like, but keep it around.
 ?>
 <div class="modal-wrapper">
-	<div class="container" style="position:relative;top:10%;">
+	<div class="container" style="position:relative;top:5%;">
 		<div class="modal col-md-6 col-md-offset-3">
 			<div class="cerrar"><span class="glyphicon glyphicon-remove"></span> </div>
 			<div class="inner-modal ">

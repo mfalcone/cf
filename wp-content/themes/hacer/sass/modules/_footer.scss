@@ -9,10 +9,11 @@
 	.modal{
 		background:#FFF;
 		border-radius: 10px;
-		height: 80%;
+		height: 90vh;
 		top:10%;
 		position: relative;
-    	
+    	overflow: auto;
+    		
     	.cerrar{
     		position: absolute;
     		top: 10px;
@@ -22,16 +23,40 @@
 
     	.inner-modal{
     		margin-top:50px;
+			padding-bottom: 50px;
 
+			.image-wrapper{
+				float:left;
+				width: 100%;
+				img{
+					display: block;
+					margin-left:auto;
+					margin-right: auto;
+				}
+			}
     		h2{
-    			font-size:2.5rem;
+    			margin-top:20px;
+    			font-size:2.8rem;
     		}
     		p{
-    			margin-top:40px;
+    			margin-top:20px;
     		}
 
     		img{
     			max-width: 100%;
+    		}
+    		.epigrafe{
+    			background:#DDD;
+    			clear:left;
+    			padding:5px;
+    			border-bottom:1px solid #333;
+    			p{
+    				margin:0;
+    			}
+    		}
+
+    		a{
+    			color:#c11e2a;
     		}
     	}
 	}

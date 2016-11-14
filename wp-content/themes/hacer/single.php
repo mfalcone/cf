@@ -5,6 +5,7 @@
  * doesn't know which template to use (e.g. 404 error)
  */
 
+
 get_header(); // This fxn gets the header.php file and renders it ?>
 
 <section class="container single">
@@ -18,43 +19,52 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 					$imgDestacada = wp_get_attachment_url( $thumbID );
 					$layout = get_post_meta( get_the_ID(), 'layout', true ); 
 					
-					if($layout=="dos-columnas"){?>
-
-				 		<div class="col-md-12">	
-				 			<h1 class="dos-col-title"><?php the_title();?></h1>
-				 			<div class="col-md-6 dos-col-texto">
-					 			<div class="expert">
-									<?php the_excerpt(); ?>
-								</div>
-								<div class="content">
-				 					<?php the_content();?>
-				 				</div>
-				 			</div>
-				 			<div class="col-md-6">
-				 				<img src="<?php echo $imgDestacada; ?>" alt="">
-				 			</div>
-				 		</div>
-				 	<?php }else{
-				 ?>
-					<?php 
-						$current_post_id = $post->ID; 
-						?>
-				<div class="col-md-12">			
+					if(in_category('seccionales')){?>
+					<div id="map-wrapper">
 					<div class="image-wrapper"><img src="<?php echo $imgDestacada; ?>" alt=""></div>
-					<h1><?php the_title();?></h1>
-					<div class="expert">
-						<?php the_excerpt(); ?>
+					<div class="epigrafe"><?php the_excerpt();?></div>
+			    	<h2><?php the_title();?></h2>
+					<div class="contenido">
+						<?php the_content(); ?>
 					</div>
-					<div class="content">
-						<?php the_content();?>
 					</div>
-				</div>
-				<?php }?>
-				<?php endwhile; // OK, let's stop the post loop once we've displayed it ?>
-	
+					<?php } else{
+						if($layout=="dos-columnas"){?>
 
-			<?php endif; ?>
+						 		<div class="col-md-12">	
+						 			<h1 class="dos-col-title"><?php the_title();?></h1>
+						 			<div class="col-md-6 dos-col-texto">
+							 			<div class="expert">
+											<?php the_excerpt(); ?>
+										</div>
+										<div class="content">
+						 					<?php the_content();?>
+						 				</div>
+						 			</div>
+						 			<div class="col-md-6">
+						 				<img src="<?php echo $imgDestacada; ?>" alt="">
+						 			</div>
+						 		</div>
+						 	<?php }else{
+						 ?>
+							<?php 
+								$current_post_id = $post->ID; 
+								?>
+						<div class="col-md-12">			
+							<div class="image-wrapper"><img src="<?php echo $imgDestacada; ?>" alt=""></div>
+							<h1><?php the_title();?></h1>
+							<div class="expert">
+								<?php the_excerpt(); ?>
+							</div>
+							<div class="content">
+								<?php the_content();?>
+							</div>
+						</div>
+						<?php }?>
+					<?php }?>
+							<?php endwhile; // OK, let's stop the post loop once we've displayed it ?>
 
+		<?php endif; ?>
 </section>
 <div class="aside-wrapp">
 	<div class="aside col-md-12">
@@ -107,4 +117,6 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 			</ul>
 	</div>
 </div>
-<?php get_footer(); // This fxn gets the footer.php file and renders it ?>
+<?php get_footer(); // This fxn gets the footer.php file and renders it 
+
+?>

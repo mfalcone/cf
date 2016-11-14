@@ -7,7 +7,6 @@ jq(document).ready(function bpLike() {
     "use strict";
 
     function megusta() {
-        console.log("z")
         id = jq(this).attr('id');                           // Used to get the id of the entity liked or unliked
          $elem = jq(this);
         type = jq(this).attr('class')                           //
@@ -24,7 +23,7 @@ jq(document).ready(function bpLike() {
         var method = type[1];
         type = type[0];
 
-        jq(this).addClass('loading');
+        jq(this).addClass('loading').text("cargando...");
         var activity_autor = $elem.parents('li').data("userid");
         console.log(activity_autor);
         jq.post(ajaxurl, {
@@ -35,7 +34,6 @@ jq(document).ready(function bpLike() {
             'activity_autor':activity_autor
         },
             function( data ) {
-                console.log(data)
                 jq('#' + id).fadeOut(100, function() {
                     jq(this).html(data).removeClass('loading').fadeIn(100);
                 });

@@ -160,8 +160,11 @@
 		<ul id="admins-list" class="item-list single-line">
 
 			<?php while ( bp_members() ) : bp_the_member(); ?>
-			<li>
+			<li class="row">
+				<div class="col-md-1">
 				<?php echo bp_core_fetch_avatar( array( 'item_id' => bp_get_member_user_id(), 'type' => 'thumb', 'width' => 30, 'height' => 30, 'alt' => sprintf( __( 'Profile picture of %s', 'buddypress' ), bp_get_member_name() ) ) ); ?>
+				</div>
+				<div class="col-md-11">
 				<h5>
 					<a href="<?php bp_member_permalink(); ?>"> <?php bp_member_name(); ?></a>
 					<?php if ( count( bp_group_admin_ids( false, 'array' ) ) > 1 ) : ?>
@@ -170,6 +173,7 @@
 					</span>
 					<?php endif; ?>
 				</h5>
+				</div>
 			</li>
 			<?php endwhile; ?>
 
@@ -287,21 +291,22 @@
 		<ul id="request-list" class="item-list">
 			<?php while ( bp_group_membership_requests() ) : bp_group_the_membership_request(); ?>
 
-				<li>
-					<?php bp_group_request_user_avatar_thumb(); ?>
-					<h4><?php bp_group_request_user_link(); ?> <span class="comments"><?php bp_group_request_comment(); ?></span></h4>
-					<span class="activity"><?php bp_group_request_time_since_requested(); ?></span>
+				<li class="row">
+					<div class="col-md-1">
+						<?php bp_group_request_user_avatar_thumb(); ?>
+					</div>
+					<div class="col-md-11">
+						<h4><?php bp_group_request_user_link(); ?> <span class="comments"><?php bp_group_request_comment(); ?></span></h4>
+						<span class="activity"><?php bp_group_request_time_since_requested(); ?></span>
 
-					<?php do_action( 'bp_group_membership_requests_admin_item' ); ?>
+						<?php do_action( 'bp_group_membership_requests_admin_item' ); ?>
 
-					<div class="action">
-
-						<?php bp_button( array( 'id' => 'group_membership_accept', 'component' => 'groups', 'wrapper_class' => 'accept', 'link_href' => bp_get_group_request_accept_link(), 'link_title' => __( 'Accept', 'buddypress' ), 'link_text' => __( 'Accept', 'buddypress' ) ) ); ?>
-
-						<?php bp_button( array( 'id' => 'group_membership_reject', 'component' => 'groups', 'wrapper_class' => 'reject', 'link_href' => bp_get_group_request_reject_link(), 'link_title' => __( 'Reject', 'buddypress' ), 'link_text' => __( 'Reject', 'buddypress' ) ) ); ?>
-
-						<?php do_action( 'bp_group_membership_requests_admin_item_action' ); ?>
-
+						<div class="action">
+							<?php $bt = bp_button( array( 'id' => 'group_membership_accept', 'component' => 'groups', 'wrapper_class' => 'accept', 'link_href' => bp_get_group_request_accept_link(), 'link_title' => __( 'Accept', 'buddypress' ), 'link_text' => __( 'Accept', 'buddypress' ) ) ); ?>
+							<div style="display:none"><?php var_dump($bt);?></div>
+							<?php bp_button( array( 'id' => 'group_membership_reject', 'component' => 'groups', 'wrapper_class' => 'reject', 'link_href' => bp_get_group_request_reject_link(), 'link_title' => __( 'Reject', 'buddypress' ), 'link_text' => __( 'Reject', 'buddypress' ) ) ); ?>
+							<?php do_action( 'bp_group_membership_requests_admin_item_action' ); ?>
+						</div>
 					</div>
 				</li>
 
