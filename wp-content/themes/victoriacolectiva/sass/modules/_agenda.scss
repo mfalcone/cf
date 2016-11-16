@@ -12,7 +12,30 @@
 			}
 			.date{
 				color: $gris_medio;
+				border-bottom: 1px solid;
+				padding:5px;
+				margin-bottom:4px;
 			}
+			.imagen{
+				padding:0;
+				img{
+					width: 100%;
+					height: auto;
+				}
+			}
+		&.finalizado{
+			color: #999;
+			h3{
+				color: #999;
+				margin-top:10px;
+			}
+			small{
+				background:$rojo;
+				color: #FFF;
+				padding:5px;
+				float:right;
+			}
+		}
 		}
 	}
 }

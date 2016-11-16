@@ -22,7 +22,24 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 
 	if($post_id)
 	{
-
+		if (!function_exists('wp_generate_attachment_metadata')){
+                require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+                require_once(ABSPATH . "wp-admin" . '/includes/file.php');
+                require_once(ABSPATH . "wp-admin" . '/includes/media.php');
+            }
+             if ($_FILES) {
+                foreach ($_FILES as $file => $array) {
+                    if ($_FILES[$file]['error'] !== UPLOAD_ERR_OK) {
+                        return "upload error : " . $_FILES[$file]['error'];
+                    }
+                    $attach_id = media_handle_upload( $file, $post_id );
+                }   
+            }
+            if ($attach_id > 0){
+                //and if you want to set that image as Post  then use:
+                update_post_meta($post_id,'_thumbnail_id',$attach_id);
+          	
+            }
 		// Update Custom Meta
 		update_post_meta($post_id, 'fecha_inicio', esc_attr(strip_tags($_POST['fecha_inicio'])));
 		update_post_meta($post_id, 'horario_inicio', esc_attr(strip_tags($_POST['horario_inicio'])));
@@ -31,7 +48,12 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 		//update_post_meta($post_id, 'vsip_custom_two', esc_attr(strip_tags($_POST['customMetaTwo'])));
 
 		// Redirect
+		$to = "krusty.ar@gmail.com";
+		$subject = "nuevo evento a aprobar";
+		$message = "se ingresó un nuevo evento que está como pendiente";
+		wp_mail($to, $subject, $message);
 		wp_redirect( home_url() ); exit;
+		
 	}
 
 } ?>
@@ -41,7 +63,7 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 	<!-- #primary BEGIN -->
 	<div id="primary">
 
-		<form action="" id="primaryPostForm" method="POST">
+		<form action="" id="primaryPostForm" method="POST" enctype="multipart/form-data">
 
 			<fieldset>
 
@@ -71,7 +93,7 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 				<input type="time" name="horario_inicio" id="horario_inicio" value="<?php if(isset($_POST['horario_inicio'])) echo $_POST['horario_inicio'];?>" />
 
 			</fieldset>
-
+			
 			<fieldset>
 
 				<label for="fecha_fin">Fecha de Finalización</label>
@@ -87,7 +109,13 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 				<input type="time" name="horario_fin" id="horario_fin" value="<?php if(isset($_POST['horario_fin'])) echo $_POST['horario_fin'];?>" />
 
 			</fieldset>
+			<fieldset>
+						
+				<label for="postContent">Imagen (cuadrada):</label>
 
+				<input type="file" name="thumbnail" id="thumbnail">
+
+			</fieldset>
 
 			<fieldset>
 						

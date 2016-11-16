@@ -18,6 +18,11 @@
 	margin-top:-150px;
 	padding:0;
 	box-shadow: 0px 10px 12px 8px rgba(0,0,0,0.75);
+
+	@include max-screen(1000px) {
+		top:5px;
+		margin-top:0;
+	}
 	h2{
 		font-size:1.5rem;
 		background:$rojo;
@@ -116,6 +121,7 @@
 }
 
 .desc{
+
 	h1{
 		background:$rojo;
 		color:#FFF;
@@ -139,6 +145,13 @@
 	background:#FFF;
 	margin-right:20px;
 	padding:0;
+
+	@include max-screen(1000px) {
+		top:5px;
+		margin-top:0;
+		margin-right: 0;
+		height:auto;
+	}
 }
 
 .reset-form{

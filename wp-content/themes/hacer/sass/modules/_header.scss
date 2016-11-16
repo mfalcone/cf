@@ -4,7 +4,7 @@
 	border-bottom:2px solid #FFF;
 	background:$rojo;
 	position:relative;
-	z-index:1;
+	z-index:3;
 	@include screen(320px,480px) { 
 				height:80px;
 			}
@@ -55,6 +55,10 @@
 				&:hover{
 					background:$rojo;
 				}
+			}
+
+			&:first-child{
+				display:none;
 			}
 		}
 	}

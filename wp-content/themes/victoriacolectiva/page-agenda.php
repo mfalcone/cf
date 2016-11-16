@@ -38,21 +38,35 @@ get_header(); ?>
 		$loop = new WP_Query( $args );
 		//print_r($loop);
 		while ( $loop->have_posts() ) : $loop->the_post(); ?>
-			<li>
+			
 			
 			<?php 
+			$date = date('Y-m-d');
 			$fecha_inicio = get_post_meta(get_the_ID(), 'fecha_inicio', true); 
 			$hora_inicio = get_post_meta(get_the_ID(), 'horario_inicio', true); 
 			$fecha_fin = get_post_meta(get_the_ID(), 'fecha_fin', true); 
 			$horario_fin = get_post_meta(get_the_ID(), 'horario_fin', true);
+			
+			if($date>$fecha_fin){
+				$finalizado = true;
+			}
 			?> 
+			<li class="<?php if($finalizado) echo 'finalizado';?>">
+			<?php if($finalizado) echo '<small>finalizado</small>';?>
 			<h3><?php the_title(); ?></h3>
 			<div class="date">
 			inicio: <?php echo date("d/m", strtotime($fecha_inicio));?> - <?php echo $hora_inicio;?>hs. | 
 			fin:<?php echo date("d/m", strtotime($fecha_fin));?> - <?php echo $horario_fin;?>hs.</div>
 			
 			<div class="content">
-				<?php the_content();?>
+				<?php if(has_post_thumbnail() ):?>
+					<div class="row">
+						<div class="col-md-3 imagen"><?php the_post_thumbnail( array(100,100)); ?></div>
+						<div class="col-md-9"><?php the_content();?></div>
+					</div>
+				<?php else: ?>	
+					<?php the_content();?>
+				<?php endif;?>
 			</div>
 			</li>
 			<?php endwhile; ?>
