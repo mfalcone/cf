@@ -22,13 +22,16 @@ get_header(); ?>
 		<?php
 		
 		while ( have_posts() ) : the_post();
-			if ( has_post_thumbnail() ) {
-				the_post_thumbnail('medium');
-			}
+			
 			$posttype =  get_post_type();
 			if($posttype=="contenido-destacado"){
 				get_template_part( 'template-parts/content', 'destacado' );
+			}else if($posttype=="agenda"){
+				get_template_part( 'template-parts/content', 'agenda' );
 			}else{
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail('medium');
+				}
 				get_template_part( 'template-parts/content', get_post_format() );
 			}?>
 			<?php comments_template(); ?>

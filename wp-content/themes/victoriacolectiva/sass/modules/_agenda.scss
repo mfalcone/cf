@@ -5,6 +5,7 @@
 			background: #FFF;
 			padding:10px;
 			margin-bottom: 20px;
+			position:relative;
 			h3{
 				font-size: 2rem;
 				padding:0;
@@ -23,19 +24,74 @@
 					height: auto;
 				}
 			}
+			.col-md-1{
+				padding:0;
+			}
 		&.finalizado{
 			color: #999;
 			h3{
 				color: #999;
 				margin-top:10px;
 			}
-			small{
+			small.finalizado{
 				background:$rojo;
 				color: #FFF;
 				padding:5px;
 				float:right;
+				position:absolute;
+				right: 10px;
+				top:5px;
 			}
 		}
 		}
+	}
+}
+
+.agenda-single{
+	.col-md-1{
+		padding:0;
+	}
+	.col-md-4{
+		padding:0;
+		img{
+			max-width: 100%;
+		}
+	}
+	.col-md-11{
+		small{
+			background: #CCC;
+		    padding: 5px;
+		    width: 100%;
+		    display: block;
+		}
+	}
+	h1{
+		margin:0;
+		margin-bottom: 10px;
+	}
+}
+
+.fecha-calendario{
+	float:left;
+	border:2px solid $rojo;
+	position:relative;
+	width:100%;
+	background:#FFF;
+	margin-bottom:20px;
+	h5{
+		font-size: 3rem;
+	    text-align: center;
+	    padding-bottom: 20px;
+	}
+	small{
+		background:$rojo;
+		color: #FFF;
+		padding:5px;
+		position:absolute;
+		left:0;
+		bottom:0;
+		width:100%;
+		text-align: center;
+		font-size:1rem;
 	}
 }

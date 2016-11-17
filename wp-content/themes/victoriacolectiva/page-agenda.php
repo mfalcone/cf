@@ -34,7 +34,8 @@ get_header(); ?>
 							'orderby' => 'meta_value', 
 							'order' => 'DESC'  );
 			}
-			
+		$meses = array("0","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+
 		$loop = new WP_Query( $args );
 		//print_r($loop);
 		while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -46,18 +47,28 @@ get_header(); ?>
 			$hora_inicio = get_post_meta(get_the_ID(), 'horario_inicio', true); 
 			$fecha_fin = get_post_meta(get_the_ID(), 'fecha_fin', true); 
 			$horario_fin = get_post_meta(get_the_ID(), 'horario_fin', true);
-			
+			$month = date("m",strtotime($fecha_inicio));
+			$dia = date("d",strtotime($fecha_inicio));
 			if($date>$fecha_fin){
 				$finalizado = true;
 			}
 			?> 
 			<li class="<?php if($finalizado) echo 'finalizado';?>">
-			<?php if($finalizado) echo '<small>finalizado</small>';?>
-			<h3><?php the_title(); ?></h3>
-			<div class="date">
-			inicio: <?php echo date("d/m", strtotime($fecha_inicio));?> - <?php echo $hora_inicio;?>hs. | 
-			fin:<?php echo date("d/m", strtotime($fecha_fin));?> - <?php echo $horario_fin;?>hs.</div>
-			
+			<?php if($finalizado) echo '<small class="finalizado">finalizado</small>';?>
+			<div class="row">
+				<div class="col-md-1">
+					<div class="fecha-calendario">
+						<h5><?php echo $dia; ?></h5>
+						<small><?php echo $meses[$month];?></small>
+					</div>
+				</div>
+				<div class="col-md-11">
+					<h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
+					<div class="date">
+					inicio: <?php echo date("d/m", strtotime($fecha_inicio));?> - <?php echo $hora_inicio;?>hs. | 
+					fin:<?php echo date("d/m", strtotime($fecha_fin));?> - <?php echo $horario_fin;?>hs.</div>
+					</div>
+				</div>
 			<div class="content">
 				<?php if(has_post_thumbnail() ):?>
 					<div class="row">

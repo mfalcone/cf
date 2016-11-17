@@ -150,7 +150,6 @@
 			</li>
 		</ul>
 	</aside>
-	<div style="display:none"><?php if ( function_exists( 'ray_number_online_users' ) ) echo ray_number_online_users();?></div>
 	<div class="show">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Area superior") ) : ?>
 			<?php endif;?>

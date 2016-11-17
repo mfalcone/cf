@@ -355,7 +355,7 @@ add_action( 'bp_init', 'bp_remove_group_step_invites', 9999 );
 
 
 
-
+/*no jode */
 
 function add_users_to_bpgroup() {   
     if( bp_is_active('groups') ):
@@ -462,7 +462,7 @@ function possibly_redirect(){
  }
 }
 
-
+/*jode*/
 function user_role_update( $user_id, $new_role ) {
 		if($new_role=="organico"){
 	        $site_url = get_bloginfo('wpurl');
@@ -500,16 +500,6 @@ function filtering_activity_default( $query ) {
 add_filter( 'bp_ajax_querystring', 'filtering_activity_default', 999 );
 
 
-function ray_number_online_users() {
-	$i = 0;
-	if ( bp_has_members( 'user_id=0&type=online&per_page=999&populate_extras=0') ) {
-		while ( bp_members() ) : bp_the_member();
-			$i++;
-		endwhile;
-	}
-
-	return $i;
-}
 
 
 

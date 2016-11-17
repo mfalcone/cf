@@ -75,7 +75,7 @@
 					<div class="content no">
 						<?php 
 							$my_content=apply_filters('the_content',$post->post_content);//this will get the content for you
-							$trimmed_my_content = wp_trim_words( $my_content, 10, '<a href="'. get_home_url() .'/agenda">&nbsp;<span class="moretext">Leer mas</span></a>' );
+							$trimmed_my_content = wp_trim_words( $my_content, 10, '<a href="'. get_permalink() .'">&nbsp;<span class="moretext">Leer mas</span></a>' );
 		    				echo $trimmed_my_content;
 						?>
 					</div>
