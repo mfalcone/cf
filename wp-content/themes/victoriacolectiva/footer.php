@@ -55,6 +55,9 @@
 									'orderby' => 'meta_value', 
 									'order' => 'ASC'  );
 				}
+				
+
+				$meses = array("0","En","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic");
 
 				$loop = new WP_Query( $args );
 				//print_r($loop);
@@ -66,19 +69,41 @@
 					$hora_inicio = get_post_meta(get_the_ID(), 'horario_inicio', true); 
 					$fecha_fin = get_post_meta(get_the_ID(), 'fecha_fin', true); 
 					$horario_fin = get_post_meta(get_the_ID(), 'hora_fin', true);
+					$month = date("m",strtotime($fecha_inicio));
+					$dia = date("d",strtotime($fecha_inicio));
 					?> 
-
-					<div class="date">
-					inicio: <?php echo date("d/m", strtotime($fecha_inicio));?> - <?php echo $hora_inicio;?>hs. | 
-					fin:<?php echo date("d/m", strtotime($fecha_fin));?> - <?php echo $horario_fin;?>hs.</div>
-					<h3><?php the_title(); ?></h3>
-					<div class="content no">
-						<?php 
-							$my_content=apply_filters('the_content',$post->post_content);//this will get the content for you
-							$trimmed_my_content = wp_trim_words( $my_content, 10, '<a href="'. get_permalink() .'">&nbsp;<span class="moretext">Leer mas</span></a>' );
-		    				echo $trimmed_my_content;
-						?>
+					<div class="row">
+						<div class="col-md-2 fecha-cont">
+							<div class="fecha-calendario">
+								<h5><?php echo $dia; ?></h5>
+								<small><?php echo $meses[$month];?></small>
+							</div>
+						</div>
+						<div class="col-md-10">
+							<h3><?php the_title(); ?></h3>
+						</div>
 					</div>
+					<div class="contenido no">
+							<?php if(has_post_thumbnail() ):?>
+							<div class="row">
+								<div class="col-md-9"><?php 
+									$my_content=apply_filters('the_content',$post->post_content);//this will get the content for you
+									$trimmed_my_content = wp_trim_words( $my_content, 10, '<a href="'. get_permalink() .'">&nbsp;<span class="moretext">Leer mas</span></a>' );
+				    				echo $trimmed_my_content;
+								?></div>
+								<div class="col-md-3 imagen-wrapper">
+									<?php the_post_thumbnail( array(60)); ?>
+								</div>
+							</div>
+							<?php else:?>
+								<?php 
+									$my_content=apply_filters('the_content',$post->post_content);//this will get the content for you
+									$trimmed_my_content = wp_trim_words( $my_content, 10, '<a href="'. get_permalink() .'">&nbsp;<span class="moretext">Leer mas</span></a>' );
+				    				echo $trimmed_my_content;
+								?>
+							<?php endif;?>
+					</div>
+					
 					</li>
 				<?php endwhile; ?>
 				<li class="agenda-controles">

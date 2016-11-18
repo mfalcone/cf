@@ -230,7 +230,7 @@ class contenidos_destacados_widget extends WP_Widget
                    var timer = setInterval(function() {
                    	$(".contenidos-destacados li").fadeOut(500);
                    	$("#dot-container .dot").removeClass("selected");
-	                   	console.log(count)
+	                   	
 					    visibilizarItem(count,500);
 					    if(count < $(".contenidos-destacados li").length-1){
 						    count++
