@@ -47,7 +47,7 @@ function fechaFin() {
 
 function horaFin() {
 	global $post;
-	$hora_fin = get_post_meta($post->ID, 'horario_fin', true);
+	$hora_fin = get_post_meta($post->ID, 'hora_fin', true);
 	echo $hora_fin;
 	echo '<input type="time" name="hora_fin" id="horario_fin" value="' . $hora_fin  . '" class="widefat" />';
 }
@@ -111,7 +111,7 @@ function wpt_save_agenda_meta($post_id, $post) {
 	$agenda_meta['fecha_inicio'] = $_POST['fecha_inicio'];
 	$agenda_meta['fecha_fin'] = $_POST['fecha_fin'];
 	$agenda_meta['horario_inicio'] = $_POST['horario_inicio'];
-	$agenda_meta['horario_fin'] = $_POST['horario_fin'];
+	$agenda_meta['hora_fin'] = $_POST['hora_fin'];
 	$agenda_meta['nivel-usuario'] = $_POST['nivel-usuario'];
 	
 	// Add values of $events_meta as custom fields

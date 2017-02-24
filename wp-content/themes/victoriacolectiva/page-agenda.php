@@ -46,7 +46,7 @@ get_header(); ?>
 			$fecha_inicio = get_post_meta(get_the_ID(), 'fecha_inicio', true); 
 			$hora_inicio = get_post_meta(get_the_ID(), 'horario_inicio', true); 
 			$fecha_fin = get_post_meta(get_the_ID(), 'fecha_fin', true); 
-			$horario_fin = get_post_meta(get_the_ID(), 'horario_fin', true);
+			$horario_fin = get_post_meta(get_the_ID(), 'hora_fin', true);
 			$month = date("m",strtotime($fecha_inicio));
 			$dia = date("d",strtotime($fecha_inicio));
 			if($date>$fecha_fin){

@@ -238,9 +238,33 @@ div.activity{
 
 	.activity-inner{
 		margin-bottom:30px;
+
+		.fecha-cont{
+			width:90px;
+			margin-right: 10px;
+		}
+
+		h2{
+			padding:0;
+			margin:0;
+			font-size:2rem;
+			margin-bottom: 20px;
+			padding-left:90px;
+		}
 		iframe{
 			width:100%;
 			min-height: 400px;
+		}
+
+		.dato-de-evento{
+			overflow: auto;
+			p{
+				width: 40%;
+				float:left;
+				img{
+					float:right;
+				}
+			}
 		}
 	}
 
@@ -248,7 +272,7 @@ div.activity{
 		float:left;
 		clear:left;
 		border-top: 1px solid;
-   		padding-top: 20px;
+   		padding-top: 25px;
    		width: 90%;
 		a{
 			display: inline-block;

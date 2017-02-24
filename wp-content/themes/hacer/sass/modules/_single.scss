@@ -1,6 +1,7 @@
 .single{
 	.image-wrapper{
-		max-height: 500px;
+		margin-top:2rem;
+		max-height: 450px;
 		overflow: hidden;
 		img{
 			width: 100%;
@@ -8,12 +9,12 @@
 	}
 
 	h1{
-		font-size:4.5rem;
+		font-size:4rem;
 		margin-top:2rem;
 	}
 	.expert{
 		font-weight: bold;
-		margin-top: 40px;
+		margin-top: 10px;
 		margin-bottom: 20px;
 		font-size: 2rem;
 		line-height: 2.5rem;

@@ -63,7 +63,7 @@ $meses = array("0","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Ago
 		<div class="alta col-md-4">
 			<a href="<?php the_permalink();?>">
 				<?php the_post_thumbnail( 'alta-image' ); ?>
-				<h1><?php the_title(); ?></h1>
+				<h2><?php the_title(); ?></h2>
 				<div class="excerpt">
 				<?php the_excerpt(); ?>
 				</div>
@@ -89,7 +89,7 @@ $meses = array("0","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Ago
 		<a href="<?php the_permalink();?>">
 			<div class="col-md-6"><?php the_post_thumbnail( 'media-image' ); ?></div>
 			<div class="col-md-6 nota">
-			<h1><?php the_title(); ?></h1>
+			<h2><?php the_title(); ?></h2>
 			<?php the_excerpt(); ?>
 			</div>
 			</a>
@@ -97,7 +97,7 @@ $meses = array("0","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Ago
 		<?php endwhile; ?>
 	</section>
 </div>
-<section class="map-container">
+<!--section class="map-container">
 	<div class="container">
 	<h1>Ciudad Futura en los Barrios</h1>
 	<p>Clickeá sobre cada seccional para conocer las actividades del mes en todos los puntos de la ciudad.</p>
@@ -108,7 +108,7 @@ $meses = array("0","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Ago
 	</script>
 	<?php get_template_part( 'map');?>
 	</div>
-</section>
+</section-->
 <section class="container analisis">
 	<?php $args = array( 'category_name' => 'analisis', 'posts_per_page' => 1,'monthnum' =>$monthtowatch);
 	$loop = new WP_Query( $args );

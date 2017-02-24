@@ -27,24 +27,53 @@
     $monthtowatch = $_GET['mes'];
     $GLOBALS['monthtowatch'] = $monthtowatch;
   }else{
-  $monthtowatch = $lastmonth;
-  $GLOBALS['monthtowatch'] = $monthtowatch;
-  };
+    if(get_query_var('monthnum')){
+      $mesnum = get_query_var('monthnum');
+      $mesencuestion = $meses[$mesnum];
+      $GLOBALS['monthtowatch'] = $mesnum;
+    }else{
+      $mesnum = $lastmonth;
+      $mesencuestion =  $meses[$mesnum];
+       $GLOBALS['monthtowatch'] = $mesnum;
+    };
+}
 ?>
 
  </head>
 <body <?php body_class( 'class-name' ); ?>>
 <header id="main-header">
   <div class="container">
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-      <img src="<?php  echo get_template_directory_uri(); ?>/img/logo.png" alt="">
-      <h2><?php bloginfo('description');?></h2>
-    </a>
-    
-    <hgroup>
-      <h3><?php echo $meses[$monthtowatch]; ?> en Ciudad Futura</h3>
-      <h4>Ver meses anteriores</h4>
-    </hgroup>
+    <?php if (!is_home()):  ?>
+    <div class="col-md-4 col-xs-4 vertical">
+      <?php if (!is_singular('post')) :?>
+      <h3><?php echo  $mesencuestion; ?> en Ciudad Futura</h3>
+      <?php else:
+      while ( have_posts() ) : the_post();?>
+        <h3><?php echo  get_the_time("F");?> en Ciudad Futura</h3>
+      <?php endwhile; ?>
+      <?php endif;?>
+    </div>
+    <?php endif; ?>
+    <div class="col-md-4 col-xs-3">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="main-link">
+        <img src="<?php  echo get_template_directory_uri(); ?>/img/logo.png" alt="">
+      </a>
+    </div>
+    <div class="col-md-4 col-xs-5  vertical <?php if (is_home()):  ?>col-md-offset-4 col-xs-offset-4<?php endif;?>">
+      <div class="row">
+        <div class="col-md-8 col-xs-6">
+          <h4>Ver todos los meses</h4>
+        </div>
+        <div class="col-md-4  col-xs-6 form-wrap">
+          <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+              <input type="search" class="search-field" placeholder="Buscar …" value="" name="s" title="Buscar" />
+              <button type="submit" class="btn">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+          </form>
+        </div>
+      </div>
+    </div>
     <ul class="meses"><?php wp_get_archives('type=monthly&limit=12'); ?></ul>
   </div>
 </header>

@@ -36,4 +36,11 @@ jQuery(document).ready(function($){
 		$(".meses").toggle();
 	})
 
+	$('form.search-form input[type="search"]').focusin(function() {
+		    $('form.search-form').addClass("active");
+		});
+	$('form.search-form input[type="search"]').focusout(function() {
+	    $('form.search-form').removeClass("active");
+	});
+
 })	

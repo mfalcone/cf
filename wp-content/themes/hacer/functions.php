@@ -16,9 +16,10 @@ function fb_opengraph() {
  
     if(is_single()) {
         if(has_post_thumbnail($post->ID)) {
-            $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
+            $img_src_ar = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
+            $img_src = $img_src_ar[0];  
         } else {
-            $img_src = get_stylesheet_directory_uri() . '/img/ciudad_hacer.jpg';
+            $img_src = get_stylesheet_directory_uri() . '/img/portada.jpg';
         }
         if($excerpt = $post->post_excerpt) {
             $excerpt = strip_tags($post->post_excerpt);
@@ -40,12 +41,12 @@ function fb_opengraph() {
      if(has_post_thumbnail($post->ID)) {
             $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'large');
         } else {
-            $img_src = get_stylesheet_directory_uri() . '/img/ciudad_hacer.png';
+            $img_src = get_stylesheet_directory_uri() . '/img/portada.jpg';
         }	
     ?>	
 
 	
-	<meta property="og:title" content="<?php echo the_title(); ?>"/>
+	  <meta property="og:title" content="<?php echo the_title(); ?>"/>
     <meta property="og:description" content="<?php echo $excerpt; ?>"/>
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
@@ -55,8 +56,16 @@ function fb_opengraph() {
 <?php
 
     } else {
-
-        return;
+      $img_src = get_stylesheet_directory_uri() . '/img/portada.jpg';
+    
+    ?>
+    <meta property="og:title" content="2016.ciudadfutura.com.ar"/>
+    <meta property="og:description" content="2016.ciudadfutura.com.ar es un resumen de las activdades más destacadas del año legislativo que se presentan aquí en el marco de los conceptos de Transparencia y Hacer."/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="http://2016.ciudadfutura.com.ar"/>
+    <meta property="og:site_name" content="2016.ciudadfutura.com.ar""/>
+    <meta property="og:image" content="<?php echo $img_src; ?>"/>
+    <?php
     }
 }
 

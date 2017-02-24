@@ -429,42 +429,61 @@ $(document).ready(function(){
 		});
 	})
 
-var wysihtml5ParserRules = {
-  tags: {
-    strong: {},
-    b:      {},
-    i:      {},
-    em:     {},
-    br:     {},
-    p:      {},
-    div:    {},
-    span:   {},
-    ul:     {},
-    ol:     {},
-    li:     {},
-    a:      {
-      set_attributes: {
-        target: "_blank",
-        rel:    "nofollow"
-      },
-      check_attributes: {
-        href:   "url" // important to avoid XSS
-      }
-    }
-  }
-};
+	var wysihtml5ParserRules = {
+	  tags: {
+	    strong: {},
+	    b:      {},
+	    i:      {},
+	    em:     {},
+	    br:     {},
+	    p:      {},
+	    div:    {},
+	    span:   {},
+	    ul:     {},
+	    ol:     {},
+	    li:     {},
+	    a:      {
+	      set_attributes: {
+	        target: "_blank",
+	        rel:    "nofollow"
+	      },
+	      check_attributes: {
+	        href:   "url" // important to avoid XSS
+	      }
+	    }
+	  }
+	};
 
-if($(".page-template-page-blog").size() || $(".page-template-template-edit-foto").size()){
-	var editor = new wysihtml5.Editor("postContent", {
-    toolbar:      "toolbar",
-    parserRules:  wysihtml5ParserRules
-  });	
-}
+	if($(".page-template-page-blog").size() || $(".page-template-template-edit-foto").size()){
+		var editor = new wysihtml5.Editor("postContent", {
+	    toolbar:      "toolbar",
+	    parserRules:  wysihtml5ParserRules
+	  });	
+	}
 
 
-$("#right-sidebar-wrapper").mCustomScrollbar({
-    theme:"minimal-dark"
-});
+	$("#right-sidebar-wrapper").mCustomScrollbar({
+	    theme:"minimal-dark"
+	});
+
+	$("#primaryPostForm button").click(function(e){
+		
+		$("#fecha_inicio, #postTitle, #horario_inicio, #fecha_fin, #postContent, #thumbnail").each(function(){
+			if($(this).val() == ""){
+				$(".mensaje-al-usuario").show().html("por favor, completá los campos obligatorios");
+				$(this).addClass("completar")
+				e.preventDefault();	
+				throw new Error('Completar los campos');
+			}
+		})
+		if($("#fecha_fin").val()<$("#fecha_inicio").val()){
+			$(".mensaje-al-usuario").show().html("La fecha de finialización no puede ser anterior a la fecha de inicio");
+			e.preventDefault();	
+		}
+
+		//$("#primaryPostForm").submit();
+
+	})
 
 })
 

@@ -59,7 +59,6 @@
 		width: 100%;
 
 		.generic-button{
-			border:1px solid $gris_medio;
 			padding:5px;
 			margin-left:5px;
 			margin-top:5px;
@@ -93,6 +92,10 @@
 	.item-list-tabs{
 		width:100%;
 		margin-top:10px;
+
+		.activity-likes-personal-li{
+			display: none;
+		}
 	}
 
 	.actividad-wrapper{
@@ -101,9 +104,7 @@
 			background:$gris_medio;
 			padding-top:10px;
 			ul{
-				position:relative;
-				left:50%;
-				margin-left:-25%;
+				float:right;
 			}
 		}
 	}
@@ -234,3 +235,6 @@
 	display:none;
 }
 
+#activity-likes-personal-li, #likes-personal-li{
+	display:none;
+}

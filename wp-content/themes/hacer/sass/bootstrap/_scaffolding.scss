@@ -25,10 +25,11 @@ html {
 }
 
 body {
-  font-family: $font-family-base;
+  @import url('https://fonts.googleapis.com/css?family=Roboto:400');
+  font-family:'Roboto',sans-serif;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  color: $text-color;
+  color: #000000;
   background-color: $body-bg;
 }
 

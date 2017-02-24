@@ -7,8 +7,9 @@ html{
 }
 
 body{
-	background:#FFF;
-	font-family:$fuenteprincipal;
+	background:#E8E9E9;
+	@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+	font-family:'Roboto',sans-serif;
 	font-size:1.5rem;
 	line-height:2rem;
 }

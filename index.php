@@ -11,6 +11,9 @@
  *
  * @var bool
  */
+/*header("Location: http://localhost/ciudadfutura/mantenimiento.html"); /* Redirect browser */
+/*exit();*/
+
 define('WP_USE_THEMES', true);
 
 /** Loads the WordPress Environment and Template */

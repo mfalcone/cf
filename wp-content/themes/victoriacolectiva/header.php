@@ -118,7 +118,14 @@
 			<li class="hacer"><h3><span class="glyphicon glyphicon-forward"></span>Hacer</h3>
 
 				<ul>
-						<?php 
+					
+						
+						<?php wp_nav_menu( array( 'theme_location' => 'hacer-menu','container' => '','items_wrap' => '%3$s') ); ?>
+				</ul>		
+			</li>
+		</ul>
+		
+				<?php 
 						$currentslug = bp_get_current_group_slug();
 						$user_id = get_current_user_id();
 						$args = array(
@@ -127,6 +134,8 @@
 								'user_id'=>$user_id
 						);
 						if ( bp_has_groups($args) ) : ?>
+						<h4 class="grupos-titulo">Mis grupos</h4>
+						<ul class="grupos">	
 						<?php while ( bp_groups() ) : bp_the_group(s); ?>
 							<?php
 								ob_start();
@@ -136,19 +145,16 @@
 							?>
 							<li>
 								<?php if($currentslug == $slugs){?>
-									<span class="selected"><?php bp_group_name() ?></span>
+									<div class="selected"><?php bp_group_avatar( 'type=thumb&width=30&height=30' ) ?><?php bp_group_name() ?></div>
 								<?php }else{?>
-									<a href="<?php bp_group_permalink() ?>"><?php bp_group_name() ?></a>
+									<a href="<?php bp_group_permalink() ?>"><?php bp_group_avatar( 'type=thumb&width=30&height=30' ) ?><span><?php bp_group_name() ?></span></a>
 								<?php }?>
 
 							</li>
 						<?php endwhile; ?>
+						</ul>
 						<?php endif;?>
-						
-						<?php wp_nav_menu( array( 'theme_location' => 'hacer-menu','container' => '','items_wrap' => '%3$s') ); ?>
-				</ul>		
-			</li>
-		</ul>
+		
 	</aside>
 	<div class="show">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Area superior") ) : ?>

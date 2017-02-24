@@ -18,7 +18,8 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 					$thumbID = get_post_thumbnail_id( $post->ID );
 					$imgDestacada = wp_get_attachment_url( $thumbID );
 					$layout = get_post_meta( get_the_ID(), 'layout', true ); 
-					
+					$mes = get_the_time("m");
+					$mes_completo = get_the_time("F");
 					if(in_category('seccionales')){?>
 					<div id="map-wrapper">
 					<div class="image-wrapper"><img src="<?php echo $imgDestacada; ?>" alt=""></div>
@@ -68,12 +69,11 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 </section>
 <div class="aside-wrapp">
 	<div class="aside col-md-12">
-	<h2>Otras noticias del mes</h2>
+	<h2>Otras noticias del mes de <?php echo $mes_completo;?></h2>
 	<ul>
 		<?php 	
 				$contador = 0;
-				$monthtowatch = $GLOBALS['monthtowatch'];
-				$args = array('posts_per_page' => 4, 'monthnum' =>$monthtowatch, 'meta_query' => array (
+				$args = array('posts_per_page' => 4, 'monthnum' =>$mes, 'meta_query' => array (
 					'relation' => 'OR',
 					    array (
 						  'key' => '_posicion',
@@ -100,9 +100,9 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 					$contador++;
 					}?>
 			<?php endwhile; 
-			if($contador==3){
+			if($contador<4){
 
-				$args = array( 'category_name' => 'proyecto', 'posts_per_page' => 1,'monthnum' =>$monthtowatch);
+				$args = array( 'category_name' => 'proyecto', 'posts_per_page' => 1,'monthnum' =>$mes);
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post();?>
 				<li>

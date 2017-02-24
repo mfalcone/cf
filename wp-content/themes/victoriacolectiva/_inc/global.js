@@ -101,6 +101,8 @@ jq(document).ready( function() {
 			object = jq("#whats-new-post-object").val();
 		}
 
+		console.log(content)
+
 		jq.post( ajaxurl, {
 			action: 'post_update',
 			'cookie': bp_get_cookies(),

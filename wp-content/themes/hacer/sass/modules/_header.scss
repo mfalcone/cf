@@ -1,21 +1,30 @@
 
 #main-header{
-	height:110px;
-	border-bottom:2px solid #FFF;
-	background:$rojo;
+	padding-bottom:20px;
+	border-bottom:0px solid #FFF;
+	background:#FFFFFF;
 	position:relative;
-	z-index:3;
+	z-index:1;
+	-webkit-box-shadow: -4px 6px 22px 0px rgba(0,0,0,0.57);
+	-moz-box-shadow: -4px 6px 22px 0px rgba(0,0,0,0.57);
+	box-shadow: -4px 6px 22px 0px rgba(0,0,0,0.57);
 	@include screen(320px,480px) { 
 				height:80px;
 			}
 	.container{
 		@include screen(320px,480px) { 
-				padding-right:5px;
+				padding-right:0px;
 			}
+
+
 	}
+	
 	img{
-		float:left;
-		margin-top:20px;
+		margin-top:16px;
+		margin-left:auto;
+		margin-right: auto;
+		display: block;
+		max-width: 100%;
 		@include screen(320px,480px) { 
 				width:48%;
 			}
@@ -35,12 +44,14 @@
 				}
 		}
 	}
-
+	.main-link{
+		float:none;
+	}
     .meses{
 		display: none;
 		position: absolute;
 		top: 80px;
-		left: 264px;
+		right:0px;
 		background: #000;
 		color: #FFF;
 		width: 400px;
@@ -56,20 +67,19 @@
 					background:$rojo;
 				}
 			}
-
-			&:first-child{
-				display:none;
-			}
 		}
 	}
 
 	.container{
 		position: relative;
+		background:#FFF;
+
 	}
+	
 	
 	hgroup{
 		float:left;
-		margin-left: 30px;
+		margin-left: -160px;
 		color: #FFF;
 		margin-top: 20px;
 			@include screen(320px,480px) { 
@@ -88,36 +98,89 @@
 			}
 	}
 	h3{
-		font-size: 2.3rem;
-		@include screen(320px,480px) { 
-				font-size:1rem;
+		@import url('https://fonts.googleapis.com/css?family=Roboto:400');
+		color:#000000;
+		font-family:'Roboto',sans-serif;
+		font-size: 2.1rem;
+		line-height: 40px;
+		@include max-screen(992px) { 
+				font-size:1.2rem;
 			}
 	}
 
 	h4{
-		margin-top:10px;
-		font-size:1.2rem;
+		@import url('https://fonts.googleapis.com/css?family=Roboto:400');
+		color:#000;
+		font-family:'Roboto',sans-serif;
+		text-align:center;
+		font-size:1.8rem;
 		cursor:pointer;
+		line-height: 40px;
 		&.selected{
-			background: #000;
 			color: $rojo;
-			padding: 5px 0 5px 10px;
-    		width: 400px;
 		}
+		@include max-screen(992px) { 
+				font-size:1.2rem;
+			}
 		@include screen(320px,480px) { 
 				display:none;
 			}
 	}
 
+	.form-wrap{
+		position:relative;		
+	}
+	.search-form{
+		position:absolute;
+		width: 100%;
+		right: 0;
+		top:0;
+		background:$rojo;
+		padding:5px;
+		-o-transition:.5s;
+ 		-ms-transition:.5s;
+  		-moz-transition:.5s;
+		-webkit-transition:.5s;
+		transition:.5s;
+		line-height: 30px;
+		input{
+			float:left;
+		}
+		input[type="search"]{
+			width:77%;
+			top:0;
+			left:0;
+			background:none;
+			border:none;
+			outline: none;
+			color: #FFF;
+			padding-left:5px;
+			&::-webkit-input-placeholder { color:#FEB3B6; }
+			&::-moz-placeholder { color:#FEB3B6; } /* firefox 19+ */
+			&:-ms-input-placeholder { color:#FEB3B6; } /* ie */
+			&:-moz-placeholder { color:#FEB3B6; }
+		}
 
+		button{
+			padding:5px;
+			background:#FFF;
+			float:right;
+		}
 
+		&.active{
+			width:300%;
+		}
+	}
+
+	div.vertical{
+		margin-top:20px;
+	}
 }
 
 h1.nombremes{
-	background: rgba(255,255,255,0.5);
     width: 100%;
     position: absolute;
     padding: 10px;
-    font-size: 4rem;
-    z-index:2;
+    font-size: 0rem;
+    z-index:0;
 }

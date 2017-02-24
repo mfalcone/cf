@@ -1,5 +1,21 @@
 <?php /* Template Name:Quiero Ayudar */ 
-get_header(); ?>
+get_header(); 
+
+function my_bp_get_users_by_xprofile( $field_id, $value ) {
+ 
+global $wpdb;
+$hoy = date('Y-m-d');
+$result = $wpdb->get_results('SELECT * FROM  wp_bp_xprofile_data WHERE field_id = 3 AND DATE_FORMAT(value,"%m-%d") = DATE_FORMAT("'.$hoy.'","%m-%d")');
+
+print_r($result); // display data
+}
+
+my_bp_get_users_by_xprofile( 6, 'homeros' );
+//print_r($user_ids);
+?>
+
+
+
 
 			<?php if ( have_posts() ) : 
 			// Do we have any posts in the databse that match our query?

@@ -90,6 +90,8 @@ define('PATH_CURRENT_SITE', '/ciudadfutura/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
 
+
+define('DISABLE_WP_CRON', true);
 /* ¡Eso es todo, deja de editar! Feliz blogging */
 
 /** WordPress absolute path to the Wordpress directory. */

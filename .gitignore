@@ -1,7 +1,12 @@
 .DS_Store
-wp-content/themes/transparencia.ciudadfutura/sass/.sass-cache/*
+wp-content/themes/transparencia.ciudadfutura/sass/.sass-cache/**
+wp-content/themes/victoriacolectiva/sass/.sass-cache/**
+wp-content/themes/hacer/sass/.sass-cache/**
+**/.sass-cache
+**/.sass-cache/*
 live/wp-config.php
 wp-content/themes/ciudadfutura/afiliado.php
 wp-content/themes/ciudadfutura/wp-config.php
 wp-content/themes/transparencia.ciudadfutura/aporte.php
 wp-content/themes/victoriacolectiva/aporte.php
+wp-content/themes/hacer/sass/-sass-cache

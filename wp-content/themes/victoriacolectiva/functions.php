@@ -500,6 +500,16 @@ function filtering_activity_default( $query ) {
 add_filter( 'bp_ajax_querystring', 'filtering_activity_default', 999 );
 
 
+function fred_whitelist_tags_in_activity( $allowedtags ) {
+	    $allowedtags['div']['class'] = array();
+	    $allowedtags['h5'] = array();
+	    $allowedtags['iframe']['src'] = array();
+	    $allowedtags['small'] = array();
+	    $allowedtags['h2'] = array();
+	    $allowedtags['p']['class'] = array();
+	    return $allowedtags;
+}
+add_filter( 'bp_activity_allowed_tags', 'fred_whitelist_tags_in_activity' );
 
 
 

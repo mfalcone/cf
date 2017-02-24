@@ -1,4 +1,8 @@
 <?php
+
+update_option( 'siteurl', 'http://ciudadfutura.com.ar' );
+update_option( 'home', 'http://ciudadfutura.com.ar' );
+
 function register_my_menus() {
   register_nav_menus(
     array(

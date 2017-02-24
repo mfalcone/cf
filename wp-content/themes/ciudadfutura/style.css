@@ -880,6 +880,7 @@ section.blog{
 	width: 100%;
 	color: #FFF;
 	height: 140px;
+	background:rgba(0,0,0,0.7);
 }
 
 .blog .hgroup .bkred{
@@ -923,6 +924,7 @@ section.blog{
 	font-style: italic;
 	position: relative;
 	z-index: 1;
+	color:#5f5f5f;
 }
 
 .blog .post{
@@ -947,6 +949,10 @@ section.blog{
     font-size: 16px;
     line-height: 23px;
     margin-bottom: 23px;
+}
+
+.blog .post p strong{
+	font-weight: bold;
 }
 
 .blog .post h2{
@@ -1404,4 +1410,11 @@ display:none;
 		padding: 10px;
 	}
 }
+
+@media all and (max-width : 575px){
+	.blog header h1{
+		font-size:3rem;
+	}
+}
+
 

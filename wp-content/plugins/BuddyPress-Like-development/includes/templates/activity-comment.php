@@ -30,6 +30,7 @@ function bplike_activity_comment_button() {
             <a href="#" class="acomment-reply bp-primary-action like" id="like-activity-<?php echo bp_get_activity_comment_id(); ?>" title="<?php echo bp_like_get_text( 'like_this_item' ); ?>"><?php
                echo bp_like_get_text( 'like' );
                echo ' <span><small>' . ( $liked_count ? $liked_count : '0' ) . '</small></span>';
+
                 ?></a>
         <?php } else { ?>
             <a href="#" class="acomment-reply bp-primary-action unlike" id="unlike-activity-<?php echo bp_get_activity_comment_id(); ?>" title="<?php echo bp_like_get_text( 'unlike_this_item' ); ?>"><?php
@@ -38,5 +39,6 @@ function bplike_activity_comment_button() {
                 ?></a>
             <?php
         }
+       view_who_likes( bp_get_activity_comment_id(), 'activity_update' );
     }
 }

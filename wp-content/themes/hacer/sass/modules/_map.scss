@@ -1,55 +1,63 @@
 .map-container{
-	background:$rojo;
+	background:#FFF;
 	margin-top:60px;
 	padding:20px 0;
 	
 	h1{
+		@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+		color:#000000;
+		font-family:'Roboto',sans-serif;
 		font-size:4rem;
-		color: #FFF;
 		margin-bottom:10px;
+		text-align: center;
 	}
 	
 	p{
-		color:#FFF;
-		margin-bottom: 20px;
+		color:#000000;
+		margin-bottom: 10px;
+		text-align: center;
 	}
 
 	svg{
-		background:#FFF;
+		background: transparent;
 		display: block;
-		margin-left:auto;
+		margin-left:280px;
 		margin-right: auto;
+		width: 540px;
+		margin-top: -130px;
+		margin-bottom: -100px;
+
 
 		#sec_1{
-			fill:#A8A8A8;
+			fill:#C6A87D;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 		
 		#sec_2{
-			fill:#B0B0B0;
+			fill:#C6A87D;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_3{
-			fill:#707070;
+			fill:#C6A87D;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 		
 		#sec_4{
-			fill:#7F7F7F;
+			fill:#89C6E5;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_5{
-			fill:#828282;
+			fill:#A8D6C4;
 			&:hover{
 			fill:$rojo;
 			}
@@ -57,91 +65,91 @@
 
 
 		#sec_6{
-			fill:#B8B8B8;
+			fill:#97A7AF;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_7{
-			fill:#B3B3B3;
+			fill:#FCCB7C;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_8{
-			fill:#C2C2C2;
+			fill:#E2ACAC;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_9{
-			fill:#BFBFBF;
+			fill:#E1ACAC;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_10{
-			fill:#CFCFCF;
+			fill:#ED8083;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_11{
-			fill:#D4D4D4;
+			fill:#AFABD5;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_12{
-			fill:#D3D3D3;
+			fill:#F5D2D2;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_13{
-			fill:#D9D9D9;
+			fill:#DDAA78;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_14{
-			fill:#E0E0E0;
+			fill:#F9F19C;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_15{
-			fill:#EDEDED;
+			fill:#B9C576;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_16{
-			fill:#C7C7C7;
+			fill:#D2C897;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_17{
-			fill:#DADADA;
+			fill:#F6C389;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_18{
-			fill:#C3C3C3;
+			fill:#DDAA78;
 			&:hover{
 			fill:$rojo;
 			}
@@ -149,28 +157,28 @@
 	
 
 		#sec_19{
-			fill:#BFBFBF;
+			fill:#E2C6B5;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_20{
-			fill:#A8A8A8;
+			fill:#F5D2D2;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 		
 		#sec_21{
-			fill:#ABABAB;
+			fill:#AFABD5;
 			&:hover{
 			fill:$rojo;
 			}
 		}
 
 		#sec_S2{
-			fill:#A8A8A8;
+			fill:#EA5C5F;
 			&:hover{
 			fill:$rojo;
 			}

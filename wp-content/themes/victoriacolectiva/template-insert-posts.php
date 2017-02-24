@@ -62,12 +62,12 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 <h2>Ingresar un Evento</h2>
 	<!-- #primary BEGIN -->
 	<div id="primary">
-
+		<div class="mensaje-al-usuario"></div>
 		<form action="" id="primaryPostForm" method="POST" enctype="multipart/form-data">
 
 			<fieldset>
 
-				<label for="postTitle">Título del evento</label>
+				<label for="postTitle">Título del evento <span class="obligatorio">(*)</span></label>
 
 				<input type="text" name="postTitle" id="postTitle" value="<?php if(isset($_POST['postTitle'])) echo $_POST['postTitle'];?>" class="required" />
 
@@ -80,7 +80,7 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 
 			<fieldset>
 
-				<label for="fecha_inicio">Fecha de Inicio</label>
+				<label for="fecha_inicio">Fecha de Inicio <span class="obligatorio">(*)</span></label>
 
 				<input type="date" name="fecha_inicio" id="fecha_inicio" value="<?php if(isset($_POST['fecha_inicio'])) echo $_POST['fecha_inicio'];?>" />
 
@@ -88,7 +88,7 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 
 			<fieldset>
 
-				<label for="horario_inicio">Hora de Inicio</label>
+				<label for="horario_inicio">Hora de Inicio  <span class="obligatorio">(*)</span></label>
 
 				<input type="time" name="horario_inicio" id="horario_inicio" value="<?php if(isset($_POST['horario_inicio'])) echo $_POST['horario_inicio'];?>" />
 
@@ -96,7 +96,7 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 			
 			<fieldset>
 
-				<label for="fecha_fin">Fecha de Finalización</label>
+				<label for="fecha_fin">Fecha de Finalización <span class="obligatorio">(*)</span></label>
 
 				<input type="date" name="fecha_fin" id="fecha_fin" value="<?php if(isset($_POST['fecha_fin'])) echo $_POST['fecha_fin'];?>" />
 
@@ -104,14 +104,14 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 
 			<fieldset>
 
-				<label for="horario_fin">Hora de Finalización</label>
+				<label for="horario_fin">Hora de Finalización </label>
 
 				<input type="time" name="horario_fin" id="horario_fin" value="<?php if(isset($_POST['horario_fin'])) echo $_POST['horario_fin'];?>" />
 
 			</fieldset>
 			<fieldset>
 						
-				<label for="postContent">Imagen (cuadrada):</label>
+				<label for="postContent">Imagen (cuadrada)  <span class="obligatorio">(*)</span></label>
 
 				<input type="file" name="thumbnail" id="thumbnail">
 
@@ -119,7 +119,7 @@ if(isset($_POST['submitted']) && isset($_POST['post_nonce_field']) && wp_verify_
 
 			<fieldset>
 						
-				<label for="postContent">Descripción</label>
+				<label for="postContent">Descripción <span class="obligatorio">(*)</span></label>
 
 				<textarea name="postContent" id="postContent" rows="8" cols="30"><?php if(isset($_POST['postContent'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['postContent']); } else { echo $_POST['postContent']; } } ?></textarea>
 

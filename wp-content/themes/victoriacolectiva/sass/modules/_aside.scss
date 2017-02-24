@@ -4,14 +4,15 @@
 	top:0;
 	z-index:13;
 	padding-top:40px;
+	background:$gris_oscuro_dos;
+	height: 100%;
+		
 	@include max-screen(1000px) {
 	        display:none;
 	        height:auto;
 	    }
 	#main-menu{
 		width: 210px;
-		background:$gris_oscuro_dos;
-		height: 100%;
 		float:left;
 		list-style: none;
 		padding:0;
@@ -99,7 +100,46 @@
 			}
 		}
 	}
+	h4.grupos-titulo{
+		padding-top:20px;
+		color: #FFF;
+		font-size: 2rem;
+		clear:left;
+		padding-left:10px;
+	}
+	ul.grupos{
+		width: 210px;
+		clear:left;	
+		padding-top:10px;	
+		li{
+			margin-left:10px;
+			img{
+				float:left;
+				margin-right: 5px;
+			}
+			a{
+				overflow: auto;
+				display: block;
+				color: #C6C6C6;
+				margin-bottom:10px;
+				span{
+					float:left;
+					display: block;
+					width: 165px;
+				}
 
+				&:hover{
+					background:$rojo;
+					color: #FFF;
+				}
+			}
+			div.selected{
+				background:$rojo;
+				color: #FFF;
+				overflow: auto;
+			}
+		}
+	}
 
 	.buscador{
 		display:none;
