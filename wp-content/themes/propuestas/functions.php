@@ -30,6 +30,7 @@ function add_propuestas_metaboxes(){
 	add_meta_box('wpt_que_es', 'Que es', 'wpt_que_es', 'propuesta', 'normal', 'high');
 	add_meta_box('wpt_para_que_sirve', 'Para que sirve', 'wpt_para_que_sirve', 'propuesta', 'normal', 'high');
 	add_meta_box('wpt_ejemplo', 'Ejemplo', 'wpt_ejemplo', 'propuesta', 'normal', 'high');
+	add_meta_box('wpt_link_ordenanza', 'link al proyecto de Ordenanza', 'wpt_link_ordenanza', 'propuesta', 'normal', 'high');
 }
 
 
@@ -68,6 +69,12 @@ function wpt_ejemplo() {
 }
 
 
+function wpt_link_ordenanza() {
+	global $post;
+	$link_ordenanza = get_post_meta($post->ID, '_link_ordenanza', true);
+	echo '<input type="text" name="_link_ordenanza" value="' . $link_ordenanza  . '" class="widefat" />';
+}
+
 
 function wpt_save_propuestas_meta($post_id, $post) {
 	
@@ -81,6 +88,7 @@ function wpt_save_propuestas_meta($post_id, $post) {
 	$que_es['_que_es'] = $_POST['_que_es'];
 	$que_es['_para_que_sirve'] = $_POST['_para_que_sirve'];
 	$que_es['_ejemplo'] = $_POST['_ejemplo'];
+	$que_es['_link_ordenanza'] = $_POST['_link_ordenanza'];
 	
 	foreach ($que_es as $key => $value) { // Cycle through the $events_meta array!
 		if( $post->post_type == 'revision' ) return; // Don't store custom data twice

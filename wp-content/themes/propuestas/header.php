@@ -26,3 +26,14 @@
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
+  <header class="main-header">
+    <div class="col-md-4 col-sm-12 col-xs-12">  
+      <h1 class="cumplimos">Cumplimos</h1>
+    </div>
+    <div class="col-md-4 col-md-offset-4 col-sm-12 col-xs-12">  
+      <div class="propuestas">
+        
+      </div>
+    
+    </div>
+  </header>

@@ -1,0 +1,30 @@
+.main-header{
+	height:420px;
+	width:100%;
+	@include min-screen(1000px) {
+	display: flex;
+  	align-items: center;
+  justify-content: center;
+}
+	.cumplimos{
+		text-indent: -10000px;
+		background: url(img/cumplimos-header.png) no-repeat;
+		height: 249px;
+		max-width: 540px;
+		background-size: 100%;
+		margin-top:10px;
+		width: 100%;
+	}
+
+	.propuestas{
+		float:right;
+		background:url(img/propuestas-header.png) no-repeat;
+		max-width: 558px;
+		height: 228px;
+		background-size: 100%;
+		margin-top:10px;
+		width: 100%;
+		
+	}
+
+}
