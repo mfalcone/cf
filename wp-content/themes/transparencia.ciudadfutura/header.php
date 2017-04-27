@@ -51,19 +51,7 @@ if ( !is_user_logged_in() ) {
 		</div>
 	</div>
 	<header>
-				<div class="row">
-					<div id="caren" class="concejal"></div>
-					<div id="juan" class="concejal"></div>
-					<div id="pitu" class="concejal"></div>
-					<div class="col-md-4 pull-right cartel">
-						<div class="cont-wrapper">
-								<p class="ideas-acciones">
-									CUENTAS CLARAS <span class="glyphicon glyphicon-cloud"></span> <br>
-									ACCIONES CONCRETAS <span class="glyphicon glyphicon-cloud-download"></span> 
-								</p>
-								<h2>DONAMOS EL 70% DE NUESTROS SUELDOS PARA MANTENER NUESTRA AUTONOMÍA FINANCIERA Y POLÍTICA</h2>
-						</div>
-					</div>
-					
-			</div>
+	<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+		
+	</a>
 	</header>

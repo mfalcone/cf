@@ -37,24 +37,24 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 			SUELDO TOTAL 100%
 		</div>
 		<div class="donacion" style="width:70%">
-			DONACIÓN AL INSTRUMENTO 70%
+			DONACIÓN AL INSTRUMENTO 76%
 		</div>
 		<div class="sueldo" style="width:30%">
-			SUELDO NETO 30%
+			SUELDO NETO 24%
 		</div>
 	</div>
 	<div class="col-md-4">
 		<div class="row">
 			<div class="num_total col-md-4">
-				<h4>$58.634</h4>
+				<h4>$81.900</h4>
 				<h5>SUELDO TOTAL<br></h5>
 			</div>
 			<div class="num_donacion col-md-4">
-				<h4>$42.554</h4>
+				<h4>$62.300</h4>
 				<h5>DONACIÓN AL INSTRUMENTO</h5>
 			</div>
 			<div class="num_sueldo col-md-4">
-				<h4>$16.080</h4>
+				<h4>$19.600</h4>
 				<h5>SUELDO NETO</h5>
 			</div>
 		</div>

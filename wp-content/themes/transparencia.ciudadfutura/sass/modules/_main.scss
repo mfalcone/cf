@@ -238,6 +238,25 @@ section.container{
 	font-weight: bold;
 	position: relative;
 	z-index: 3;
+
+}
+
+.texto-cabecera{
+	h1{
+		background:url(img/transparencia_logo.png) no-repeat center center;
+		background-repeat:no-repeat;
+    	background-size:contain;
+    	height: 100px;
+    	text-indent: -1000px;
+	}
+
+	h2{
+		font-family: 'Montserrat', sans-serif;
+		font-size: 3.6rem;
+		color:$rojo;
+		font-weight: bold;
+
+	}
 }
 
 @media all and (max-width: 850px) {
@@ -848,3 +867,206 @@ section.container{
 	width:100%;
 	height:800px;
 }
+
+.nuevo-graf{
+	font-family: 'Montserrat', sans-serif;
+	text-transform:uppercase;
+	margin-bottom:70px;
+	h2{
+		color: #6F6F6E;
+		font-size: 5rem;
+		font-weight: bold;
+	}
+
+	h3{
+		color: $rojo;
+		font-size: 3rem;
+		font-weight: bold;
+	}
+	.col-md-4{
+		text-align: right;
+		border-right:3px solid #6F6F6E;
+	}
+
+	h2,h3,h4{
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	h4{
+		margin-top: 20px;
+    	font-size: 2.5rem;
+    	color: $rojo;
+	}
+}
+
+.full-graph{
+	padding-bottom: 200px;
+	h2,h3,h4{
+	font-family: 'Montserrat', sans-serif;
+}
+
+	.itemgraph{
+		position:relative;
+		padding-top:20px;
+		h2{
+			float:left;
+			padding-bottom: 20px;
+			margin-right: 10px;
+			font-size:3rem;
+			clear: left;
+			color: $rojo;
+		}
+		h3{
+			font-size:1.5rem;
+			color: $rojo;
+			cursor:pointer;
+		}
+
+		h4{
+			font-size:1.6rem;
+		}
+
+		.exp{
+			position:absolute;
+			background:#666;
+			padding:10px;
+			z-index: 10;
+			display: none;
+			color: #FFF;
+		}
+
+
+	}
+
+	#item1{
+		left: -280px;
+    	width: 300px;
+	}
+
+	#item2{
+		left: -220px;
+    	width: 300px;
+   	    top: 70px;
+	}
+
+	#item3{
+		left: -190px;
+    	width: 300px;
+    	top:130px;
+	}
+
+	#item4{
+		left: -200px;
+	    width: 300px;
+	    top: 170px;
+	}
+
+	#item5{
+		left: -240px;
+	    width: 300px;
+	    top: 220px;
+	}
+
+	#item6{
+		top: 250px;
+    width: 500px;
+    left: -300px;
+	}
+
+	#item7{
+		width: 500px;
+	    left: -380px;
+	    top: 250px;
+	}
+
+	#item8{
+		width: 500px;
+	    left: -430px;
+	    top: 250px;
+	}
+
+	#item9{
+		width: 620px;
+   		left: -700px;
+    	top: 275px;
+		clear:left;
+		h2{
+			padding-bottom:30px;
+		}
+
+    	h3{
+    		width: 200px;
+    	}
+
+    	h4{
+    		margin-left:60px;
+    		
+    		&.sec{
+    			margin-left:0;
+    		}
+    	}
+	.col-md-{
+		float:left;
+	}
+	}
+
+	.equal{
+		width: 20px;
+	}
+}
+
+.presupuesto16{
+	float:right;
+	width:310px;
+	text-align:center;
+	border:1px solid #666;
+	padding:20px;
+	h2,h3,h4{
+		font-family: 'Montserrat', sans-serif;
+	}
+	h3,h4{
+		color: #6F6F6E;
+	}
+	h2{
+		color: $rojo;
+		font-size:3.5rem;
+
+	}
+
+	h3{
+		font-size: 1.5rem;
+	}
+	h4{
+		span{
+			color: $rojo;
+		}
+	}
+	&:hover{
+		text-decoration: none;
+		background:#CCC;
+	}
+}
+
+
+@media only screen  and (max-width: 1200px){
+	.full-graph .itemgraph{
+		position: initial;
+	}
+
+	.full-graph #item9 .col-md-{
+		float:none;
+	}
+} 
+
+@media only screen  and (max-width: 990px){
+	
+	.full-graph #item9 .col-md-{
+		float:left;
+	}
+} 
+
+@media only screen  and (max-width: 691px){
+	#graph-container{
+		display: none;
+	}
+} 

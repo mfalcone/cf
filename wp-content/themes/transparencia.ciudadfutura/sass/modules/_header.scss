@@ -7,7 +7,7 @@
 	}
 header{
 	width:100%;
-	background:url(img/concejo.jpg)  no-repeat center center fixed; 
+	background:url(img/concejales.jpg)  no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -15,79 +15,16 @@ header{
 	height: 670px;
 	position:relative;
 	overflow: hidden;
-	background-position: 0 0;
+	background-position: center center;
 
 	
-	
-	.pull-right{
-		float:right;
-	}
-	
-	h2{
-	    font-size: 3.5rem;
-	    color: #FFF;
-	}		
-
-	.row{
-		margin:0;
+	a.logo{
+		background:url(img/logo.png) no-repeat;
+		width: 252px;
+		height: 86px;
+		display: block;
 		position:relative;
-		height: 100%;
-		
-		#caren{
-			background: url(img/caren.png) no-repeat;
-			width: 408px;
-			height: 643px;
-			left:-1%;
-			z-index: 3;
-			top:80px;
-			@include fadeIn($duration: 1s, $delay: 0s);
-
-		}
-		#juan{
-			background: url(img/juan.png) no-repeat;
-			width: 495px;
-			height: 738px;
-			left:17%;
-			z-index: 2;
-			@include fadeIn($duration: 1s, $delay: 1s);
-			
-		}
-
-		#pitu{
-			background: url(img/pitu.png) no-repeat;
-			width: 475px;
-			height: 674px;
-			left:40%;
-			z-index: 1;
-			top:50px;
-			@include fadeIn($duration: 1s, $delay: 2s);
-
-		}
-
-		.concejal{
-			float:left;
-			position: absolute;
-			top: 0;
-		}
-
-		.cartel{
-			background: rgba(194,34,43,1);
-			text-align: right;
-			height: 100%;
-			.cont-wrapper{
-				padding-top: 2rem;
-				padding-bottom: 2rem;
-				padding-left: 3rem;
-				margin-top:25px;
-				.ideas-acciones{
-					font-size: 2.5rem;
-					font-weight: bold;
-					font-family:$akzidenz;
-					margin-bottom: 1rem;
-				}
-
-			}
-		}
+		top:10px;
 	}
 }
 
