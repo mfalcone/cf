@@ -108,12 +108,12 @@ add_action('save_post', 'wpt_save_propuestas_meta', 1, 2); // save the custom fi
 
 function estilosyjs()  { 
 
-	wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/style.css');
+	wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/style.css?v=4');
 	wp_enqueue_script('jquery');
-	wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/js/theme.js', array( 'jquery' ), 1.0, false );
-	
+	wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/js/theme.js', array( 'jquery' ), 2.0, false );
 	
 }
+
 add_action( 'wp_enqueue_scripts', 'estilosyjs' );
 
 if ( function_exists( 'add_theme_support' ) )
@@ -160,7 +160,15 @@ function fb_opengraph() {
 
 <?php
 
-    } else {
+    } else if(is_home()) { ?>
+    	<meta property="og:title" content="<?php echo get_bloginfo(); ?>"/>
+    	<meta property="og:description" content="<?php echo $excerpt; ?>"/>
+    	<meta property="og:type" content="article"/>
+    	<meta property="og:url" content="<?php echo get_home_url(); ?>"/>
+    	<meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
+    	<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/miniatura_facebook_twitter.jpg"/>
+
+    <?php } else {
 
         return;
     }

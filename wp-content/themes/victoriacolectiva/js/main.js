@@ -385,7 +385,7 @@ $(document).ready(function(){
 		$.ajax({
 			type: "POST",
 			cache: false,
-			url: $("#contact_form").data("form")+"/aporte.php",
+			url: $("#contact_form").data("form")+"/aporte.php?ModPagespeed=off",
 			data: "data="+JSON.stringify(jason),
 			success: function(data) {
 				alert(data);
@@ -421,7 +421,7 @@ $(document).ready(function(){
 		$.ajax({
 			type: "POST",
 			cache: false,
-			url: $("#contact_form").data("form")+"/aporte.php",
+			url: $("#contact_form").data("form")+"/aporte.php?ModPagespeed=off",
 			data: "llamar="+JSON.stringify(jason2),
 			success: function(data) {
 				alert(data);

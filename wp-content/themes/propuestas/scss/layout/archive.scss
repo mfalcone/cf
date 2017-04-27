@@ -25,10 +25,11 @@ body{
     h2{
         font-family: 'league_gothicregular';
         color: $rojo;
-        font-size:2.8rem;
+        font-size:2.3rem;
         text-transform: uppercase;
         border-bottom:1px dashed #666;
         padding-bottom: 10px;
+        margin-top:5px;
         .fa{
             margin-right: 10px;
         }
@@ -36,6 +37,8 @@ body{
 
     h3{
         color: $rojo;
+        font-size:1.6rem;
+        margin: 4px 0 4px 0;
     }
 
 }
@@ -65,7 +68,24 @@ body{
     padding: 10px;
     color: #000;
     height: 100%;
-
+    @include max-screen(1450px) {
+    font-size:1.2rem;
+    }
+    @include min-screen(1450px) {
+    font-size:1.6rem;
+    }
+    @include max-screen(1200px) {
+    font-size:1.2rem;
+    }
+    
+    @include screen(990px,1280px) {
+      font-size:1.4rem;
+    }
+  
+    @include max-screen(760px) {
+    font-size:1.5rem;
+    }
+    
 }
 .card.flipped {
     -webkit-transform: rotateY( 180deg );
@@ -97,25 +117,24 @@ a{
         position:relative;
         display: inline-block;
         top:5px;
+        width: 200px;
+        height: 60px;
     }
+
+    .twitter-share-button { min-width: 80px !important; width: auto !important;}
 }
 
-h4{
-    color: #FFF;
-    background: $rojo;
-    position: relative;
-    left: -10px;
-    padding: 4px;
-    width: 50%;
-    font-size: 1.5rem;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-
-}
 .link{
-    margin-top:20px;
+    margin-top:10px;
     .fa-newspaper-o{
         margin-right: 10px;
     }
+}
+
+.cargando{
+    color: #FFF;
+    padding:40px;
+    text-align:center;
+    font-size:3rem;
 }
 

@@ -6,17 +6,16 @@
 		<div class="card">
 			<div class="front"><?php the_post_thumbnail( 'full' );?></div>
 			<div class="back">
-				<h4><span class="fa fa-check-square-o"></span> Proyectos Presentados</h4>
 				<h2><span class="fa fa-check-square-o"></span><?php the_title();?></h2>
 				<div class="que-es">
-					<h3>Qué es</h3>
+					<h3>¿Qué es?</h3>
 					<?php 
 						$que_es = get_post_meta(get_the_ID(), '_que_es', true); 
 						echo $que_es;
 					?>
 				</div>
 				<div class="para-que-sirve">
-					<h3>Para que sirve</h3>
+					<h3>¿Para qué sirve?</h3>
 					<?php 
 						$para_que_sirve = get_post_meta(get_the_ID(), '_para_que_sirve', true); 
 						echo $para_que_sirve		

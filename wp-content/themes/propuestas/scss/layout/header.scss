@@ -1,6 +1,7 @@
 .main-header{
-	height:420px;
 	width:100%;
+	background:url(img/back-header.jpg);
+	overflow:hidden;
 	@include min-screen(1000px) {
 	display: flex;
   	align-items: center;
@@ -9,22 +10,22 @@
 	.cumplimos{
 		text-indent: -10000px;
 		background: url(img/cumplimos-header.png) no-repeat;
-		height: 249px;
-		max-width: 540px;
-		background-size: 100%;
+		height: 0;
+		max-width: 709px;
+		background-size: contain;
 		margin-top:10px;
 		width: 100%;
+		padding-top: 50%;
 	}
 
 	.propuestas{
-		float:right;
-		background:url(img/propuestas-header.png) no-repeat;
-		max-width: 558px;
-		height: 228px;
+		max-width: 1010px;
 		background-size: 100%;
 		margin-top:10px;
 		width: 100%;
-		
+		img{
+			max-width: 100%;
+		}
 	}
 
 }
